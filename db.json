@@ -294,5 +294,27 @@
 			"url": "https://youtu.be/5glqYsL5elo",
 			"wikidata_id": 2
 		}
+	],
+	"goal": [
+		{
+			"id": 1,
+			"days": 5,
+			"profile_id": 1
+		},
+		{
+			"id": 2,
+			"days": 2,
+			"profile_id": 2
+		},
+		{
+			"id": 3,
+			"days": 7,
+			"profile_id": 3
+		},
+		{
+			"id": 4,
+			"days": 1,
+			"profile_id": 4
+		}
 	]
 }
