@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom'
-import UnAuth from 'layouts/Unauth'
 import Auth from 'layouts/Auth'
+import UnAuth from 'layouts/UnAuth'
 import Home from 'pages/Home'
 import Login from 'pages/Login'
 import Register from 'pages/Register'

@@ -1,5 +1,7 @@
+import { Outlet } from 'react-router'
+
 const Auth = () => {
-	return <>Auth</>
+	return <Outlet />
 }
 
 export default Auth

@@ -1,5 +1,7 @@
+import { Outlet } from 'react-router'
+
 const UnAuth = () => {
-	return <>UnAuth</>
+	return <Outlet />
 }
 
 export default UnAuth
