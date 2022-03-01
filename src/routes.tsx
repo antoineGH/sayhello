@@ -3,6 +3,7 @@ import Auth from 'layouts/Auth'
 import UnAuth from 'layouts/UnAuth'
 import Home from 'pages/Home'
 import Course from 'pages/Course'
+import Lesson from 'pages/Lesson'
 import Quiz from 'pages/Quiz'
 import Login from 'pages/Login'
 import Register from 'pages/Register'
@@ -15,6 +16,7 @@ const routes = (isLogged: Boolean) => [
 		children: [
 			{ path: 'home', element: <Home /> },
 			{ path: 'course', element: <Course /> },
+			{ path: 'lesson', element: <Lesson /> },
 			{ path: 'quiz', element: <Quiz /> },
 			{ path: '/auth', element: <Navigate to='/auth/home' /> },
 		],

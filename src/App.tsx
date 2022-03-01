@@ -5,7 +5,7 @@ import { Switch, Layout } from 'antd'
 import './App.css'
 
 const App: React.FC = (): JSX.Element => {
-	const [isLogged, setIsLogged] = useState(true)
+	const [isLogged, setIsLogged] = useState(false)
 	const routing = useRoutes(routes(isLogged))
 	const { Content } = Layout
 
