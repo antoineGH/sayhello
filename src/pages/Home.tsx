@@ -5,7 +5,7 @@ const Home = () => {
 	useTitle('Home')
 	return (
 		<>
-			<PageHeader className='site-page-header' onBack={() => null} title='Home' subTitle='Welcome to sayHello' />
+			<PageHeader className='site-page-header' title='Home' subTitle='Welcome to sayHello' />
 		</>
 	)
 }

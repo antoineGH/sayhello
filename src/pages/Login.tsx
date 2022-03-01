@@ -5,12 +5,7 @@ const Login = () => {
 	useTitle('Login')
 	return (
 		<>
-			<PageHeader
-				className='site-page-header'
-				onBack={() => null}
-				title='Login'
-				subTitle='Log into your account'
-			/>
+			<PageHeader className='site-page-header' title='Login' subTitle='Log into your account' />
 		</>
 	)
 }
