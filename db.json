@@ -70,6 +70,32 @@
 			"profile_id": 3
 		}
 	],
+	"completed": [
+		{
+			"id": 1,
+			"completed": true,
+			"lesson_id": 1,
+			"profile_id": 1
+		},
+		{
+			"id": 2,
+			"completed": false,
+			"lesson_id": 2,
+			"profile_id": 1
+		},
+		{
+			"id": 3,
+			"completed": false,
+			"lesson_id": 1,
+			"profile_id": 3
+		},
+		{
+			"id": 4,
+			"completed": false,
+			"lesson_id": 1,
+			"profile_id": 3
+		}
+	],
 	"course": [
 		{
 			"id": 1,
@@ -182,13 +208,11 @@
 	"quiz": [
 		{
 			"id": 1,
-			"completed": false,
 			"name": "Quiz ESL English",
 			"lesson_id": 1
 		},
 		{
 			"id": 2,
-			"completed": true,
 			"name": "Quiz 2 ESL English",
 			"lesson_id": 2
 		}
@@ -260,6 +284,7 @@
 			"id": 1,
 			"score": "10",
 			"date_created": "2022-02-27T18:55:43.511Z",
+			"profile_id": 1,
 			"quiz_id": 1
 		}
 	],
