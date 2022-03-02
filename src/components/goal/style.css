@@ -1,0 +1,10 @@
+.div_weekdays {
+	/* background-color: yellow; */
+	display: flex;
+	justify-content: space-between;
+}
+
+.weekdays {
+	/* background-color: pink; */
+	font-size: 0.9rem;
+}
