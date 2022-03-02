@@ -8,6 +8,7 @@ import Quiz from 'pages/Quiz'
 import Login from 'pages/Login'
 import Register from 'pages/Register'
 import Forgot from 'pages/Forgot'
+import Reset from 'pages/Reset'
 
 const routes = (isLogged: Boolean) => [
 	{
@@ -28,6 +29,7 @@ const routes = (isLogged: Boolean) => [
 			{ path: 'login', element: <Login /> },
 			{ path: 'register', element: <Register /> },
 			{ path: 'forgot', element: <Forgot /> },
+			{ path: 'reset', element: <Reset /> },
 			{ path: '/', element: <Navigate to='/login' /> },
 		],
 	},
