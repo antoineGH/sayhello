@@ -4,11 +4,18 @@ import './style.css'
 const Goal = () => {
 	const { Title } = Typography
 	const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+	const handleEditGoal = (): void => {
+		console.log('handleEditGoal')
+	}
+
 	return (
 		<>
 			<div className='goal_title'>
 				<Title level={3}>My Goals</Title>
-				<Button type='link'>Edit</Button>
+				<Button onClick={handleEditGoal} type='link'>
+					Edit
+				</Button>
 			</div>
 			<Card bordered={false} style={{ width: 350 }}>
 				<Statistic title='THIS WEEK' value='0 of 5 days' />
