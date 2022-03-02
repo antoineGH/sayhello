@@ -7,9 +7,6 @@ const ForgotForm = () => {
 
 	const onFinish = (values: formValueSuccessForgot) => {
 		console.log('Success:', values)
-		if (!values.user.email) {
-			return
-		}
 		navigate('/reset')
 	}
 
@@ -36,7 +33,7 @@ const ForgotForm = () => {
 			onFinishFailed={onFinishFailed}
 			validateMessages={validateMessages}
 			autoComplete='off'>
-			<Form.Item name={['user', 'email']} label='Email' rules={[{ type: 'email' }]}>
+			<Form.Item name={['user', 'email']} label='Email' rules={[{ required: true, type: 'email' }]}>
 				<Input />
 			</Form.Item>
 			<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
