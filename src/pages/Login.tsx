@@ -1,4 +1,5 @@
 import { PageHeader, Row, Col, Button } from 'antd'
+import LoginForm from 'forms/loginForm/LoginForm'
 import useTitle from 'hooks/useTitle'
 import { useNavigate } from 'react-router'
 
@@ -11,6 +12,9 @@ const Login = () => {
 				<Col>
 					<PageHeader className='site-page-header' title='Login' subTitle='Log into your account' />
 				</Col>
+			</Row>
+			<Row>
+				<LoginForm />
 			</Row>
 			<Row>
 				<Col>
