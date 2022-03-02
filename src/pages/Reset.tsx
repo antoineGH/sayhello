@@ -12,7 +12,7 @@ const Reset = () => {
 				<Col>
 					<PageHeader
 						className='site-page-header'
-						onBack={() => navigate('/reset')}
+						onBack={() => navigate('/forgot')}
 						title='Reset Password'
 						subTitle='Reset your password'
 					/>
