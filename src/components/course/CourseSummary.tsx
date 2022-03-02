@@ -14,7 +14,8 @@ const CourseSummary = ({ courseID, courseName, duration, difficulty, completed, 
 	return (
 		<>
 			<Title level={4}>{courseName}</Title>
-			<Row>
+			<Progress percent={completed} status='active' />
+			<Row style={{ marginTop: '1rem' }}>
 				<Col span={4}>
 					<Statistic title='Duration' value={duration} suffix='h' />
 				</Col>
@@ -22,8 +23,9 @@ const CourseSummary = ({ courseID, courseName, duration, difficulty, completed, 
 					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
 			</Row>
-			<Progress percent={completed} status='active' />
-			<Button onClick={() => handleResumeCourse(courseID)}>Resume</Button>
+			<Button style={{ marginTop: '1rem' }} onClick={() => handleResumeCourse(courseID)}>
+				Resume
+			</Button>
 			<Divider />
 		</>
 	)

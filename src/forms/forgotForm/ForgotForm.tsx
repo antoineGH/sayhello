@@ -7,6 +7,9 @@ const ForgotForm = () => {
 
 	const onFinish = (values: formValueSuccessForgot) => {
 		console.log('Success:', values)
+		if (!values.user.email) {
+			return
+		}
 		navigate('/reset')
 	}
 
