@@ -1,4 +1,5 @@
 import { Button, Col, PageHeader, Row } from 'antd'
+import RegisterForm from 'forms/registerForm/RegisterForm'
 import useTitle from 'hooks/useTitle'
 import { useNavigate } from 'react-router'
 
@@ -15,6 +16,11 @@ const Register = () => {
 						title='Register'
 						subTitle='Create a new account'
 					/>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<RegisterForm />
 				</Col>
 			</Row>
 			<Row>

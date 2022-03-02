@@ -1,7 +1,8 @@
 import { Button, Form, Input } from 'antd'
+import { formValueSuccessReset } from 'types/form'
 
 const ResetForm = () => {
-	const onFinish = (values: any) => {
+	const onFinish = (values: formValueSuccessReset) => {
 		console.log('Success:', values)
 	}
 

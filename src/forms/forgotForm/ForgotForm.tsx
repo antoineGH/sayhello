@@ -1,10 +1,11 @@
 import { Button, Form, Input } from 'antd'
 import { useNavigate } from 'react-router'
+import { formValueSuccessForgot } from 'types/form'
 
 const ForgotForm = () => {
 	const navigate = useNavigate()
 
-	const onFinish = (values: any) => {
+	const onFinish = (values: formValueSuccessForgot) => {
 		console.log('Success:', values)
 		navigate('/reset')
 	}

@@ -1,8 +1,8 @@
 import { Form, Input, Button, Checkbox } from 'antd'
-import { formValueSuccess } from 'types/login'
+import { formValueSuccessLogin } from 'types/form'
 
 const LoginForm = () => {
-	const onFinish = (values: formValueSuccess) => {
+	const onFinish = (values: formValueSuccessLogin) => {
 		console.log('Success:', values)
 	}
 
