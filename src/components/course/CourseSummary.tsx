@@ -1,4 +1,5 @@
-import { Button, Col, Divider, Progress, Row, Statistic, Tag, Typography } from 'antd'
+import { BorderOutlined, CheckSquareOutlined } from '@ant-design/icons'
+import { Button, Col, Progress, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
 
 interface Props {
 	courseID: number
@@ -24,7 +25,20 @@ const CourseSummary = ({
 	const { Title } = Typography
 	return (
 		<>
-			<Title level={4}>{courseName}</Title>
+			<Row>
+				<Col span={4}>
+					<Title level={4}>{courseName}</Title>
+				</Col>
+				<Col offset={18}>
+					<Tooltip title={completed === 100 ? `${courseName} completed` : `${courseName} not completed`}>
+						{completed ? (
+							<CheckSquareOutlined className='checkedLesson' />
+						) : (
+							<BorderOutlined className='uncheckedLesson' />
+						)}
+					</Tooltip>
+				</Col>
+			</Row>
 			<Row>
 				{tags.map((tag, count) => {
 					count++
@@ -43,7 +57,6 @@ const CourseSummary = ({
 			<Button style={{ marginTop: '1rem' }} onClick={() => handleCourse(courseID)}>
 				{isEnrolled ? 'Enroll' : 'Resume'}
 			</Button>
-			<Divider />
 		</>
 	)
 }

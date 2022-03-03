@@ -1,0 +1,8 @@
+.checkedLesson {
+	color: green !important;
+	font-size: 1.4rem;
+}
+
+.uncheckedLesson {
+	font-size: 1.4rem;
+}

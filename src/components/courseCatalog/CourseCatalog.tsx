@@ -50,12 +50,11 @@ const CourseCatalog = () => {
 			<div className='course_title'>
 				<Title level={3}>Available Courses</Title>
 			</div>
-			<Card bordered={false}>
-				{courses.map((course, count) => {
-					count++
-					return (
+			{courses.map((course, count) => {
+				count++
+				return (
+					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }}>
 						<CourseSummary
-							key={count}
 							courseID={course.courseID}
 							courseName={course.courseName}
 							duration={course.duration}
@@ -65,9 +64,9 @@ const CourseCatalog = () => {
 							handleCourse={handleEnrollCourse}
 							isEnrolled={true}
 						/>
-					)
-				})}
-			</Card>
+					</Card>
+				)
+			})}
 		</>
 	)
 }
