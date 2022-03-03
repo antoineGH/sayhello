@@ -1,4 +1,4 @@
-import { Button, Col, Divider, Progress, Row, Statistic, Typography } from 'antd'
+import { Button, Col, Divider, Progress, Row, Statistic, Tag, Typography } from 'antd'
 
 interface Props {
 	courseID: number
@@ -6,15 +6,32 @@ interface Props {
 	duration: number
 	difficulty: number
 	completed: number
-	handleResumeCourse: (courseID: number) => void
+	tags: string[]
+	handleCourse: (courseID: number) => void
+	isEnrolled: boolean
 }
 
-const CourseSummary = ({ courseID, courseName, duration, difficulty, completed, handleResumeCourse }: Props) => {
+const CourseSummary = ({
+	courseID,
+	courseName,
+	duration,
+	difficulty,
+	completed,
+	tags,
+	handleCourse,
+	isEnrolled,
+}: Props) => {
 	const { Title } = Typography
 	return (
 		<>
 			<Title level={4}>{courseName}</Title>
-			<Progress percent={completed} status='active' />
+			<Row>
+				{tags.map((tag, count) => {
+					count++
+					return <Tag key={count}>{tag}</Tag>
+				})}
+			</Row>
+			{!isEnrolled && <Progress percent={completed} status='active' />}
 			<Row style={{ marginTop: '1rem' }}>
 				<Col span={4}>
 					<Statistic title='Duration' value={duration} suffix='h' />
@@ -23,8 +40,8 @@ const CourseSummary = ({ courseID, courseName, duration, difficulty, completed, 
 					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
 			</Row>
-			<Button style={{ marginTop: '1rem' }} onClick={() => handleResumeCourse(courseID)}>
-				Resume
+			<Button style={{ marginTop: '1rem' }} onClick={() => handleCourse(courseID)}>
+				{isEnrolled ? 'Enroll' : 'Resume'}
 			</Button>
 			<Divider />
 		</>

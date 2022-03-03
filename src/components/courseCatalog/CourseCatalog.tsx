@@ -1,9 +1,8 @@
-import { Button, Card, Typography } from 'antd'
+import { Card, Typography } from 'antd'
 import CourseSummary from 'components/course/CourseSummary'
 import { useNavigate } from 'react-router'
-import './style.css'
 
-const CourseList = () => {
+const CourseCatalog = () => {
 	const { Title } = Typography
 	const navigate = useNavigate()
 	const courses = [
@@ -12,7 +11,7 @@ const CourseList = () => {
 			courseName: 'Course 1',
 			duration: 1,
 			difficulty: 1,
-			completed: 100,
+			completed: 0,
 			tags: ['ESL', 'English', 'Native Speaker'],
 		},
 		{
@@ -20,7 +19,7 @@ const CourseList = () => {
 			courseName: 'Course 2',
 			duration: 2,
 			difficulty: 2,
-			completed: 12,
+			completed: 0,
 			tags: ['ESL', 'Advanced English', 'Native Speaker'],
 		},
 		{
@@ -28,7 +27,7 @@ const CourseList = () => {
 			courseName: 'Course 3',
 			duration: 3,
 			difficulty: 3,
-			completed: 75,
+			completed: 0,
 			tags: ['ESL', 'Intermediate English', 'Native Speaker'],
 		},
 		{
@@ -41,22 +40,15 @@ const CourseList = () => {
 		},
 	]
 
-	const handleResumeCourse = (courseID: number) => {
-		console.log('handleResumeCourse')
+	const handleEnrollCourse = (courseID: number) => {
+		console.log('handleEnrollCourse')
 		navigate(`/course/${courseID}`)
 	}
 
-	const handleEditCourse = () => {
-		console.log('handleEditCourse')
-	}
-
 	return (
-		<div className='course_main'>
+		<>
 			<div className='course_title'>
-				<Title level={3}>My Courses</Title>
-				<Button onClick={handleEditCourse} type='link'>
-					Edit
-				</Button>
+				<Title level={3}>Available Courses</Title>
 			</div>
 			<Card bordered={false}>
 				{courses.map((course, count) => {
@@ -70,13 +62,13 @@ const CourseList = () => {
 							difficulty={course.difficulty}
 							completed={course.completed}
 							tags={course.tags}
-							handleCourse={handleResumeCourse}
-							isEnrolled={false}
+							handleCourse={handleEnrollCourse}
+							isEnrolled={true}
 						/>
 					)
 				})}
 			</Card>
-		</div>
+		</>
 	)
 }
-export default CourseList
+export default CourseCatalog

@@ -1,4 +1,5 @@
 import { PageHeader } from 'antd'
+import CourseCatalog from 'components/courseCatalog/CourseCatalog'
 import useTitle from 'hooks/useTitle'
 import { useNavigate } from 'react-router'
 
@@ -7,14 +8,15 @@ const Course = () => {
 	const navigate = useNavigate()
 
 	return (
-		<>
+		<div style={{ margin: '1rem' }}>
 			<PageHeader
 				className='site-page-header'
 				onBack={() => navigate(-1)}
 				title='Courses'
 				subTitle='Find your courses'
 			/>
-		</>
+			<CourseCatalog />
+		</div>
 	)
 }
 

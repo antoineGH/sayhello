@@ -192,17 +192,17 @@
 		{
 			"id": 1,
 			"name": "ESL English",
-			"lesson_id": 1
+			"course_id": 1
 		},
 		{
 			"id": 2,
 			"name": "ESL Intermediate English",
-			"lesson_id": 2
+			"course_id": 2
 		},
 		{
 			"id": 3,
 			"name": "ESL Advanced English",
-			"lesson_id": 3
+			"course_id": 3
 		}
 	],
 	"quiz": [
