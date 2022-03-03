@@ -8,16 +8,26 @@ const Home = () => {
 	useTitle('Home')
 	return (
 		<>
-			<PageHeader className='site-page-header' title='Home' subTitle='Welcome to sayHello' />
 			<Row>
 				<Col>
+					<PageHeader className='site-page-header' title='Home' subTitle='Welcome to sayHello' />
+				</Col>
+			</Row>
+			<Row>
+				<Col span={16}>
 					<CourseList />
 				</Col>
-				<Col>
-					<Goal />
-				</Col>
-				<Col>
-					<Score />
+				<Col span={8}>
+					<Row>
+						<Col span={24}>
+							<Goal />
+						</Col>
+					</Row>
+					<Row>
+						<Col span={24}>
+							<Score />
+						</Col>
+					</Row>
 				</Col>
 			</Row>
 		</>

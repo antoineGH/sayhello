@@ -10,14 +10,14 @@ const Goal = () => {
 	}
 
 	return (
-		<>
+		<div className='goal_main'>
 			<div className='goal_title'>
 				<Title level={3}>My Goals</Title>
 				<Button onClick={handleEditGoal} type='link'>
 					Edit
 				</Button>
 			</div>
-			<Card bordered={false} style={{ width: 350 }}>
+			<Card bordered={false}>
 				<Statistic title='THIS WEEK' value='0 of 5 days' />
 				<Divider dashed />
 				<Timeline>
@@ -31,7 +31,7 @@ const Goal = () => {
 					})}
 				</Timeline>
 			</Card>
-		</>
+		</div>
 	)
 }
 export default Goal

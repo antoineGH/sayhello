@@ -24,14 +24,14 @@ const CourseList = () => {
 	}
 
 	return (
-		<>
+		<div className='course_main'>
 			<div className='course_title'>
 				<Title level={3}>My Courses</Title>
 				<Button onClick={handleEditCourse} type='link'>
 					Edit
 				</Button>
 			</div>
-			<Card bordered={false} style={{ width: 1000 }}>
+			<Card bordered={false}>
 				{courses.map((course, count) => {
 					count++
 					return (
@@ -47,7 +47,7 @@ const CourseList = () => {
 					)
 				})}
 			</Card>
-		</>
+		</div>
 	)
 }
 export default CourseList

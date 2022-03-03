@@ -1,4 +1,5 @@
 import { Card, Divider, Statistic, Typography } from 'antd'
+import './score.css'
 
 const Score = () => {
 	const { Title } = Typography
@@ -10,9 +11,9 @@ const Score = () => {
 	]
 
 	return (
-		<>
+		<div className='score_title'>
 			<Title level={3}>Latest Scores</Title>
-			<Card bordered={false} style={{ width: 350 }}>
+			<Card bordered={false}>
 				{scores.map((score, count) => {
 					count++
 					return (
@@ -27,7 +28,7 @@ const Score = () => {
 					)
 				})}
 			</Card>
-		</>
+		</div>
 	)
 }
 export default Score
