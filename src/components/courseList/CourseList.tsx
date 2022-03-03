@@ -13,6 +13,8 @@ const CourseList = () => {
 			duration: 1,
 			difficulty: 1,
 			completed: 100,
+			numberLesson: 6,
+			numberQuiz: 2,
 			tags: ['ESL', 'English', 'Native Speaker'],
 		},
 		{
@@ -21,6 +23,8 @@ const CourseList = () => {
 			duration: 2,
 			difficulty: 2,
 			completed: 12,
+			numberLesson: 6,
+			numberQuiz: 2,
 			tags: ['ESL', 'Advanced English', 'Native Speaker'],
 		},
 		{
@@ -29,6 +33,8 @@ const CourseList = () => {
 			duration: 3,
 			difficulty: 3,
 			completed: 75,
+			numberLesson: 6,
+			numberQuiz: 2,
 			tags: ['ESL', 'Intermediate English', 'Native Speaker'],
 		},
 		{
@@ -37,6 +43,8 @@ const CourseList = () => {
 			duration: 4,
 			difficulty: 4,
 			completed: 0,
+			numberLesson: 6,
+			numberQuiz: 2,
 			tags: ['ESL', 'Native Level English', 'Native Speaker'],
 		},
 	]
@@ -69,6 +77,8 @@ const CourseList = () => {
 							duration={course.duration}
 							difficulty={course.difficulty}
 							completed={course.completed}
+							numberLesson={course.numberLesson}
+							numberQuiz={course.numberQuiz}
 							tags={course.tags}
 							handleCourse={handleResumeCourse}
 							isEnrolled={false}

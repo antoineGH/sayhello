@@ -12,6 +12,8 @@ const CourseCatalog = () => {
 			duration: 1,
 			difficulty: 1,
 			completed: 0,
+			numberLesson: 3,
+			numberQuiz: 3,
 			tags: ['ESL', 'English', 'Native Speaker'],
 		},
 		{
@@ -20,6 +22,8 @@ const CourseCatalog = () => {
 			duration: 2,
 			difficulty: 2,
 			completed: 0,
+			numberLesson: 2,
+			numberQuiz: 1,
 			tags: ['ESL', 'Advanced English', 'Native Speaker'],
 		},
 		{
@@ -28,6 +32,8 @@ const CourseCatalog = () => {
 			duration: 3,
 			difficulty: 3,
 			completed: 0,
+			numberLesson: 6,
+			numberQuiz: 2,
 			tags: ['ESL', 'Intermediate English', 'Native Speaker'],
 		},
 		{
@@ -36,6 +42,8 @@ const CourseCatalog = () => {
 			duration: 4,
 			difficulty: 4,
 			completed: 0,
+			numberLesson: 2,
+			numberQuiz: 1,
 			tags: ['ESL', 'Native Level English', 'Native Speaker'],
 		},
 	]
@@ -60,6 +68,8 @@ const CourseCatalog = () => {
 							duration={course.duration}
 							difficulty={course.difficulty}
 							completed={course.completed}
+							numberLesson={course.numberLesson}
+							numberQuiz={course.numberQuiz}
 							tags={course.tags}
 							handleCourse={handleEnrollCourse}
 							isEnrolled={true}
