@@ -191,17 +191,17 @@
 	"tag": [
 		{
 			"id": 1,
-			"name": "ESL English",
+			"tag": ["ESL English", "ESL", "English"],
 			"course_id": 1
 		},
 		{
 			"id": 2,
-			"name": "ESL Intermediate English",
+			"tag": ["ESL Intermediate English", "ESL", "English"],
 			"course_id": 2
 		},
 		{
 			"id": 3,
-			"name": "ESL Advanced English",
+			"tag": ["ESL Advanced English", "ESL", "English"],
 			"course_id": 3
 		}
 	],
