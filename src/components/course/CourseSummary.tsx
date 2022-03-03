@@ -56,7 +56,7 @@ const CourseSummary = ({
 			</Row>
 			{!isEnrolled && <Progress percent={completed} status='active' />}
 			<Row style={{ marginTop: '1rem' }}>
-				<Col span={5}>
+				<Col span={7}>
 					<Statistic title='Contains' value={getContains(numberLesson, numberQuiz)} />
 				</Col>
 				<Col span={4}>
@@ -65,7 +65,7 @@ const CourseSummary = ({
 				<Col span={4}>
 					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
-				<Col span={1} offset={10} style={{ justifyContent: 'center', display: 'flex' }}>
+				<Col span={1} offset={8} style={{ justifyContent: 'center', display: 'flex' }}>
 					<Button style={{ marginTop: '1rem' }} onClick={() => handleCourse(courseID)}>
 						{isEnrolled ? 'Enroll' : 'Resume'}
 					</Button>

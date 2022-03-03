@@ -66,10 +66,10 @@ const CourseList = () => {
 					Edit
 				</Button>
 			</div>
-			<Card bordered={false}>
-				{courses.map((course, count) => {
-					count++
-					return (
+			{courses.map((course, count) => {
+				count++
+				return (
+					<Card bordered={false} style={{ marginBottom: '1rem' }}>
 						<CourseSummary
 							key={count}
 							courseID={course.courseID}
@@ -83,9 +83,9 @@ const CourseList = () => {
 							handleCourse={handleResumeCourse}
 							isEnrolled={false}
 						/>
-					)
-				})}
-			</Card>
+					</Card>
+				)
+			})}
 		</div>
 	)
 }
