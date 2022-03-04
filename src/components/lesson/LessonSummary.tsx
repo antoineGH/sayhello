@@ -30,7 +30,9 @@ const LessonSummary = ({
 				<Col span={4}>
 					<Title level={4}>{lessonName}</Title>
 				</Col>
-				<Col offset={18}>
+			</Row>
+			<Row>
+				<Col span={1} offset={23} style={{ justifyContent: 'center', display: 'flex' }}>
 					<Tooltip title={completed ? `${lessonName} completed` : `${lessonName} not completed`}>
 						{completed ? (
 							<CheckSquareOutlined className='checkedLesson' />
@@ -44,13 +46,15 @@ const LessonSummary = ({
 				<Col span={4}>
 					<Statistic title='Duration' value={duration} suffix='h' />
 				</Col>
-				<Col span={2} offset={18}>
+				<Col span={4}>
 					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
+				<Col span={1} offset={15} style={{ justifyContent: 'center', display: 'flex' }}>
+					<Button style={{ marginTop: '1rem' }} onClick={() => handleLesson(lessonID)}>
+						{completed ? 'Resume' : 'Start'}
+					</Button>
+				</Col>
 			</Row>
-			<Button style={{ marginTop: '1rem' }} onClick={() => handleLesson(lessonID)}>
-				{completed ? 'Resume' : 'Start'}
-			</Button>
 		</>
 	)
 }

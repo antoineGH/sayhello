@@ -38,7 +38,15 @@ const CourseSummary = ({
 				<Col span={4}>
 					<Title level={4}>{courseName}</Title>
 				</Col>
-				<Col span={1} offset={19} style={{ justifyContent: 'center', display: 'flex' }}>
+			</Row>
+			<Row>
+				<Col span={4}>
+					{tags.map((tag, count) => {
+						count++
+						return <Tag key={count}>{tag}</Tag>
+					})}
+				</Col>
+				<Col span={1} offset={19} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
 					<Tooltip title={completed === 100 ? `${courseName} completed` : `${courseName} not completed`}>
 						{completed ? (
 							<CheckSquareOutlined className='checkedLesson' />
@@ -47,12 +55,6 @@ const CourseSummary = ({
 						)}
 					</Tooltip>
 				</Col>
-			</Row>
-			<Row>
-				{tags.map((tag, count) => {
-					count++
-					return <Tag key={count}>{tag}</Tag>
-				})}
 			</Row>
 			{!isEnrolled && <Progress percent={completed} status='active' />}
 			<Row style={{ marginTop: '1rem' }}>
