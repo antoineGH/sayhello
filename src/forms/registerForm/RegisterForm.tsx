@@ -47,7 +47,7 @@ const RegisterForm = () => {
 				</Form.Item>
 				<Form.Item
 					name='confirm'
-					label='Confirm Password'
+					label='Confirm'
 					dependencies={['password']}
 					hasFeedback
 					rules={[

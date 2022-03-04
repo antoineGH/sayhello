@@ -7,7 +7,7 @@ const Forgot = () => {
 	const navigate = useNavigate()
 	useTitle('Forgot')
 	return (
-		<>
+		<div className='forgot_main'>
 			<Row>
 				<Col>
 					<PageHeader
@@ -23,7 +23,7 @@ const Forgot = () => {
 					<ForgotForm />
 				</Col>
 			</Row>
-		</>
+		</div>
 	)
 }
 

@@ -7,7 +7,7 @@ const Login = () => {
 	useTitle('Login')
 	const navigate = useNavigate()
 	return (
-		<>
+		<div className='login_main'>
 			<Row>
 				<Col>
 					<PageHeader className='site-page-header' title='Login' subTitle='Log into your account' />
@@ -17,9 +17,7 @@ const Login = () => {
 				<LoginForm />
 			</Row>
 			<Row>
-				<Col>
-					<p>No account?</p>
-				</Col>
+				<Col className='login_justify'>No account?</Col>
 				<Col>
 					<Button onClick={() => navigate('/register')} type='link'>
 						Register
@@ -27,16 +25,14 @@ const Login = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col>
-					<p>Forgot your password?</p>
-				</Col>
+				<Col className='login_justify'>Forgot your password?</Col>
 				<Col>
 					<Button onClick={() => navigate('/forgot')} type='link'>
 						Reset
 					</Button>
 				</Col>
 			</Row>
-		</>
+		</div>
 	)
 }
 

@@ -3,3 +3,32 @@
 .ant-statistic-content {
 	font-size: 16px;
 }
+
+/* LOGIN */
+
+.register_main,
+.forgot_main,
+.reset_main,
+.login_main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 1rem;
+}
+
+.ant-page-header-heading-sub-title {
+	margin-right: 12px;
+	color: rgba(0, 0, 0, 0.45);
+	font-size: 14px;
+	line-height: 1.5715;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 0.25rem;
+}
+
+.register_justify,
+.login_justify {
+	display: flex;
+	align-items: center;
+}

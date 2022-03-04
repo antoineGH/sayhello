@@ -58,7 +58,7 @@ const QuizSummary = ({
 					</Link>
 				</Col>
 				<Col span={4}>
-					<Statistic title='Duration' value={numberQuestion} suffix='Questions' />
+					<Statistic title='Contains' value={numberQuestion} suffix='Questions' />
 				</Col>
 				<Col span={4}>
 					<Statistic title='Difficulty' value={difficulty} suffix='/10' />

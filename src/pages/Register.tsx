@@ -7,7 +7,7 @@ const Register = () => {
 	const navigate = useNavigate()
 	useTitle('Register')
 	return (
-		<>
+		<div className='register_main'>
 			<Row>
 				<Col>
 					<PageHeader
@@ -24,16 +24,14 @@ const Register = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col>
-					<p>Already have an account?</p>
-				</Col>
+				<Col className='login_justify'>Already have an account?</Col>
 				<Col>
 					<Button onClick={() => navigate('/login')} type='link'>
 						Login
 					</Button>
 				</Col>
 			</Row>
-		</>
+		</div>
 	)
 }
 

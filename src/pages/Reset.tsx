@@ -7,7 +7,7 @@ const Reset = () => {
 	const navigate = useNavigate()
 	useTitle('Reset')
 	return (
-		<>
+		<div className='reset_main'>
 			<Row>
 				<Col>
 					<PageHeader
@@ -23,7 +23,7 @@ const Reset = () => {
 					<ResetForm />
 				</Col>
 			</Row>
-		</>
+		</div>
 	)
 }
 
