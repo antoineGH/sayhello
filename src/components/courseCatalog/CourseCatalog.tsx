@@ -50,7 +50,7 @@ const CourseCatalog = () => {
 
 	const handleEnrollCourse = (courseID: number) => {
 		console.log('handleEnrollCourse')
-		navigate(`/course/${courseID}`)
+		navigate(`/auth/course/${courseID}`)
 	}
 
 	return (

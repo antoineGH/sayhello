@@ -51,7 +51,7 @@ const CourseList = () => {
 
 	const handleResumeCourse = (courseID: number) => {
 		console.log('handleResumeCourse')
-		navigate(`/course/${courseID}`)
+		navigate(`/auth/course/${courseID}`)
 	}
 
 	const handleEditCourse = () => {

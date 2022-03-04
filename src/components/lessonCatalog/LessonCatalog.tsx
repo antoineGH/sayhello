@@ -46,7 +46,7 @@ const LessonCatalog = () => {
 
 	const handleStartLesson = (lessonID: number) => {
 		console.log('handleStartLesson')
-		navigate(`/lesson/${lessonID}`)
+		navigate(`/auth/lesson/${lessonID}`)
 	}
 
 	return (

@@ -1,4 +1,5 @@
 import { PageHeader } from 'antd'
+import QuizCatalog from 'components/quizCatalog/QuizCatalog'
 import useTitle from 'hooks/useTitle'
 import { useNavigate } from 'react-router'
 
@@ -7,14 +8,15 @@ const Quiz = () => {
 	useTitle('Quiz')
 
 	return (
-		<>
+		<div style={{ margin: '1rem' }}>
 			<PageHeader
 				className='site-page-header'
 				onBack={() => navigate(-1)}
 				title='Quiz'
-				subTitle='Get ready for your quiz'
+				subTitle='Find your quizzes'
 			/>
-		</>
+			<QuizCatalog />
+		</div>
 	)
 }
 
