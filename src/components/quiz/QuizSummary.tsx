@@ -1,4 +1,4 @@
-import { BorderOutlined, CheckSquareOutlined } from '@ant-design/icons'
+import { BorderOutlined, CheckSquareOutlined, TrophyOutlined } from '@ant-design/icons'
 import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 
@@ -27,13 +27,22 @@ const QuizSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={4}>
+				<Col span={1}>
 					<Title level={4}>{quizName}</Title>
 				</Col>
+				{score !== -1 ? (
+					<Col>
+						<Tooltip title={`Completed, Score ${score}/100`}>
+							<TrophyOutlined style={{ color: 'gold', fontSize: '1.2rem', marginTop: '.2rem' }} />
+						</Tooltip>
+					</Col>
+				) : (
+					''
+				)}
 			</Row>
 			<Row>
 				<Col span={1} offset={23} style={{ justifyContent: 'center', display: 'flex' }}>
-					<Tooltip title={score !== 0 ? `${lessonName} completed` : `${lessonName} not completed`}>
+					<Tooltip title={score !== 0 ? `${quizName} completed` : `${quizName} not completed`}>
 						{score !== -1 ? (
 							<CheckSquareOutlined className='checkedLesson' />
 						) : (
