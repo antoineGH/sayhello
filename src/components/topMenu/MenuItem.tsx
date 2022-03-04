@@ -1,9 +1,10 @@
 import { menu } from './menu'
 import CustomLink from './CustomLink'
+import './style.css'
 
 const MenuItem = () => {
 	return (
-		<>
+		<div className='topmenu_items'>
 			{menu.map((element) => {
 				return (
 					<CustomLink key={element.name} to={element.path}>
@@ -11,7 +12,7 @@ const MenuItem = () => {
 					</CustomLink>
 				)
 			})}
-		</>
+		</div>
 	)
 }
 

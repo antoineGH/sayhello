@@ -40,15 +40,15 @@ const CourseSummary = ({
 				</Col>
 			</Row>
 			<Row>
-				<Col span={4}>
+				<Col span={6}>
 					{tags.map((tag, count) => {
 						count++
 						return <Tag key={count}>{tag}</Tag>
 					})}
 				</Col>
-				<Col span={1} offset={19} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
+				<Col span={1} offset={17} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
 					<Tooltip title={completed === 100 ? `${courseName} completed` : `${courseName} not completed`}>
-						{completed ? (
+						{completed === 100 ? (
 							<CheckSquareOutlined className='checkedLesson' />
 						) : (
 							<BorderOutlined className='uncheckedLesson' />
