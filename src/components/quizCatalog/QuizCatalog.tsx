@@ -1,6 +1,7 @@
 import { Card, Typography } from 'antd'
 import QuizSummary from 'components/quiz/QuizSummary'
 import { useNavigate } from 'react-router'
+import './style.css'
 
 const QuizCatalog = () => {
 	const { Title } = Typography
@@ -50,7 +51,7 @@ const QuizCatalog = () => {
 	}
 
 	return (
-		<>
+		<div className='quiz_main'>
 			<div className='quiz_title'>
 				<Title level={3}>Available Quizzes</Title>
 			</div>
@@ -71,7 +72,7 @@ const QuizCatalog = () => {
 					</Card>
 				)
 			})}
-		</>
+		</div>
 	)
 }
 

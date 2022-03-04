@@ -8,7 +8,7 @@ const Course = () => {
 	const navigate = useNavigate()
 
 	return (
-		<div style={{ margin: '1rem' }}>
+		<div>
 			<PageHeader
 				className='site-page-header'
 				onBack={() => navigate(-1)}

@@ -1,6 +1,7 @@
 import { Card, Typography } from 'antd'
 import LessonSummary from 'components/lesson/LessonSummary'
 import { useNavigate } from 'react-router'
+import './style.css'
 
 const LessonCatalog = () => {
 	const { Title } = Typography
@@ -50,7 +51,7 @@ const LessonCatalog = () => {
 	}
 
 	return (
-		<>
+		<div className='course_main'>
 			<div className='course_title'>
 				<Title level={3}>Available Lessons</Title>
 			</div>
@@ -71,7 +72,7 @@ const LessonCatalog = () => {
 					</Card>
 				)
 			})}
-		</>
+		</div>
 	)
 }
 
