@@ -2,3 +2,36 @@
 	display: flex;
 	justify-content: space-evenly;
 }
+
+.col_logo {
+	display: flex;
+	align-self: center;
+}
+
+.title_logo {
+	color: white !important;
+}
+
+.col_logo h3 {
+	display: flex;
+	justify-content: center;
+	margin: auto !important;
+}
+
+.col_avatar {
+	display: flex !important;
+	justify-content: flex-end;
+	align-self: center;
+}
+
+.col_avatar span {
+	justify-content: flex-end;
+	align-self: flex-end;
+	transform: scale(1.1);
+}
+
+.col_search {
+	display: flex !important;
+	justify-content: flex-end;
+	align-self: center;
+}
