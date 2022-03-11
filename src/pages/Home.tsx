@@ -1,6 +1,7 @@
 import { Col, PageHeader, Row } from 'antd'
 import CourseList from 'components/courseList/CourseList'
 import Goal from 'components/goal/Goal'
+import ModalEditCourse from 'components/modals/modalEditCourse/ModalEditCourse'
 import Score from 'components/score/Score'
 import useTitle from 'hooks/useTitle'
 
@@ -30,6 +31,7 @@ const Home = () => {
 					</Row>
 				</Col>
 			</Row>
+			<ModalEditCourse />
 		</>
 	)
 }
