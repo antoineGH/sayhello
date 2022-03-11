@@ -2,11 +2,23 @@ import { useState } from 'react'
 import { Button, Checkbox, Col, Modal, Row } from 'antd'
 
 // TODO: Create Course Type, Type the props from parent component (Home Page)
+// TODO: Props to receive:
+// TODO: Array Enrolled Courses => setValues defaultValue in Checkbox
+// TODO: Array All Courses => defines array options [{label: lessonName: String, value: lessonID: number}]
+// TODO: handleOk => dispatch update from local state values to Redux store to update enrolled courses
+// TODO: Modal async: setConfirmLoading replaced with loadingState selector return on updateCourse action
 
 const ModalEditCourse = () => {
 	const [values, setValues] = useState([1, 3])
 	const [visible, setVisible] = useState(false)
 	const [confirmLoading, setConfirmLoading] = useState(false)
+
+	const options = [
+		{ label: 'Lesson 1', value: 1 },
+		{ label: 'Lesson 2', value: 2 },
+		{ label: 'Lesson 3', value: 3 },
+		{ label: 'Lesson 4', value: 4 },
+	]
 
 	const showModal = () => {
 		setVisible(true)
@@ -17,7 +29,6 @@ const ModalEditCourse = () => {
 		setTimeout(() => {
 			setVisible(false)
 			setConfirmLoading(false)
-			// replace local loading state with Redux Store loading state on update course dispatch action
 		}, 2000)
 	}
 
@@ -30,13 +41,6 @@ const ModalEditCourse = () => {
 		setValues(checkedValues)
 	}
 
-	const options = [
-		{ label: 'Lesson 1', value: 1 },
-		{ label: 'Lesson 2', value: 2 },
-		{ label: 'Lesson 3', value: 3 },
-		{ label: 'Lesson 4', value: 4 },
-	]
-
 	return (
 		<>
 			<Button type='primary' onClick={showModal}>
@@ -48,7 +52,7 @@ const ModalEditCourse = () => {
 				onOk={handleOk}
 				confirmLoading={confirmLoading}
 				onCancel={handleCancel}>
-				<Checkbox.Group defaultValue={[1, 3]} onChange={onChange} style={{ width: '100%' }}>
+				<Checkbox.Group defaultValue={values} onChange={onChange} style={{ width: '100%' }}>
 					<Row>
 						{options.map((option, count) => {
 							count++
