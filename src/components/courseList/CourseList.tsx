@@ -1,5 +1,6 @@
-import { Button, Card, Typography } from 'antd'
+import { Card, Typography } from 'antd'
 import CourseSummary from 'components/course/CourseSummary'
+import ModalEditCourse from 'components/modals/modalEditCourse/ModalEditCourse'
 import { useNavigate } from 'react-router'
 import './style.css'
 
@@ -54,17 +55,11 @@ const CourseList = () => {
 		navigate(`/auth/course/${courseID}`)
 	}
 
-	const handleEditCourse = () => {
-		console.log('handleEditCourse')
-	}
-
 	return (
 		<div className='course_main'>
 			<div className='course_title'>
 				<Title level={3}>My Courses</Title>
-				<Button onClick={handleEditCourse} type='link'>
-					Edit
-				</Button>
+				<ModalEditCourse />
 			</div>
 			{courses.map((course, count) => {
 				count++

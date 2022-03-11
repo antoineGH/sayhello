@@ -43,8 +43,8 @@ const ModalEditCourse = () => {
 
 	return (
 		<>
-			<Button type='primary' onClick={showModal}>
-				Modal Edit Courses
+			<Button type='link' onClick={showModal}>
+				Edit
 			</Button>
 			<Modal
 				title='Edit Courses'

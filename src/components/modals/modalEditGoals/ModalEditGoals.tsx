@@ -34,8 +34,8 @@ const ModalEditGoals = () => {
 
 	return (
 		<>
-			<Button type='primary' onClick={showModal}>
-				Modal Edit Goals
+			<Button type='link' onClick={showModal}>
+				Edit
 			</Button>
 			<Modal
 				title='Edit Courses'
