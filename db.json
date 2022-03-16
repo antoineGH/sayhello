@@ -234,49 +234,49 @@
 			"id": 1,
 			"option": "2",
 			"correctness": false,
-			"quiz_id": 1
+			"question_id": 1
 		},
 		{
 			"id": 2,
 			"option": "4",
 			"correctness": true,
-			"quiz_id": 1
+			"question_id": 1
 		},
 		{
 			"id": 3,
 			"option": "6",
 			"correctness": false,
-			"quiz_id": 1
+			"question_id": 1
 		},
 		{
 			"id": 4,
 			"option": "8",
 			"correctness": false,
-			"quiz_id": 1
+			"question_id": 1
 		},
 		{
 			"id": 5,
 			"option": "2",
 			"correctness": false,
-			"quiz_id": 2
+			"question_id": 2
 		},
 		{
 			"id": 6,
 			"option": "4",
 			"correctness": false,
-			"quiz_id": 2
+			"question_id": 2
 		},
 		{
 			"id": 7,
 			"option": "6",
 			"correctness": false,
-			"quiz_id": 2
+			"question_id": 2
 		},
 		{
 			"id": 8,
 			"option": "8",
 			"correctness": true,
-			"quiz_id": 2
+			"question_id": 2
 		}
 	],
 	"result": [
