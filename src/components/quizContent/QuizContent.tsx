@@ -27,10 +27,24 @@ const QuizContent = ({ questions }: props) => {
 	const [progress, setProgress] = useState(0)
 	const [question, setQuestion] = useState(questions[index])
 	const [answers, setAnswers] = useState(new Array(questions.length))
+	const [readySubmit, setReadySubmit] = useState(false)
 
 	const getPercentageCompletion = () => {
 		return Number(((index / (questions.length - 1)) * 100).toFixed(0))
 	}
+
+	useEffect(() => {
+		let flagReady = true
+		answers.forEach((answer) => {
+			if (typeof answer !== 'boolean') {
+				flagReady = false
+			}
+		})
+		if (flagReady) {
+			// Should return false but turns to true for off reasons
+			setReadySubmit(true)
+		}
+	}, [answers])
 
 	useEffect(() => {
 		setProgress(() => getPercentageCompletion())
@@ -40,16 +54,11 @@ const QuizContent = ({ questions }: props) => {
 	const handleClickPreviousQuestion = () => {
 		setQuestion(questions[index - 1])
 		setIndex(index - 1)
-		console.log('handleClickPreviousQuestion')
 	}
 
 	const handleClickNextQuestion = () => {
-		if (index + 1 >= questions.length) {
-			return
-		}
 		setQuestion(questions[index + 1])
 		setIndex(index + 1)
-		console.log('handleClickNextQuestion')
 	}
 
 	const handleAnswerQuestion = (correctness: Boolean) => {
@@ -62,13 +71,26 @@ const QuizContent = ({ questions }: props) => {
 		setAnswers(newAnswers)
 	}
 
+	const isPreviousDisabled = () => {
+		return question === questions[0]
+	}
+
+	const isNextDisabled = () => {
+		return index + 1 >= questions.length
+	}
+
+	const handleSubmit = () => {
+		console.log('handleSubmit')
+		console.log(answers)
+	}
+
 	return (
 		<>
 			{String(index)}
 			{question.question}
 
 			<Progress percent={progress} status='active' />
-			<Button disabled={question === questions[0]} onClick={() => handleClickPreviousQuestion()}>
+			<Button disabled={isPreviousDisabled()} onClick={() => handleClickPreviousQuestion()}>
 				Previous
 			</Button>
 			<Text>
@@ -85,7 +107,13 @@ const QuizContent = ({ questions }: props) => {
 					</Button>
 				)
 			})}
-			<Button onClick={() => handleClickNextQuestion()}>Next</Button>
+			<Button disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
+				Next
+			</Button>
+			<Button disabled={readySubmit} onClick={handleSubmit}>
+				Submit
+			</Button>
+			{String(readySubmit)}
 		</>
 	)
 }
