@@ -26,7 +26,7 @@ const QuizContent = ({ questions }: props) => {
 	const [index, setIndex] = useState(0)
 	const [progress, setProgress] = useState(0)
 	const [question, setQuestion] = useState(questions[index])
-	const [answers, setAnswers] = useState(new Array(questions.length))
+	const [answers, setAnswers] = useState(Array(questions.length).fill(null))
 	const [readySubmit, setReadySubmit] = useState(false)
 
 	const getPercentageCompletion = () => {
@@ -34,14 +34,7 @@ const QuizContent = ({ questions }: props) => {
 	}
 
 	useEffect(() => {
-		let flagReady = true
-		answers.forEach((answer) => {
-			if (typeof answer !== 'boolean') {
-				flagReady = false
-			}
-		})
-		if (flagReady) {
-			// Should return false but turns to true for off reasons
+		if (answers.every((answer) => typeof answer === 'boolean')) {
 			setReadySubmit(true)
 		}
 	}, [answers])
@@ -110,10 +103,9 @@ const QuizContent = ({ questions }: props) => {
 			<Button disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
 				Next
 			</Button>
-			<Button disabled={readySubmit} onClick={handleSubmit}>
+			<Button disabled={!readySubmit} onClick={handleSubmit}>
 				Submit
 			</Button>
-			{String(readySubmit)}
 		</>
 	)
 }
