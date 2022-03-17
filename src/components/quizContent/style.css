@@ -1,0 +1,38 @@
+.container_quiz {
+	max-width: 800px;
+	margin: auto;
+	margin-bottom: 3rem;
+	background-color: white;
+	padding: 1rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.center {
+	justify-content: center;
+	align-items: center;
+}
+
+.space_col {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.progress_row {
+	margin: 1rem;
+}
+
+.title_row {
+	margin: 1rem;
+	margin-bottom: 0rem;
+}
+
+.row_answers {
+	margin: 0.8rem;
+}
+
+.button_quiz {
+	min-width: 500px;
+}

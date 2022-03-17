@@ -1,5 +1,6 @@
-import { Button, Progress, Typography } from 'antd'
 import { useEffect, useState } from 'react'
+import { Button, Col, Progress, Row, Typography } from 'antd'
+import './style.css'
 
 export type Questions = Question[]
 
@@ -22,7 +23,7 @@ interface props {
 }
 
 const QuizContent = ({ questions }: props) => {
-	const { Text } = Typography
+	const { Text, Title } = Typography
 	const [index, setIndex] = useState(0)
 	const [progress, setProgress] = useState(0)
 	const [question, setQuestion] = useState(questions[index])
@@ -78,35 +79,62 @@ const QuizContent = ({ questions }: props) => {
 	}
 
 	return (
-		<>
-			{String(index)}
-			{question.question}
-
-			<Progress percent={progress} status='active' />
-			<Button disabled={isPreviousDisabled()} onClick={() => handleClickPreviousQuestion()}>
-				Previous
-			</Button>
-			<Text>
-				Question {index + 1} / {questions.length}
-			</Text>
-			{question.options.map((option, count) => {
-				count++
-				return (
-					<Button
-						key={option.id}
-						disabled={typeof answers[index] === 'boolean'}
-						onClick={() => handleAnswerQuestion(option.correctness)}>
-						{String.fromCharCode(count + 96)}. {option.option}
+		<div className='container_quiz'>
+			<Row className='center title_row'>
+				<Col>
+					<Title level={5}>{question.question}</Title>
+				</Col>
+			</Row>
+			<Row className='center'>
+				<Col>
+					{question.options.map((option, count) => {
+						count++
+						return (
+							<Row key={option.id} className='row_answers'>
+								<Button
+									className='button_quiz'
+									disabled={typeof answers[index] === 'boolean'}
+									onClick={() => handleAnswerQuestion(option.correctness)}>
+									<span style={{ fontWeight: 'bold', marginRight: '.4rem' }}>
+										{String.fromCharCode(count + 96)}.
+									</span>
+									{option.option}
+								</Button>
+							</Row>
+						)
+					})}
+				</Col>
+			</Row>
+			<Row className='progress_row'>
+				<Progress percent={progress} status='active' />
+			</Row>
+			<Row className='center space_col'>
+				<Col>
+					<Button disabled={isPreviousDisabled()} onClick={() => handleClickPreviousQuestion()}>
+						Previous
 					</Button>
-				)
-			})}
-			<Button disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
-				Next
-			</Button>
-			<Button disabled={!readySubmit} onClick={handleSubmit}>
-				Submit
-			</Button>
-		</>
+				</Col>
+				<Col>
+					<Text>
+						Question {index + 1} / {questions.length}
+					</Text>
+				</Col>
+				<Col>
+					<Button disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
+						Next
+					</Button>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					{readySubmit && (
+						<Button disabled={!readySubmit} onClick={handleSubmit}>
+							Submit
+						</Button>
+					)}
+				</Col>
+			</Row>
+		</div>
 	)
 }
 
