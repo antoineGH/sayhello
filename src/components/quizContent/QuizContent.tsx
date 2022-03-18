@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Button, Col, Progress, Row, Typography } from 'antd'
 import './style.css'
+import { Option } from 'antd/lib/mentions'
+import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 
 export type Questions = Question[]
 
@@ -28,6 +30,7 @@ const QuizContent = ({ questions }: props) => {
 	const [progress, setProgress] = useState(0)
 	const [question, setQuestion] = useState(questions[index])
 	const [answers, setAnswers] = useState(Array(questions.length).fill(null))
+	const [choices, setChoices] = useState(Array(questions.length).fill(null))
 	const [readySubmit, setReadySubmit] = useState(false)
 
 	const getPercentageCompletion = () => {
@@ -55,7 +58,7 @@ const QuizContent = ({ questions }: props) => {
 		setIndex(index + 1)
 	}
 
-	const handleAnswerQuestion = (correctness: Boolean) => {
+	const handleAnswerQuestion = (correctness: Boolean, count: number) => {
 		if (typeof answers[index] === 'boolean') {
 			console.log('You already answered this question')
 			return
@@ -63,6 +66,9 @@ const QuizContent = ({ questions }: props) => {
 		let newAnswers = [...answers]
 		newAnswers[index] = correctness
 		setAnswers(newAnswers)
+		let newChoices = [...choices]
+		newChoices[index] = count
+		setChoices(newChoices)
 	}
 
 	const isPreviousDisabled = () => {
@@ -76,6 +82,28 @@ const QuizContent = ({ questions }: props) => {
 	const handleSubmit = () => {
 		console.log('handleSubmit')
 		console.log(answers)
+	}
+
+	const hasAnswered = () => {
+		return typeof answers[index] === 'boolean'
+	}
+
+	const getClassNameButton = (correctness: Boolean, count: number) => {
+		let className = 'button_quiz'
+		if (hasAnswered()) {
+			if (correctness) {
+				className = `${className} border_green`
+				if (count === choices[index]) {
+					className = `${className} bg_green`
+				}
+			} else {
+				className = `${className} border_red`
+				if (count === choices[index]) {
+					className = `${className} bg_red`
+				}
+			}
+		}
+		return className
 	}
 
 	return (
@@ -92,9 +120,10 @@ const QuizContent = ({ questions }: props) => {
 						return (
 							<Row key={option.id} className='row_answers'>
 								<Button
-									className='button_quiz'
-									disabled={typeof answers[index] === 'boolean'}
-									onClick={() => handleAnswerQuestion(option.correctness)}>
+									className={getClassNameButton(option.correctness, count)}
+									disabled={hasAnswered()}
+									type='dashed'
+									onClick={() => handleAnswerQuestion(option.correctness, count)}>
 									<span style={{ fontWeight: 'bold', marginRight: '.4rem' }}>
 										{String.fromCharCode(count + 96)}.
 									</span>
@@ -108,30 +137,30 @@ const QuizContent = ({ questions }: props) => {
 			<Row className='progress_row'>
 				<Progress percent={progress} status='active' />
 			</Row>
-			<Row className='center space_col'>
-				<Col>
+			<Row className='center'>
+				<Col span={7} style={{ display: 'flex', justifyContent: 'start' }}>
 					<Button disabled={isPreviousDisabled()} onClick={() => handleClickPreviousQuestion()}>
+						<LeftOutlined />
 						Previous
 					</Button>
 				</Col>
-				<Col>
+				<Col span={8} style={{ display: 'flex', justifyContent: 'center' }}>
 					<Text>
 						Question {index + 1} / {questions.length}
 					</Text>
 				</Col>
-				<Col>
+				<Col span={7} style={{ display: 'flex', justifyContent: 'end' }}>
 					<Button disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
 						Next
+						<RightOutlined />
 					</Button>
 				</Col>
 			</Row>
-			<Row>
+			<Row className='center row_submit'>
 				<Col>
-					{readySubmit && (
-						<Button disabled={!readySubmit} onClick={handleSubmit}>
-							Submit
-						</Button>
-					)}
+					<Button disabled={!readySubmit} onClick={handleSubmit}>
+						Submit
+					</Button>
 				</Col>
 			</Row>
 		</div>

@@ -12,14 +12,6 @@
 	align-items: center;
 }
 
-.space_col {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 1rem;
-	margin-left: 1rem;
-	margin-right: 1rem;
-}
-
 .progress_row {
 	margin: 1rem;
 }
@@ -33,6 +25,25 @@
 	margin: 0.8rem;
 }
 
+.row_submit {
+	margin-top: 1.2rem;
+}
+
 .button_quiz {
 	min-width: 500px;
+}
+
+.border_red {
+	border-color: #f7000070 !important;
+}
+
+.border_green {
+	border-color: #6dd85a !important;
+}
+
+.bg_red {
+	background: #cb3c3c2b !important;
+}
+.bg_green {
+	background: #6dcb3c2b !important;
 }
