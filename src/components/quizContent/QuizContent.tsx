@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Button, Col, Progress, Row, Typography } from 'antd'
 import './style.css'
-import { Option } from 'antd/lib/mentions'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 
 export type Questions = Question[]

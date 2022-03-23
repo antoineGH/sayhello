@@ -10,6 +10,7 @@ import Register from 'pages/Register'
 import Forgot from 'pages/Forgot'
 import Reset from 'pages/Reset'
 import QuizPage from 'pages/QuizPage'
+import CourseContent from 'components/courseContent/CourseContent'
 
 const routes = (isLogged: Boolean) => [
 	{
@@ -18,6 +19,7 @@ const routes = (isLogged: Boolean) => [
 		children: [
 			{ path: 'home', element: <Home /> },
 			{ path: 'course', element: <Course /> },
+			{ path: 'course/:courseID', element: <CourseContent /> },
 			{ path: 'lesson', element: <Lesson /> },
 			{ path: 'quiz', element: <Quiz /> },
 			{ path: 'quiz/:quizID', element: <QuizPage /> },
