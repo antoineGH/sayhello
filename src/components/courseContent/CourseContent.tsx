@@ -51,20 +51,13 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 				<Col>
 					<Title level={3}>{course.courseName}</Title>
 				</Col>
-				<Col style={{ marginLeft: '1rem', marginBottom: '.4rem', transform: 'scale(0.75)' }}>
-					<Tooltip
-						title={
-							course.completed === 100
-								? `${course.courseName} completed`
-								: `${course.courseName} not completed`
-						}>
-						{course.completed === 100 ? (
+				{course.completed === 100 && (
+					<Col style={{ marginLeft: '1rem', marginBottom: '.4rem', transform: 'scale(0.75)' }}>
+						<Tooltip title={`${course.courseName} completed`}>
 							<CheckSquareOutlined className='checkedLesson' />
-						) : (
-							<BorderOutlined className='uncheckedLesson' />
-						)}
-					</Tooltip>
-				</Col>
+						</Tooltip>
+					</Col>
+				)}
 			</Row>
 			<Row className='center'>
 				<Col>
@@ -97,15 +90,13 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 				return (
 					<div className='lesson_container'>
 						<Row>
-							<Col>
-								<Title level={4}>{lesson.lessonName}</Title>
-							</Col>
 							<Col
 								style={{
 									justifyContent: 'center',
 									display: 'flex',
 									marginTop: '0.15rem',
-									marginLeft: '.75rem',
+									marginLeft: '-0.2rem',
+									marginRight: '0.2rem',
 									transform: 'scale(0.75)',
 								}}>
 								<Tooltip
@@ -121,6 +112,10 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 									)}
 								</Tooltip>
 							</Col>
+							<Col>
+								<Title level={4}>{lesson.lessonName}</Title>
+							</Col>
+
 							<Col
 								span={2}
 								offset={18}
