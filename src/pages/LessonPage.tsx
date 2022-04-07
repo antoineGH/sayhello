@@ -55,13 +55,13 @@ const LessonPage = () => {
 					{
 						id: 1,
 						description: 'Video 1',
-						url: 'https://youtu.be/5glqYsL5elo',
+						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
 						wikidata_id: 1,
 					},
 					{
 						id: 2,
 						description: 'Video 2',
-						url: 'https://youtu.be/5glqYsL5elo',
+						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
 						wikidata_id: 1,
 					},
 				],
@@ -89,13 +89,13 @@ const LessonPage = () => {
 					{
 						id: 3,
 						description: 'Video 3',
-						url: 'https://youtu.be/5glqYsL5elo',
+						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
 						wikidata_id: 2,
 					},
 					{
 						id: 4,
 						description: 'Video 4',
-						url: 'https://youtu.be/5glqYsL5elo',
+						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
 						wikidata_id: 2,
 					},
 				],

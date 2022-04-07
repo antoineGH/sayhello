@@ -1,5 +1,5 @@
 import { BorderOutlined, CheckSquareOutlined } from '@ant-design/icons'
-import { Button, Col, Divider, Row, Statistic, Tooltip, Typography } from 'antd'
+import { Button, Col, Divider, Row, Statistic, Tooltip, Typography, Image } from 'antd'
 import { useNavigate } from 'react-router'
 
 interface Quiz {
@@ -51,10 +51,21 @@ interface props {
 	lesson: Lesson
 }
 
+interface pictureDetails {
+	id: number
+	description: string
+	url: string
+}
+
+interface videoDetails {
+	id: number
+	description: string
+	url: string
+}
+
 const LessonContent = ({ lesson }: props) => {
 	const { Text, Title } = Typography
 	const navigate = useNavigate()
-	console.log(lesson)
 
 	return (
 		<div className='container_quiz'>
@@ -85,19 +96,31 @@ const LessonContent = ({ lesson }: props) => {
 			<Divider dashed />
 
 			{lesson.wikidatas.map((wikidata, count) => {
+				let pictureDetails: pictureDetails = { id: 0, description: '', url: '' }
+				let videoDetails: videoDetails = { id: 0, description: '', url: '' }
 				count++
+
+				wikidata.wikipicture.forEach((picture) => {
+					if (picture.wikidata_id === wikidata.id) {
+						pictureDetails = {
+							id: picture.id,
+							description: picture.description,
+							url: picture.url,
+						}
+					}
+				})
+				wikidata.wikivideo.forEach((video) => {
+					if (video.wikidata_id === wikidata.id) {
+						videoDetails = {
+							id: video.id,
+							description: video.description,
+							url: video.url,
+						}
+					}
+				})
 				return (
 					<div key={count} className='lesson_container'>
 						<Row>
-							<Col
-								style={{
-									justifyContent: 'center',
-									display: 'flex',
-									marginTop: '0.15rem',
-									marginLeft: '-0.2rem',
-									marginRight: '0.2rem',
-									transform: 'scale(0.75)',
-								}}></Col>
 							<Col>
 								<Title level={4}>{wikidata.title}</Title>
 							</Col>
@@ -105,6 +128,24 @@ const LessonContent = ({ lesson }: props) => {
 						<Row>
 							<Col>{wikidata.description}</Col>
 						</Row>
+
+						{pictureDetails.id !== 0 && (
+							<Row>
+								<Col>
+									<Image width={200} src={pictureDetails.url} alt={pictureDetails.description} />
+								</Col>
+							</Row>
+						)}
+						{videoDetails.id !== 0 && (
+							<Row>
+								<Col>
+									<video width='320' height='240' controls>
+										<source src={videoDetails.url} type='video/mp4' />
+										Your browser does not support the video tag.
+									</video>
+								</Col>
+							</Row>
+						)}
 					</div>
 				)
 			})}
