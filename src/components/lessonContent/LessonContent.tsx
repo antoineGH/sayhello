@@ -35,6 +35,17 @@ interface Wikidata {
 
 type Wikidatas = Wikidata[]
 
+type Lessons = LessonLight[]
+
+interface LessonLight {
+	id: number
+	name: string
+	author: string
+	duration: number
+	difficulty: number
+	course_id: number
+}
+
 interface Lesson {
 	id: number
 	name: string
@@ -49,6 +60,7 @@ interface Lesson {
 
 interface props {
 	lesson: Lesson
+	lessons: Lessons
 }
 
 interface pictureDetails {
@@ -63,7 +75,7 @@ interface videoDetails {
 	url: string
 }
 
-const LessonContent = ({ lesson }: props) => {
+const LessonContent = ({ lesson, lessons }: props) => {
 	const { Text, Title } = Typography
 	const navigate = useNavigate()
 
