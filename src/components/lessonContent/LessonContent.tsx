@@ -88,6 +88,12 @@ const LessonContent = ({ lesson, lessons }: props) => {
 		return lessons.some((_lesson) => _lesson.id === lesson.id + 1)
 	}
 
+	const htmlDecode = (input: string) => {
+		var e = document.createElement('div')
+		e.innerHTML = input
+		return e.childNodes.length === 0 ? '' : e.childNodes[0].nodeValue
+	}
+
 	return (
 		<div className='container_quiz'>
 			<Row className='center title_row'>
@@ -148,7 +154,7 @@ const LessonContent = ({ lesson, lessons }: props) => {
 						</Row>
 						<Row className='row_wikidata'>
 							<Col>
-								<Text className='wikidata_text'>{wikidata.description}</Text>
+								<div dangerouslySetInnerHTML={{ __html: wikidata.description }} />
 							</Col>
 						</Row>
 

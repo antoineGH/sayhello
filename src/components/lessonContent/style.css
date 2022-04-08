@@ -7,3 +7,15 @@
 	text-justify: inter-word;
 	white-space: pre-line;
 }
+
+code {
+	font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap;
+	color: #faf8f0;
+	background-color: #481d48;
+}
