@@ -1,4 +1,4 @@
-import { BorderOutlined, CheckSquareOutlined } from '@ant-design/icons'
+import { BorderOutlined, CheckSquareOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Button, Col, Divider, Row, Statistic, Tooltip, Typography, Image } from 'antd'
 import { useNavigate } from 'react-router'
 
@@ -35,6 +35,17 @@ interface Wikidata {
 
 type Wikidatas = Wikidata[]
 
+type Lessons = LessonLight[]
+
+interface LessonLight {
+	id: number
+	name: string
+	author: string
+	duration: number
+	difficulty: number
+	course_id: number
+}
+
 interface Lesson {
 	id: number
 	name: string
@@ -49,6 +60,7 @@ interface Lesson {
 
 interface props {
 	lesson: Lesson
+	lessons: Lessons
 }
 
 interface pictureDetails {
@@ -63,9 +75,17 @@ interface videoDetails {
 	url: string
 }
 
-const LessonContent = ({ lesson }: props) => {
+const LessonContent = ({ lesson, lessons }: props) => {
 	const { Text, Title } = Typography
 	const navigate = useNavigate()
+
+	const hasPreviousLesson = (lesson: Lesson, lessons: Lessons): boolean => {
+		return lessons.some((_lesson) => _lesson.id === lesson.id - 1)
+	}
+
+	const hasNextLesson = (lesson: Lesson, lessons: Lessons): boolean => {
+		return lessons.some((_lesson) => _lesson.id === lesson.id + 1)
+	}
 
 	return (
 		<div className='container_quiz'>
@@ -149,6 +169,25 @@ const LessonContent = ({ lesson }: props) => {
 					</div>
 				)
 			})}
+
+			<Row>
+				<Col span={8}>
+					<Button
+						disabled={!hasPreviousLesson(lesson, lessons)}
+						onClick={() => navigate(`/auth/lesson/${lesson.id - 1}`)}>
+						<LeftOutlined />
+						Previous
+					</Button>
+				</Col>
+				<Col span={8} offset={8} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+					<Button
+						disabled={!hasNextLesson(lesson, lessons)}
+						onClick={() => navigate(`/auth/lesson/${lesson.id + 1}`)}>
+						<RightOutlined />
+						Next
+					</Button>
+				</Col>
+			</Row>
 		</div>
 	)
 }
