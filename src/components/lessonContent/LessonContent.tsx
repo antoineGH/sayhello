@@ -1,6 +1,7 @@
 import { BorderOutlined, CheckSquareOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Button, Col, Divider, Row, Statistic, Tooltip, Typography, Image } from 'antd'
 import { useNavigate } from 'react-router'
+import './style.css'
 
 interface Quiz {
 	id: number
@@ -145,8 +146,10 @@ const LessonContent = ({ lesson, lessons }: props) => {
 								<Title level={4}>{wikidata.title}</Title>
 							</Col>
 						</Row>
-						<Row>
-							<Col>{wikidata.description}</Col>
+						<Row className='row_wikidata'>
+							<Col>
+								<Text className='wikidata_text'>{wikidata.description}</Text>
+							</Col>
 						</Row>
 
 						{pictureDetails.id !== 0 && (

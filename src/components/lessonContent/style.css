@@ -1,0 +1,9 @@
+.row_wikidata {
+	margin-bottom: 1rem;
+}
+
+.wikidata_text {
+	text-align: justify;
+	text-justify: inter-word;
+	white-space: pre-line;
+}
