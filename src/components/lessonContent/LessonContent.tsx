@@ -183,8 +183,8 @@ const LessonContent = ({ lesson, lessons }: props) => {
 					<Button
 						disabled={!hasNextLesson(lesson, lessons)}
 						onClick={() => navigate(`/auth/lesson/${lesson.id + 1}`)}>
-						<RightOutlined />
 						Next
+						<RightOutlined />
 					</Button>
 				</Col>
 			</Row>
