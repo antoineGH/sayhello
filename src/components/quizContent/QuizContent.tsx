@@ -92,6 +92,9 @@ const QuizContent = ({ questions }: props) => {
 	}
 
 	const questionUnAnswered = (): String => {
+		if (hasAnswered()) {
+			return 'Ready to submit'
+		}
 		let unAnswered = 'Missing question '
 		Object.entries(answers).forEach(([key, value]) => {
 			if (typeof value !== 'boolean') {
@@ -100,7 +103,9 @@ const QuizContent = ({ questions }: props) => {
 			if (Object.keys(answers).length === Number(key) + 1) {
 				unAnswered += '.'
 			} else {
-				unAnswered += ', '
+				if (typeof value !== 'boolean') {
+					unAnswered += ', '
+				}
 			}
 		})
 		return unAnswered
