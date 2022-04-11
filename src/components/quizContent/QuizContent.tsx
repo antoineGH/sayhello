@@ -93,9 +93,6 @@ const QuizContent = ({ questions }: props) => {
 
 	const questionUnAnswered = (): String => {
 		let unAnswered = 'Missing question '
-		if (Object.keys(answers).length >= 1) {
-			unAnswered = unAnswered.replace('question', 'questions')
-		}
 		Object.entries(answers).forEach(([key, value]) => {
 			if (typeof value !== 'boolean') {
 				unAnswered += String(Number(key) + 1)
