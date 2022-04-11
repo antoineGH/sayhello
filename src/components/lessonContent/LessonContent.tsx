@@ -77,7 +77,7 @@ interface videoDetails {
 }
 
 const LessonContent = ({ lesson, lessons }: props) => {
-	const { Text, Title } = Typography
+	const { Title } = Typography
 	const navigate = useNavigate()
 
 	const hasPreviousLesson = (lesson: Lesson, lessons: Lessons): boolean => {
@@ -88,10 +88,18 @@ const LessonContent = ({ lesson, lessons }: props) => {
 		return lessons.some((_lesson) => _lesson.id === lesson.id + 1)
 	}
 
-	const htmlDecode = (input: string) => {
-		var e = document.createElement('div')
-		e.innerHTML = input
-		return e.childNodes.length === 0 ? '' : e.childNodes[0].nodeValue
+	const handleClickPrevious = (lesson: Lesson, lessons: Lessons) => {
+		if (hasPreviousLesson(lesson, lessons)) {
+			navigate(`/auth/lesson/${lesson.id - 1}`)
+		}
+		navigate(`/auth/course/${lesson.course_id}`)
+	}
+
+	const handleClickNext = (lesson: Lesson, lessons: Lessons) => {
+		if (hasNextLesson(lesson, lessons)) {
+			navigate(`/auth/lesson/${lesson.id + 1}`)
+		}
+		navigate(`/auth/course/${lesson.course_id}`)
 	}
 
 	return (
@@ -181,17 +189,13 @@ const LessonContent = ({ lesson, lessons }: props) => {
 
 			<Row>
 				<Col span={8}>
-					<Button
-						disabled={!hasPreviousLesson(lesson, lessons)}
-						onClick={() => navigate(`/auth/lesson/${lesson.id - 1}`)}>
+					<Button onClick={() => handleClickPrevious(lesson, lessons)}>
 						<LeftOutlined />
 						Previous
 					</Button>
 				</Col>
 				<Col span={8} offset={8} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-					<Button
-						disabled={!hasNextLesson(lesson, lessons)}
-						onClick={() => navigate(`/auth/lesson/${lesson.id + 1}`)}>
+					<Button onClick={() => handleClickNext(lesson, lessons)}>
 						Next
 						<RightOutlined />
 					</Button>
