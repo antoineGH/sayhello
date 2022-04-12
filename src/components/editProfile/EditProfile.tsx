@@ -1,5 +1,5 @@
 import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Col, Row, Typography } from 'antd'
+import { Avatar, Button, Col, Row, Typography } from 'antd'
 import './style.css'
 
 interface Profile {
@@ -21,6 +21,14 @@ const EditProfile = ({ profiles }: Props) => {
 
 	console.log(profiles)
 
+	const handleSwitchProfile = (profileID: number) => {
+		console.log(`handleSwichProfile, profileID: ${profileID}`)
+	}
+
+	const handleEditProfile = (profileID: number) => {
+		console.log(`handleEditProfile, profileID: ${profileID}`)
+	}
+
 	return (
 		<div className='profile_main'>
 			<div className='profile_title'>
@@ -35,9 +43,21 @@ const EditProfile = ({ profiles }: Props) => {
 								shape='square'
 								size={64}
 								icon={<UserOutlined />}
-								style={{ marginTop: '.2rem', marginBottom: '.4rem' }}
+								style={{ marginTop: '.8rem' }}
 							/>
-							<Title level={4}>{profile.name}</Title>
+							<Row>
+								<Col>
+									<Title level={4}>{profile.name}</Title>
+								</Col>
+							</Row>
+							<Row>
+								<Col>
+									<Button onClick={() => handleSwitchProfile(profile.id)}>Switch</Button>
+								</Col>
+								<Col>
+									<Button onClick={() => handleEditProfile(profile.id)}>Edit</Button>
+								</Col>
+							</Row>
 						</Col>
 					)
 				})}

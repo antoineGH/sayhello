@@ -11,16 +11,16 @@ const TopMenu = () => {
 
 	const menu = (
 		<Menu>
-			<Menu.Item>
+			<Menu.Item key='1'>
 				<Button type='text'>Switch Profil</Button>
 			</Menu.Item>
-			<Menu.Item>
+			<Menu.Item key='2'>
 				<Button onClick={() => navigate('/auth/account')} type='text'>
 					Edit Account
 				</Button>
 			</Menu.Item>
 			<Menu.Divider />
-			<Menu.Item>
+			<Menu.Item key='3'>
 				<Button type='text'>Logout</Button>
 			</Menu.Item>
 		</Menu>
@@ -42,7 +42,11 @@ const TopMenu = () => {
 				</Col>
 				<Col className='col_avatar' span={1}>
 					<Dropdown overlay={menu} placement='bottomRight' arrow>
-						<Avatar icon={<UserOutlined />} />
+						<Avatar
+							src='http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a'
+							shape='square'
+							icon={<UserOutlined />}
+						/>
 					</Dropdown>
 				</Col>
 			</Row>
