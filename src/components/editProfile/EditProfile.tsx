@@ -11,24 +11,14 @@ interface Profile {
 
 type Profiles = Profile[]
 
-interface User {
-	id: number
-	email: string
-	password: string
-	first_name: string
-	last_name: string
-	date_created: string
+interface Props {
 	profiles: Profiles
 }
 
-interface Props {
-	user: User
-}
-
-const EditProfile = ({ user }: Props) => {
+const EditProfile = ({ profiles }: Props) => {
 	const { Title } = Typography
 
-	console.log(user)
+	console.log(profiles)
 
 	return (
 		<div className='profile_main'>
