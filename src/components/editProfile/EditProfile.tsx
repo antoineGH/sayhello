@@ -1,5 +1,5 @@
 import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Card, Col, Row, Typography } from 'antd'
+import { Avatar, Col, Row, Typography } from 'antd'
 import './style.css'
 
 interface Profile {
@@ -30,8 +30,14 @@ const EditProfile = ({ profiles }: Props) => {
 				{profiles.map((profile) => {
 					return (
 						<Col key={profile.id} className='col_square' style={{ marginRight: '1rem' }}>
-							<Avatar src={profile.avatar} shape='square' size={64} icon={<UserOutlined />} />
-							<Title level={3}>{profile.name}</Title>
+							<Avatar
+								src={profile.avatar}
+								shape='square'
+								size={64}
+								icon={<UserOutlined />}
+								style={{ marginTop: '.2rem', marginBottom: '.4rem' }}
+							/>
+							<Title level={4}>{profile.name}</Title>
 						</Col>
 					)
 				})}
