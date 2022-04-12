@@ -1,10 +1,11 @@
-import { Typography } from 'antd'
-import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
+import { UserOutlined } from '@ant-design/icons'
+import { Avatar, Card, Col, Row, Typography } from 'antd'
 import './style.css'
 
 interface Profile {
 	id: number
 	name: string
+	avatar: string
 	age: number
 	user_id: number
 }
@@ -22,8 +23,19 @@ const EditProfile = ({ profiles }: Props) => {
 
 	return (
 		<div className='profile_main'>
-			<Title level={3}>My Profiles</Title>
-			<ModalEditProfile />
+			<div className='profile_title'>
+				<Title level={3}>My Profiles</Title>
+			</div>
+			<Row>
+				{profiles.map((profile) => {
+					return (
+						<Col key={profile.id} className='col_square' style={{ marginRight: '1rem' }}>
+							<Avatar src={profile.avatar} shape='square' size={64} icon={<UserOutlined />} />
+							<Title level={3}>{profile.name}</Title>
+						</Col>
+					)
+				})}
+			</Row>
 		</div>
 	)
 }

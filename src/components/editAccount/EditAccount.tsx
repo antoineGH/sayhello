@@ -27,8 +27,6 @@ interface Props {
 const EditAccount = ({ user }: Props) => {
 	const { Title } = Typography
 
-	console.log(user)
-
 	return (
 		<div className='account_main'>
 			<div className='edit_account'>

@@ -5,7 +5,6 @@ import useTitle from 'hooks/useTitle'
 
 const AccountPage = () => {
 	useTitle('Account')
-
 	const user = {
 		id: 1,
 		email: 'antoine.ratat@gmail.com',
@@ -17,29 +16,34 @@ const AccountPage = () => {
 			{
 				id: 1,
 				name: 'Antoine',
+				avatar: 'http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a',
 				age: 31,
 				user_id: 1,
 			},
 			{
 				id: 2,
 				name: 'Catherine',
+				avatar: 'http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a',
 				age: 54,
 				user_id: 1,
 			},
 			{
 				id: 3,
 				name: 'Bastien',
+				avatar: 'http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a',
 				age: 26,
 				user_id: 2,
 			},
 			{
 				id: 4,
 				name: 'Thierry',
+				avatar: 'http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a',
 				age: 51,
 				user_id: 2,
 			},
 		],
 	}
+
 	return (
 		<>
 			<Row>
