@@ -12,6 +12,7 @@ import Reset from 'pages/Reset'
 import QuizPage from 'pages/QuizPage'
 import CoursePage from 'pages/CoursePage'
 import LessonPage from 'pages/LessonPage'
+import AccountPage from 'pages/AccountPage'
 
 const routes = (isLogged: Boolean) => [
 	{
@@ -25,6 +26,7 @@ const routes = (isLogged: Boolean) => [
 			{ path: 'lesson/:lessonID', element: <LessonPage /> },
 			{ path: 'quiz', element: <Quiz /> },
 			{ path: 'quiz/:quizID', element: <QuizPage /> },
+			{ path: 'account', element: <AccountPage /> },
 			{ path: '/auth', element: <Navigate to='/auth/home' /> },
 		],
 	},

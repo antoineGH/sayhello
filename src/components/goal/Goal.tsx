@@ -12,7 +12,7 @@ const Goal = () => {
 				<Title level={3}>My Goals</Title>
 				<ModalEditGoals />
 			</div>
-			<Card bordered={false}>
+			<Card bordered={false} style={{ paddingBottom: '0rem !important' }}>
 				<Statistic title='THIS WEEK' value='0 of 5 days' />
 				<Divider dashed />
 				<Timeline>

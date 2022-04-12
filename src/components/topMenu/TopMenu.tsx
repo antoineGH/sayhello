@@ -1,29 +1,27 @@
 import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Col, Dropdown, Menu, Row, Typography } from 'antd'
+import { Avatar, Button, Col, Dropdown, Menu, Row, Typography } from 'antd'
+import { useNavigate } from 'react-router'
 
 import MenuItem from './MenuItem'
 import SearchBar from './Search'
 
 const TopMenu = () => {
 	const { Title } = Typography
+	const navigate = useNavigate()
 
 	const menu = (
 		<Menu>
 			<Menu.Item>
-				<a target='_blank' rel='noopener noreferrer' href='https://www.antgroup.com'>
-					Switch Profile
-				</a>
+				<Button type='text'>Switch Profil</Button>
 			</Menu.Item>
 			<Menu.Item>
-				<a target='_blank' rel='noopener noreferrer' href='https://www.aliyun.com'>
+				<Button onClick={() => navigate('/auth/account')} type='text'>
 					Edit Account
-				</a>
+				</Button>
 			</Menu.Item>
 			<Menu.Divider />
 			<Menu.Item>
-				<a target='_blank' rel='noopener noreferrer' href='https://www.luohanacademy.com'>
-					Logout
-				</a>
+				<Button type='text'>Logout</Button>
 			</Menu.Item>
 		</Menu>
 	)
