@@ -51,7 +51,7 @@ const QuizSummary = ({
 				)}
 			</Row>
 			<Row></Row>
-			<Row style={{ marginTop: '1rem' }}>
+			<Row>
 				<Col span={4}>
 					<Link to={`/auth/lesson/${lessonID}`}>
 						<Statistic
@@ -73,7 +73,7 @@ const QuizSummary = ({
 				<Col span={4}>
 					<Statistic className='stat_course_lower' title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
-				<Col span={1} offset={11} style={{ justifyContent: 'center', display: 'flex' }}>
+				<Col span={1} offset={11} className='col_course_summary_btn'>
 					<Button style={{ marginTop: '1rem' }} disabled={score !== -1} onClick={() => handleQuiz(quizID)}>
 						{score !== -1 ? 'Completed' : 'Take Quiz'}
 					</Button>
