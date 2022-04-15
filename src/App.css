@@ -83,6 +83,7 @@ p {
 	margin-bottom: 4px;
 	color: rgb(0 0 0 / 73%);
 	font-size: 14px;
+	letter-spacing: 0.1rem;
 }
 
 .ant-tag {

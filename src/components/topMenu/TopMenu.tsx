@@ -28,7 +28,7 @@ const TopMenu = () => {
 
 	return (
 		<>
-			<Row>
+			<Row style={{ backgroundColor: 'pink' }}>
 				<Col span={2} onClick={() => navigate('/auth/home')} className='col_logo'>
 					<Title level={3} className='title_logo'>
 						sayHello
@@ -37,15 +37,15 @@ const TopMenu = () => {
 				<Col span={8}>
 					<MenuItem />
 				</Col>
-				<Col className='col_search' span={4} offset={9}>
+				<Col className='col_search' span={4} offset={8}>
 					<SearchBar />
 				</Col>
-				<Col className='col_avatar' span={1}>
+				<Col className='col_avatar' span={2}>
 					<Dropdown overlay={menu} placement='bottomRight' arrow>
 						<Avatar
-							src='http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a'
+							src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'
 							icon={<UserOutlined />}
-							size={36}
+							size={40}
 						/>
 					</Dropdown>
 				</Col>

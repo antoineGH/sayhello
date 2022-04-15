@@ -41,6 +41,8 @@
 }
 
 .ant-layout-header {
-	padding: 0px !important;
+	padding: 0rem !important;
 	background: transparent !important;
+	/* height: 0rem !important;
+	line-height: 0rem !important; */
 }
