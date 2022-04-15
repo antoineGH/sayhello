@@ -137,6 +137,25 @@ h4.ant-typography,
 	text-transform: uppercase;
 }
 
+.col_course_summary_btn .ant-btn {
+	margin-top: 1rem;
+	background: #3a10e5;
+	color: white;
+	border-radius: 0.2rem;
+	font-family: 'Apercu-Pro-Bold';
+	transition: background-color 400ms;
+}
+
+.col_course_summary_btn .ant-btn:hover {
+	border-color: #eeff00 !important;
+	background: #3b10e5c2 !important;
+}
+
+.col_course_summary_btn {
+	display: flex;
+	justify-content: flex-end;
+}
+
 /* LOGIN */
 
 .register_main,

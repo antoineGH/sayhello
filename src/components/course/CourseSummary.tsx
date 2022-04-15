@@ -68,7 +68,7 @@ const CourseSummary = ({
 				<Col span={6}>
 					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
-				<Col span={5} offset={1} style={{ justifyContent: 'flex-end', display: 'flex' }}>
+				<Col span={5} offset={1} className='col_course_summary_btn'>
 					<Button style={{ marginTop: '1rem' }} onClick={() => handleCourse(courseID)}>
 						{isEnrolled ? 'Enroll' : 'Resume'}
 					</Button>
