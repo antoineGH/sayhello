@@ -6,6 +6,9 @@ const Goal = () => {
 	const { Title } = Typography
 	const weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
+	const value = <p>LOL</p>
+	// value='0 of 5 days'
+
 	return (
 		<div className='goal_main'>
 			<div className='goal_title'>
@@ -13,7 +16,7 @@ const Goal = () => {
 				<ModalEditGoals />
 			</div>
 			<Card className='goal_card' bordered={false} style={{ paddingBottom: '0rem !important' }}>
-				<Statistic title='THIS WEEK' value='0 of 5 days' />
+				<Statistic className='stat_goal' title='THIS WEEK' prefix='0' value=' of 5 days' />
 				<Divider dashed />
 				<Timeline>
 					{weekDays.map((days, count) => {

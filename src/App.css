@@ -169,6 +169,50 @@ h4.ant-typography,
 	display: flex;
 }
 
+.stat_goal {
+	max-height: 82px;
+}
+
+.stat_goal .ant-statistic-content-prefix {
+	margin-top: -1rem;
+	margin-right: 4px;
+	font-size: 3.5rem;
+	font-family: 'Anonymous Pro', monospace;
+	font-weight: bold;
+	letter-spacing: -0.05rem;
+}
+
+.stat_goal .ant-statistic-content-value {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	color: #6b6f7e;
+	display: inline-block;
+	margin: 0px;
+	font-size: 0.95rem;
+}
+
+.stat_course_lower .ant-statistic-content-value {
+	margin-top: -1rem;
+	margin-right: 4px;
+	font-size: 1.6rem;
+	font-family: 'Anonymous Pro', monospace;
+	font-weight: bold;
+	letter-spacing: -0.05rem;
+}
+
+.stat_course_lower .ant-statistic-content-suffix {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	color: #6b6f7e;
+	display: inline-block;
+	margin-left: 0px;
+	font-size: 0.95rem;
+}
+
+.ant-timeline-item-content {
+	font-family: 'Apercu-Pro-Regular';
+}
+
 /* STRIPE */
 
 .ant-progress-inner {

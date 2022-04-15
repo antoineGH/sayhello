@@ -29,7 +29,7 @@ const CourseSummary = ({
 	const { Title } = Typography
 
 	const getContains = (numberLesson: number, numberQuiz: number) => {
-		return `${numberLesson} lesson${numberLesson > 1 ? 's' : ''} / ${numberQuiz} quiz${numberQuiz > 1 ? 'zes' : ''}`
+		return ` lesson${numberLesson + numberQuiz > 1 ? 's' : ''}`
 	}
 
 	return (
@@ -62,13 +62,18 @@ const CourseSummary = ({
 			)}
 			<Row style={{ marginTop: '1rem' }}>
 				<Col span={6}>
-					<Statistic title='Contains' value={getContains(numberLesson, numberQuiz)} />
+					<Statistic
+						className='stat_course_lower'
+						title='Contains'
+						value={numberLesson + numberQuiz}
+						suffix={getContains(numberLesson, numberQuiz)}
+					/>
 				</Col>
 				<Col span={6}>
-					<Statistic title='Duration' value={duration} suffix='h' />
+					<Statistic className='stat_course_lower' title='Duration' value={duration} suffix='h' />
 				</Col>
 				<Col span={6}>
-					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
+					<Statistic className='stat_course_lower' title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
 				<Col span={5} offset={1} className='col_course_summary_btn'>
 					<Button style={{ marginTop: '1rem' }} onClick={() => handleCourse(courseID)}>
