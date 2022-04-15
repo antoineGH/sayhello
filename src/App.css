@@ -1,39 +1,24 @@
 @import '~antd/dist/antd.css';
 
+body {
+	background: #fff0e5;
+}
+
+/* LAYOUTS */
+
+.layout-content {
+	max-width: 1440px;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	background: #fff0e5;
+}
+
 .ant-statistic-content {
 	font-size: 16px;
 }
 
-/* LOGIN */
-
-.register_main,
-.forgot_main,
-.reset_main,
-.login_main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-bottom: 1rem;
-}
-
-.ant-page-header-heading-sub-title {
-	margin-right: 12px;
-	color: rgba(0, 0, 0, 0.45);
-	font-size: 14px;
-	line-height: 1.5715;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	margin-top: 0.25rem;
-}
-
-.register_justify,
-.login_justify {
-	display: flex;
-	align-items: center;
-}
-
-/* FONTS */
+/* IMPORT FONTS */
 
 @font-face {
 	font-family: 'Apercu-Pro-Bold';
@@ -65,9 +50,76 @@
 	src: url('./fonts/Apercu-Regular.woff') format('woff');
 }
 
-.layout-content {
-	max-width: 1440px;
+/* FONTS MANAGEMENT */
+
+.font_menu_item {
+	font-family: 'Apercu-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	cursor: pointer;
+	color: #10162f;
+	text-align: left;
+	font-size: 0.95rem;
+	color: #423f40;
+	letter-spacing: -0.01rem;
+}
+
+h3.ant-typography {
+	font-family: 'Apercu-Pro-Bold';
+	font-weight: 700;
+	line-height: 1.1;
+	font-size: 1.625rem;
+}
+
+p {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.ant-statistic-title {
+	font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	margin-bottom: 4px;
+	color: rgb(0 0 0 / 73%);
+	font-size: 14px;
+}
+
+.ant-tag {
+	font-family: 'Apercu-Pro-Bold';
+	font-weight: 500;
+	line-height: 1.1;
+	padding: 0.35rem 1rem;
+	font-size: 0.8rem;
+	background: #f5ffe3;
+	border: none;
+}
+
+/* LOGIN */
+
+.register_main,
+.forgot_main,
+.reset_main,
+.login_main {
 	display: flex;
-	justify-content: center;
-	margin: auto;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 1rem;
+}
+
+.ant-page-header-heading-sub-title {
+	margin-right: 12px;
+	color: rgba(0, 0, 0, 0.45);
+	font-size: 14px;
+	line-height: 1.5715;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 0.25rem;
+}
+
+.register_justify,
+.login_justify {
+	display: flex;
+	align-items: center;
 }

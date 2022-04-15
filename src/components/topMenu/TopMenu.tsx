@@ -44,8 +44,8 @@ const TopMenu = () => {
 					<Dropdown overlay={menu} placement='bottomRight' arrow>
 						<Avatar
 							src='http://www.gravatar.com/avatar/73543542128f5a067ffc34305eefe48a'
-							shape='square'
 							icon={<UserOutlined />}
+							size={36}
 						/>
 					</Dropdown>
 				</Col>
