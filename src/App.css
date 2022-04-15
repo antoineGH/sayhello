@@ -90,6 +90,7 @@ p {
 	color: rgb(0 0 0 / 73%);
 	font-size: 14px;
 	letter-spacing: 0.1rem;
+	text-transform: uppercase;
 }
 
 .ant-tag {
@@ -113,6 +114,16 @@ p {
 	color: #3a10e5;
 	background: #0000001f;
 	border-radius: 4px;
+}
+
+h4.ant-typography,
+.ant-typography h4 {
+	margin-bottom: 0.5em;
+	color: rgba(0, 0, 0, 0.85);
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.4;
+	font-family: 'Apercu-Pro-Bold';
 }
 
 /* LOGIN */

@@ -10,7 +10,7 @@ const CourseList = () => {
 	const courses = [
 		{
 			courseID: 1,
-			courseName: 'Course 1',
+			courseName: 'Learn Redux',
 			duration: 1,
 			difficulty: 1,
 			completed: 100,
@@ -20,7 +20,7 @@ const CourseList = () => {
 		},
 		{
 			courseID: 2,
-			courseName: 'Course 2',
+			courseName: 'Learn Flask',
 			duration: 2,
 			difficulty: 2,
 			completed: 12,
@@ -30,7 +30,7 @@ const CourseList = () => {
 		},
 		{
 			courseID: 3,
-			courseName: 'Course 3',
+			courseName: 'Learn Javascript',
 			duration: 3,
 			difficulty: 3,
 			completed: 75,
@@ -40,7 +40,7 @@ const CourseList = () => {
 		},
 		{
 			courseID: 4,
-			courseName: 'Course 4',
+			courseName: 'Learn Typescript',
 			duration: 4,
 			difficulty: 4,
 			completed: 0,

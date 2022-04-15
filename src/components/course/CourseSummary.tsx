@@ -35,7 +35,12 @@ const CourseSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={4}>
+				<Col span={24}>
+					<div className='ant-statistic-title'>COURSE</div>
+				</Col>
+			</Row>
+			<Row>
+				<Col span={24}>
 					<Title level={4}>{courseName}</Title>
 				</Col>
 			</Row>
@@ -49,9 +54,9 @@ const CourseSummary = ({
 				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
 					<Tooltip title={completed === 100 ? `${courseName} completed` : `${courseName} not completed`}>
 						{completed === 100 ? (
-							<CheckSquareOutlined className='checkedLesson' />
+							<CheckSquareOutlined className='checkedLesson' style={{ color: '#4010e5' }} />
 						) : (
-							<BorderOutlined className='uncheckedLesson' />
+							<BorderOutlined className='uncheckedLesson' style={{ color: '#4010e5' }} />
 						)}
 					</Tooltip>
 				</Col>

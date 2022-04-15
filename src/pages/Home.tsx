@@ -10,7 +10,7 @@ const Home = () => {
 		<>
 			<Row>
 				<Col>
-					<PageHeader className='site-page-header' title='Home' subTitle='Welcome to sayHello' />
+					<PageHeader className='site-page-header' title='Home' />
 				</Col>
 			</Row>
 			<Row>
