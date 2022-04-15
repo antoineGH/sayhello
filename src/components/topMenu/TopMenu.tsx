@@ -29,7 +29,7 @@ const TopMenu = () => {
 	return (
 		<>
 			<Row>
-				<Col className='col_logo' span={1}>
+				<Col onClick={() => navigate('/auth/home')} className='col_logo' span={1}>
 					<Title level={3} className='title_logo'>
 						sayHello
 					</Title>

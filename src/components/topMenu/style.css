@@ -6,6 +6,7 @@
 .col_logo {
 	display: flex;
 	align-self: center;
+	cursor: pointer;
 }
 
 .title_logo {

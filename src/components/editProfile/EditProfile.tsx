@@ -1,5 +1,7 @@
 import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Button, Col, Row, Typography } from 'antd'
+import { Avatar, Button, Col, message, Row, Typography } from 'antd'
+import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
+import { useState } from 'react'
 import './style.css'
 
 interface Profile {
@@ -17,16 +19,32 @@ interface Props {
 }
 
 const EditProfile = ({ profiles }: Props) => {
-	const { Title } = Typography
+	const [visible, setVisible] = useState(false)
+	const [editProfile, setEditProfile] = useState(1)
+	const [confirmLoading, setConfirmLoading] = useState(false)
 
-	console.log(profiles)
+	const { Title } = Typography
 
 	const handleSwitchProfile = (profileID: number) => {
 		console.log(`handleSwichProfile, profileID: ${profileID}`)
 	}
 
 	const handleEditProfile = (profileID: number) => {
-		console.log(`handleEditProfile, profileID: ${profileID}`)
+		setEditProfile(profileID)
+		setVisible(true)
+	}
+
+	const handleOk = (values: string) => {
+		console.log('Success:', values)
+		setConfirmLoading(true)
+		setTimeout(() => {
+			setVisible(false)
+			setConfirmLoading(false)
+		}, 2000)
+	}
+
+	const handleCancel = () => {
+		setVisible(false)
 	}
 
 	return (
@@ -62,6 +80,14 @@ const EditProfile = ({ profiles }: Props) => {
 					)
 				})}
 			</Row>
+			<ModalEditProfile
+				profiles={profiles}
+				visible={visible}
+				handleOk={handleOk}
+				confirmLoading={confirmLoading}
+				handleCancel={handleCancel}
+				editProfile={editProfile}
+			/>
 		</div>
 	)
 }
