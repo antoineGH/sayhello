@@ -4,7 +4,7 @@ const useTitle = (title: string, prevailOnUnmount = false) => {
 	const defaultTitle = useRef(document.title)
 
 	useEffect(() => {
-		document.title = 'SayHello - ' + title
+		document.title = title + ' | SayHello'
 	}, [title])
 
 	useEffect(

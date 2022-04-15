@@ -70,6 +70,12 @@ h3.ant-typography {
 	font-size: 1.625rem;
 }
 
+a:hover {
+	cursor: pointer;
+	text-decoration: none;
+	color: #3a10e5;
+}
+
 p {
 	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell',
 		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

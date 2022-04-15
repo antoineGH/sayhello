@@ -1,5 +1,5 @@
 import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Button, Col, Dropdown, Menu, Row, Typography } from 'antd'
+import { Avatar, Button, Col, Dropdown, Menu, Row, Typography, Image } from 'antd'
 import { useNavigate } from 'react-router'
 
 import MenuItem from './MenuItem'
@@ -28,19 +28,21 @@ const TopMenu = () => {
 
 	return (
 		<>
-			<Row style={{ backgroundColor: 'pink' }}>
+			<Row>
 				<Col span={2} onClick={() => navigate('/auth/home')} className='col_logo'>
-					<Title level={3} className='title_logo'>
-						sayHello
-					</Title>
+					<Image
+						preview={false}
+						src='https://templars.guru/app/github/react_sayHello/logo-sayHello.png'
+						style={{ width: '84%' }}
+					/>
 				</Col>
-				<Col span={8}>
+				<Col span={7}>
 					<MenuItem />
 				</Col>
-				<Col className='col_search' span={4} offset={8}>
+				<Col className='col_search' span={4} offset={9}>
 					<SearchBar />
 				</Col>
-				<Col className='col_avatar' span={2}>
+				<Col className='col_avatar' span={1}>
 					<Dropdown overlay={menu} placement='bottomRight' arrow>
 						<Avatar
 							src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'
