@@ -40,13 +40,13 @@ const CourseSummary = ({
 				</Col>
 			</Row>
 			<Row>
-				<Col span={6}>
+				<Col span={22}>
 					{tags.map((tag, count) => {
 						count++
 						return <Tag key={count}>{tag}</Tag>
 					})}
 				</Col>
-				<Col span={1} offset={17} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
+				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
 					<Tooltip title={completed === 100 ? `${courseName} completed` : `${courseName} not completed`}>
 						{completed === 100 ? (
 							<CheckSquareOutlined className='checkedLesson' />
@@ -58,16 +58,16 @@ const CourseSummary = ({
 			</Row>
 			{!isEnrolled && <Progress percent={completed} status='active' />}
 			<Row style={{ marginTop: '1rem' }}>
-				<Col span={7}>
+				<Col span={6}>
 					<Statistic title='Contains' value={getContains(numberLesson, numberQuiz)} />
 				</Col>
-				<Col span={4}>
+				<Col span={6}>
 					<Statistic title='Duration' value={duration} suffix='h' />
 				</Col>
-				<Col span={4}>
+				<Col span={6}>
 					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
-				<Col span={1} offset={8} style={{ justifyContent: 'center', display: 'flex' }}>
+				<Col span={5} offset={1} style={{ justifyContent: 'flex-end', display: 'flex' }}>
 					<Button style={{ marginTop: '1rem' }} onClick={() => handleCourse(courseID)}>
 						{isEnrolled ? 'Enroll' : 'Resume'}
 					</Button>

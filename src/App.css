@@ -32,3 +32,42 @@
 	display: flex;
 	align-items: center;
 }
+
+/* FONTS */
+
+@font-face {
+	font-family: 'Apercu-Pro-Bold';
+	src: url('./fonts/Apercu-Pro-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Apercu-Pro-Italic';
+	src: url('./fonts/Apercu-Pro-Italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Apercu-Pro-Light';
+	src: url('./fonts/Apercu-Pro-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Apercu-Pro-Mono';
+	src: url('./fonts/Apercu-Pro-Mono.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Apercu-Pro-Regular';
+	src: url('./fonts/Apercu-Pro-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Apercu-Regular';
+	src: url('./fonts/Apercu-Regular.woff') format('woff');
+}
+
+.layout-content {
+	max-width: 1440px;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
