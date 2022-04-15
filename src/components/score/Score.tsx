@@ -19,9 +19,10 @@ const Score = () => {
 					return (
 						<div key={count}>
 							<Statistic
+								className='stat_course_lower stat_score'
 								title={`${score.lesson_name} - ${score.quiz_name}`}
 								value={score.score}
-								suffix='/ 100'
+								suffix='%'
 							/>
 							{count !== scores.length && <Divider />}
 						</div>

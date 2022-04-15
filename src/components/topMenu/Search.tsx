@@ -9,7 +9,7 @@ const SearchBar = () => {
 
 	return (
 		<>
-			<Search placeholder='input search text' allowClear onSearch={onSearch} style={{ width: 200 }} />
+			<Search placeholder='Search our catalog' allowClear onSearch={onSearch} style={{ width: 200 }} />
 		</>
 	)
 }

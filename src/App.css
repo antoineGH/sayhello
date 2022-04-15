@@ -123,7 +123,7 @@ h4.ant-typography,
 	margin-bottom: 0.5em;
 	color: rgba(0, 0, 0, 0.85);
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 1.5rem;
 	line-height: 1.4;
 	font-family: 'Apercu-Pro-Bold';
 }
@@ -207,6 +207,10 @@ h4.ant-typography,
 	display: inline-block;
 	margin-left: 0px;
 	font-size: 0.95rem;
+}
+
+.stat_score .ant-statistic-content {
+	margin-bottom: -1rem;
 }
 
 .ant-timeline-item-content {
