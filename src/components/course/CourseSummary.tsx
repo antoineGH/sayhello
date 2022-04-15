@@ -35,8 +35,15 @@ const CourseSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={24}>
+				<Col span={22}>
 					<div className='ant-statistic-title'>COURSE</div>
+				</Col>
+				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
+					<Tooltip title={completed === 100 ? `${courseName} completed` : `${courseName} not completed`}>
+						{completed === 100 && (
+							<CheckSquareOutlined className='checkedLesson' style={{ color: '#4010e5' }} />
+						)}
+					</Tooltip>
 				</Col>
 			</Row>
 			<Row>
@@ -45,20 +52,11 @@ const CourseSummary = ({
 				</Col>
 			</Row>
 			<Row>
-				<Col span={22}>
+				<Col span={24}>
 					{tags.map((tag, count) => {
 						count++
 						return <Tag key={count}>{tag}</Tag>
 					})}
-				</Col>
-				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex', marginBottom: '1rem' }}>
-					<Tooltip title={completed === 100 ? `${courseName} completed` : `${courseName} not completed`}>
-						{completed === 100 ? (
-							<CheckSquareOutlined className='checkedLesson' style={{ color: '#4010e5' }} />
-						) : (
-							<BorderOutlined className='uncheckedLesson' style={{ color: '#4010e5' }} />
-						)}
-					</Tooltip>
 				</Col>
 			</Row>
 			{!isEnrolled && <Progress percent={completed} status='active' strokeColor='#ffd300' />}
