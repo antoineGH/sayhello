@@ -14,10 +14,10 @@ const ModalEditCourse = () => {
 	const [confirmLoading, setConfirmLoading] = useState(false)
 
 	const options = [
-		{ label: 'Lesson 1', value: 1 },
-		{ label: 'Lesson 2', value: 2 },
-		{ label: 'Lesson 3', value: 3 },
-		{ label: 'Lesson 4', value: 4 },
+		{ label: 'Course 1', value: 1 },
+		{ label: 'Course 2', value: 2 },
+		{ label: 'Course 3', value: 3 },
+		{ label: 'Course 4', value: 4 },
 	]
 
 	const showModal = () => {
@@ -64,10 +64,6 @@ const ModalEditCourse = () => {
 						})}
 					</Row>
 				</Checkbox.Group>
-				{values.map((value, count) => {
-					count++
-					return <span key={count}>{value}, </span>
-				})}
 			</Modal>
 		</>
 	)
