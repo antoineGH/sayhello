@@ -27,12 +27,22 @@ const QuizSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={1}>
+				<Col span={22}>
+					<div className='ant-statistic-title'>QUIZ</div>
+				</Col>
+				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex' }}>
+					<Tooltip title={score !== 0 ? `${quizName} completed` : `${quizName} not completed`}>
+						{score !== -1 && <CheckSquareOutlined className='checkedLesson' />}
+					</Tooltip>
+				</Col>
+			</Row>
+			<Row>
+				<Col span={2}>
 					<Title level={4}>{quizName}</Title>
 				</Col>
 				{score !== -1 ? (
 					<Col>
-						<Tooltip title={`Completed, Score ${score}/100`}>
+						<Tooltip title={`Completed: Score ${score}%`}>
 							<TrophyOutlined style={{ color: 'gold', fontSize: '1.2rem', marginTop: '.2rem' }} />
 						</Tooltip>
 					</Col>
@@ -40,28 +50,28 @@ const QuizSummary = ({
 					''
 				)}
 			</Row>
-			<Row>
-				<Col span={1} offset={23} style={{ justifyContent: 'center', display: 'flex' }}>
-					<Tooltip title={score !== 0 ? `${quizName} completed` : `${quizName} not completed`}>
-						{score !== -1 ? (
-							<CheckSquareOutlined className='checkedLesson' />
-						) : (
-							<BorderOutlined className='uncheckedLesson' />
-						)}
-					</Tooltip>
-				</Col>
-			</Row>
+			<Row></Row>
 			<Row style={{ marginTop: '1rem' }}>
 				<Col span={4}>
 					<Link to={`/auth/lesson/${lessonID}`}>
-						<Statistic title='Related to' value={lessonName} valueStyle={{ color: '#1890ff' }} />
+						<Statistic
+							className='stat_related'
+							title='Related to'
+							value={lessonName}
+							valueStyle={{ color: '#1890ff' }}
+						/>
 					</Link>
 				</Col>
 				<Col span={4}>
-					<Statistic title='Contains' value={numberQuestion} suffix='Questions' />
+					<Statistic
+						className='stat_course_lower'
+						title='Contains'
+						value={numberQuestion}
+						suffix='Questions'
+					/>
 				</Col>
 				<Col span={4}>
-					<Statistic title='Difficulty' value={difficulty} suffix='/10' />
+					<Statistic className='stat_course_lower' title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
 				<Col span={1} offset={11} style={{ justifyContent: 'center', display: 'flex' }}>
 					<Button style={{ marginTop: '1rem' }} disabled={score !== -1} onClick={() => handleQuiz(quizID)}>

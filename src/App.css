@@ -217,6 +217,19 @@ h4.ant-typography,
 	font-family: 'Apercu-Pro-Regular';
 }
 
+.stat_related .ant-statistic-content-value {
+	font-family: 'Apercu-Pro-Regular';
+	color: rgb(58, 16, 229);
+	transition: ease-in 300ms;
+}
+
+.stat_related .ant-statistic-content-value:hover {
+	color: #3a10e5;
+	background: #0000001f;
+	border-radius: 4px;
+	padding: 0rem 1rem;
+}
+
 /* STRIPE */
 
 .ant-progress-inner {
