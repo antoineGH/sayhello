@@ -57,7 +57,9 @@ const CourseSummary = ({
 					})}
 				</Col>
 			</Row>
-			{!isEnrolled && <Progress percent={completed} status='active' strokeColor='#ffd300' />}
+			{!isEnrolled && (
+				<Progress percent={completed} status='active' strokeColor='#ffd300' style={{ marginTop: '0.3rem' }} />
+			)}
 			<Row style={{ marginTop: '1rem' }}>
 				<Col span={6}>
 					<Statistic title='Contains' value={getContains(numberLesson, numberQuiz)} />

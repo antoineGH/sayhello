@@ -50,6 +50,8 @@ body {
 	src: url('./fonts/Apercu-Regular.woff') format('woff');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+
 /* FONTS MANAGEMENT */
 
 .font_menu_item {
@@ -156,6 +158,17 @@ h4.ant-typography,
 	justify-content: flex-end;
 }
 
+.ant-progress-text {
+	font-size: 1.3rem;
+	font-family: 'Anonymous Pro', monospace;
+	font-weight: bold;
+	letter-spacing: -0.05rem;
+}
+
+.ant-progress-line {
+	display: flex;
+}
+
 /* STRIPE */
 
 .ant-progress-inner {
@@ -166,6 +179,7 @@ h4.ant-typography,
 		rgba(0, 0, 0, 0.685) 3px,
 		rgba(0, 0, 0, 0.863) 6px
 	);
+	overflow: hidden;
 }
 
 /* LOGIN */
