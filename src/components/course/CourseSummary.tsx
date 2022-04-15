@@ -1,4 +1,4 @@
-import { BorderOutlined, CheckSquareOutlined } from '@ant-design/icons'
+import { CheckSquareOutlined } from '@ant-design/icons'
 import { Button, Col, Progress, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 	numberQuiz: number
 	tags: string[]
 	handleCourse: (courseID: number) => void
-	isEnrolled: boolean
+	isNotEnrolled: boolean
 }
 
 const CourseSummary = ({
@@ -24,7 +24,7 @@ const CourseSummary = ({
 	numberQuiz,
 	tags,
 	handleCourse,
-	isEnrolled,
+	isNotEnrolled,
 }: Props) => {
 	const { Title } = Typography
 
@@ -57,7 +57,7 @@ const CourseSummary = ({
 					})}
 				</Col>
 			</Row>
-			{!isEnrolled && (
+			{!isNotEnrolled && (
 				<Progress percent={completed} status='active' strokeColor='#ffd300' style={{ marginTop: '0.3rem' }} />
 			)}
 			<Row style={{ marginTop: '1rem' }}>
@@ -77,7 +77,7 @@ const CourseSummary = ({
 				</Col>
 				<Col span={5} offset={1} className='col_course_summary_btn'>
 					<Button style={{ marginTop: '1rem' }} onClick={() => handleCourse(courseID)}>
-						{isEnrolled ? 'Enroll' : 'Resume'}
+						{isNotEnrolled && completed !== 100 ? 'Enroll' : 'Resume'}
 					</Button>
 				</Col>
 			</Row>

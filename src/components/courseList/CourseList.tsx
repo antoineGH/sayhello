@@ -76,7 +76,7 @@ const CourseList = () => {
 							numberQuiz={course.numberQuiz}
 							tags={course.tags}
 							handleCourse={handleResumeCourse}
-							isEnrolled={false}
+							isNotEnrolled={false}
 						/>
 					</Card>
 				)

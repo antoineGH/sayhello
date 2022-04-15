@@ -32,7 +32,7 @@ const CourseCatalog = () => {
 			courseName: 'Learn Javascript',
 			duration: 3,
 			difficulty: 3,
-			completed: 0,
+			completed: 100,
 			numberLesson: 6,
 			numberQuiz: 2,
 			tags: ['ESL', 'Intermediate English', 'Native Speaker'],
@@ -73,7 +73,7 @@ const CourseCatalog = () => {
 							numberQuiz={course.numberQuiz}
 							tags={course.tags}
 							handleCourse={handleEnrollCourse}
-							isEnrolled={true}
+							isNotEnrolled={true}
 						/>
 					</Card>
 				)
