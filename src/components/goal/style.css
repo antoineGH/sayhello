@@ -5,3 +5,11 @@
 .goal_title {
 	display: flex;
 }
+
+.ant-timeline-item-last {
+	padding-bottom: 0rem !important;
+}
+
+.goal_card .ant-card-body {
+	padding-bottom: 0rem !important;
+}
