@@ -29,15 +29,15 @@ const TopMenu = () => {
 	return (
 		<>
 			<Row>
-				<Col onClick={() => navigate('/auth/home')} className='col_logo' span={1}>
+				<Col span={2} onClick={() => navigate('/auth/home')} className='col_logo'>
 					<Title level={3} className='title_logo'>
 						sayHello
 					</Title>
 				</Col>
-				<Col span={5}>
+				<Col span={8}>
 					<MenuItem />
 				</Col>
-				<Col className='col_search' span={2} offset={15}>
+				<Col className='col_search' span={4} offset={9}>
 					<SearchBar />
 				</Col>
 				<Col className='col_avatar' span={1}>
