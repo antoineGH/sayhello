@@ -9,12 +9,7 @@ const Quiz = () => {
 
 	return (
 		<div>
-			<PageHeader
-				className='site-page-header'
-				onBack={() => navigate(-1)}
-				title='Quiz'
-				subTitle='Find your quizzes'
-			/>
+			<PageHeader className='site-page-header' onBack={() => navigate(-1)} title='Quiz' subTitle='your quizzes' />
 			<QuizCatalog />
 		</div>
 	)

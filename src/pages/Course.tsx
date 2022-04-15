@@ -13,7 +13,7 @@ const Course = () => {
 				className='site-page-header'
 				onBack={() => navigate(-1)}
 				title='Courses'
-				subTitle='Find your courses'
+				subTitle='your courses'
 			/>
 			<CourseCatalog />
 		</div>

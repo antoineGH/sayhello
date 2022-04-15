@@ -131,6 +131,12 @@ h4.ant-typography,
 		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
+.ant-page-header-heading-sub-title {
+	font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	text-transform: uppercase;
+}
+
 /* LOGIN */
 
 .register_main,
