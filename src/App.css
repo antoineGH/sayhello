@@ -102,6 +102,19 @@ p {
 	border: none;
 }
 
+.ant-btn-link {
+	color: #3a10e5;
+	transition: background-color 300ms;
+	margin-left: 0.5rem;
+}
+
+.ant-btn-link:hover,
+.ant-btn-link:focus {
+	color: #3a10e5;
+	background: #0000001f;
+	border-radius: 4px;
+}
+
 /* LOGIN */
 
 .register_main,
