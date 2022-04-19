@@ -27,10 +27,19 @@ const QuizSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={22}>
+				<Col>
 					<div className='ant-statistic-title'>QUIZ</div>
 				</Col>
-				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex' }}>
+				{score !== -1 ? (
+					<Col span={1}>
+						<Tooltip title={`Completed: Score ${score}%`}>
+							<TrophyOutlined style={{ color: 'gold', fontSize: '1.1rem', marginLeft: '0.3rem' }} />
+						</Tooltip>
+					</Col>
+				) : (
+					''
+				)}
+				<Col span={1} offset={21} style={{ justifyContent: 'center', display: 'flex' }}>
 					<Tooltip title={score !== 0 ? `${quizName} completed` : `${quizName} not completed`}>
 						{score !== -1 && <CheckSquareOutlined className='checkedLesson' />}
 					</Tooltip>
@@ -40,15 +49,6 @@ const QuizSummary = ({
 				<Col span={2}>
 					<Title level={4}>{quizName}</Title>
 				</Col>
-				{score !== -1 ? (
-					<Col>
-						<Tooltip title={`Completed: Score ${score}%`}>
-							<TrophyOutlined style={{ color: 'gold', fontSize: '1.2rem', marginTop: '.2rem' }} />
-						</Tooltip>
-					</Col>
-				) : (
-					''
-				)}
 			</Row>
 			<Row></Row>
 			<Row>
