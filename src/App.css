@@ -337,6 +337,13 @@ h4.ant-typography,
 	font-size: 0.95rem;
 }
 
+.ant-form-item-explain-error {
+	color: #ff4d4f;
+	font-family: 'Apercu-Pro-Mono';
+	letter-spacing: -0.03rem;
+	font-size: 0.8rem;
+}
+
 /* LOGIN */
 
 .register_main,

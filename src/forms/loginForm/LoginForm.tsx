@@ -24,7 +24,7 @@ const LoginForm = () => {
 				label='Username'
 				className='login_username_row'
 				name='username'
-				rules={[{ required: true, message: 'Please input your username!' }]}>
+				rules={[{ required: true, message: 'Please input your username' }]}>
 				<Input className='login_username' />
 			</Form.Item>
 
@@ -32,7 +32,7 @@ const LoginForm = () => {
 				label='Password'
 				className='login_password_row'
 				name='password'
-				rules={[{ required: true, message: 'Please input your password!' }]}>
+				rules={[{ required: true, message: 'Please input your password' }]}>
 				<Input.Password className='login_password' />
 			</Form.Item>
 
