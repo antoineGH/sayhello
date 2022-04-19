@@ -83,6 +83,7 @@ const QuizSummary = ({
 					</Button>
 				</Col>
 			</Row>
+			<h3 className='pattern-checks-sm bg-mint white text-pattern'>dasdasdPLAY</h3>
 		</>
 	)
 }

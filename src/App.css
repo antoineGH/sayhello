@@ -224,11 +224,11 @@ h4.ant-typography,
 }
 
 .ant-timeline-item-content {
-	font-family: 'Apercu-Pro-Regular';
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
 }
 
 .stat_related .ant-statistic-content-value {
-	font-family: 'Apercu-Pro-Regular';
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
 	color: rgb(58, 16, 229);
 	transition: ease-in 300ms;
 }
@@ -251,6 +251,77 @@ h4.ant-typography,
 		rgba(0, 0, 0, 0.863) 6px
 	);
 	overflow: hidden;
+}
+
+/* FIELD FORM */
+
+.ant-form-item-label > label {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.85);
+	font-size: 0.95rem;
+}
+
+.ant-form-item-label > label::after {
+	content: none;
+}
+
+#login {
+	width: 100%;
+	justify-content: center;
+	margin: auto;
+	max-width: 250px;
+}
+
+#login .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+	content: none;
+}
+
+#login .login_username_row,
+#login .login_password_row {
+	display: flex;
+	flex-direction: column;
+}
+
+.ant-form-horizontal .ant-form-item-label {
+	flex-grow: 0;
+	display: flex;
+}
+
+.login_username,
+.login_password {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+	font-size: 0.95rem;
+	line-height: 1.5;
+	width: 100%;
+	min-width: 0;
+	padding: 4px 11px;
+	color: #10162f;
+	line-height: 1.5715;
+	background-color: #fff;
+	border: 1px solid #707382;
+	border-radius: 2px;
+	transition: all 0.3s;
+	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
+}
+
+#login .ant-btn {
+	min-width: 40px;
+	height: 40px;
+	font-family: 'Apercu-Pro-Bold';
+	font-size: 1rem;
+	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+	background: #3a10e5;
+	color: white;
+	border-radius: 0.2rem;
+	transition: background-color 400ms;
+}
+
+#login .ant-btn:hover {
+	border-color: #eeff00 !important;
+	background: #3b10e5c2 !important;
 }
 
 /* LOGIN */

@@ -13,7 +13,7 @@ const Login = () => {
 					<PageHeader className='site-page-header' title='Login' subTitle='Log into your account' />
 				</Col>
 			</Row>
-			<Row>
+			<Row style={{ width: '100%' }}>
 				<LoginForm />
 			</Row>
 			<Row>

@@ -12,25 +12,25 @@ const LoginForm = () => {
 
 	return (
 		<Form
-			name='basic'
-			labelCol={{ span: 8 }}
-			wrapperCol={{ span: 16 }}
+			name='login'
 			initialValues={{ remember: true }}
 			onFinish={onFinish}
 			onFinishFailed={onFinishFailed}
 			autoComplete='off'>
 			<Form.Item
 				label='Username'
+				className='login_username_row'
 				name='username'
 				rules={[{ required: true, message: 'Please input your username!' }]}>
-				<Input />
+				<Input className='login_username' />
 			</Form.Item>
 
 			<Form.Item
 				label='Password'
+				className='login_password_row'
 				name='password'
 				rules={[{ required: true, message: 'Please input your password!' }]}>
-				<Input.Password />
+				<Input.Password className='login_password' />
 			</Form.Item>
 
 			<Form.Item name='remember' valuePropName='checked' wrapperCol={{ offset: 8, span: 16 }}>
@@ -38,9 +38,7 @@ const LoginForm = () => {
 			</Form.Item>
 
 			<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-				<Button type='primary' htmlType='submit'>
-					Submit
-				</Button>
+				<Button htmlType='submit'>Login</Button>
 			</Form.Item>
 		</Form>
 	)
