@@ -153,6 +153,16 @@ h4.ant-typography,
 	background: #3b10e5c2 !important;
 }
 
+.col_course_summary_btn .btn_disabled {
+	background-color: #3a10e57a !important;
+}
+
+.col_course_summary_btn .btn_disabled:hover {
+	background-color: #3a10e57a !important;
+	color: white;
+	pointer-events: none;
+}
+
 .col_course_summary_btn {
 	display: flex;
 	justify-content: flex-end;

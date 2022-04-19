@@ -1,4 +1,4 @@
-import { BorderOutlined, CheckSquareOutlined, TrophyOutlined } from '@ant-design/icons'
+import { CheckSquareOutlined, TrophyOutlined } from '@ant-design/icons'
 import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 
@@ -74,7 +74,11 @@ const QuizSummary = ({
 					<Statistic className='stat_course_lower' title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
 				<Col span={1} offset={11} className='col_course_summary_btn'>
-					<Button style={{ marginTop: '1rem' }} disabled={score !== -1} onClick={() => handleQuiz(quizID)}>
+					<Button
+						className={score !== -1 ? 'btn_disabled' : ''}
+						style={{ marginTop: '1rem' }}
+						disabled={score !== -1}
+						onClick={() => handleQuiz(quizID)}>
 						{score !== -1 ? 'Completed' : 'Take Quiz'}
 					</Button>
 				</Col>
