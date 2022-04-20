@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Button, Col, Progress, Row, Tooltip, Typography } from 'antd'
+import { Button, Col, Progress, Row, Statistic, Tooltip, Typography } from 'antd'
 import './style.css'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 
@@ -92,17 +92,23 @@ const QuizContent = ({ questions }: props) => {
 	}
 
 	const questionUnAnswered = (): String => {
-		if (hasAnswered()) {
+		// if (Object.every(anwsers).forEach(answer => {typeof answer ==='boolean'}))){
+		let readySubmit = true
+		Object.entries(answers).forEach(([key, value]) => {
+			if (typeof value !== 'boolean') {
+				readySubmit = false
+			}
+		})
+		if (readySubmit) {
 			return 'Ready to submit'
 		}
+
 		let unAnswered = 'Missing question '
 		Object.entries(answers).forEach(([key, value]) => {
 			if (typeof value !== 'boolean') {
 				unAnswered += String(Number(key) + 1)
 			}
-			if (Object.keys(answers).length === Number(key) + 1) {
-				unAnswered += '.'
-			} else {
+			if (Object.keys(answers).length !== Number(key) + 1) {
 				if (typeof value !== 'boolean') {
 					unAnswered += ', '
 				}
@@ -158,36 +164,43 @@ const QuizContent = ({ questions }: props) => {
 				</Col>
 			</Row>
 			<Row className='progress_row'>
-				<Progress percent={progress} status='active' />
+				<Progress strokeColor='#ffd300' percent={progress} status='active' showInfo={false} />
 			</Row>
-			<Row className='center'>
+			<Row className='center navigation_quiz_row'>
 				<Col span={8} style={{ display: 'flex', justifyContent: 'start' }}>
-					<Button disabled={isPreviousDisabled()} onClick={() => handleClickPreviousQuestion()}>
+					<Button
+						className='btn_quiz'
+						disabled={isPreviousDisabled()}
+						onClick={() => handleClickPreviousQuestion()}>
 						<LeftOutlined />
 						Previous
 					</Button>
 				</Col>
+
 				<Col span={8} style={{ display: 'flex', justifyContent: 'center' }}>
-					<Text>
-						Question {index + 1} / {questions.length}
-					</Text>
+					<Statistic
+						className='stat_course_lower stat_quiz'
+						title='Question'
+						value={index + 1}
+						suffix={'/' + questions.length}
+					/>
 				</Col>
 				<Col span={8} style={{ display: 'flex', justifyContent: 'end' }}>
-					<Button disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
+					<Button className='btn_quiz' disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
 						Next
 						<RightOutlined />
 					</Button>
 				</Col>
 			</Row>
-			<Row className='center row_submit'>
-				<Col>
-					<Tooltip title={questionUnAnswered()}>
-						<Button disabled={!readySubmit} onClick={handleSubmit}>
+			<Tooltip title={questionUnAnswered()}>
+				<Row className='center row_submit'>
+					<Col>
+						<Button className='btn_quiz' disabled={!readySubmit} onClick={handleSubmit}>
 							Submit
 						</Button>
-					</Tooltip>
-				</Col>
-			</Row>
+					</Col>
+				</Row>
+			</Tooltip>
 		</div>
 	)
 }

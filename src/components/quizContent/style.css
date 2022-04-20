@@ -1,5 +1,4 @@
 .container_quiz {
-	/* max-width: 800px; */
 	margin: auto;
 	margin-bottom: 3rem;
 	background-color: white;
@@ -13,7 +12,8 @@
 }
 
 .progress_row {
-	margin: 1rem;
+	margin: auto;
+	max-width: 500px;
 }
 
 .title_row {
@@ -46,4 +46,17 @@
 }
 .bg_green {
 	background: #6dcb3c2b !important;
+}
+
+.stat_quiz {
+	display: flex;
+}
+
+.stat_quiz .ant-statistic-content {
+	margin-left: 0.75rem;
+}
+
+.navigation_quiz_row {
+	max-width: 500px;
+	margin: auto;
 }
