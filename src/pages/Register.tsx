@@ -1,4 +1,4 @@
-import { Button, Col, PageHeader, Row } from 'antd'
+import { Col, PageHeader, Row } from 'antd'
 import RegisterForm from 'forms/registerForm/RegisterForm'
 import useTitle from 'hooks/useTitle'
 import { useNavigate } from 'react-router'
@@ -18,18 +18,8 @@ const Register = () => {
 					/>
 				</Col>
 			</Row>
-			<Row>
-				<Col>
-					<RegisterForm />
-				</Col>
-			</Row>
-			<Row>
-				<Col className='login_justify'>Already have an account?</Col>
-				<Col>
-					<Button onClick={() => navigate('/login')} type='link'>
-						Login
-					</Button>
-				</Col>
+			<Row style={{ width: '100%' }}>
+				<RegisterForm />
 			</Row>
 		</div>
 	)

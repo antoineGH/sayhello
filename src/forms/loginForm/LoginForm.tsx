@@ -50,7 +50,7 @@ const LoginForm = () => {
 				</Button>
 			</Form.Item>
 			<Row>
-				<Col style={{ alignItems: 'center', marginTop: '.2rem' }} className='no_account'>
+				<Col style={{ alignItems: 'center', marginTop: '.35rem' }} className='no_account'>
 					No account?
 				</Col>
 				<Col>
