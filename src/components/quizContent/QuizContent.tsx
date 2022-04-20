@@ -126,7 +126,6 @@ const QuizContent = ({ questions }: props) => {
 					className = `${className} bg_green`
 				}
 			} else {
-				className = `${className} border_red`
 				if (count === choices[index]) {
 					className = `${className} bg_red`
 				}
@@ -167,7 +166,7 @@ const QuizContent = ({ questions }: props) => {
 				<Progress strokeColor='#ffd300' percent={progress} status='active' showInfo={false} />
 			</Row>
 			<Row className='center navigation_quiz_row'>
-				<Col span={8} style={{ display: 'flex', justifyContent: 'start' }}>
+				<Col className='btn_quiz_col' span={8} style={{ display: 'flex', justifyContent: 'start' }}>
 					<Button
 						className='btn_quiz'
 						disabled={isPreviousDisabled()}
@@ -185,7 +184,7 @@ const QuizContent = ({ questions }: props) => {
 						suffix={'/' + questions.length}
 					/>
 				</Col>
-				<Col span={8} style={{ display: 'flex', justifyContent: 'end' }}>
+				<Col className='btn_quiz_col' span={8} style={{ display: 'flex', justifyContent: 'end' }}>
 					<Button className='btn_quiz' disabled={isNextDisabled()} onClick={() => handleClickNextQuestion()}>
 						Next
 						<RightOutlined />
@@ -194,7 +193,7 @@ const QuizContent = ({ questions }: props) => {
 			</Row>
 			<Tooltip title={questionUnAnswered()}>
 				<Row className='center row_submit'>
-					<Col>
+					<Col className='btn_quiz_col'>
 						<Button className='btn_quiz' disabled={!readySubmit} onClick={handleSubmit}>
 							Submit
 						</Button>

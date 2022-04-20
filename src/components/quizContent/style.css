@@ -33,19 +33,15 @@
 	min-width: 500px;
 }
 
-.border_red {
-	border-color: #f7000070 !important;
-}
-
 .border_green {
-	border-color: #6dd85a !important;
+	border-color: #52c41a !important;
 }
 
 .bg_red {
 	background: #cb3c3c2b !important;
 }
 .bg_green {
-	background: #6dcb3c2b !important;
+	background: #53c41a4f !important;
 }
 
 .stat_quiz {
