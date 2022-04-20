@@ -18,10 +18,8 @@ const Reset = () => {
 					/>
 				</Col>
 			</Row>
-			<Row>
-				<Col>
-					<ResetForm />
-				</Col>
+			<Row style={{ width: '100%' }}>
+				<ResetForm />
 			</Row>
 		</div>
 	)

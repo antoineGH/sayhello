@@ -18,10 +18,8 @@ const Forgot = () => {
 					/>
 				</Col>
 			</Row>
-			<Row>
-				<Col>
-					<ForgotForm />
-				</Col>
+			<Row style={{ width: '100%' }}>
+				<ForgotForm />
 			</Row>
 		</div>
 	)

@@ -11,49 +11,44 @@ const ResetForm = () => {
 	}
 
 	return (
-		<Form
-			name='basic'
-			labelCol={{ span: 8 }}
-			wrapperCol={{ span: 16 }}
-			initialValues={{ remember: true }}
-			onFinish={onFinish}
-			onFinishFailed={onFinishFailed}
-			autoComplete='off'>
+		<Form name='reset' onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete='off'>
 			<Form.Item
+				className='reset_password_row'
 				name='password'
 				label='Password'
 				rules={[
 					{
 						required: true,
-						message: 'Please input your password!',
+						message: 'Please input your password',
 					},
 				]}
 				hasFeedback>
-				<Input.Password />
+				<Input.Password className='reset_password' />
 			</Form.Item>
 			<Form.Item
+				className='reset_password_row'
 				name='confirm'
-				label='Confirm'
+				label='Confirm Password'
 				dependencies={['password']}
 				hasFeedback
 				rules={[
 					{
 						required: true,
-						message: 'Please confirm your password!',
+						message: 'Please confirm your password',
 					},
 					({ getFieldValue }) => ({
 						validator(_, value) {
 							if (!value || getFieldValue('password') === value) {
 								return Promise.resolve()
 							}
-							return Promise.reject(new Error('The two passwords that you entered do not match!'))
+							return Promise.reject(new Error('Passwords do not match'))
 						},
 					}),
 				]}>
-				<Input.Password />
+				<Input.Password className='reset_password' />
 			</Form.Item>
-			<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-				<Button type='primary' htmlType='submit'>
+			<Form.Item style={{ marginTop: '1.5rem' }}>
+				<Button className='btn_reset' type='primary' htmlType='submit'>
 					Set Password
 				</Button>
 			</Form.Item>

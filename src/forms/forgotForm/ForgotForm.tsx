@@ -25,19 +25,20 @@ const ForgotForm = () => {
 
 	return (
 		<Form
-			name='basic'
-			labelCol={{ span: 8 }}
-			wrapperCol={{ span: 16 }}
-			initialValues={{ remember: true }}
+			name='forgot'
 			onFinish={onFinish}
 			onFinishFailed={onFinishFailed}
 			validateMessages={validateMessages}
 			autoComplete='off'>
-			<Form.Item name={['user', 'email']} label='Email' rules={[{ required: true, type: 'email' }]}>
-				<Input />
+			<Form.Item
+				className='forgot_email_row'
+				name={['user', 'email']}
+				label='Email'
+				rules={[{ required: true, type: 'email', message: 'Email not valid' }]}>
+				<Input className='forgot_email' />
 			</Form.Item>
-			<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-				<Button type='primary' htmlType='submit'>
+			<Form.Item style={{ marginTop: '1.5rem' }}>
+				<Button className='btn_forgot' type='primary' htmlType='submit'>
 					Reset
 				</Button>
 			</Form.Item>
