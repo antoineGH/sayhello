@@ -1,0 +1,48 @@
+.col_arrow {
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+}
+
+.col_arrow:last-child {
+	display: none !important;
+}
+
+.card_lesson {
+	background-color: #f5f5f5 !important;
+	margin-bottom: 1rem !important;
+	cursor: pointer;
+}
+
+.forward_arrow {
+	color: #ffd300 !important;
+	font-size: 2rem !important;
+}
+.completed {
+	color: #3b10e54d !important;
+}
+
+.row_lesson:last-child() {
+	background-color: pink !important;
+}
+
+.card_lesson:hover {
+	background-color: #ffd300 !important;
+	-webkit-transition: background-color 450ms linear;
+	-ms-transition: background-color 450ms linear;
+	transition: background-color 450ms linear;
+}
+
+.card_lesson:hover .stat_course_lower .ant-statistic-content-suffix {
+	color: #ffffff !important;
+	-webkit-transition: background-color 450ms linear;
+	-ms-transition: background-color 450ms linear;
+	transition: background-color 450ms linear;
+}
+
+.card_lesson:hover .ant-statistic-title {
+	color: #ffffff !important;
+	-webkit-transition: background-color 450ms linear;
+	-ms-transition: background-color 450ms linear;
+	transition: background-color 450ms linear;
+}

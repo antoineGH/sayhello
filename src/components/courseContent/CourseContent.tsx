@@ -1,5 +1,6 @@
-import { BorderOutlined, CheckSquareOutlined } from '@ant-design/icons'
-import { Button, Col, Divider, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
+import { CheckSquareOutlined } from '@ant-design/icons'
+import { Col, Divider, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
+import LessonCard from 'components/lessonCard/LessonCard'
 import { useNavigate } from 'react-router'
 import './style.css'
 
@@ -67,7 +68,7 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 					<Title level={4}>{course.courseName}</Title>
 				</Col>
 			</Row>
-			<Row className='center'>
+			<Row>
 				<Col span={24}>
 					{tags.map((tag) => {
 						return <Tag key={tag}>{tag}</Tag>
@@ -97,62 +98,12 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 				</Col>
 			</Row>
 			<Divider dashed />
-
-			{/* LESSON */}
-
-			{lessons.map((lesson, count) => {
-				count++
-				return (
-					<div className='lesson_container' key={count}>
-						<Row>
-							<Col span={22}>
-								<div className='ant-statistic-title'>COURSE</div>
-							</Col>
-							<Col
-								style={{
-									justifyContent: 'center',
-									display: 'flex',
-									marginTop: '0.15rem',
-									marginLeft: '-0.2rem',
-									marginRight: '0.2rem',
-									transform: 'scale(0.75)',
-								}}>
-								<Tooltip
-									title={
-										lesson.completed
-											? `${lesson.lessonName} completed`
-											: `${lesson.lessonName} not completed`
-									}>
-									{lesson.completed ? (
-										<CheckSquareOutlined className='checkedLesson' />
-									) : (
-										<BorderOutlined className='uncheckedLesson' />
-									)}
-								</Tooltip>
-							</Col>
-							<Col>
-								<Title level={4}>{lesson.lessonName}</Title>
-							</Col>
-							<Col
-								span={2}
-								offset={18}
-								style={{ justifyContent: 'center', alignSelf: 'center', display: 'flex' }}>
-								<Button onClick={() => handleClickLesson(lesson.lessonID)}>
-									{lesson.completed ? 'Resume' : 'Start'}
-								</Button>
-							</Col>
-						</Row>
-						<Row style={{ marginTop: '1rem' }}>
-							<Col span={4}>
-								<Statistic title='Duration' value={lesson.duration} suffix='h' />
-							</Col>
-							<Col span={4}>
-								<Statistic title='Difficulty' value={lesson.difficulty} suffix='/10' />
-							</Col>
-						</Row>
-					</div>
-				)
-			})}
+			<Row className='row_lesson'>
+				{lessons.map((lesson, count) => {
+					count++
+					return <LessonCard key={lesson.lessonID} handleClickLesson={handleClickLesson} lesson={lesson} />
+				})}
+			</Row>
 		</>
 	)
 }
