@@ -210,6 +210,16 @@ h4.ant-typography,
 	letter-spacing: -0.05rem;
 }
 
+.stat_course_lower_teacher .ant-statistic-content-value {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	color: #000000;
+	display: inline-block;
+	margin-left: 0px;
+	font-size: 1rem;
+	text-transform: capitalize;
+}
+
 .stat_course_lower .ant-statistic-content-suffix {
 	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
 		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

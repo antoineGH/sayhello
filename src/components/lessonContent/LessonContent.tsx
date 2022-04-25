@@ -1,5 +1,5 @@
-import { BorderOutlined, CheckSquareOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
-import { Button, Col, Divider, Row, Statistic, Tooltip, Typography, Image } from 'antd'
+import { CheckSquareOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
+import { Button, Col, Divider, Row, Statistic, Tooltip, Typography, Image, Card } from 'antd'
 import { useNavigate } from 'react-router'
 import './style.css'
 
@@ -103,29 +103,37 @@ const LessonContent = ({ lesson, lessons }: props) => {
 	}
 
 	return (
-		<div className='container_quiz'>
-			<Row className='center title_row'>
-				<Col>
-					<Title level={3}>{lesson.name}</Title>
+		<>
+			<Row>
+				<Col span={22}>
+					<div className='ant-statistic-title'>LESSON</div>
 				</Col>
-				{lesson.completed === 100 && (
-					<Col style={{ marginLeft: '1rem', marginBottom: '.4rem', transform: 'scale(0.75)' }}>
-						<Tooltip title={`${lesson.name} completed`}>
-							<CheckSquareOutlined className='checkedLesson' />
-						</Tooltip>
-					</Col>
-				)}
+				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex' }}>
+					<Tooltip title={`${lesson.name} completed`}>
+						{lesson.completed === 100 && <CheckSquareOutlined className='checkedLesson' />}
+					</Tooltip>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<Title level={4}>{lesson.name}</Title>
+				</Col>
 			</Row>
 
-			<Row className='center mt1'>
-				<Col span={8} className='center'>
-					<Statistic title='Teacher' value={lesson.author} prefix='Teacher' />
+			<Row className='mt1'>
+				<Col span={8}>
+					<Statistic className='stat_course_lower_teacher' title='Teacher' value={lesson.author} />
 				</Col>
-				<Col span={8} className='center'>
-					<Statistic title='Duration' value={lesson.duration} suffix='h' />
+				<Col span={8}>
+					<Statistic className='stat_course_lower' title='Duration' value={lesson.duration} suffix='h' />
 				</Col>
-				<Col span={8} className='center'>
-					<Statistic title='Difficulty' value={lesson.difficulty} suffix='/10' />
+				<Col span={8}>
+					<Statistic
+						className='stat_course_lower'
+						title='Difficulty'
+						value={lesson.difficulty}
+						suffix='/10'
+					/>
 				</Col>
 			</Row>
 			<Divider dashed />
@@ -154,7 +162,7 @@ const LessonContent = ({ lesson, lessons }: props) => {
 					}
 				})
 				return (
-					<div key={count} className='lesson_container'>
+					<Card key={count} bordered={true} className='card_lesson_content'>
 						<Row>
 							<Col>
 								<Title level={4}>{wikidata.title}</Title>
@@ -183,7 +191,7 @@ const LessonContent = ({ lesson, lessons }: props) => {
 								</Col>
 							</Row>
 						)}
-					</div>
+					</Card>
 				)
 			})}
 
@@ -201,7 +209,7 @@ const LessonContent = ({ lesson, lessons }: props) => {
 					</Button>
 				</Col>
 			</Row>
-		</div>
+		</>
 	)
 }
 

@@ -53,12 +53,7 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 					<div className='ant-statistic-title'>COURSE</div>
 				</Col>
 				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex' }}>
-					<Tooltip
-						title={
-							course.completed === 100
-								? `${course.courseName} completed`
-								: `${course.courseName} not completed`
-						}>
+					<Tooltip title={`${course.courseName} completed`}>
 						{course.completed === 100 && <CheckSquareOutlined className='checkedLesson' />}
 					</Tooltip>
 				</Col>

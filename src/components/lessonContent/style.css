@@ -19,3 +19,12 @@ code {
 	color: #faf8f0;
 	background-color: #481d48;
 }
+
+.card_lesson_content {
+	background-color: #f5f5f5 !important;
+	margin-bottom: 1rem !important;
+	cursor: pointer;
+	-webkit-transition: background-color 450ms linear;
+	-ms-transition: background-color 450ms linear;
+	transition: background-color 450ms linear;
+}
