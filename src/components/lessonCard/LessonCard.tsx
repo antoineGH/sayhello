@@ -22,7 +22,7 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
 	return (
 		<>
 			<Col span={5}>
-				<Card bordered={true} className='card_lesson'>
+				<Card bordered={true} className='card_lesson' onClick={() => handleClickLesson(lesson.lessonID)}>
 					<Row>
 						<Col span={22}>
 							<div className='ant-statistic-title'>LESSON</div>
