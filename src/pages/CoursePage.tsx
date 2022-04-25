@@ -1,4 +1,4 @@
-import { PageHeader, Typography } from 'antd'
+import { Card, PageHeader } from 'antd'
 import CourseContent from 'components/courseContent/CourseContent'
 import useTitle from 'hooks/useTitle'
 import { useParams } from 'react-router'
@@ -9,7 +9,6 @@ const CoursePage = () => {
 	const urlParams = useParams()
 	const courseID = urlParams?.courseID
 	useTitle(`Course ${courseID}`)
-	const { Title } = Typography
 
 	const course = {
 		courseID: 1,
@@ -53,17 +52,9 @@ const CoursePage = () => {
 				title='Course'
 				subTitle='Course Summary'
 			/>
-			<div
-				style={{
-					margin: '1rem 1rem 1rem 1.5rem',
-				}}>
-				<div className='quiz_title'>
-					<Title level={3}>{course.courseName}</Title>
-				</div>
-				<div className='quiz_content'>
-					<CourseContent course={course} tags={tags} lessons={lessons} />
-				</div>
-			</div>
+			<Card bordered={false} style={{ marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem' }}>
+				<CourseContent course={course} tags={tags} lessons={lessons} />
+			</Card>
 		</div>
 	)
 }

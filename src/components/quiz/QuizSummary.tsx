@@ -73,7 +73,7 @@ const QuizSummary = ({
 				<Col span={4}>
 					<Statistic className='stat_course_lower' title='Difficulty' value={difficulty} suffix='/10' />
 				</Col>
-				<Col span={1} offset={11} className='col_course_summary_btn'>
+				<Col span={2} offset={10} className='col_course_summary_btn'>
 					<Button
 						className={score !== -1 ? 'btn_disabled' : ''}
 						style={{ marginTop: '1rem' }}

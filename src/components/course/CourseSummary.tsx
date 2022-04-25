@@ -51,9 +51,8 @@ const CourseSummary = ({
 			</Row>
 			<Row>
 				<Col span={24}>
-					{tags.map((tag, count) => {
-						count++
-						return <Tag key={count}>{tag}</Tag>
+					{tags.map((tag) => {
+						return <Tag key={tag}>{tag}</Tag>
 					})}
 				</Col>
 			</Row>

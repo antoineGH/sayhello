@@ -33,11 +33,11 @@ interface props {
 }
 
 const CourseContent = ({ course, tags, lessons }: props) => {
-	const { Text, Title } = Typography
+	const { Title } = Typography
 	const navigate = useNavigate()
 
 	const getContains = (numberLesson: number, numberQuiz: number) => {
-		return `${numberLesson} lesson${numberLesson > 1 ? 's' : ''} / ${numberQuiz} quiz${numberQuiz > 1 ? 'zes' : ''}`
+		return ` module${numberLesson + numberQuiz > 1 ? 's' : ''}`
 	}
 
 	const handleClickLesson = (lessonID: number) => {
@@ -46,50 +46,68 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 	}
 
 	return (
-		<div className='container_quiz'>
-			<Row className='center title_row'>
-				<Col>
-					<Title level={3}>{course.courseName}</Title>
+		<>
+			<Row>
+				<Col span={22}>
+					<div className='ant-statistic-title'>COURSE</div>
 				</Col>
-				{course.completed === 100 && (
-					<Col style={{ marginLeft: '1rem', marginBottom: '.4rem', transform: 'scale(0.75)' }}>
-						<Tooltip title={`${course.courseName} completed`}>
-							<CheckSquareOutlined className='checkedLesson' />
-						</Tooltip>
-					</Col>
-				)}
+				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex' }}>
+					<Tooltip
+						title={
+							course.completed === 100
+								? `${course.courseName} completed`
+								: `${course.courseName} not completed`
+						}>
+						{course.completed === 100 && <CheckSquareOutlined className='checkedLesson' />}
+					</Tooltip>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<Title level={4}>{course.courseName}</Title>
+				</Col>
 			</Row>
 			<Row className='center'>
-				<Col>
-					{tags.map((tag, count) => {
-						count++
-						return (
-							<Tooltip key={count} title={tag}>
-								<Tag>{tag}</Tag>
-							</Tooltip>
-						)
+				<Col span={24}>
+					{tags.map((tag) => {
+						return <Tag key={tag}>{tag}</Tag>
 					})}
 				</Col>
 			</Row>
 
-			<Row className='center mt1'>
-				<Col span={8} className='center '>
-					<Statistic title='Contains' value={getContains(course.numberLesson, course.numberQuiz)} />
+			<Row style={{ marginTop: '1rem' }}>
+				<Col span={6}>
+					<Statistic
+						className='stat_course_lower'
+						title='Contains'
+						value={course.numberLesson + course.numberQuiz}
+						suffix={getContains(course.numberLesson, course.numberQuiz)}
+					/>
 				</Col>
-				<Col span={8} className='center'>
-					<Statistic title='Duration' value={course.duration} suffix='h' />
+				<Col span={6}>
+					<Statistic className='stat_course_lower' title='Duration' value={course.duration} suffix='h' />
 				</Col>
-				<Col span={8} className='center'>
-					<Statistic title='Difficulty' value={course.difficulty} suffix='/10' />
+				<Col span={6}>
+					<Statistic
+						className='stat_course_lower'
+						title='Difficulty'
+						value={course.difficulty}
+						suffix='/10'
+					/>
 				</Col>
 			</Row>
 			<Divider dashed />
 
+			{/* LESSON */}
+
 			{lessons.map((lesson, count) => {
 				count++
 				return (
-					<div className='lesson_container'>
+					<div className='lesson_container' key={count}>
 						<Row>
+							<Col span={22}>
+								<div className='ant-statistic-title'>COURSE</div>
+							</Col>
 							<Col
 								style={{
 									justifyContent: 'center',
@@ -115,7 +133,6 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 							<Col>
 								<Title level={4}>{lesson.lessonName}</Title>
 							</Col>
-
 							<Col
 								span={2}
 								offset={18}
@@ -136,7 +153,7 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 					</div>
 				)
 			})}
-		</div>
+		</>
 	)
 }
 
