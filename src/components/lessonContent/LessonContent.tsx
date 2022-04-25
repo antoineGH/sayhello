@@ -185,7 +185,7 @@ const LessonContent = ({ lesson, lessons }: props) => {
 					<Card key={count} bordered={true} className='card_lesson_content'>
 						<Row>
 							<Col>
-								<Title level={4}>{wikidata.title}</Title>
+								<Title level={3}>{wikidata.title}</Title>
 							</Col>
 						</Row>
 						<Row className='row_wikidata'>
