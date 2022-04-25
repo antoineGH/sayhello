@@ -182,7 +182,9 @@ const LessonPage = () => {
 				title='Lesson'
 				subTitle='Lesson Summary'
 			/>
-			<Card bordered={false} style={{ marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem' }}>
+			<Card
+				bordered={false}
+				style={{ marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem', paddingTop: '0.5rem' }}>
 				<LessonContent lesson={lesson} lessons={lessons} />
 			</Card>
 		</div>

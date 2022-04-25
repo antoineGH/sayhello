@@ -104,6 +104,26 @@ const LessonContent = ({ lesson, lessons }: props) => {
 
 	return (
 		<>
+			<Row style={{ marginBottom: '2rem' }}>
+				<Col
+					span={12}
+					className='col_course_summary_btn'
+					style={{ display: 'flex', justifyContent: 'flex-start' }}>
+					<Button onClick={() => handleClickPrevious(lesson, lessons)}>
+						<LeftOutlined />
+						Previous
+					</Button>
+				</Col>
+				<Col
+					span={12}
+					style={{ display: 'flex', justifyContent: 'flex-end' }}
+					className='col_course_summary_btn'>
+					<Button onClick={() => handleClickNext(lesson, lessons)}>
+						Next
+						<RightOutlined />
+					</Button>
+				</Col>
+			</Row>
 			<Row>
 				<Col span={22}>
 					<div className='ant-statistic-title'>LESSON</div>
@@ -196,14 +216,18 @@ const LessonContent = ({ lesson, lessons }: props) => {
 			})}
 
 			<Row>
-				<Col span={8}>
-					<Button onClick={() => handleClickPrevious(lesson, lessons)}>
+				<Col span={8} className='btn_quiz_col'>
+					<Button className='btn_quiz' onClick={() => handleClickPrevious(lesson, lessons)}>
 						<LeftOutlined />
 						Previous
 					</Button>
 				</Col>
-				<Col span={8} offset={8} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-					<Button onClick={() => handleClickNext(lesson, lessons)}>
+				<Col
+					span={8}
+					offset={8}
+					style={{ display: 'flex', justifyContent: 'flex-end' }}
+					className='btn_quiz_col'>
+					<Button className='btn_quiz' onClick={() => handleClickNext(lesson, lessons)}>
 						Next
 						<RightOutlined />
 					</Button>
