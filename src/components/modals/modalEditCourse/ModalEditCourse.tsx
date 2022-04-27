@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button, Checkbox, Col, Modal, Row } from 'antd'
+import './style.css'
 
 // TODO: Create Course Type, Type the props from parent component (Home Page)
 // TODO: Props to receive:
@@ -47,6 +48,7 @@ const ModalEditCourse = () => {
 				Edit
 			</Button>
 			<Modal
+				className='edit_course_modal'
 				title='Edit Courses'
 				visible={visible}
 				onOk={handleOk}

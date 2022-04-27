@@ -1,0 +1,52 @@
+.edit_course_modal .ant-modal-title {
+	font-family: 'Apercu-Pro-Bold';
+	font-size: 1.2rem;
+}
+
+.edit_course_modal .ant-checkbox-wrapper span {
+	font-family: 'Apercu-Pro-Regular';
+	font-size: 1rem;
+	letter-spacing: -0.01rem;
+}
+
+.edit_course_modal .ant-checkbox-checked .ant-checkbox-inner {
+	background-color: #3a10e5;
+	border-color: #3a10e5;
+}
+.edit_course_modal .ant-modal-footer .ant-btn-primary {
+	min-width: 40px;
+	height: 40px;
+	font-family: 'Apercu-Pro-Bold';
+	font-size: 1rem;
+	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+	background: #3a10e5;
+	color: white;
+	border-radius: 0.2rem;
+	transition: background-color 400ms;
+	border: none;
+}
+
+.edit_course_modal .ant-modal-footer .ant-btn-primary:hover {
+	border-color: #eeff00 !important;
+	background: #3b10e5c2 !important;
+	color: white !important;
+}
+
+.edit_course_modal .ant-modal-footer .ant-btn-default {
+	min-width: 40px;
+	height: 40px;
+	font-family: 'Apercu-Pro-Bold';
+	font-size: 1rem;
+	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+	background: #ffffff;
+	border-radius: 0.2rem;
+	transition: color 400ms;
+	transition: border 400ms;
+}
+
+.edit_course_modal .ant-modal-footer .ant-btn-default:hover {
+	/* border-color: #eeff00 !important;
+	background: #3b10e5c2 !important; */
+	color: #3a10e5 !important;
+	border-color: #3a10e5;
+}
