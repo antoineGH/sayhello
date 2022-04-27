@@ -183,6 +183,7 @@ const LessonPage = () => {
 			/>
 			<Card
 				bordered={false}
+				className='card_lesson_main'
 				style={{ marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem', paddingTop: '0.5rem' }}>
 				<LessonContent lesson={lesson} lessons={lessons} />
 			</Card>
