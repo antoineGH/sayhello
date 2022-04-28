@@ -40,3 +40,36 @@
 .card_lesson:hover .ant-statistic-title {
 	color: #ffffff !important;
 }
+
+.lesson_completed {
+	background: radial-gradient(rgba(0, 0, 0, 0.096) 2px, transparent 3px) !important;
+	background-size: 25px 25px !important;
+}
+
+.lesson_completed.card_lesson:hover {
+	background-color: initial !important;
+	color: initial !important;
+}
+
+.lesson_completed.card_lesson:hover .stat_course_lower .ant-statistic-content-suffix {
+	color: initial !important;
+}
+
+.lesson_completed.card_lesson:hover .ant-statistic-title {
+	color: initial !important;
+}
+
+.lesson_completed .stat_course_lower,
+.lesson_completed h4,
+.lesson_completed .span_lesson {
+	background-color: white;
+}
+
+.lesson_completed .span_lesson {
+	padding: 0rem 1rem 0rem 0rem;
+}
+
+.lesson_completed .col_tooltip span {
+	background-color: white;
+	padding: 0rem 1rem 0rem 0rem;
+}

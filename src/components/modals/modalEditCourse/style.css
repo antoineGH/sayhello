@@ -6,7 +6,6 @@
 .edit_course_modal .ant-checkbox-wrapper span {
 	font-family: 'Apercu-Pro-Regular';
 	font-size: 1rem;
-	letter-spacing: -0.01rem;
 }
 
 .edit_course_modal .ant-checkbox-checked .ant-checkbox-inner {
@@ -45,8 +44,19 @@
 }
 
 .edit_course_modal .ant-modal-footer .ant-btn-default:hover {
-	/* border-color: #eeff00 !important;
-	background: #3b10e5c2 !important; */
 	color: #3a10e5 !important;
 	border-color: #3a10e5;
+}
+
+.edit_course_modal .ant-checkbox-group div div {
+	padding: 0rem 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.edit_course_modal.ant-checkbox-wrapper {
+	width: 100%;
+}
+
+div > .ant-checkbox-wrapper-checked {
+	background-color: pink !important;
 }

@@ -1,5 +1,5 @@
 import { Card, Col, Row, Statistic, Tooltip, Typography } from 'antd'
-import { BorderOutlined, CheckSquareOutlined, ForwardOutlined } from '@ant-design/icons'
+import { CheckSquareOutlined, ForwardOutlined } from '@ant-design/icons'
 import './style.css'
 
 interface Lesson {
@@ -22,12 +22,21 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
 	return (
 		<>
 			<Col span={5}>
-				<Card bordered={true} className='card_lesson' onClick={() => handleClickLesson(lesson.lessonID)}>
+				<Card
+					bordered={true}
+					className={lesson.completed ? 'card_lesson lesson_completed' : 'card_lesson '}
+					onClick={() => handleClickLesson(lesson.lessonID)}>
 					<Row>
 						<Col span={22}>
-							<div className='ant-statistic-title'>LESSON</div>
+							<div className='ant-statistic-title'>
+								<span className='span_lesson'>LESSON</span>
+							</div>
 						</Col>
-						<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex' }}>
+						<Col
+							className='col_tooltip'
+							span={1}
+							offset={1}
+							style={{ justifyContent: 'center', display: 'flex' }}>
 							<Tooltip
 								title={
 									lesson.completed
