@@ -21,10 +21,12 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
 	const { Title } = Typography
 	return (
 		<>
-			<Col span={5}>
+			<Col span={5} className={lesson.completed ? 'col_lesson_completed' : 'col_lesson_uncompleted'}>
 				<Card
 					bordered={true}
-					className={lesson.completed ? 'card_lesson lesson_completed' : 'card_lesson '}
+					className={
+						lesson.completed ? 'card_lesson lesson_completed' : 'card_lesson card_lesson_uncompleted'
+					}
 					onClick={() => handleClickLesson(lesson.lessonID)}>
 					<Row>
 						<Col span={22}>

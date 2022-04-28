@@ -1,5 +1,5 @@
 import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
-import { BorderOutlined, CheckSquareOutlined } from '@ant-design/icons'
+import { CheckSquareOutlined } from '@ant-design/icons'
 import './style.css'
 
 interface Props {
@@ -26,11 +26,14 @@ const LessonSummary = ({
 	const { Title } = Typography
 	return (
 		<>
+			<div className='rectangle'></div>
 			<Row>
 				<Col span={22}>
-					<div className='ant-statistic-title'>LESSON</div>
+					<div className='ant-statistic-title'>
+						<span className='span_lesson'>LESSON</span>
+					</div>
 				</Col>
-				<Col span={1} offset={1} style={{ justifyContent: 'center', display: 'flex' }}>
+				<Col span={1} offset={1} className='col_tooltip' style={{ justifyContent: 'center', display: 'flex' }}>
 					<Tooltip title={completed ? `${lessonName} completed` : `${lessonName} not completed`}>
 						{completed && <CheckSquareOutlined className='checkedLesson' />}
 					</Tooltip>
@@ -41,6 +44,7 @@ const LessonSummary = ({
 					<Title level={4}>{lessonName}</Title>
 				</Col>
 			</Row>
+
 			<Row>
 				<Col span={4}>
 					<Statistic className='stat_course_lower' title='Duration' value={duration} suffix='h' />

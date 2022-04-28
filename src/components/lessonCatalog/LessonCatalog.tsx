@@ -13,7 +13,7 @@ const LessonCatalog = () => {
 			author: 'Antoine',
 			duration: 1,
 			difficulty: 2,
-			completed: false,
+			completed: true,
 			courseID: 1,
 		},
 		{
@@ -22,7 +22,7 @@ const LessonCatalog = () => {
 			author: 'Bastien',
 			duration: 2,
 			difficulty: 4,
-			completed: false,
+			completed: true,
 			courseID: 1,
 		},
 		{
@@ -31,7 +31,7 @@ const LessonCatalog = () => {
 			author: 'Catherine',
 			duration: 3,
 			difficulty: 5,
-			completed: true,
+			completed: false,
 			courseID: 2,
 		},
 		{

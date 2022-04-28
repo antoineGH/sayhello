@@ -3,3 +3,32 @@
 	color: #3a10e5 !important;
 	font-size: 1.4rem;
 }
+
+.catalog_completed .stat_course_lower,
+.catalog_completed h4,
+.catalog_completed .span_lesson {
+	background-color: transparent;
+}
+
+.catalog_completed .span_lesson {
+	padding: 0rem 1rem 0rem 0rem;
+}
+
+.catalog_completed .col_tooltip span {
+	background-color: white;
+}
+
+.catalog_completed .rectangle {
+	width: 60%;
+	height: 80%;
+	background: #555;
+	position: absolute;
+	right: 10%;
+	background: radial-gradient(rgba(0, 0, 0, 0.096) 2px, transparent 3px) !important;
+	background-size: 35px 35px !important;
+	background-color: white !important;
+}
+
+.course_main .ant-card {
+	overflow: hidden;
+}
