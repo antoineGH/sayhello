@@ -21,7 +21,7 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
 	const { Title } = Typography
 	return (
 		<>
-			<Col span={5} className={lesson.completed ? 'col_lesson_completed' : 'col_lesson_uncompleted'}>
+			<Col span={5} className={lesson.completed ? 'col_lesson_completed not' : 'uncompleted'}>
 				<Card
 					bordered={true}
 					className={
@@ -74,7 +74,7 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
 					</Row>
 				</Card>
 			</Col>
-			<Col span={1} className='col_arrow'>
+			<Col span={1} className='col_arrow not'>
 				<ForwardOutlined className={lesson.completed ? 'forward_arrow completed' : 'forward_arrow'} />
 			</Col>
 		</>
