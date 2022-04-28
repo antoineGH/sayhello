@@ -150,7 +150,6 @@ const QuizContent = ({ questions }: props) => {
 								<Button
 									className={getClassNameButton(option.correctness, count)}
 									disabled={hasAnswered()}
-									type='dashed'
 									onClick={() => handleAnswerQuestion(option.correctness, count)}>
 									<span style={{ fontWeight: 'bold', marginRight: '.4rem' }}>
 										{String.fromCharCode(count + 96)}.

@@ -33,8 +33,22 @@
 	min-width: 500px;
 }
 
+.row_answers .ant-btn {
+	border-radius: 2px;
+	border: 1px solid #707382;
+	line-height: 1.5715;
+	min-height: 40px !important;
+	transition: color 400ms;
+	transition: border 400ms;
+}
+
+.row_answers .ant-btn:hover {
+	color: #3a10e5;
+	border-color: #3a10e5;
+}
+
 .border_green {
-	border-color: #52c41a !important;
+	border: 2px solid #52c41a !important;
 }
 
 .bg_red {
