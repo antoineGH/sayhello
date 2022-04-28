@@ -51,12 +51,85 @@
 .edit_course_modal .ant-checkbox-group div div {
 	padding: 0rem 0.5rem;
 	margin-bottom: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .edit_course_modal.ant-checkbox-wrapper {
 	width: 100%;
 }
 
+.ant-checkbox-group .ant-col {
+	padding: 0.3rem 1rem !important;
+}
+
 div > .ant-checkbox-wrapper-checked {
-	background-color: pink !important;
+	padding: 0rem 0.5rem 0rem 0rem;
+}
+
+div > .ant-checkbox-wrapper-checked::after {
+	background: radial-gradient(rgba(0, 0, 0, 0.096) 2px, transparent 3px) !important;
+	background-size: 7px 7px !important;
+	width: 100px;
+}
+
+.slider_goal .ant-slider-rail {
+	height: 8px;
+}
+.slider_goal .ant-slider-track {
+	height: 8px;
+	background: rgb(255, 211, 0);
+}
+.slider_goal .ant-slider-handle {
+	height: 18px;
+	width: 18px;
+	border-color: rgb(255, 211, 0);
+	border-color: #3a10e5;
+	/* background: rgb(255, 211, 0); */
+}
+
+.ant-slider:hover .ant-slider-track {
+	background-color: initial;
+}
+
+.ant-slider:hover,
+.slider_goal:hover {
+	background-color: initial !important;
+	border-color: #3a10e5 !important;
+}
+
+.ant-slider-handle:focus {
+	border-color: #3a10e5 !important;
+	outline: none;
+	box-shadow: 0 0 0 5px #3a10e5;
+}
+
+.ant-slider:hover .ant-slider-track {
+	background-color: rgb(255, 211, 0) !important;
+}
+
+.ant-slider:hover .ant-slider-handle {
+	border-color: rgb(255, 211, 0) !important;
+}
+
+.row_slider {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.row_slider .ant-col {
+	justify-content: center;
+}
+
+.input_goal {
+	font-family: 'Apercu-Pro-Mono';
+	color: rgba(0, 0, 0, 0.85);
+	font-size: 1.3rem !important;
+	font-variant: tabular-nums;
+	line-height: 1.5715;
+	font-weight: bold;
+	width: 100%;
 }

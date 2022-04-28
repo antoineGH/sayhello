@@ -38,19 +38,35 @@ const ModalEditGoals = () => {
 				Edit
 			</Button>
 			<Modal
-				title='Edit Courses'
+				className='edit_course_modal'
+				title='Edit Goals'
 				visible={visible}
 				onOk={handleOk}
 				confirmLoading={confirmLoading}
 				onCancel={handleCancel}>
-				<Row>
-					<Col span={12}>
-						<Slider min={0} max={7} onChange={onChange} value={value} />
+				<Row className='row_slider'>
+					<Col span={14} style={{ marginRight: '1rem' }}>
+						<Slider
+							min={0}
+							max={7}
+							tooltipVisible={false}
+							onChange={onChange}
+							value={value}
+							className='slider_goal'
+						/>
+					</Col>
+					<Col span={6}>
+						<InputNumber
+							min={0}
+							max={7}
+							value={value}
+							formatter={(value) => `${value} Days`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+							onChange={onChange}
+							className='input_goal'
+						/>
 					</Col>
 				</Row>
-				<Row>
-					<InputNumber min={0} max={7} value={value} onChange={onChange} />
-				</Row>
+				<Row></Row>
 			</Modal>
 		</>
 	)
