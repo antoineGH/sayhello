@@ -26,9 +26,9 @@ const ModalEditProfile = ({ profiles, visible, handleOk, confirmLoading, handleC
 	const [profileUpdate, setProfileUpdate] = useState(profiles[editProfile - 1].name)
 	const { Title } = Typography
 
-	useEffect(() => {
-		console.log(profileUpdate)
-	}, [profileUpdate])
+	// useEffect(() => {
+	// 	console.log(profileUpdate)
+	// }, [profileUpdate])
 
 	const handleOnChange = (e: React.FormEvent<HTMLInputElement>) => {
 		setProfileUpdate(e.currentTarget.value)

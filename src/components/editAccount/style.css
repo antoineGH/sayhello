@@ -5,3 +5,20 @@
 .account_main {
 	margin: 1rem 1rem 1rem 1.5rem;
 }
+
+.ant-statistic-email {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.85);
+	font-size: 0.95rem;
+}
+
+.card_account_information div {
+	text-align: center;
+}
+
+.card_account_information .ant-avatar {
+	margin: auto;
+}

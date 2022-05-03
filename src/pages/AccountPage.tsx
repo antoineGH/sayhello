@@ -52,10 +52,10 @@ const AccountPage = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col span={12}>
+				<Col span={8}>
 					<EditAccount user={user} />
 				</Col>
-				<Col span={12}>
+				<Col span={16}>
 					<EditProfile profiles={user.profiles} />
 				</Col>
 			</Row>

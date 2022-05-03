@@ -1,4 +1,7 @@
-import { Typography } from 'antd'
+import { Button, Col, Row, Typography } from 'antd'
+import { useState } from 'react'
+import AccountInformation from './AccountInformation'
+import EditAccountInformation from './EditAccountInformation'
 import './style.css'
 
 interface Profile {
@@ -26,12 +29,23 @@ interface Props {
 
 const EditAccount = ({ user }: Props) => {
 	const { Title } = Typography
+	const [visible, setVisible] = useState(false)
+
+	console.log(user)
 
 	return (
 		<div className='account_main'>
-			<div className='edit_account'>
-				<Title level={3}>My Account</Title>
-			</div>
+			<Row>
+				<Col>
+					<Title level={3}>My Account</Title>
+				</Col>
+				<Col>
+					<Button type='link' onClick={() => setVisible(!visible)}>
+						Edit
+					</Button>
+				</Col>
+			</Row>
+			{visible ? <EditAccountInformation /> : <AccountInformation user={user} />}
 		</div>
 	)
 }
