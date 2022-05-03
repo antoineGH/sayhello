@@ -508,6 +508,69 @@ h4.ant-typography,
 	flex-direction: column;
 }
 
+#edit-password .edit_password_row {
+	display: flex;
+	flex-direction: column;
+}
+
+#edit-account {
+	width: 100%;
+	justify-content: center;
+	margin: auto;
+	max-width: 250px;
+	margin-top: 1rem;
+}
+
+#edit-password {
+	width: 100%;
+	justify-content: center;
+	margin: auto;
+	max-width: 250px;
+	margin-top: 1rem;
+}
+
+#edit-account .edit_password_row,
+#edit-account .edit_firstname_row,
+#edit-account .edit_lastname_row {
+	display: flex;
+	flex-direction: column;
+}
+#edit-password .edit_password_row,
+#edit-password .edit_firstname_row,
+#edit-password .edit_lastname_row {
+	display: flex;
+}
+
+#edit-account .btn_login {
+	min-width: 40px;
+	height: 40px;
+	font-family: 'Apercu-Pro-Bold';
+	font-size: 1rem;
+	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+	background: #3a10e5;
+	color: white;
+	border-radius: 0.2rem;
+	transition: background-color 400ms;
+	border: none;
+}
+.edit_lastname,
+.edit_firstname,
+.edit_password {
+	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+	font-size: 0.95rem;
+	line-height: 1.5;
+	width: 100%;
+	min-width: 0;
+	padding: 4px 11px;
+	color: #10162f;
+	line-height: 1.5715;
+	background-color: #fff;
+	border: 1px solid #707382;
+	border-radius: 2px;
+	transition: all 0.3s;
+	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
+}
+
 .reset_password {
 	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
 	font-size: 0.95rem;
