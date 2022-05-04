@@ -1,5 +1,5 @@
 import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Button, Col, message, Row, Typography } from 'antd'
+import { Avatar, Button, Col, Row, Typography } from 'antd'
 import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
 import { useState } from 'react'
 import './style.css'

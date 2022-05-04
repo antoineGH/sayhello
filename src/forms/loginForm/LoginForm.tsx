@@ -1,4 +1,4 @@
-import { Form, Input, Button, Checkbox, Row, Col } from 'antd'
+import { Form, Input, Button, Row, Col } from 'antd'
 import { useNavigate } from 'react-router'
 import { formValueSuccessLogin } from 'types/form'
 

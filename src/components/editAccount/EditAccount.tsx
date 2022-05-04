@@ -29,7 +29,7 @@ interface Props {
 
 const EditAccount = ({ user }: Props) => {
 	const { Title } = Typography
-	const [visible, setVisible] = useState(false)
+	const [visible, setVisible] = useState(true)
 
 	console.log(user)
 
@@ -41,11 +41,11 @@ const EditAccount = ({ user }: Props) => {
 				</Col>
 				<Col>
 					<Button type='link' onClick={() => setVisible(!visible)}>
-						Edit
+						{visible ? 'Back' : 'Edit'}
 					</Button>
 				</Col>
 			</Row>
-			{visible ? <EditAccountInformation /> : <AccountInformation user={user} />}
+			{visible ? <EditAccountInformation user={user} /> : <AccountInformation user={user} />}
 		</div>
 	)
 }

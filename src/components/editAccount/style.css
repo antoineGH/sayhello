@@ -22,3 +22,12 @@
 .card_account_information .ant-avatar {
 	margin: auto;
 }
+
+.special_link {
+	padding: 0rem 1rem !important;
+}
+
+.update_password_row {
+	display: flex;
+	justify-content: center;
+}

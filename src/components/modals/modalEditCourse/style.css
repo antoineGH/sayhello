@@ -1,4 +1,5 @@
-.edit_course_modal .ant-modal-title {
+.edit_course_modal .ant-modal-title,
+.modal_edit_password .ant-modal-title {
 	font-family: 'Apercu-Pro-Bold';
 	font-size: 1.2rem;
 }
@@ -12,7 +13,8 @@
 	background-color: #3a10e5;
 	border-color: #3a10e5;
 }
-.edit_course_modal .ant-modal-footer .ant-btn-primary {
+.edit_course_modal .ant-modal-footer .ant-btn-primary,
+.modal_edit_password .ant-modal-footer .ant-btn-primary {
 	min-width: 40px;
 	height: 40px;
 	font-family: 'Apercu-Pro-Bold';
@@ -25,13 +27,15 @@
 	border: none;
 }
 
-.edit_course_modal .ant-modal-footer .ant-btn-primary:hover {
+.edit_course_modal .ant-modal-footer .ant-btn-primary:hover,
+.modal_edit_password .ant-modal-footer .ant-btn-primary:hover {
 	border-color: #eeff00 !important;
 	background: #3b10e5c2 !important;
 	color: white !important;
 }
 
-.edit_course_modal .ant-modal-footer .ant-btn-default {
+.edit_course_modal .ant-modal-footer .ant-btn-default,
+.modal_edit_password .ant-modal-footer .ant-btn-default {
 	min-width: 40px;
 	height: 40px;
 	font-family: 'Apercu-Pro-Bold';
@@ -43,12 +47,14 @@
 	transition: border 400ms;
 }
 
-.edit_course_modal .ant-modal-footer .ant-btn-default:hover {
+.edit_course_modal .ant-modal-footer .ant-btn-default:hover,
+.modal_edit_password .ant-modal-footer .ant-btn-default:hover {
 	color: #3a10e5 !important;
 	border-color: #3a10e5;
 }
 
-.edit_course_modal .ant-checkbox-group div div {
+.edit_course_modal .ant-checkbox-group div div,
+.modal_edit_password .ant-checkbox-group div div {
 	padding: 0rem 0.5rem;
 	margin-bottom: 0.5rem;
 	display: flex;
@@ -126,4 +132,8 @@ div > .ant-checkbox-wrapper-checked {
 	line-height: 1.5715;
 	font-weight: bold;
 	width: 100%;
+}
+
+.modal_edit_password {
+	width: 357px !important;
 }
