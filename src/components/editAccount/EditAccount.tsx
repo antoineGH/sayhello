@@ -1,4 +1,4 @@
-import { Button, Col, Row, Typography } from 'antd'
+import { Button, Card, Col, Row, Typography } from 'antd'
 import { useState } from 'react'
 import AccountInformation from './AccountInformation'
 import EditAccountInformation from './EditAccountInformation'
@@ -29,7 +29,7 @@ interface Props {
 
 const EditAccount = ({ user }: Props) => {
 	const { Title } = Typography
-	const [visible, setVisible] = useState(true)
+	const [visible, setVisible] = useState(false)
 
 	console.log(user)
 
@@ -45,7 +45,14 @@ const EditAccount = ({ user }: Props) => {
 					</Button>
 				</Col>
 			</Row>
-			{visible ? <EditAccountInformation user={user} /> : <AccountInformation user={user} />}
+			<Card
+				key={user.id}
+				bordered={false}
+				style={{ marginBottom: '1rem', height: '400px' }}
+				className='card_account_information'
+				title='My Information'>
+				{visible ? <EditAccountInformation user={user} /> : <AccountInformation user={user} />}
+			</Card>
 		</div>
 	)
 }

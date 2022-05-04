@@ -33,23 +33,17 @@ const AccountInformation = ({ user }: Props) => {
 	}
 
 	return (
-		<Card key={user.id} bordered={false} style={{ marginBottom: '1rem' }} className='card_account_information'>
-			<Row>
-				<Col span={24}>
-					<div className='ant-statistic-title'>My Information</div>
-				</Col>
-			</Row>
+		<div className='container_account_info'>
 			<Row>
 				<Avatar
 					size={100}
 					src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'
 					icon={<UserOutlined />}
-					style={{ marginTop: '.8rem' }}
 				/>
 			</Row>
 			<Row>
 				<Col span={24} style={{ marginTop: '1rem' }}>
-					<Title level={4}>{`${user.first_name} ${user.last_name}`}</Title>
+					<Title level={4} style={{ marginBottom: '.2rem' }}>{`${user.first_name} ${user.last_name}`}</Title>
 				</Col>
 				<Col span={24} className='ant-statistic-email'>
 					{user.email}
@@ -58,7 +52,7 @@ const AccountInformation = ({ user }: Props) => {
 					{formatTimeStamp(user.date_created)}
 				</Col>
 			</Row>
-		</Card>
+		</div>
 	)
 }
 export default AccountInformation

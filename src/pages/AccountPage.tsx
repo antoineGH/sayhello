@@ -48,7 +48,7 @@ const AccountPage = () => {
 		<>
 			<Row>
 				<Col>
-					<PageHeader className='site-page-header' title='Account Information' subTitle='My information' />
+					<PageHeader className='site-page-header' title='Account Information' />
 				</Col>
 			</Row>
 			<Row>

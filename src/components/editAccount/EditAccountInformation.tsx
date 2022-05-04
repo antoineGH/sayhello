@@ -52,13 +52,7 @@ const EditAccountInformation = ({ user }: Props) => {
 	}
 
 	return (
-		<Card key={user.id} bordered={false} style={{ marginBottom: '1rem' }} className='card_account_information'>
-			<Row>
-				<Col span={24}>
-					<div className='ant-statistic-title'>My Information</div>
-				</Col>
-			</Row>
-			<Row></Row>
+		<>
 			<Row>
 				<Form
 					name='edit-account'
@@ -105,7 +99,7 @@ const EditAccountInformation = ({ user }: Props) => {
 				handleOk={handleOk}
 				confirmLoading={confirmLoading}
 			/>
-		</Card>
+		</>
 	)
 }
 export default EditAccountInformation
