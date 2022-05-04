@@ -14,3 +14,33 @@
 	justify-self: center;
 	align-items: center;
 }
+
+.row_card_account {
+	display: flex;
+	justify-content: space-evenly;
+	height: 75%;
+}
+
+.row_card_account .profile_col {
+	background: #f5f5f5;
+	/* width: 100%; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 0.25rem;
+	transition: background-color 400ms;
+}
+
+.row_card_account .profile_col:hover {
+	background-color: #ffd300 !important;
+}
+.row_last_col {
+	grid-row-end: -1;
+	position: relative;
+}
+
+.col_cog {
+	min-height: 1.25em;
+	line-height: 1.25;
+}

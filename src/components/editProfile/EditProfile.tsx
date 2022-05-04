@@ -1,6 +1,5 @@
-import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Button, Col, Row, Typography } from 'antd'
-import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
+import { SettingOutlined, UserOutlined } from '@ant-design/icons'
+import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import { useState } from 'react'
 import './style.css'
 
@@ -19,75 +18,68 @@ interface Props {
 }
 
 const EditProfile = ({ profiles }: Props) => {
-	const [visible, setVisible] = useState(false)
-	const [editProfile, setEditProfile] = useState(1)
-	const [confirmLoading, setConfirmLoading] = useState(false)
-
 	const { Title } = Typography
-
-	const handleSwitchProfile = (profileID: number) => {
-		console.log(`handleSwichProfile, profileID: ${profileID}`)
-	}
+	const [visible, setVisible] = useState(false)
 
 	const handleEditProfile = (profileID: number) => {
-		setEditProfile(profileID)
-		setVisible(true)
+		console.log(`handleEditProfile: ${profileID}`)
 	}
 
-	const handleOk = (values: string) => {
-		console.log('Success:', values)
-		setConfirmLoading(true)
-		setTimeout(() => {
-			setVisible(false)
-			setConfirmLoading(false)
-		}, 2000)
-	}
-
-	const handleCancel = () => {
-		setVisible(false)
+	const handleSwitchProfile = (profileID: number) => {
+		console.log(`handleSwitchProfile: ${profileID}`)
 	}
 
 	return (
-		<div className='profile_main'>
-			<div className='profile_title'>
-				<Title level={3}>My Profiles</Title>
-			</div>
+		<div className='account_main'>
 			<Row>
-				{profiles.map((profile) => {
-					return (
-						<Col key={profile.id} className='col_square' style={{ marginRight: '1rem' }}>
-							<Avatar
-								src={profile.avatar}
-								shape='square'
-								size={64}
-								icon={<UserOutlined />}
-								style={{ marginTop: '.8rem' }}
-							/>
-							<Row>
-								<Col>
-									<Title level={4}>{profile.name}</Title>
-								</Col>
-							</Row>
-							<Row>
-								<Col>
-									<Button onClick={() => handleSwitchProfile(profile.id)}>Switch</Button>
-								</Col>
-								<Col>
-									<Button onClick={() => handleEditProfile(profile.id)}>Edit</Button>
-								</Col>
-							</Row>
-						</Col>
-					)
-				})}
+				<Col>
+					<Title level={3}>My Profiles</Title>
+				</Col>
+				<Col>
+					<Button type='link' onClick={() => setVisible(!visible)}>
+						{visible ? 'Back' : 'Edit'}
+					</Button>
+				</Col>
 			</Row>
-			<ModalEditProfile
-				profiles={profiles}
-				visible={visible}
-				handleOk={handleOk}
-				confirmLoading={confirmLoading}
-				handleCancel={handleCancel}
-				editProfile={editProfile}
-			/>
+			<Card
+				bordered={false}
+				style={{ marginBottom: '1rem', height: '400px' }}
+				className='card_account_information'
+				title={visible ? 'Edit Profile' : 'Select Profile'}>
+				<Row className='row_card_account'>
+					{profiles.map((profile) => {
+						return (
+							<Col
+								className='profile_col'
+								key={profile.id}
+								span={5}
+								onClick={
+									visible
+										? () => handleEditProfile(profile.id)
+										: () => handleSwitchProfile(profile.id)
+								}>
+								<Row>
+									<Avatar size={100} src={profile.avatar} icon={<UserOutlined />} />
+								</Row>
+								<Row style={{ marginTop: '.5rem' }}>
+									<Col span={24}>
+										<Title level={5}>{profile.name}</Title>
+									</Col>
+								</Row>
+								<Row className='row_last_col'>
+									<Col className='col_cog'>
+										{visible ? (
+											<SettingOutlined style={{ fontSize: '1.1rem', color: '#3a10e5' }} />
+										) : (
+											' '
+										)}
+									</Col>
+								</Row>
+							</Col>
+						)
+					})}
+				</Row>
+			</Card>
 		</div>
 	)
 }

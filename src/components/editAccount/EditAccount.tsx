@@ -31,8 +31,6 @@ const EditAccount = ({ user }: Props) => {
 	const { Title } = Typography
 	const [visible, setVisible] = useState(false)
 
-	console.log(user)
-
 	return (
 		<div className='account_main'>
 			<Row>
@@ -46,7 +44,6 @@ const EditAccount = ({ user }: Props) => {
 				</Col>
 			</Row>
 			<Card
-				key={user.id}
 				bordered={false}
 				style={{ marginBottom: '1rem', height: '400px' }}
 				className='card_account_information'
