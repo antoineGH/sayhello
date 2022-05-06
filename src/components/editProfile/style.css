@@ -18,18 +18,17 @@
 .row_card_account {
 	display: flex;
 	justify-content: space-evenly;
-	height: 75%;
+	height: 55%;
 }
 
 .row_card_account .profile_col {
 	background: #f5f5f5;
-	/* width: 100%; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	border-radius: 0.25rem;
 	transition: background-color 400ms;
+	cursor: pointer;
 }
 
 .row_card_account .profile_col:hover {
@@ -43,4 +42,29 @@
 .col_cog {
 	min-height: 1.25em;
 	line-height: 1.25;
+}
+
+.avatar_tranparent {
+	opacity: 0.6;
+}
+
+.avatar_cog {
+	font-size: 1.1rem;
+	color: '#3a10e5' !important;
+}
+
+.cog_lol {
+	font-size: 1.2rem;
+	color: '#3a10e5';
+	position: relative;
+	display: block;
+}
+
+.overlay {
+	position: absolute;
+	top: 0.4rem;
+	right: 0.4rem;
+	font-weight: bold;
+	text-align: right;
+	font-size: 30px;
 }

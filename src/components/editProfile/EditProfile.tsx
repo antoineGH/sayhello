@@ -58,21 +58,22 @@ const EditProfile = ({ profiles }: Props) => {
 										? () => handleEditProfile(profile.id)
 										: () => handleSwitchProfile(profile.id)
 								}>
-								<Row>
-									<Avatar size={100} src={profile.avatar} icon={<UserOutlined />} />
-								</Row>
 								<Row style={{ marginTop: '.5rem' }}>
-									<Col span={24}>
-										<Title level={5}>{profile.name}</Title>
-									</Col>
+									<Avatar
+										size={100}
+										src={profile.avatar}
+										icon={<UserOutlined />}
+										className={visible ? 'avatar_tranparent' : ''}></Avatar>
+									{visible && (
+										<SettingOutlined
+											style={{ color: '#3a10e5', fontSize: '1.5rem' }}
+											className='overlay'
+										/>
+									)}
 								</Row>
-								<Row className='row_last_col'>
-									<Col className='col_cog'>
-										{visible ? (
-											<SettingOutlined style={{ fontSize: '1.1rem', color: '#3a10e5' }} />
-										) : (
-											' '
-										)}
+								<Row>
+									<Col span={24} style={{ marginTop: '0.3rem' }}>
+										<Title level={5}>{profile.name}</Title>
 									</Col>
 								</Row>
 							</Col>
