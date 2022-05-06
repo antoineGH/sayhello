@@ -31,6 +31,27 @@
 	cursor: pointer;
 }
 
+.row_card_account .profile_col_visible {
+	background: radial-gradient(rgba(0, 0, 0, 0.096) 2px, transparent 3px) !important;
+	background-size: 25px 25px !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: background-color 400ms;
+	transition: background 400ms;
+	cursor: pointer;
+}
+
+.row_card_account .profile_col_visible:hover {
+	background: radial-gradient(rgba(0, 0, 0, 0.096) 2px, transparent 3px) !important;
+	background-size: 15px 15px !important;
+}
+
+.row_card_account .profile_col_visible:hover .title_white h5 {
+	content: '';
+}
+
 .row_card_account .profile_col:hover {
 	background-color: #ffd300 !important;
 }
@@ -42,10 +63,6 @@
 .col_cog {
 	min-height: 1.25em;
 	line-height: 1.25;
-}
-
-.avatar_tranparent {
-	opacity: 0.6;
 }
 
 .avatar_cog {
@@ -62,9 +79,14 @@
 
 .overlay {
 	position: absolute;
-	top: 0.4rem;
-	right: 0.4rem;
+	top: 0rem;
+	right: 0rem;
 	font-weight: bold;
 	text-align: right;
 	font-size: 30px;
+	padding: 0.3rem;
+}
+
+.title_white {
+	width: 75%;
 }

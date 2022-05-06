@@ -50,7 +50,7 @@ const EditProfile = ({ profiles }: Props) => {
 					{profiles.map((profile) => {
 						return (
 							<Col
-								className='profile_col'
+								className={visible ? 'profile_col_visible' : 'profile_col'}
 								key={profile.id}
 								span={5}
 								onClick={
@@ -58,12 +58,8 @@ const EditProfile = ({ profiles }: Props) => {
 										? () => handleEditProfile(profile.id)
 										: () => handleSwitchProfile(profile.id)
 								}>
-								<Row style={{ marginTop: '.5rem' }}>
-									<Avatar
-										size={100}
-										src={profile.avatar}
-										icon={<UserOutlined />}
-										className={visible ? 'avatar_tranparent' : ''}></Avatar>
+								<Row style={{ marginTop: '.5rem', padding: '1rem' }}>
+									<Avatar size={100} src={profile.avatar} icon={<UserOutlined />} />
 									{visible && (
 										<SettingOutlined
 											style={{ color: '#3a10e5', fontSize: '1.5rem' }}
@@ -71,7 +67,7 @@ const EditProfile = ({ profiles }: Props) => {
 										/>
 									)}
 								</Row>
-								<Row>
+								<Row className={visible ? 'title_white' : ''}>
 									<Col span={24} style={{ marginTop: '0.3rem' }}>
 										<Title level={5}>{profile.name}</Title>
 									</Col>
