@@ -1,4 +1,4 @@
-import { SettingOutlined, UserOutlined } from '@ant-design/icons'
+import { CaretRightOutlined, ForwardOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import { useState } from 'react'
 import './style.css'
@@ -70,6 +70,18 @@ const EditProfile = ({ profiles }: Props) => {
 								<Row className={visible ? 'title_white' : ''}>
 									<Col span={24} style={{ marginTop: '0.3rem' }}>
 										<Title level={5}>{profile.name}</Title>
+									</Col>
+								</Row>
+								<Row>
+									<Col>
+										{profile.id === 1 ? (
+											<CaretRightOutlined
+												rotate={-90}
+												style={{ fontSize: '2rem', color: 'rgb(59 16 229)' }}
+											/>
+										) : (
+											<p className='empty_text'></p>
+										)}
 									</Col>
 								</Row>
 							</Col>

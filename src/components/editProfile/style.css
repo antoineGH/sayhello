@@ -22,30 +22,37 @@
 }
 
 .row_card_account .profile_col {
+	width: 100%;
 	background: #f5f5f5;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	transition: background-color 400ms;
 	cursor: pointer;
+	border: 1px solid #f0f0f0 !important;
+	transition: background-color 400ms;
+	transition: transform 400ms;
 }
 
 .row_card_account .profile_col_visible {
-	background: radial-gradient(rgba(0, 0, 0, 0.096) 2px, transparent 3px) !important;
-	background-size: 25px 25px !important;
+	background-image: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent 3px,
+		rgba(0, 0, 0, 0.068) 3px,
+		rgba(0, 0, 0, 0.068) 6px
+	);
+	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	transition: background-color 400ms;
-	transition: background 400ms;
 	cursor: pointer;
+	transition: transform 0.4s;
 }
 
 .row_card_account .profile_col_visible:hover {
-	background: radial-gradient(rgba(0, 0, 0, 0.096) 2px, transparent 3px) !important;
-	background-size: 15px 15px !important;
+	transform: scale(1.2);
 }
 
 .row_card_account .profile_col_visible:hover .title_white h5 {
@@ -54,6 +61,7 @@
 
 .row_card_account .profile_col:hover {
 	background-color: #ffd300 !important;
+	transform: scale(1.2);
 }
 .row_last_col {
 	grid-row-end: -1;
@@ -89,4 +97,9 @@
 
 .title_white {
 	width: 75%;
+}
+
+.empty_text {
+	height: 1.3em;
+	line-height: 1.25;
 }
