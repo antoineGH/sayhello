@@ -1,5 +1,6 @@
-import { CaretRightOutlined, ForwardOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
+import { CaretRightOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
+import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
 import { useState } from 'react'
 import './style.css'
 
@@ -20,13 +21,32 @@ interface Props {
 const EditProfile = ({ profiles }: Props) => {
 	const { Title } = Typography
 	const [visible, setVisible] = useState(false)
+	const [visibleEdit, setVisibleEdit] = useState(false)
+	const [confirmLoading, setConfirmLoading] = useState(false)
+	const [profile, setProfile] = useState(profiles[0])
 
 	const handleEditProfile = (profileID: number) => {
-		console.log(`handleEditProfile: ${profileID}`)
+		const profile = profiles.filter((profile) => profile.id === profileID)
+		setProfile(profile[0])
+		// setTimeout(() => {
+		setVisibleEdit(true)
+		// }, 100)
 	}
 
 	const handleSwitchProfile = (profileID: number) => {
 		console.log(`handleSwitchProfile: ${profileID}`)
+	}
+
+	const handleOk = () => {
+		setConfirmLoading(true)
+		setTimeout(() => {
+			setVisible(false)
+			setConfirmLoading(false)
+		}, 2000)
+	}
+
+	const handleCancel = () => {
+		setVisibleEdit(false)
 	}
 
 	return (
@@ -89,6 +109,13 @@ const EditProfile = ({ profiles }: Props) => {
 					})}
 				</Row>
 			</Card>
+			<ModalEditProfile
+				profile={profile}
+				visible={visibleEdit}
+				handleCancel={handleCancel}
+				handleOk={handleOk}
+				confirmLoading={confirmLoading}
+			/>
 		</div>
 	)
 }
