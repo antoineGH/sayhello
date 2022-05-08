@@ -1,7 +1,7 @@
-import { CaretRightOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
-import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
-import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
 import { useState } from 'react'
+import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
+import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
+import { CaretRightOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
 import './style.css'
 
 interface Profile {
@@ -28,9 +28,7 @@ const EditProfile = ({ profiles }: Props) => {
 	const handleEditProfile = (profileID: number) => {
 		const profile = profiles.filter((profile) => profile.id === profileID)
 		setProfile(profile[0])
-		// setTimeout(() => {
 		setVisibleEdit(true)
-		// }, 100)
 	}
 
 	const handleSwitchProfile = (profileID: number) => {
