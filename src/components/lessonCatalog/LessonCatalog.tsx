@@ -15,6 +15,7 @@ const LessonCatalog = () => {
 			difficulty: 2,
 			completed: true,
 			courseID: 1,
+			courseName: 'Course 1',
 		},
 		{
 			lessonID: 2,
@@ -24,6 +25,7 @@ const LessonCatalog = () => {
 			difficulty: 4,
 			completed: true,
 			courseID: 1,
+			courseName: 'Course 1',
 		},
 		{
 			lessonID: 3,
@@ -33,6 +35,7 @@ const LessonCatalog = () => {
 			difficulty: 5,
 			completed: false,
 			courseID: 2,
+			courseName: 'Course 2',
 		},
 		{
 			lessonID: 4,
@@ -42,6 +45,7 @@ const LessonCatalog = () => {
 			difficulty: 5,
 			completed: false,
 			courseID: 3,
+			courseName: 'Course 3',
 		},
 	]
 
@@ -67,6 +71,7 @@ const LessonCatalog = () => {
 							difficulty={lesson.difficulty}
 							completed={lesson.completed}
 							courseID={lesson.courseID}
+							courseName={lesson.courseName}
 							handleLesson={handleStartLesson}
 						/>
 					</Card>

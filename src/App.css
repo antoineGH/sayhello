@@ -382,6 +382,19 @@ h4.ant-typography,
 	box-shadow: none !important;
 }
 
+.btn_disabled {
+	min-width: 40px;
+	height: 40px;
+	font-family: 'Apercu-Pro-Bold';
+	font-size: 1rem;
+	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+	background: #3a10e5;
+	color: white;
+	border-radius: 0.2rem;
+	transition: background-color 400ms;
+	border: none;
+}
+
 .link_heavy {
 	font-family: 'Apercu-Pro-Bold';
 	font-size: 1rem;

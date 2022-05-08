@@ -88,11 +88,13 @@ const QuizSummary = ({
 					}}
 					className='btn_quiz_col'>
 					{score !== -1 ? (
-						<Tooltip title={`${quizName} completed`}>
-							<CheckSquareOutlined className='checkedLesson' />
-						</Tooltip>
+						<div>
+							<Button disabled className='btn_disabled'>
+								Completed
+							</Button>
+						</div>
 					) : (
-						<Button className='btn_quiz' style={{ marginTop: '1rem' }} onClick={() => handleQuiz(quizID)}>
+						<Button className='btn_quiz' onClick={() => handleQuiz(quizID)}>
 							Take Quiz
 						</Button>
 					)}
