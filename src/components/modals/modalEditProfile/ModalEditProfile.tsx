@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { UploadOutlined, UserOutlined } from '@ant-design/icons'
 import { Avatar, Button, Col, Form, Input, Modal, Row, Upload } from 'antd'
 import './style.css'
 import { formValueSuccessLogin } from 'types/form'
-import React from 'react'
 
 interface Profile {
 	id: number
@@ -23,15 +22,14 @@ interface Props {
 
 const ModalEditProfile = ({ profile, visible, confirmLoading, handleOk, handleCancel }: Props) => {
 	const [username, setUsername] = useState('')
-	const inputEl = useRef(null)
-	useEffect(() => {
-		console.log('trigger useEffect profile changed')
-		setUsername(profile.name)
-		// valueRef.current.value = profile.name
-		inputEl.current.focus()
-	}, [profile.name])
 
-	// BUG:  SOLUTION UPDATE FORM, RESET WITH USEEFFECT
+	useEffect(() => {
+		setUsername(profile.name)
+		const input = document.getElementById('edit-account_username') as HTMLInputElement
+		if (input) {
+			input.value = username
+		}
+	}, [profile, username])
 
 	return (
 		<Modal
@@ -60,12 +58,7 @@ const ModalEditProfile = ({ profile, visible, confirmLoading, handleOk, handleCa
 					className='edit_firstname_row'
 					name='username'
 					rules={[{ required: true, message: 'Please input your username' }]}>
-					<Input
-						ref={inputEl}
-						className='edit_firstname'
-						onChange={(e) => setUsername(e.target.value)}
-						value={username}
-					/>
+					<Input className='edit_firstname' onChange={(e) => setUsername(e.target.value)} value={username} />
 				</Form.Item>
 			</Form>
 		</Modal>
