@@ -27,60 +27,75 @@ const QuizSummary = ({
 	return (
 		<>
 			<Row>
-				<Col>
-					<div className='ant-statistic-title'>QUIZ</div>
+				<Col span={22}>
+					<Row>
+						<Col>
+							<div className='ant-statistic-title'>QUIZ</div>
+						</Col>
+					</Row>
+					<Row>
+						<Col>
+							<Title level={4}>{quizName}</Title>
+						</Col>
+						{score !== -1 ? (
+							<Col span={1}>
+								<Tooltip title={`Completed: Score ${score}%`}>
+									<div className='circle'>
+										<TrophyOutlined className='trophy_elem' />
+									</div>
+								</Tooltip>
+							</Col>
+						) : (
+							''
+						)}
+					</Row>
+					<Row></Row>
+					<Row>
+						<Col span={4}>
+							<Link to={`/auth/lesson/${lessonID}`}>
+								<Statistic
+									className='stat_related'
+									title='Related to'
+									value={lessonName}
+									valueStyle={{ color: '#1890ff' }}
+								/>
+							</Link>
+						</Col>
+						<Col span={4}>
+							<Statistic
+								className='stat_course_lower'
+								title='Contains'
+								value={numberQuestion}
+								suffix='Questions'
+							/>
+						</Col>
+						<Col span={4}>
+							<Statistic
+								className='stat_course_lower'
+								title='Difficulty'
+								value={difficulty}
+								suffix='/10'
+							/>
+						</Col>
+					</Row>
 				</Col>
-				{score !== -1 ? (
-					<Col span={1}>
-						<Tooltip title={`Completed: Score ${score}%`}>
-							<TrophyOutlined style={{ color: 'gold', fontSize: '1.1rem', marginLeft: '0.3rem' }} />
+				<Col
+					span={2}
+					style={{
+						display: 'flex',
+						justifyContent: 'flex-end',
+						alignItems: 'center',
+					}}
+					className='btn_quiz_col'>
+					{score !== -1 ? (
+						<Tooltip title={`${quizName} completed`}>
+							<CheckSquareOutlined className='checkedLesson' />
 						</Tooltip>
-					</Col>
-				) : (
-					''
-				)}
-				<Col span={1} offset={21} style={{ justifyContent: 'center', display: 'flex' }}>
-					<Tooltip title={score !== 0 ? `${quizName} completed` : `${quizName} not completed`}>
-						{score !== -1 && <CheckSquareOutlined className='checkedLesson' />}
-					</Tooltip>
-				</Col>
-			</Row>
-			<Row>
-				<Col span={2}>
-					<Title level={4}>{quizName}</Title>
-				</Col>
-			</Row>
-			<Row></Row>
-			<Row>
-				<Col span={4}>
-					<Link to={`/auth/lesson/${lessonID}`}>
-						<Statistic
-							className='stat_related'
-							title='Related to'
-							value={lessonName}
-							valueStyle={{ color: '#1890ff' }}
-						/>
-					</Link>
-				</Col>
-				<Col span={4}>
-					<Statistic
-						className='stat_course_lower'
-						title='Contains'
-						value={numberQuestion}
-						suffix='Questions'
-					/>
-				</Col>
-				<Col span={4}>
-					<Statistic className='stat_course_lower' title='Difficulty' value={difficulty} suffix='/10' />
-				</Col>
-				<Col span={2} offset={10} className='col_course_summary_btn'>
-					<Button
-						className={score !== -1 ? 'btn_disabled' : ''}
-						style={{ marginTop: '1rem' }}
-						disabled={score !== -1}
-						onClick={() => handleQuiz(quizID)}>
-						{score !== -1 ? 'Completed' : 'Take Quiz'}
-					</Button>
+					) : (
+						<Button className='btn_quiz' style={{ marginTop: '1rem' }} onClick={() => handleQuiz(quizID)}>
+							Take Quiz
+						</Button>
+					)}
 				</Col>
 			</Row>
 		</>

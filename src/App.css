@@ -586,3 +586,21 @@ h4.ant-typography,
 	transition: all 0.3s;
 	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
 }
+
+.circle {
+	border-radius: 50%;
+	width: 1.7rem;
+	height: 1.7rem;
+	background-color: #3a10e5;
+	margin: auto;
+}
+
+.trophy_elem {
+	color: gold;
+	font-size: 1.1rem;
+	display: flex;
+	justify-content: center;
+	height: 100%;
+	align-items: center;
+	margin-top: 0.2rem;
+}
