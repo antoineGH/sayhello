@@ -37,12 +37,13 @@ const EditProfile = ({ profiles }: Props) => {
 		console.log(`handleSwitchProfile: ${profileID}`)
 	}
 
-	const handleOk = () => {
+	const handleOk = (username: String) => {
 		setConfirmLoading(true)
 		setTimeout(() => {
-			setVisible(false)
 			setConfirmLoading(false)
+			setVisibleEdit(false)
 		}, 2000)
+		console.log(`handleOk ${username}`)
 	}
 
 	const handleCancel = () => {

@@ -1,0 +1,18 @@
+.col_avatar,
+.col_upload {
+	display: flex !important;
+	justify-content: center;
+}
+
+.col_upload {
+	margin-top: 1.5rem;
+}
+
+.row_avatar {
+	display: flex;
+	justify-content: center;
+}
+
+.modal_edit_profile {
+	width: 357px !important;
+}
