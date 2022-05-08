@@ -88,6 +88,7 @@ const LessonSummary = ({
 						alignItems: 'center',
 					}}>
 					<Button
+						style={{ marginTop: '1rem' }}
 						className={completed ? 'btn_quiz btn_quiz_resume' : 'btn_quiz'}
 						onClick={() => handleLesson(lessonID)}>
 						{completed ? 'Resume' : 'Start'}

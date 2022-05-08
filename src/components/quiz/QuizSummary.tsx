@@ -89,12 +89,12 @@ const QuizSummary = ({
 					className='btn_quiz_col'>
 					{score !== -1 ? (
 						<div>
-							<Button disabled className='btn_disabled'>
+							<Button disabled className='btn_disabled' style={{ marginTop: '1rem' }}>
 								Completed
 							</Button>
 						</div>
 					) : (
-						<Button className='btn_quiz' onClick={() => handleQuiz(quizID)}>
+						<Button className='btn_quiz' onClick={() => handleQuiz(quizID)} style={{ marginTop: '1rem' }}>
 							Take Quiz
 						</Button>
 					)}
