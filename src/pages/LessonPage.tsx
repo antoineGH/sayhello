@@ -84,6 +84,7 @@ const LessonPage = () => {
 		duration: 1,
 		difficulty: 1,
 		course_id: 1,
+		course_name: 'Course 1',
 		completed: 0,
 		quizs: [
 			{
@@ -106,34 +107,8 @@ const LessonPage = () => {
 				</div></div></figure></figure> <p>When we do so, we should see a screen like that below pop up briefly and then disappear.</p> <figure><figure class="whtGallery pad-2" id="49976148docPartGal880007" role="group"><div class="gallery-layout"><div class="gallery-layout-container"><figure class="gal-mgb" data-index="0"><img src="https://img.wonderhowto.com/img/31/58/63524355438197/0/hack-like-pro-linux-basics-for-aspiring-hacker-part-14-mysql.w1456.jpg" alt="Hack Like a Pro: Linux Basics for the Aspiring Hacker, Part 14 (MySQL)" width="532" height="532" style="max-width:532px;height:auto;"/></figure></div></div></figure></figure> 
 				`,
 				lesson_id: 1,
-				wikipicture: [
-					{
-						id: 1,
-						description: 'Picure 1',
-						url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWFcAgfiF4wsowNxBzNU-5ql0Bhe6GzBfpoQ&usqp=CAU',
-						wikidata_id: 1,
-					},
-					{
-						id: 2,
-						description: 'Picure 2',
-						url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWFcAgfiF4wsowNxBzNU-5ql0Bhe6GzBfpoQ&usqp=CAU',
-						wikidata_id: 1,
-					},
-				],
-				wikivideo: [
-					{
-						id: 1,
-						description: 'Video 1',
-						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-						wikidata_id: 1,
-					},
-					{
-						id: 2,
-						description: 'Video 2',
-						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-						wikidata_id: 1,
-					},
-				],
+				wikipicture: [],
+				wikivideo: [],
 			},
 			{
 				id: 2,
@@ -141,34 +116,8 @@ const LessonPage = () => {
 				description: `<p>Now that our MySQL service is started, we can begin to use it. First, we need to authenticate ourselves by logging in.</p><p>Open a terminal and type:</p>
 				<code>mysql -u root -p</code><br/><br/>`,
 				lesson_id: 1,
-				wikipicture: [
-					{
-						id: 3,
-						description: 'Picure 3',
-						url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWFcAgfiF4wsowNxBzNU-5ql0Bhe6GzBfpoQ&usqp=CAU',
-						wikidata_id: 2,
-					},
-					{
-						id: 4,
-						description: 'Picure 4',
-						url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWFcAgfiF4wsowNxBzNU-5ql0Bhe6GzBfpoQ&usqp=CAU',
-						wikidata_id: 2,
-					},
-				],
-				wikivideo: [
-					{
-						id: 3,
-						description: 'Video 3',
-						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-						wikidata_id: 2,
-					},
-					{
-						id: 4,
-						description: 'Video 4',
-						url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-						wikidata_id: 2,
-					},
-				],
+				wikipicture: [],
+				wikivideo: [],
 			},
 		],
 	}

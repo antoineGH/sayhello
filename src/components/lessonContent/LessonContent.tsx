@@ -1,6 +1,7 @@
 import { CheckSquareOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import { Button, Col, Divider, Row, Statistic, Tooltip, Typography, Image, Card } from 'antd'
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 import './style.css'
 
 interface Quiz {
@@ -54,6 +55,7 @@ interface Lesson {
 	duration: number
 	difficulty: number
 	course_id: number
+	course_name: string
 	completed: number
 	quizs: Quizs
 	wikidatas: Wikidatas
@@ -104,27 +106,7 @@ const LessonContent = ({ lesson, lessons }: props) => {
 
 	return (
 		<>
-			<Row style={{ marginBottom: '2rem' }}>
-				<Col
-					span={12}
-					className='col_course_summary_btn'
-					style={{ display: 'flex', justifyContent: 'flex-start' }}>
-					<Button onClick={() => handleClickPrevious(lesson, lessons)}>
-						<LeftOutlined />
-						Previous
-					</Button>
-				</Col>
-				<Col
-					span={12}
-					style={{ display: 'flex', justifyContent: 'flex-end' }}
-					className='col_course_summary_btn'>
-					<Button onClick={() => handleClickNext(lesson, lessons)}>
-						Next
-						<RightOutlined />
-					</Button>
-				</Col>
-			</Row>
-			<Row>
+			<Row className='mt1'>
 				<Col span={22}>
 					<div className='ant-statistic-title'>LESSON</div>
 				</Col>
@@ -140,14 +122,24 @@ const LessonContent = ({ lesson, lessons }: props) => {
 				</Col>
 			</Row>
 
-			<Row className='mt1'>
-				<Col span={8}>
+			<Row className='mt1' style={{ marginBottom: '1rem' }}>
+				<Col span={3}>
+					<Link to={`/auth/lesson/${lesson.course_id}`}>
+						<Statistic
+							className='stat_related'
+							title='Related to'
+							value={lesson.course_name}
+							valueStyle={{ color: '#1890ff' }}
+						/>
+					</Link>
+				</Col>
+				<Col span={3}>
 					<Statistic className='stat_course_lower_teacher' title='Teacher' value={lesson.author} />
 				</Col>
-				<Col span={8}>
+				<Col span={3}>
 					<Statistic className='stat_course_lower' title='Duration' value={lesson.duration} suffix='h' />
 				</Col>
-				<Col span={8}>
+				<Col span={3}>
 					<Statistic
 						className='stat_course_lower'
 						title='Difficulty'
@@ -156,7 +148,6 @@ const LessonContent = ({ lesson, lessons }: props) => {
 					/>
 				</Col>
 			</Row>
-			<Divider dashed />
 
 			{lesson.wikidatas.map((wikidata, count) => {
 				let pictureDetails: pictureDetails = { id: 0, description: '', url: '' }
