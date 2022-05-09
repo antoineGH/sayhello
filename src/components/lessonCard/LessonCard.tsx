@@ -21,7 +21,14 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
 	const { Title } = Typography
 	return (
 		<>
-			<Col span={5} className={lesson.completed ? 'col_lesson_completed not' : 'uncompleted'}>
+			<Col
+				xs={24}
+				sm={24}
+				md={11}
+				lg={7}
+				xl={5}
+				xxl={5}
+				className={lesson.completed ? 'col_lesson_completed not' : 'uncompleted'}>
 				<Card
 					bordered={true}
 					className={

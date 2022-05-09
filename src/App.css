@@ -638,6 +638,15 @@ h4.ant-typography,
 	.btn_quiz_col {
 		justify-content: flex-start;
 	}
+
+	.col_arrow {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: rotate(90deg);
+		margin: auto;
+		margin-bottom: 1rem;
+	}
 }
 
 @media (max-width: 576px) {
@@ -666,9 +675,23 @@ h4.ant-typography,
 		margin-bottom: 0.5rem;
 	}
 
+	.card_course_content .ant-statistic {
+		margin-bottom: 0.5rem;
+	}
+
 	.card_course .ant-statistic-title,
 	.card_lesson_summary .ant-statistic-title,
+	.card_course_content .ant-statistic-title,
+	.card_course_summary .ant-statistic-title,
 	.card_quiz_summary .ant-statistic-title {
 		margin-bottom: 0rem;
+	}
+
+	.row_statistic {
+		margin-left: 0.6rem;
+	}
+
+	.row_statistic_lesson {
+		margin-left: 0.2rem;
 	}
 }

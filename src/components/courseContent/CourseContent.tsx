@@ -1,5 +1,5 @@
 import { CheckSquareOutlined } from '@ant-design/icons'
-import { Col, Divider, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
+import { Col, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
 import LessonCard from 'components/lessonCard/LessonCard'
 import { useNavigate } from 'react-router'
 import './style.css'
@@ -66,13 +66,17 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 			<Row>
 				<Col span={24}>
 					{tags.map((tag) => {
-						return <Tag key={tag}>{tag}</Tag>
+						return (
+							<Tag key={tag} className='tag_course'>
+								{tag}
+							</Tag>
+						)
 					})}
 				</Col>
 			</Row>
 
-			<Row style={{ marginTop: '1rem' }}>
-				<Col span={6}>
+			<Row style={{ marginTop: '1rem', marginBottom: '1rem' }}>
+				<Col xs={{ span: 24, order: 4 }} sm={8} md={6} lg={4}>
 					<Statistic
 						className='stat_course_lower'
 						title='Contains'
@@ -80,10 +84,10 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 						suffix={getContains(course.numberLesson, course.numberQuiz)}
 					/>
 				</Col>
-				<Col span={6}>
+				<Col xs={24} sm={8} md={6} lg={4}>
 					<Statistic className='stat_course_lower' title='Duration' value={course.duration} suffix='h' />
 				</Col>
-				<Col span={6}>
+				<Col xs={24} sm={8} md={6} lg={4}>
 					<Statistic
 						className='stat_course_lower'
 						title='Difficulty'
@@ -92,7 +96,6 @@ const CourseContent = ({ course, tags, lessons }: props) => {
 					/>
 				</Col>
 			</Row>
-			<Divider dashed />
 			<Row className='row_lesson'>
 				{lessons.map((lesson, count) => {
 					count++

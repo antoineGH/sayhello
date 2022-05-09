@@ -62,7 +62,7 @@ const CourseCatalog = () => {
 			{courses.map((course, count) => {
 				count++
 				return (
-					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }}>
+					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }} className='card_course_summary'>
 						<CourseSummary
 							courseID={course.courseID}
 							courseName={course.courseName}

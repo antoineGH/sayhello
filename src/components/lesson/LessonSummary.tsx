@@ -54,7 +54,7 @@ const LessonSummary = ({
 							''
 						)}
 					</Row>
-					<Row>
+					<Row className='row_statistic_lesson'>
 						<Col xs={{ span: 24, order: 4 }} sm={8} md={6} lg={4}>
 							<Link to={`/auth/course/${courseID}`}>
 								<Statistic

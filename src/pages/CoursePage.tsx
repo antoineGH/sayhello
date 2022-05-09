@@ -88,7 +88,10 @@ const CoursePage = () => {
 				title='Course'
 				subTitle='Course Summary'
 			/>
-			<Card bordered={false} style={{ marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem' }}>
+			<Card
+				bordered={false}
+				style={{ marginLeft: '1rem', marginRight: '1rem', marginBottom: '1rem' }}
+				className='card_course_content'>
 				<CourseContent course={course} tags={tags} lessons={lessons} />
 			</Card>
 		</div>
