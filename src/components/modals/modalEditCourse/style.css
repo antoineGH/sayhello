@@ -129,10 +129,13 @@ div > .ant-checkbox-wrapper-checked {
 	justify-content: center;
 }
 
+.input_goal .ant-input-number-input-wrap {
+	width: 100%;
+}
 .input_goal {
 	font-family: 'Apercu-Pro-Mono';
 	color: rgba(0, 0, 0, 0.85);
-	font-size: 1.3rem !important;
+	font-size: 1rem !important;
 	font-variant: tabular-nums;
 	line-height: 1.5715;
 	font-weight: bold;

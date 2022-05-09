@@ -62,6 +62,7 @@ const ModalEditGoals = () => {
 							value={value}
 							formatter={(value) => `${value} Days`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
 							onChange={onChange}
+							style={{ width: '100%' }}
 							className='input_goal'
 						/>
 					</Col>
