@@ -45,7 +45,7 @@ const ModalEditGoals = () => {
 				confirmLoading={confirmLoading}
 				onCancel={handleCancel}>
 				<Row className='row_slider'>
-					<Col span={14} style={{ marginRight: '1rem' }}>
+					<Col xs={24} sm={14} style={{ marginRight: '1rem' }}>
 						<Slider
 							min={0}
 							max={7}
@@ -55,7 +55,7 @@ const ModalEditGoals = () => {
 							className='slider_goal'
 						/>
 					</Col>
-					<Col span={6}>
+					<Col xs={8} sm={6}>
 						<InputNumber
 							min={0}
 							max={7}
