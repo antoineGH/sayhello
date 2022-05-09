@@ -606,6 +606,11 @@ h4.ant-typography,
 	height: 1.7rem;
 	background-color: #3a10e5;
 	margin: auto;
+	transition: all 0.2s linear;
+}
+
+.circle:hover {
+	transform: scale(1.3);
 }
 
 .trophy_elem {
