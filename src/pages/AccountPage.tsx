@@ -30,14 +30,14 @@ const AccountPage = () => {
 			{
 				id: 3,
 				name: 'Bastien',
-				avatar: 'https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png',
+				avatar: 'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
 				age: 26,
 				user_id: 2,
 			},
 			{
 				id: 4,
-				name: 'Thierry',
-				avatar: 'https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png',
+				name: 'Max',
+				avatar: 'https://www.gravatar.com/userimage/120424681/5e05bb39aae93745809bf0a293fdd945?size=120',
 				age: 51,
 				user_id: 2,
 			},
