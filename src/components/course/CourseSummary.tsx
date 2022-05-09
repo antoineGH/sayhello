@@ -1,4 +1,4 @@
-import { CheckSquareOutlined, TrophyOutlined } from '@ant-design/icons'
+import { TrophyOutlined } from '@ant-design/icons'
 import { Button, Col, Progress, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
 
 interface Props {

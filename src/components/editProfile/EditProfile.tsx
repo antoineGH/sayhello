@@ -16,9 +16,10 @@ type Profiles = Profile[]
 
 interface Props {
 	profiles: Profiles
+	isModal: boolean
 }
 
-const EditProfile = ({ profiles }: Props) => {
+const EditProfile = ({ profiles, isModal }: Props) => {
 	const { Title } = Typography
 	const [visible, setVisible] = useState(false)
 	const [visibleEdit, setVisibleEdit] = useState(false)
@@ -48,8 +49,10 @@ const EditProfile = ({ profiles }: Props) => {
 		setVisibleEdit(false)
 	}
 
+	console.log(isModal)
+
 	return (
-		<div className='account_main'>
+		<div className={isModal ? 'account_main edit_profile_modal' : 'account_main'}>
 			<Row>
 				<Col>
 					<Title level={3}>My Profiles</Title>
@@ -62,7 +65,6 @@ const EditProfile = ({ profiles }: Props) => {
 			</Row>
 			<Card
 				bordered={false}
-				style={{ marginBottom: '1rem', height: '400px' }}
 				className='card_account_information'
 				title={visible ? 'Edit Profile' : 'Select Profile'}>
 				<Row className='row_card_account'>

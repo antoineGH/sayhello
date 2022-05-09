@@ -56,7 +56,7 @@ const AccountPage = () => {
 					<EditAccount user={user} />
 				</Col>
 				<Col span={16}>
-					<EditProfile profiles={user.profiles} />
+					<EditProfile profiles={user.profiles} isModal={false} />
 				</Col>
 			</Row>
 		</>

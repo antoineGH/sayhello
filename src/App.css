@@ -617,3 +617,7 @@ h4.ant-typography,
 	align-items: center;
 	margin-top: 0.2rem;
 }
+
+.modal_switch_profile {
+	width: 802px !important;
+}

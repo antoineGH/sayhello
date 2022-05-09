@@ -1,18 +1,68 @@
-import { UserOutlined } from '@ant-design/icons'
-import { Avatar, Button, Col, Dropdown, Menu, Row, Typography, Image } from 'antd'
+import { useState } from 'react'
 import { useNavigate } from 'react-router'
-
-import MenuItem from './MenuItem'
 import SearchBar from './Search'
+import MenuItem from './MenuItem'
+import { Avatar, Button, Col, Dropdown, Menu, Row, Image } from 'antd'
+import { UserOutlined } from '@ant-design/icons'
+import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
 
 const TopMenu = () => {
-	const { Title } = Typography
 	const navigate = useNavigate()
+	const [visible, setVisible] = useState(false)
+
+	const handleCancel = (): void => {
+		setVisible(false)
+	}
+
+	const handleOk = (profileID: number): void => {
+		console.log(`handleOk ${profileID}`)
+	}
+
+	const user = {
+		id: 1,
+		email: 'antoine.ratat@gmail.com',
+		password: 'test',
+		first_name: 'Antoine',
+		last_name: 'Ratat',
+		date_created: '2022-02-27T18:45:43.511Z',
+		profiles: [
+			{
+				id: 1,
+				name: 'Antoine',
+				avatar: 'https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png',
+				age: 31,
+				user_id: 1,
+			},
+			{
+				id: 2,
+				name: 'Carrie',
+				avatar: 'https://secure.gravatar.com/userimage/120424681/b77218678307e7fb0e7afce0df04b52c?size=400',
+				age: 54,
+				user_id: 1,
+			},
+			{
+				id: 3,
+				name: 'Bastien',
+				avatar: 'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
+				age: 26,
+				user_id: 2,
+			},
+			{
+				id: 4,
+				name: 'Max',
+				avatar: 'https://www.gravatar.com/userimage/120424681/5e05bb39aae93745809bf0a293fdd945?size=120',
+				age: 51,
+				user_id: 2,
+			},
+		],
+	}
 
 	const menu = (
 		<Menu>
 			<Menu.Item key='1'>
-				<Button type='text'>Switch Profil</Button>
+				<Button type='text' onClick={() => setVisible(true)}>
+					Switch Profil
+				</Button>
 			</Menu.Item>
 			<Menu.Item key='2'>
 				<Button onClick={() => navigate('/auth/account')} type='text'>
@@ -52,6 +102,7 @@ const TopMenu = () => {
 					</Dropdown>
 				</Col>
 			</Row>
+			<ModalSwitchProfile visible={visible} handleCancel={handleCancel} profiles={user.profiles} />
 		</>
 	)
 }

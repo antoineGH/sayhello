@@ -104,3 +104,24 @@
 	height: 1.3em;
 	line-height: 1.25;
 }
+
+.edit_profile_modal .ant-card-head-wrapper,
+.edit_profile_modal .ant-card-head,
+.edit_profile_modal > .ant-row {
+	display: none;
+}
+
+.edit_profile_modal {
+	min-height: 0px !important;
+}
+
+.card_account_information {
+	margin-bottom: 1rem;
+	height: 400px;
+}
+
+.edit_profile_modal .card_account_information {
+	height: 100% !important;
+	margin: 0rem;
+	padding: 0rem;
+}
