@@ -35,7 +35,7 @@ const CourseSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={20}>
+				<Col xs={24} sm={20}>
 					<Row>
 						<Col>
 							<div className='ant-statistic-title'>COURSE</div>
@@ -58,9 +58,13 @@ const CourseSummary = ({
 						)}
 					</Row>
 					<Row>
-						<Col>
+						<Col span={24}>
 							{tags.map((tag) => {
-								return <Tag key={tag}>{tag}</Tag>
+								return (
+									<Tag className='tag_course' key={tag}>
+										{tag}
+									</Tag>
+								)
 							})}
 						</Col>
 					</Row>
@@ -74,8 +78,8 @@ const CourseSummary = ({
 							/>
 						)}
 					</Row>
-					<Row style={{ marginTop: '1rem' }}>
-						<Col span={6}>
+					<Row style={{ marginTop: '1rem' }} className='row_statistic'>
+						<Col xs={24} sm={6}>
 							<Statistic
 								className='stat_course_lower'
 								title='Contains'
@@ -83,10 +87,10 @@ const CourseSummary = ({
 								suffix={getContains(numberLesson, numberQuiz)}
 							/>
 						</Col>
-						<Col span={6}>
+						<Col xs={24} sm={6}>
 							<Statistic className='stat_course_lower' title='Duration' value={duration} suffix='h' />
 						</Col>
-						<Col span={6}>
+						<Col xs={24} sm={6}>
 							<Statistic
 								className='stat_course_lower'
 								title='Difficulty'
@@ -96,14 +100,7 @@ const CourseSummary = ({
 						</Col>
 					</Row>
 				</Col>
-				<Col
-					span={4}
-					className='btn_quiz_col'
-					style={{
-						display: 'flex',
-						justifyContent: 'flex-end',
-						alignItems: 'center',
-					}}>
+				<Col xs={24} md={4} className='btn_quiz_col'>
 					<Button
 						className={completed === 100 ? 'btn_quiz btn_quiz_resume' : 'btn_quiz'}
 						style={{ marginTop: '1rem' }}

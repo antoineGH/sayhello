@@ -62,7 +62,7 @@ const LessonCatalog = () => {
 			{lessons.map((lesson, count) => {
 				count++
 				return (
-					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }}>
+					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }} className='card_lesson_summary'>
 						<LessonSummary
 							lessonID={lesson.lessonID}
 							lessonName={lesson.lessonName}

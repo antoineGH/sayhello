@@ -14,20 +14,19 @@ const Home = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col span={16}>
+				<Col xs={24} xl={16}>
 					<CourseList />
 				</Col>
-				<Col span={8}>
+				<Col xs={24} xl={8}>
 					<Row>
-						<Col span={24}>
+						<Col span={24} sm={12} xl={24}>
 							<Goal />
 						</Col>
-					</Row>
-					<Row>
-						<Col span={24}>
+						<Col xs={24} sm={12} xl={24}>
 							<Score />
 						</Col>
 					</Row>
+					<Row></Row>
 				</Col>
 			</Row>
 		</>

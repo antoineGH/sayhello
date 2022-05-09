@@ -1,8 +1,7 @@
-import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
-import { CheckSquareOutlined, TrophyOutlined } from '@ant-design/icons'
-import './style.css'
 import { Link } from 'react-router-dom'
-import Course from 'pages/Course'
+import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
+import { TrophyOutlined } from '@ant-design/icons'
+import './style.css'
 
 interface Props {
 	lessonID: number
@@ -31,7 +30,7 @@ const LessonSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={22}>
+				<Col xs={24} sm={20}>
 					<Row>
 						<Col>
 							<div className='ant-statistic-title'>
@@ -44,7 +43,7 @@ const LessonSummary = ({
 							<Title level={4}>{lessonName}</Title>
 						</Col>
 						{completed ? (
-							<Col span={1}>
+							<Col xs={3} md={2} lg={1}>
 								<Tooltip title='Completed'>
 									<div className='circle'>
 										<TrophyOutlined className='trophy_elem' />
@@ -56,7 +55,7 @@ const LessonSummary = ({
 						)}
 					</Row>
 					<Row>
-						<Col span={4}>
+						<Col xs={{ span: 24, order: 4 }} sm={8} md={6} lg={4}>
 							<Link to={`/auth/course/${courseID}`}>
 								<Statistic
 									className='stat_related'
@@ -66,10 +65,10 @@ const LessonSummary = ({
 								/>
 							</Link>
 						</Col>
-						<Col span={4}>
+						<Col xs={24} sm={8} md={6} lg={4}>
 							<Statistic className='stat_course_lower' title='Duration' value={duration} suffix='h' />
 						</Col>
-						<Col span={4}>
+						<Col xs={24} sm={8} md={6} lg={4}>
 							<Statistic
 								className='stat_course_lower'
 								title='Difficulty'
@@ -79,14 +78,7 @@ const LessonSummary = ({
 						</Col>
 					</Row>
 				</Col>
-				<Col
-					span={2}
-					className='btn_quiz_col'
-					style={{
-						display: 'flex',
-						justifyContent: 'flex-end',
-						alignItems: 'center',
-					}}>
+				<Col xs={24} md={4} className='btn_quiz_col'>
 					<Button
 						style={{ marginTop: '1rem' }}
 						className={completed ? 'btn_quiz btn_quiz_resume' : 'btn_quiz'}

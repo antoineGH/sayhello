@@ -64,7 +64,7 @@ const CourseList = () => {
 			{courses.map((course, count) => {
 				count++
 				return (
-					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }}>
+					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }} className='card_course'>
 						<CourseSummary
 							key={count}
 							courseID={course.courseID}

@@ -27,7 +27,7 @@ const QuizSummary = ({
 	return (
 		<>
 			<Row>
-				<Col span={22}>
+				<Col xs={24} sm={20}>
 					<Row>
 						<Col>
 							<div className='ant-statistic-title'>QUIZ</div>
@@ -38,7 +38,7 @@ const QuizSummary = ({
 							<Title level={4}>{quizName}</Title>
 						</Col>
 						{score !== -1 ? (
-							<Col span={1}>
+							<Col xs={3} md={2} lg={1}>
 								<Tooltip title={`Completed: Score ${score}%`}>
 									<div className='circle'>
 										<TrophyOutlined className='trophy_elem' />
@@ -51,7 +51,7 @@ const QuizSummary = ({
 					</Row>
 					<Row></Row>
 					<Row>
-						<Col span={4}>
+						<Col xs={{ span: 24, order: 4 }} sm={8} md={6} lg={4}>
 							<Link to={`/auth/lesson/${lessonID}`}>
 								<Statistic
 									className='stat_related'
@@ -61,7 +61,7 @@ const QuizSummary = ({
 								/>
 							</Link>
 						</Col>
-						<Col span={4}>
+						<Col xs={24} sm={8} md={6} lg={4}>
 							<Statistic
 								className='stat_course_lower'
 								title='Contains'
@@ -69,7 +69,7 @@ const QuizSummary = ({
 								suffix='Questions'
 							/>
 						</Col>
-						<Col span={4}>
+						<Col xs={24} sm={8} md={6} lg={4}>
 							<Statistic
 								className='stat_course_lower'
 								title='Difficulty'
@@ -79,14 +79,7 @@ const QuizSummary = ({
 						</Col>
 					</Row>
 				</Col>
-				<Col
-					span={2}
-					style={{
-						display: 'flex',
-						justifyContent: 'flex-end',
-						alignItems: 'center',
-					}}
-					className='btn_quiz_col'>
+				<Col xs={24} md={4} className='btn_quiz_col'>
 					{score !== -1 ? (
 						<div>
 							<Button disabled className='btn_disabled' style={{ marginTop: '1rem' }}>

@@ -58,7 +58,7 @@ const QuizCatalog = () => {
 			{quizzes.map((quiz, count) => {
 				count++
 				return (
-					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }}>
+					<Card key={count} bordered={false} style={{ marginBottom: '1rem' }} className='card_quiz_summary'>
 						<QuizSummary
 							quizID={quiz.quizID}
 							quizName={quiz.quizName}

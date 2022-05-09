@@ -339,6 +339,12 @@ h4.ant-typography,
 	border: none;
 }
 
+.btn_quiz_col {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
 #login .btn_login:active,
 #register .btn_register:active,
 #forgot .btn_forgot:active,
@@ -626,4 +632,43 @@ h4.ant-typography,
 
 .modal_switch_profile {
 	width: 802px !important;
+}
+
+@media (max-width: 768px) {
+	.btn_quiz_col {
+		justify-content: flex-start;
+	}
+}
+
+@media (max-width: 576px) {
+	.btn_quiz_col {
+		justify-content: center;
+	}
+
+	.row_statistic {
+		display: flex;
+		justify-content: center;
+	}
+
+	.tag_course {
+		margin-bottom: 0.5rem;
+	}
+
+	.card_course .ant-statistic {
+		margin-bottom: 0.5rem;
+	}
+
+	.card_lesson_summary .ant-statistic {
+		margin-bottom: 0.5rem;
+	}
+
+	.card_quiz_summary .ant-statistic {
+		margin-bottom: 0.5rem;
+	}
+
+	.card_course .ant-statistic-title,
+	.card_lesson_summary .ant-statistic-title,
+	.card_quiz_summary .ant-statistic-title {
+		margin-bottom: 0rem;
+	}
 }
