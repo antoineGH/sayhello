@@ -14,8 +14,8 @@ const TopMenu = () => {
 		setVisible(false)
 	}
 
-	const handleOk = (profileID: number): void => {
-		console.log(`handleOk ${profileID}`)
+	const handleSwitchProfile = (profileID: number): void => {
+		console.log(`handleSwitchProfile ProfileID: ${profileID}`)
 	}
 
 	const user = {
@@ -102,7 +102,12 @@ const TopMenu = () => {
 					</Dropdown>
 				</Col>
 			</Row>
-			<ModalSwitchProfile visible={visible} handleCancel={handleCancel} profiles={user.profiles} />
+			<ModalSwitchProfile
+				visible={visible}
+				handleSwitchProfile={handleSwitchProfile}
+				handleCancel={handleCancel}
+				profiles={user.profiles}
+			/>
 		</>
 	)
 }

@@ -44,6 +44,10 @@ const AccountPage = () => {
 		],
 	}
 
+	const handleSwitchProfile = (profileID: number) => {
+		console.log(`handleSwitchProfile ProfileID: ${profileID}`)
+	}
+
 	return (
 		<>
 			<Row>
@@ -56,7 +60,7 @@ const AccountPage = () => {
 					<EditAccount user={user} />
 				</Col>
 				<Col span={16}>
-					<EditProfile profiles={user.profiles} isModal={false} />
+					<EditProfile profiles={user.profiles} isModal={false} handleSwitchProfile={handleSwitchProfile} />
 				</Col>
 			</Row>
 		</>

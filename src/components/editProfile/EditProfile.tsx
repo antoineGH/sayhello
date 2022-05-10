@@ -16,10 +16,11 @@ type Profiles = Profile[]
 
 interface Props {
 	profiles: Profiles
+	handleSwitchProfile: (profileID: number) => void
 	isModal: boolean
 }
 
-const EditProfile = ({ profiles, isModal }: Props) => {
+const EditProfile = ({ profiles, handleSwitchProfile, isModal }: Props) => {
 	const { Title } = Typography
 	const [visible, setVisible] = useState(false)
 	const [visibleEdit, setVisibleEdit] = useState(false)
@@ -30,10 +31,6 @@ const EditProfile = ({ profiles, isModal }: Props) => {
 		const profile = profiles.filter((profile) => profile.id === profileID)
 		setProfile(profile[0])
 		setVisibleEdit(true)
-	}
-
-	const handleSwitchProfile = (profileID: number) => {
-		console.log(`handleSwitchProfile: ${profileID}`)
 	}
 
 	const handleOk = (username: String) => {
@@ -48,8 +45,6 @@ const EditProfile = ({ profiles, isModal }: Props) => {
 	const handleCancel = () => {
 		setVisibleEdit(false)
 	}
-
-	console.log(isModal)
 
 	return (
 		<div className={isModal ? 'account_main edit_profile_modal' : 'account_main'}>

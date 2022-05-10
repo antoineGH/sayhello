@@ -13,11 +13,12 @@ type Profiles = Profile[]
 
 interface Props {
 	visible: boolean
+	handleSwitchProfile: (profileID: number) => void
 	handleCancel: () => void
 	profiles: Profiles
 }
 
-const ModalSwitchProfile = ({ visible, handleCancel, profiles }: Props) => {
+const ModalSwitchProfile = ({ visible, handleSwitchProfile, handleCancel, profiles }: Props) => {
 	return (
 		<Modal
 			className='modal_switch_profile'
@@ -25,7 +26,7 @@ const ModalSwitchProfile = ({ visible, handleCancel, profiles }: Props) => {
 			visible={visible}
 			onCancel={handleCancel}
 			footer={null}>
-			<EditProfile profiles={profiles} isModal={true} />
+			<EditProfile profiles={profiles} isModal={true} handleSwitchProfile={handleSwitchProfile} />
 		</Modal>
 	)
 }
