@@ -16,6 +16,11 @@ const TopMenu = () => {
 
 	const handleSwitchProfile = (profileID: number): void => {
 		console.log(`handleSwitchProfile ProfileID: ${profileID}`)
+		setVisible(false)
+	}
+
+	const handleLogout = (): void => {
+		console.log('handleLogout')
 	}
 
 	const user = {
@@ -71,7 +76,9 @@ const TopMenu = () => {
 			</Menu.Item>
 			<Menu.Divider />
 			<Menu.Item key='3'>
-				<Button type='text'>Logout</Button>
+				<Button onClick={handleLogout} type='text'>
+					Logout
+				</Button>
 			</Menu.Item>
 		</Menu>
 	)
