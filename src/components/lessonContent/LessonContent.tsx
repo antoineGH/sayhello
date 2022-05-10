@@ -1,5 +1,5 @@
 import { CheckSquareOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
-import { Button, Col, Divider, Row, Statistic, Tooltip, Typography, Image, Card } from 'antd'
+import { Button, Col, Row, Statistic, Tooltip, Typography, Image, Card } from 'antd'
 import { useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import './style.css'

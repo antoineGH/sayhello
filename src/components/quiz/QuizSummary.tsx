@@ -49,8 +49,8 @@ const QuizSummary = ({
 							''
 						)}
 					</Row>
-					<Row className='row_statistic_lesson'>
-						<Col xs={{ span: 24, order: 4 }} sm={8} md={6} lg={4}>
+					<Row className='row_statistic_lesson' gutter={[0, 8]}>
+						<Col xs={{ span: 12, order: 4 }} sm={8} md={6} lg={4}>
 							<Link to={`/auth/lesson/${lessonID}`}>
 								<Statistic
 									className='stat_related'
@@ -60,7 +60,7 @@ const QuizSummary = ({
 								/>
 							</Link>
 						</Col>
-						<Col xs={24} sm={8} md={6} lg={4}>
+						<Col xs={12} sm={8} md={6} lg={4}>
 							<Statistic
 								className='stat_course_lower'
 								title='Contains'
@@ -68,7 +68,7 @@ const QuizSummary = ({
 								suffix='Questions'
 							/>
 						</Col>
-						<Col xs={24} sm={8} md={6} lg={4}>
+						<Col xs={12} sm={8} md={6} lg={4}>
 							<Statistic
 								className='stat_course_lower'
 								title='Difficulty'

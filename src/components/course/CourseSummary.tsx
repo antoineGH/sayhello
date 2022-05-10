@@ -78,8 +78,8 @@ const CourseSummary = ({
 							/>
 						)}
 					</Row>
-					<Row style={{ marginTop: '1rem' }} className='row_statistic'>
-						<Col xs={24} sm={6}>
+					<Row style={{ marginTop: '.5rem' }} className='row_statistic' gutter={[0, 8]}>
+						<Col xs={12} sm={6}>
 							<Statistic
 								className='stat_course_lower'
 								title='Contains'
@@ -87,10 +87,10 @@ const CourseSummary = ({
 								suffix={getContains(numberLesson, numberQuiz)}
 							/>
 						</Col>
-						<Col xs={24} sm={6}>
+						<Col xs={12} sm={6}>
 							<Statistic className='stat_course_lower' title='Duration' value={duration} suffix='h' />
 						</Col>
-						<Col xs={24} sm={6}>
+						<Col xs={12} sm={6}>
 							<Statistic
 								className='stat_course_lower'
 								title='Difficulty'

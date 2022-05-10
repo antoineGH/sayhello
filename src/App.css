@@ -654,16 +654,11 @@ h4.ant-typography,
 		justify-content: center;
 	}
 
-	.row_statistic {
-		display: flex;
-		justify-content: center;
-	}
-
 	.tag_course {
 		margin-bottom: 0.5rem;
 	}
 
-	.card_course .ant-statistic {
+	/* .card_course .ant-statistic {
 		margin-bottom: 0.5rem;
 	}
 
@@ -677,7 +672,7 @@ h4.ant-typography,
 
 	.card_course_content .ant-statistic {
 		margin-bottom: 0.5rem;
-	}
+	} */
 
 	.card_course .ant-statistic-title,
 	.card_lesson_summary .ant-statistic-title,
