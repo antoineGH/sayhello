@@ -122,8 +122,8 @@ const LessonContent = ({ lesson, lessons }: props) => {
 				</Col>
 			</Row>
 
-			<Row className='mt1' style={{ marginBottom: '1rem' }}>
-				<Col span={3}>
+			<Row className='mt1' style={{ marginBottom: '1rem' }} gutter={[0, 8]}>
+				<Col xs={{ span: 12, order: 3 }} sm={9} md={{ span: 6, order: 4 }} lg={4} xl={3}>
 					<Link to={`/auth/lesson/${lesson.course_id}`}>
 						<Statistic
 							className='stat_related'
@@ -133,13 +133,13 @@ const LessonContent = ({ lesson, lessons }: props) => {
 						/>
 					</Link>
 				</Col>
-				<Col span={3}>
+				<Col xs={{ span: 12, order: 4 }} sm={9} md={{ span: 6, order: 3 }} lg={4} xl={3}>
 					<Statistic className='stat_course_lower_teacher' title='Teacher' value={lesson.author} />
 				</Col>
-				<Col span={3}>
+				<Col xs={{ span: 12, order: 1 }} sm={9} md={{ span: 6, order: 1 }} lg={4} xl={3}>
 					<Statistic className='stat_course_lower' title='Duration' value={lesson.duration} suffix='h' />
 				</Col>
-				<Col span={3}>
+				<Col xs={{ span: 12, order: 2 }} sm={9} md={{ span: 6, order: 1 }} lg={4} xl={3}>
 					<Statistic
 						className='stat_course_lower'
 						title='Difficulty'
@@ -206,18 +206,14 @@ const LessonContent = ({ lesson, lessons }: props) => {
 				)
 			})}
 
-			<Row>
-				<Col span={8} className='btn_quiz_col'>
+			<Row className='row_footer'>
+				<Col span={12} className='btn_quiz_col previous_arrow'>
 					<Button className='btn_quiz' onClick={() => handleClickPrevious(lesson, lessons)}>
 						<LeftOutlined />
 						Previous
 					</Button>
 				</Col>
-				<Col
-					span={8}
-					offset={8}
-					style={{ display: 'flex', justifyContent: 'flex-end' }}
-					className='btn_quiz_col'>
+				<Col span={12} style={{ display: 'flex', justifyContent: 'flex-end' }} className='btn_quiz_col'>
 					<Button className='btn_quiz' onClick={() => handleClickNext(lesson, lessons)}>
 						Next
 						<RightOutlined />

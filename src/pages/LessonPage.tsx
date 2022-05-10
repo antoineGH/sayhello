@@ -104,7 +104,10 @@ const LessonPage = () => {
 				title: 'Part 1',
 				description: `<p>This tutorial will be the fourtenth in the Linux for hackers series and will focus on the MySQL database. Although this is not strictly a Linux tutorial, MySQL is the database of choice on most Linux distributions. In addition, it is the most widely used database behind database driven web applications. This installment is critical to understand before we progress to hacking MySQL databases and before we hack web applications that use MySQL (which there are literally thousands).</p>
 				<p>Luckily, BackTrack has MySQL already installed (if you are using another distribution, you can usually download and install MySQL from the software repository) and has a graphical start and stop. Let's start our MySQL service.</p>
-				</div></div></figure></figure> <p>When we do so, we should see a screen like that below pop up briefly and then disappear.</p> <figure><figure class="whtGallery pad-2" id="49976148docPartGal880007" role="group"><div class="gallery-layout"><div class="gallery-layout-container"><figure class="gal-mgb" data-index="0"><img src="https://img.wonderhowto.com/img/31/58/63524355438197/0/hack-like-pro-linux-basics-for-aspiring-hacker-part-14-mysql.w1456.jpg" alt="Hack Like a Pro: Linux Basics for the Aspiring Hacker, Part 14 (MySQL)" width="532" height="532" style="max-width:532px;height:auto;"/></figure></div></div></figure></figure> 
+				</div></div></figure></figure> <p>When we do so, we should see a screen like that below pop up briefly and then disappear.</p> 
+				
+
+
 				`,
 				lesson_id: 1,
 				wikipicture: [],
