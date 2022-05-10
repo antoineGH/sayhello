@@ -174,9 +174,12 @@ const LessonContent = ({ lesson, lessons }: props) => {
 				})
 				return (
 					<Card key={count} bordered={true} className='card_lesson_content'>
-						<Row>
-							<Col>
-								<Title level={3}>{wikidata.title}</Title>
+						<Row className='row_title'>
+							<Col xs={24} md={14} lg={11}>
+								<div className='rectangle'></div>
+								<div className='title'>
+									<Title level={4}>{wikidata.title}</Title>
+								</div>
 							</Col>
 						</Row>
 						<Row className='row_wikidata'>
