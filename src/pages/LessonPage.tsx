@@ -106,8 +106,9 @@ const LessonPage = () => {
 				<p>Luckily, BackTrack has MySQL already installed (if you are using another distribution, you can usually download and install MySQL from the software repository) and has a graphical start and stop. Let's start our MySQL service.</p>
 				</div></div></figure></figure> <p>When we do so, we should see a screen like that below pop up briefly and then disappear.</p> 
 				
+				<img src="https://img.wonderhowto.com/img/31/58/63524355438197/0/hack-like-pro-linux-basics-for-aspiring-hacker-part-14-mysql.w1456.jpg" alt="Hack Like a Pro: Linux Basics for the Aspiring Hacker, Part 14 (MySQL)" width="532" height="532" style="max-width:532px;height:auto;"/> 
 
-
+				
 				`,
 				lesson_id: 1,
 				wikipicture: [],

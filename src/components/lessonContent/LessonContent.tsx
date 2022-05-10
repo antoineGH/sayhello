@@ -180,7 +180,7 @@ const LessonContent = ({ lesson, lessons }: props) => {
 							</Col>
 						</Row>
 						<Row className='row_wikidata'>
-							<Col>
+							<Col className='col_content'>
 								<div dangerouslySetInnerHTML={{ __html: wikidata.description }} />
 							</Col>
 						</Row>
