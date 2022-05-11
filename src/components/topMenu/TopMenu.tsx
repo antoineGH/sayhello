@@ -90,6 +90,8 @@ const TopMenu = () => {
 				<Col
 					style={{ background: 'yellow' }}
 					md={4}
+					lg={3}
+					xl={2}
 					onClick={() => navigate('/auth/home')}
 					className='col_logo'>
 					<ReactLogo />
@@ -101,8 +103,8 @@ const TopMenu = () => {
 					style={{ background: 'aqua' }}
 					className='col_search'
 					md={8}
-					lg={{ offset: 6, span: 5 }}
-					xl={{ offset: 8, span: 5 }}>
+					lg={{ offset: 7, span: 5 }}
+					xl={{ offset: 10, span: 5 }}>
 					<SearchBar />
 				</Col>
 				<Col style={{ background: 'green' }} className='col_avatar' md={2} lg={1}>
