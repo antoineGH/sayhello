@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import SearchBar from './Search'
 import MenuItem from './MenuItem'
+import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
+import { ReactComponent as ReactLogo } from './logo_sayHello.svg'
 import { Avatar, Button, Col, Dropdown, Menu, Row, Image } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
-import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
 
 const TopMenu = () => {
 	const navigate = useNavigate()
@@ -91,12 +92,7 @@ const TopMenu = () => {
 					md={4}
 					onClick={() => navigate('/auth/home')}
 					className='col_logo'>
-					{/* <Image
-						preview={false}
-						src='https://templars.guru/app/github/react_sayHello/logo-sayHello.png'
-						style={{ width: '84%' }}
-					/> */}
-					<p>sayHello</p>
+					<ReactLogo />
 				</Col>
 				<Col md={10} lg={8} xl={6} style={{ background: 'pink' }}>
 					<MenuItem />
