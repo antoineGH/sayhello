@@ -1,14 +1,17 @@
 import { Outlet } from 'react-router'
-import { Layout } from 'antd'
 import TopMenu from 'components/topMenu/TopMenu'
+import TopBarComponent from 'components/topBarComponent/TopBarComponent'
+import { Grid, Layout } from 'antd'
 
 const Auth = () => {
 	const { Header, Footer } = Layout
+	const { useBreakpoint } = Grid
+	const screens = useBreakpoint()
+	const md = screens?.md
+
 	return (
 		<>
-			<Header>
-				<TopMenu />
-			</Header>
+			<Header className='header'>{md ? <TopMenu /> : <TopBarComponent />}</Header>
 			<Outlet />
 			<Footer style={{ textAlign: 'center', backgroundColor: '#d4dadf' }}></Footer>
 		</>

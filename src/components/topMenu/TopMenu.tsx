@@ -85,21 +85,31 @@ const TopMenu = () => {
 
 	return (
 		<>
-			<Row>
-				<Col span={2} onClick={() => navigate('/auth/home')} className='col_logo'>
-					<Image
+			<Row className='header_row'>
+				<Col
+					style={{ background: 'yellow' }}
+					md={4}
+					onClick={() => navigate('/auth/home')}
+					className='col_logo'>
+					{/* <Image
 						preview={false}
 						src='https://templars.guru/app/github/react_sayHello/logo-sayHello.png'
 						style={{ width: '84%' }}
-					/>
+					/> */}
+					<p>sayHello</p>
 				</Col>
-				<Col span={7}>
+				<Col md={10} lg={8} xl={6} style={{ background: 'pink' }}>
 					<MenuItem />
 				</Col>
-				<Col className='col_search' span={4} offset={9}>
+				<Col
+					style={{ background: 'aqua' }}
+					className='col_search'
+					md={8}
+					lg={{ offset: 6, span: 5 }}
+					xl={{ offset: 8, span: 5 }}>
 					<SearchBar />
 				</Col>
-				<Col className='col_avatar' span={1}>
+				<Col style={{ background: 'green' }} className='col_avatar' md={2} lg={1}>
 					<Dropdown overlay={menu} placement='bottomRight' arrow>
 						<Avatar
 							src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'

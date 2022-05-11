@@ -11,8 +11,8 @@ const App: React.FC = (): JSX.Element => {
 
 	return (
 		<>
-			<Switch onChange={() => setIsLogged(!isLogged)} checked={isLogged} />
-			<p>isLogged: {String(isLogged)}</p>
+			{/* <Switch onChange={() => setIsLogged(!isLogged)} checked={isLogged} /> */}
+			{/* <p>isLogged: {String(isLogged)}</p> */}
 			<Layout className='layout-content'>
 				<Content>{routing}</Content>
 			</Layout>

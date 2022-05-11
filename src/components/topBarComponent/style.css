@@ -1,0 +1,16 @@
+.button_menu span {
+	font-size: 1.75rem;
+	transform: scale(1.1, 0.9);
+}
+.icon_menu {
+	color: black !important;
+}
+
+.header .navbar {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	line-height: normal;
+	padding: 1rem 2.5rem 1rem 1rem;
+}

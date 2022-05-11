@@ -8,7 +8,6 @@
 	justify-content: flex-start;
 	align-self: center;
 	cursor: pointer;
-	margin-left: 1.5rem;
 }
 
 .title_logo {
@@ -20,12 +19,11 @@
 	display: flex;
 	justify-content: flex-start;
 	margin: auto !important;
-	margin-left: 1.5rem !important;
 }
 
 .col_avatar {
 	display: flex !important;
-	justify-content: flex-end;
+	justify-content: flex-end !important;
 	align-self: center;
 }
 
@@ -37,11 +35,19 @@
 
 .col_search {
 	display: flex !important;
-	justify-content: flex-end;
+	justify-content: center;
 	align-self: center;
 }
 
 .ant-layout-header {
 	padding: 0rem !important;
 	background: transparent !important;
+}
+
+.header_row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0rem 1.5rem;
+	background-color: orange;
 }
