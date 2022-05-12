@@ -1,5 +1,6 @@
 import { SearchOutlined } from '@ant-design/icons'
 import { Button, Input, Modal } from 'antd'
+import useEventListener from 'hooks/useEventListener'
 import { useState } from 'react'
 
 const SearchBar = () => {
@@ -14,6 +15,15 @@ const SearchBar = () => {
 	const handleCancel = () => {
 		setVisible(false)
 	}
+
+	const handler = (event: KeyboardEvent) => {
+		if (event.code === 'Slash') {
+			setVisible(true)
+		}
+		return
+	}
+
+	useEventListener('keydown', handler)
 
 	return (
 		<>
