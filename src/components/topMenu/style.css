@@ -35,7 +35,7 @@
 
 .col_search {
 	display: flex !important;
-	justify-content: center;
+	justify-content: flex-end;
 	align-self: center;
 }
 
@@ -49,7 +49,6 @@
 	justify-content: center;
 	align-items: center;
 	margin: 0rem 1.5rem;
-	background-color: orange;
 }
 
 .col_logo svg {
@@ -58,4 +57,35 @@
 	display: flex;
 	min-width: 100px;
 	min-height: 35px;
+}
+
+.button_search span {
+	transform: scale(1.4, 1.35);
+	color: #423f40;
+}
+.search_modal {
+	min-height: 125px;
+	width: 100% !important;
+	margin: 0rem !important;
+	top: 64px !important;
+	max-width: initial !important;
+}
+
+.search_modal .ant-modal-header {
+	display: none;
+}
+.search_modal .ant-modal-body {
+	display: flex;
+	justify-content: flex-start;
+	max-width: 1460px;
+	margin: auto;
+}
+
+.search_modal .ant-modal-content {
+	height: 100%;
+	border-width: 2px 0px 1px;
+	border-style: solid;
+	background-color: #ffffff;
+	border-top-color: #eeeeee;
+	border-bottom-color: #10162f;
 }

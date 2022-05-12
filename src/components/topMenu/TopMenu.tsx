@@ -4,7 +4,7 @@ import SearchBar from './Search'
 import MenuItem from './MenuItem'
 import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
 import { ReactComponent as ReactLogo } from './logo_sayHello.svg'
-import { Avatar, Button, Col, Dropdown, Menu, Row, Image } from 'antd'
+import { Avatar, Button, Col, Dropdown, Menu, Row } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
 const TopMenu = () => {
@@ -87,27 +87,16 @@ const TopMenu = () => {
 	return (
 		<>
 			<Row className='header_row'>
-				<Col
-					style={{ background: 'yellow' }}
-					md={4}
-					lg={3}
-					xl={2}
-					onClick={() => navigate('/auth/home')}
-					className='col_logo'>
+				<Col md={4} lg={3} xl={2} onClick={() => navigate('/auth/home')} className='col_logo'>
 					<ReactLogo />
 				</Col>
-				<Col md={10} lg={8} xl={6} style={{ background: 'pink' }}>
+				<Col md={10} lg={8} xl={6}>
 					<MenuItem />
 				</Col>
-				<Col
-					style={{ background: 'aqua' }}
-					className='col_search'
-					md={8}
-					lg={{ offset: 7, span: 5 }}
-					xl={{ offset: 10, span: 5 }}>
+				<Col className='col_search' md={8} lg={{ offset: 7, span: 5 }} xl={{ offset: 10, span: 5 }}>
 					<SearchBar />
 				</Col>
-				<Col style={{ background: 'green' }} className='col_avatar' md={2} lg={1}>
+				<Col className='col_avatar' md={2} lg={1}>
 					<Dropdown overlay={menu} placement='bottomRight' arrow>
 						<Avatar
 							src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'
