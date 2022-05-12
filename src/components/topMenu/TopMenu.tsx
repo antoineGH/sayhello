@@ -93,10 +93,10 @@ const TopMenu = () => {
 				<Col md={10} lg={8} xl={6}>
 					<MenuItem />
 				</Col>
-				<Col className='col_search' md={8} lg={{ offset: 7, span: 5 }} xl={{ offset: 10, span: 5 }}>
+				<Col className='col_search' md={8} lg={{ offset: 6, span: 5 }} xl={{ offset: 10, span: 5 }}>
 					<SearchBar />
 				</Col>
-				<Col className='col_avatar' md={2} lg={1}>
+				<Col className='col_avatar' md={2} lg={2} xl={1}>
 					<Dropdown overlay={menu} placement='bottomRight' arrow>
 						<Avatar
 							src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'
