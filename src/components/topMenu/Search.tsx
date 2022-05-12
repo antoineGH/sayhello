@@ -5,10 +5,10 @@ import { useState } from 'react'
 const SearchBar = () => {
 	const [visible, setVisible] = useState(false)
 	const [search, setSearch] = useState('')
-	const { Search } = Input
 
 	const onSearch = () => {
-		console.log(`onSearch: ${search}`)
+		search && console.log(`onSearch: ${search}`)
+		return
 	}
 
 	const handleCancel = () => {
@@ -26,15 +26,18 @@ const SearchBar = () => {
 			/>
 			<Modal
 				className='search_modal'
-				title='Basic Modal'
+				title='Search Modal'
 				visible={visible}
+				destroyOnClose={true}
 				footer={false}
 				closable={false}
 				maskStyle={{ backgroundColor: '#00000026', top: '64px' }}
 				onCancel={handleCancel}>
 				<Input
+					autoFocus={true}
+					className='input_search'
 					size='large'
-					placeholder='large size'
+					placeholder='Search our catalog'
 					prefix={<SearchOutlined />}
 					onChange={(e) => setSearch(e.target.value)}
 					onPressEnter={onSearch}

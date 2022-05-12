@@ -89,3 +89,41 @@
 	border-top-color: #eeeeee;
 	border-bottom-color: #10162f;
 }
+
+.input_search {
+	border: none !important;
+	border-color: #9e9e9e !important;
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+}
+
+.input_search:hover {
+	border: none !important;
+	border-color: #9e9e9e !important;
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+}
+
+.input_search .ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+	border: none !important;
+	box-shadow: none !important;
+	border-color: #9e9e9e !important;
+	border-bottom-width: 1px !important;
+	border-bottom-style: solid !important;
+}
+
+.input_search input {
+	font-family: 'Apercu-Pro-Bold';
+	font-size: 2.2rem;
+	color: #10162f;
+	padding: 0rem 0.5rem !important;
+	letter-spacing: -0.065em;
+}
+.input_search span {
+	padding: 0.2rem;
+}
+.input_search svg {
+	transform: scale(1.8, 1.8);
+	color: #423f40;
+}
