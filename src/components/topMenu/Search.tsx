@@ -1,5 +1,6 @@
 import { SearchOutlined } from '@ant-design/icons'
-import { Button, Input, Modal, Tooltip } from 'antd'
+import { keyboard } from '@testing-library/user-event/dist/keyboard'
+import { Button, Col, Input, Modal, Row, Tooltip } from 'antd'
 import useEventListener from 'hooks/useEventListener'
 import { useState } from 'react'
 
@@ -25,6 +26,8 @@ const SearchBar = () => {
 
 	useEventListener('keydown', handler)
 
+	const popularSearchKeyWords = ['Data Science', 'Python', 'Web Development', ' HTML', 'Java']
+
 	return (
 		<>
 			<Tooltip title='Press /'>
@@ -45,15 +48,32 @@ const SearchBar = () => {
 				closable={false}
 				maskStyle={{ backgroundColor: '#00000026', top: '64px' }}
 				onCancel={handleCancel}>
-				<Input
-					autoFocus={true}
-					className='input_search'
-					size='large'
-					placeholder='Search our catalog'
-					prefix={<SearchOutlined />}
-					onChange={(e) => setSearch(e.target.value)}
-					onPressEnter={onSearch}
-				/>
+				<Row className='row_search'>
+					<Col span={24}>
+						<Input
+							autoFocus={true}
+							className='input_search'
+							size='large'
+							placeholder='Search our catalog'
+							prefix={<SearchOutlined />}
+							onChange={(e) => setSearch(e.target.value)}
+							onPressEnter={onSearch}
+						/>
+					</Col>
+					<Col span={24}>Popular Searches</Col>
+					<Col span={12}>
+						<Row className='row_popular'>
+							{popularSearchKeyWords.map((keyWord, count) => {
+								count++
+								return (
+									<Col key={count}>
+										<Button type='link'>{keyWord}</Button>
+									</Col>
+								)
+							})}
+						</Row>
+					</Col>
+				</Row>
 			</Modal>
 		</>
 	)

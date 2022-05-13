@@ -109,6 +109,8 @@ p {
 	color: #3a10e5;
 	transition: background-color 300ms;
 	margin-left: 0.5rem;
+	font-size: 0.95rem;
+	font-family: 'Apercu-Pro-Bold';
 }
 
 .ant-btn-link:hover,

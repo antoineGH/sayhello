@@ -118,7 +118,7 @@
 	font-size: 2.2rem;
 	color: #10162f;
 	padding: 0rem 0.5rem !important;
-	letter-spacing: -0.065em;
+	letter-spacing: -0.045em;
 }
 .input_search span {
 	padding: 0.2rem;
@@ -126,4 +126,38 @@
 .input_search svg {
 	transform: scale(1.8, 1.8);
 	color: #423f40;
+}
+
+.row_search {
+	width: 100%;
+}
+
+.row_search > .ant-col:nth-child(2) {
+	font-family: 'Apercu-Pro-Bold';
+	font-weight: 700;
+	line-height: 1.1;
+	margin: 1rem 0px;
+	font-size: 1.25rem;
+	margin-top: 1.7rem;
+}
+
+.row_popular .ant-col {
+	font-family: 'Apercu-Pro-Regular';
+	font-size: 1rem;
+	/* background-color: pink; */
+}
+
+.row_popular {
+	/* background-color: aqua; */
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.row_popular .ant-btn {
+	font-size: 1rem;
+	font-family: 'Apercu-Pro-Bold';
+	padding: 1.2rem 1.2rem;
+	display: flex;
+	align-items: center;
 }
