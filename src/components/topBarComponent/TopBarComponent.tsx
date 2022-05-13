@@ -5,7 +5,7 @@ import { ReactComponent as ReactLogo } from '../topMenu/logo_sayHello.svg'
 import './style.css'
 
 const TopBarComponent = () => {
-	const [visible, setVisible] = useState(false)
+	const [visible, setVisible] = useState(true)
 	return (
 		<nav className='navbar'>
 			<Row className='row_topbar'>
@@ -25,9 +25,7 @@ const TopBarComponent = () => {
 				className='container-drawer drawer_menu'
 				placement='top'
 				onClose={() => setVisible(false)}
-				visible={visible}>
-				test
-			</Drawer>
+				visible={visible}></Drawer>
 		</nav>
 	)
 }

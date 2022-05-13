@@ -32,3 +32,25 @@
 	width: 120px;
 	height: 40px;
 }
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header {
+	/* background-color: pink !important; */
+	height: 76px;
+	padding: 0rem;
+}
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header .ant-drawer-header-title {
+	justify-content: flex-end;
+}
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header .ant-drawer-header-title button {
+	margin-right: 2.5rem;
+	padding: 0.5rem;
+	border-radius: 4px;
+	font-size: 1.2rem;
+}
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header .ant-drawer-header-title button:hover {
+	background: #0000001f;
+	border-radius: 4px;
+}
