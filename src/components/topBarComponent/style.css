@@ -14,3 +14,26 @@
 	line-height: normal;
 	padding: 1rem 2.5rem 1rem 1rem;
 }
+
+.row_topbar {
+	width: 100%;
+}
+
+.row_topbar .ant-col:nth-child(1) {
+	justify-content: flex-start;
+}
+.row_topbar .ant-col:nth-child(2) {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.col_logo_top {
+	/* background-color: pink; */
+}
+.col_logo_top svg {
+	width: 80%;
+	height: 80%;
+	max-width: 150px;
+	max-height: 50px;
+	margin-left: -0.5rem;
+}

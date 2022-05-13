@@ -1,4 +1,4 @@
-import { CheckSquareOutlined, TrophyOutlined } from '@ant-design/icons'
+import { TrophyOutlined } from '@ant-design/icons'
 import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 
