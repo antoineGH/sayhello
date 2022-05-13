@@ -39,18 +39,54 @@
 	padding: 0rem;
 }
 
-.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header .ant-drawer-header-title {
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header {
+	display: none;
+}
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-body {
+	padding: 0rem;
+	margin: 0rem 1.5rem;
+	margin-top: 0.2rem;
+}
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-body .row_drawer_top {
+	height: 64px;
+}
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-body .ant-col:nth-child(1) {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-body .row_drawer_top .ant-col:nth-child(2) {
+	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 }
 
-.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header .ant-drawer-header-title button {
-	margin-right: 2.5rem;
-	padding: 0.5rem;
-	border-radius: 4px;
-	font-size: 1.2rem;
+.drawer_menu
+	.ant-drawer-content-wrapper
+	.ant-drawer-content
+	.ant-drawer-body
+	.row_drawer_top
+	.ant-col:nth-child(2)
+	.ant-btn {
+	color: black;
+	font-size: 1.5rem;
+	padding: 1.4rem 0.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1.6rem;
 }
-
-.drawer_menu .ant-drawer-content-wrapper .ant-drawer-content .ant-drawer-header .ant-drawer-header-title button:hover {
+.drawer_menu
+	.ant-drawer-content-wrapper
+	.ant-drawer-content
+	.ant-drawer-body
+	.row_drawer_top
+	.ant-col:nth-child(2)
+	.ant-btn:hover {
 	background: #0000001f;
 	border-radius: 4px;
 }

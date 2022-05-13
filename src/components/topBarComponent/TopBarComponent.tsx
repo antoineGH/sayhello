@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Button, Col, Drawer, Row } from 'antd'
-import { MenuOutlined } from '@ant-design/icons'
+import { CloseOutlined, MenuOutlined } from '@ant-design/icons'
 import { ReactComponent as ReactLogo } from '../topMenu/logo_sayHello.svg'
+import { ReactComponent as ReactLogoWhiteBG } from './logo-sayHello_whiteBG.svg'
 import './style.css'
 
 const TopBarComponent = () => {
@@ -25,7 +26,18 @@ const TopBarComponent = () => {
 				className='container-drawer drawer_menu'
 				placement='top'
 				onClose={() => setVisible(false)}
-				visible={visible}></Drawer>
+				visible={visible}>
+				<Row className='row_drawer_top'>
+					<Col span={14} className='col_logo_top'>
+						<ReactLogoWhiteBG />
+					</Col>
+					<Col span={4} offset={6}>
+						<Button onClick={() => setVisible(false)} type='link'>
+							<CloseOutlined />
+						</Button>
+					</Col>
+				</Row>
+			</Drawer>
 		</nav>
 	)
 }
