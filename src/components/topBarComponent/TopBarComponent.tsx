@@ -2,45 +2,46 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { menu } from 'components/topMenu/menu'
 import CustomLink from 'components/topMenu/CustomLink'
-import { Avatar, Button, Col, Drawer, Dropdown, Menu, Row } from 'antd'
-import { CloseOutlined, MenuOutlined, UserOutlined } from '@ant-design/icons'
+import { Avatar, Button, Col, Divider, Drawer, Menu, Row } from 'antd'
+import {
+	CloseOutlined,
+	LogoutOutlined,
+	MenuOutlined,
+	SettingOutlined,
+	UserOutlined,
+	UserSwitchOutlined,
+} from '@ant-design/icons'
 import { ReactComponent as ReactLogo } from '../topMenu/logo_sayHello.svg'
 import { ReactComponent as ReactLogoWhiteBG } from './logo-sayHello_whiteBG.svg'
 import './style.css'
+import SubMenu from 'antd/lib/menu/SubMenu'
 
 const TopBarComponent = () => {
 	const [visible, setVisible] = useState(false)
 	const navigate = useNavigate()
 
-	const handleLogout = (): void => {
-		console.log('handleLogout')
+	const handleClickLogo = (): void => {
+		visible && setVisible(false)
+		navigate('/auth/home')
 	}
 
-	const subMenu = (
-		<Menu>
-			<Menu.Item key='1'>
-				<Button type='text' onClick={() => setVisible(true)}>
-					Switch Profil
-				</Button>
-			</Menu.Item>
-			<Menu.Item key='2'>
-				<Button onClick={() => navigate('/auth/account')} type='text'>
-					Edit Account
-				</Button>
-			</Menu.Item>
-			<Menu.Divider />
-			<Menu.Item key='3'>
-				<Button onClick={handleLogout} type='text'>
-					Logout
-				</Button>
-			</Menu.Item>
-		</Menu>
-	)
+	const handleSwitchAccount = (): void => {
+		console.log('handleSwitchAccount')
+	}
+
+	const handleEditAccount = (): void => {
+		setVisible(false)
+		navigate('/auth/account')
+	}
+	const handleLogout = (): void => {
+		setVisible(false)
+		console.log('handleLogout')
+	}
 
 	return (
 		<nav className='navbar'>
 			<Row className='row_topbar'>
-				<Col span={14} className='col_logo_top'>
+				<Col span={14} onClick={handleClickLogo} className='col_logo_top'>
 					<ReactLogo />
 				</Col>
 				<Col span={4} offset={6}>
@@ -58,7 +59,7 @@ const TopBarComponent = () => {
 				onClose={() => setVisible(false)}
 				visible={visible}>
 				<Row className='row_drawer_top'>
-					<Col span={14} className='col_logo_top'>
+					<Col onClick={handleClickLogo} span={14} className='col_logo_top'>
 						<ReactLogoWhiteBG />
 					</Col>
 					<Col span={4} offset={6}>
@@ -74,32 +75,41 @@ const TopBarComponent = () => {
 							<Col key={element.name} span={24}>
 								<CustomLink onClick={() => setVisible(false)} key={element.name} to={element.path}>
 									<Row>
-										<Col span={2} className='menu_mobile_icon'>
-											{element.icon}
-										</Col>
-										<Col span={22} className='menu_mobile_text'>
-											{element.name}
-										</Col>
+										{element.icon}
+										{element.name}
 									</Row>
 								</CustomLink>
 							</Col>
 						)
 					})}
+					<Divider style={{ margin: '0rem' }} />
 					<Col span={24}>
-						<Row>
-							<Col span={2} className='menu_mobile_icon'>
-								<Dropdown overlay={subMenu} placement='bottomRight' arrow>
+						<Menu
+							className='menu_user_mobile'
+							defaultSelectedKeys={['1']}
+							defaultOpenKeys={['sub1']}
+							mode='inline'>
+							<SubMenu
+								key='sub1'
+								icon={
 									<Avatar
 										src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'
 										icon={<UserOutlined />}
 										size={24}
 									/>
-								</Dropdown>
-							</Col>
-							<Col span={22} className='menu_mobile_text font_menu_item'>
-								Antoine Ratat
-							</Col>
-						</Row>
+								}
+								title='Antoine Ratat'>
+								<Menu.Item key='1' onClick={handleSwitchAccount} icon={<UserSwitchOutlined />}>
+									Switch Profile
+								</Menu.Item>
+								<Menu.Item key='2' onClick={handleEditAccount} icon={<SettingOutlined />}>
+									Edit Account
+								</Menu.Item>
+								<Menu.Item key='3' onClick={handleLogout} icon={<LogoutOutlined />}>
+									Logout
+								</Menu.Item>
+							</SubMenu>
+						</Menu>
 					</Col>
 				</Row>
 			</Drawer>
