@@ -100,7 +100,7 @@
 	width: 100%;
 }
 .row_menu_mobile .font_menu_item span {
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	padding-right: 1.5rem;
 }
 
@@ -150,7 +150,7 @@
 .ant-menu-inline.ant-menu-root .ant-menu-item > *,
 .ant-menu-inline.ant-menu-root .ant-menu-submenu-title > * {
 	flex: none;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 }
 
 .ant-menu-light .ant-menu-item:hover,
