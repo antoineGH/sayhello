@@ -1,13 +1,40 @@
 import { useState } from 'react'
-import { Button, Col, Drawer, Row } from 'antd'
-import { CloseOutlined, MenuOutlined, TrophyOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router'
+import { menu } from 'components/topMenu/menu'
+import CustomLink from 'components/topMenu/CustomLink'
+import { Avatar, Button, Col, Drawer, Dropdown, Menu, Row } from 'antd'
+import { CloseOutlined, MenuOutlined, UserOutlined } from '@ant-design/icons'
 import { ReactComponent as ReactLogo } from '../topMenu/logo_sayHello.svg'
 import { ReactComponent as ReactLogoWhiteBG } from './logo-sayHello_whiteBG.svg'
-import { menu } from 'components/topMenu/menu'
 import './style.css'
-import CustomLink from 'components/topMenu/CustomLink'
 
 const TopBarComponent = () => {
+	const navigate = useNavigate()
+	const handleLogout = (): void => {
+		console.log('handleLogout')
+	}
+
+	const subMenu = (
+		<Menu>
+			<Menu.Item key='1'>
+				<Button type='text' onClick={() => setVisible(true)}>
+					Switch Profil
+				</Button>
+			</Menu.Item>
+			<Menu.Item key='2'>
+				<Button onClick={() => navigate('/auth/account')} type='text'>
+					Edit Account
+				</Button>
+			</Menu.Item>
+			<Menu.Divider />
+			<Menu.Item key='3'>
+				<Button onClick={handleLogout} type='text'>
+					Logout
+				</Button>
+			</Menu.Item>
+		</Menu>
+	)
+
 	const [visible, setVisible] = useState(true)
 	return (
 		<nav className='navbar'>
@@ -57,6 +84,22 @@ const TopBarComponent = () => {
 							</Col>
 						)
 					})}
+					<Col span={24}>
+						<Row>
+							<Col span={2} className='menu_mobile_icon'>
+								<Dropdown overlay={subMenu} placement='bottomRight' arrow>
+									<Avatar
+										src='https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png'
+										icon={<UserOutlined />}
+										size={24}
+									/>
+								</Dropdown>
+							</Col>
+							<Col span={22} className='menu_mobile_text font_menu_item'>
+								Antoine Ratat
+							</Col>
+						</Row>
+					</Col>
 				</Row>
 			</Drawer>
 		</nav>
