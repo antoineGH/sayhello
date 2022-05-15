@@ -100,16 +100,11 @@
 	width: 100%;
 }
 .row_menu_mobile .font_menu_item span {
-	/* background-color: aqua; */
 	font-size: 1.8rem;
 	padding-right: 1.5rem;
 }
 
-.menu_user_mobile {
-	background-color: pink;
-}
 .menu_user_mobile .ant-menu-submenu-title {
-	/* background-color: yellow; */
 	padding: 0rem !important;
 }
 .menu_user_mobile .-title-content {
@@ -128,4 +123,64 @@
 .ant-menu-vertical,
 .ant-menu-vertical-left {
 	border-right: none !important;
+}
+
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-expand-icon,
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+	color: #3a10e5 !important;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item > .ant-menu-title-content,
+.ant-menu-inline.ant-menu-root .ant-menu-submenu-title > .ant-menu-title-content {
+	flex: auto;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: 1.5rem;
+	font-family: 'Apercu-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	cursor: pointer;
+	color: #10162f;
+	text-align: left;
+	font-size: 1rem;
+	color: #423f40;
+	letter-spacing: -0.01rem;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item > *,
+.ant-menu-inline.ant-menu-root .ant-menu-submenu-title > * {
+	flex: none;
+	font-size: 1.5rem;
+}
+
+.ant-menu-light .ant-menu-item:hover,
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-light .ant-menu-submenu-active,
+.ant-menu-light .ant-menu-submenu-title:hover {
+	color: black !important;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+	background-color: transparent !important;
+}
+
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+	border-right: none !important;
+}
+
+.anticon {
+	color: rgba(0, 0, 0, 0.795) !important;
+}
+
+.ant-menu-sub.ant-menu-inline > .ant-menu-item,
+.ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+	padding-left: 0.5rem !important;
+}
+
+.ant-menu-sub.ant-menu-inline {
+	background: transparent !important;
 }
