@@ -62,13 +62,14 @@ const EditProfile = ({ profiles, handleSwitchProfile, isModal }: Props) => {
 				bordered={false}
 				className='card_account_information'
 				title={visible ? 'Edit Profile' : 'Select Profile'}>
-				<Row className='row_card_account'>
+				<Row className='row_card_account' gutter={[16, 16]}>
 					{profiles.map((profile) => {
 						return (
 							<Col
 								className={visible ? 'profile_col_visible' : 'profile_col'}
 								key={profile.id}
-								span={5}
+								xs={11}
+								lg={5}
 								onClick={
 									visible
 										? () => handleEditProfile(profile.id)

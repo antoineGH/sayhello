@@ -9,7 +9,9 @@ import { ReactComponent as ReactLogoWhiteBG } from './logo-sayHello_whiteBG.svg'
 import './style.css'
 
 const TopBarComponent = () => {
+	const [visible, setVisible] = useState(false)
 	const navigate = useNavigate()
+
 	const handleLogout = (): void => {
 		console.log('handleLogout')
 	}
@@ -35,7 +37,6 @@ const TopBarComponent = () => {
 		</Menu>
 	)
 
-	const [visible, setVisible] = useState(true)
 	return (
 		<nav className='navbar'>
 			<Row className='row_topbar'>

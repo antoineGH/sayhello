@@ -22,8 +22,10 @@ const AccountPage = () => {
 			},
 			{
 				id: 2,
-				name: 'Carrie',
-				avatar: 'https://secure.gravatar.com/userimage/120424681/b77218678307e7fb0e7afce0df04b52c?size=400',
+				// name: 'Carrie',
+				name: 'John',
+				// avatar: 'https://secure.gravatar.com/userimage/120424681/b77218678307e7fb0e7afce0df04b52c?size=400',
+				avatar: 'https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png',
 				age: 54,
 				user_id: 1,
 			},
@@ -56,10 +58,10 @@ const AccountPage = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col span={8}>
+				<Col xs={24} md={8}>
 					<EditAccount user={user} />
 				</Col>
-				<Col span={16}>
+				<Col xs={24} md={16}>
 					<EditProfile profiles={user.profiles} isModal={false} handleSwitchProfile={handleSwitchProfile} />
 				</Col>
 			</Row>
