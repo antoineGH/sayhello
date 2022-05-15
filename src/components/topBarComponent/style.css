@@ -90,3 +90,20 @@
 	background: #0000001f;
 	border-radius: 4px;
 }
+
+.row_menu_mobile > .ant-col {
+	padding: 1rem 0.5rem;
+	width: 100%;
+}
+.row_menu_mobile .font_menu_item {
+	font-size: 1rem;
+	width: 100%;
+}
+
+.menu_mobile_icon {
+	font-size: 1.6rem;
+}
+
+.menu_mobile_text {
+	padding-top: 0.15rem;
+}
