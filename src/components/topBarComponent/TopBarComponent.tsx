@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { menu } from 'components/topMenu/menu'
 import CustomLink from 'components/topMenu/CustomLink'
-import { Avatar, Button, Col, Divider, Drawer, Menu, Row } from 'antd'
+import { Avatar, Button, Col, Divider, Drawer, Input, Menu, Row } from 'antd'
 import {
 	CloseOutlined,
 	LogoutOutlined,
 	MenuOutlined,
+	SearchOutlined,
 	SettingOutlined,
 	UserOutlined,
 	UserSwitchOutlined,
@@ -18,6 +19,7 @@ import SubMenu from 'antd/lib/menu/SubMenu'
 
 const TopBarComponent = () => {
 	const [visible, setVisible] = useState(false)
+	const [searchContent, setSearchContent] = useState('')
 	const navigate = useNavigate()
 
 	const handleClickLogo = (): void => {
@@ -33,9 +35,18 @@ const TopBarComponent = () => {
 		setVisible(false)
 		navigate('/auth/account')
 	}
+
 	const handleLogout = (): void => {
 		setVisible(false)
 		console.log('handleLogout')
+	}
+
+	const handleSearch = (): void => {
+		if (searchContent) {
+			console.log(`handleSearch ${searchContent}`)
+			setSearchContent('')
+		}
+		return
 	}
 
 	return (
@@ -70,6 +81,17 @@ const TopBarComponent = () => {
 				</Row>
 
 				<Row className='topmenu_items row_menu_mobile'>
+					<Col span={24}>
+						<Input
+							className='search_menu_mobile'
+							size='large'
+							placeholder='Search our catalog'
+							prefix={<SearchOutlined />}
+							onChange={(e) => setSearchContent(e.target.value)}
+							onPressEnter={handleSearch}
+							value={searchContent}
+						/>
+					</Col>
 					{menu.map((element) => {
 						return (
 							<Col key={element.name} span={24}>

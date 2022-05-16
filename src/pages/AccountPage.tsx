@@ -22,10 +22,8 @@ const AccountPage = () => {
 			},
 			{
 				id: 2,
-				// name: 'Carrie',
-				name: 'John',
-				// avatar: 'https://secure.gravatar.com/userimage/120424681/b77218678307e7fb0e7afce0df04b52c?size=400',
-				avatar: 'https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png',
+				name: 'Carrie',
+				avatar: 'https://secure.gravatar.com/userimage/120424681/b77218678307e7fb0e7afce0df04b52c?size=400',
 				age: 54,
 				user_id: 1,
 			},
