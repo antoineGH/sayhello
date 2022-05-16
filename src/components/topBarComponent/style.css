@@ -190,10 +190,6 @@
 	background: #ffffff;
 }
 
-.ant-drawer .ant-drawer-content {
-	height: 60vh !important;
-}
-
 .search_menu_mobile {
 	border: none !important;
 	border-color: #9e9e9e !important;
@@ -211,4 +207,8 @@
 	color: #10162f;
 	padding: 0rem 0.5rem !important;
 	letter-spacing: -0.04em;
+}
+
+.ant-drawer-top.ant-drawer-open .ant-drawer-content-wrapper {
+	height: 578px !important;
 }
