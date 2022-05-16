@@ -62,6 +62,7 @@ const TopBarComponent = ({ visible, setVisible, profiles, handleCancel, handleSw
 		if (searchContent) {
 			console.log(`handleSearch ${searchContent}`)
 			setSearchContent('')
+			setVisibleMenu(false)
 		}
 		return
 	}
