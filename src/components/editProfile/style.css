@@ -125,7 +125,7 @@
 	padding: 0rem;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 996px) {
 	.row_card_account .profile_col:hover {
 		background-color: #ffd300 !important;
 		transform: scale(1.1);
