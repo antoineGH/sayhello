@@ -212,3 +212,20 @@
 .ant-drawer-top.ant-drawer-open .ant-drawer-content-wrapper {
 	height: 578px !important;
 }
+
+.ant-menu-item:active,
+.ant-menu-submenu-title:active {
+	background: #adadad00 !important;
+}
+
+.modal_edit_password .ant-avatar.ant-avatar-icon {
+	margin: auto !important;
+}
+
+@media (max-width: 576px) {
+	.modal_switch_profile .account_main,
+	.modal_switch_profile .ant-modal-body {
+		margin: 0rem !important;
+		padding: 0rem !important;
+	}
+}

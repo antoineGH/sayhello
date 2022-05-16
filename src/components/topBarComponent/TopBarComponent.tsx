@@ -16,29 +16,46 @@ import { ReactComponent as ReactLogo } from '../topMenu/logo_sayHello.svg'
 import { ReactComponent as ReactLogoWhiteBG } from './logo-sayHello_whiteBG.svg'
 import './style.css'
 import SubMenu from 'antd/lib/menu/SubMenu'
+import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
 
-const TopBarComponent = () => {
-	const [visible, setVisible] = useState(false)
+interface Profile {
+	id: number
+	name: string
+	avatar: string
+	age: number
+	user_id: number
+}
+
+type Profiles = Profile[]
+
+interface Props {
+	visible: boolean
+	setVisible: (visible: boolean) => void
+	profiles: Profiles
+	handleCancel: () => void
+	handleSwitchProfile: (profileID: number) => void
+	handleLogout: () => void
+}
+
+const TopBarComponent = ({ visible, setVisible, profiles, handleCancel, handleSwitchProfile, handleLogout }: Props) => {
+	const [visibleMenu, setVisibleMenu] = useState(false)
 	const [searchContent, setSearchContent] = useState('')
 	const navigate = useNavigate()
 
 	const handleClickLogo = (): void => {
-		visible && setVisible(false)
+		visibleMenu && setVisibleMenu(false)
 		navigate('/auth/home')
 	}
 
 	const handleSwitchAccount = (): void => {
 		console.log('handleSwitchAccount')
+		setVisibleMenu(false)
+		setVisible(true)
 	}
 
 	const handleEditAccount = (): void => {
-		setVisible(false)
+		setVisibleMenu(false)
 		navigate('/auth/account')
-	}
-
-	const handleLogout = (): void => {
-		setVisible(false)
-		console.log('handleLogout')
 	}
 
 	const handleSearch = (): void => {
@@ -60,21 +77,21 @@ const TopBarComponent = () => {
 						className='button_menu'
 						type='link'
 						icon={<MenuOutlined className='icon_menu' />}
-						onClick={() => setVisible(true)}
+						onClick={() => setVisibleMenu(true)}
 					/>
 				</Col>
 			</Row>
 			<Drawer
 				className='container-drawer drawer_menu'
 				placement='top'
-				onClose={() => setVisible(false)}
-				visible={visible}>
+				onClose={() => setVisibleMenu(false)}
+				visible={visibleMenu}>
 				<Row className='row_drawer_top'>
 					<Col onClick={handleClickLogo} span={14} className='col_logo_top'>
 						<ReactLogoWhiteBG />
 					</Col>
 					<Col span={4} offset={6}>
-						<Button onClick={() => setVisible(false)} type='link'>
+						<Button onClick={() => setVisibleMenu(false)} type='link'>
 							<CloseOutlined />
 						</Button>
 					</Col>
@@ -95,7 +112,7 @@ const TopBarComponent = () => {
 					{menu.map((element) => {
 						return (
 							<Col key={element.name} span={24}>
-								<CustomLink onClick={() => setVisible(false)} key={element.name} to={element.path}>
+								<CustomLink onClick={() => setVisibleMenu(false)} key={element.name} to={element.path}>
 									<Row>
 										{element.icon}
 										{element.name}
@@ -135,6 +152,12 @@ const TopBarComponent = () => {
 					</Col>
 				</Row>
 			</Drawer>
+			<ModalSwitchProfile
+				visible={visible}
+				handleSwitchProfile={handleSwitchProfile}
+				handleCancel={handleCancel}
+				profiles={profiles}
+			/>
 		</nav>
 	)
 }
