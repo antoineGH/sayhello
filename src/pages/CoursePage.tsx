@@ -1,8 +1,7 @@
 import { Card, PageHeader } from 'antd'
 import CourseContent from 'components/courseContent/CourseContent'
 import useTitle from 'hooks/useTitle'
-import { useParams } from 'react-router'
-import { useNavigate } from 'react-router'
+import { useParams, useNavigate } from 'react-router'
 
 const CoursePage = () => {
 	const navigate = useNavigate()

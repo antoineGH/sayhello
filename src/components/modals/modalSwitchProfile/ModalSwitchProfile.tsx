@@ -1,5 +1,5 @@
-import { Modal } from 'antd'
 import EditProfile from 'components/editProfile/EditProfile'
+import { Modal } from 'antd'
 
 interface Profile {
 	id: number

@@ -1,6 +1,6 @@
-import { PageHeader, Typography } from 'antd'
-import QuizContent from 'components/quizContent/QuizContent'
 import { useNavigate, useParams } from 'react-router'
+import QuizContent from 'components/quizContent/QuizContent'
+import { PageHeader, Typography } from 'antd'
 
 const QuizPage = () => {
 	const navigate = useNavigate()

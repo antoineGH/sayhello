@@ -1,7 +1,7 @@
-import { Col, PageHeader, Row } from 'antd'
+import { useNavigate } from 'react-router'
 import ResetForm from 'forms/resetForm/ResetForm'
 import useTitle from 'hooks/useTitle'
-import { useNavigate } from 'react-router'
+import { Col, PageHeader, Row } from 'antd'
 
 const Reset = () => {
 	const navigate = useNavigate()

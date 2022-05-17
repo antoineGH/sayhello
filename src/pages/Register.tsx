@@ -1,7 +1,7 @@
-import { Col, PageHeader, Row } from 'antd'
+import { useNavigate } from 'react-router'
 import RegisterForm from 'forms/registerForm/RegisterForm'
 import useTitle from 'hooks/useTitle'
-import { useNavigate } from 'react-router'
+import { Col, PageHeader, Row } from 'antd'
 
 const Register = () => {
 	const navigate = useNavigate()

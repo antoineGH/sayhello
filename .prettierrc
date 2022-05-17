@@ -1,0 +1,26 @@
+{
+  "importOrder": [
+    "^react$",
+    "^react-router$",
+    "^components/.+$",
+    "^hooks/.+$",
+    "^utils/.+$",
+    "^data/.+$",
+    "^types/.+$",
+    "<THIRD_PARTY_MODULES>",
+    "^styles/.+$",
+    "^@ant-design/icons$",
+    "^\\.?\\./.+$"
+  ],
+  "importOrderSortSpecifiers": true,
+  "importOrderSeparation": false,
+  "importOrderCaseInsensitive": false,
+  "importOrderParserPlugins": ["typescript", "jsx"],
+  "trailingComma": "none",
+  "arrowParens": "avoid",
+  "singleQuote": true,
+  "printWidth": 80,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": false
+}
