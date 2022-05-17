@@ -1,29 +1,11 @@
 import { useNavigate } from 'react-router'
 import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
+import { TopMenuProps } from 'types/profile'
 import { Avatar, Button, Col, Dropdown, Menu, Row } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 import MenuItem from './MenuItem'
 import SearchBar from './Search'
 import { ReactComponent as ReactLogo } from './logo_sayHello.svg'
-
-interface Profile {
-  id: number
-  name: string
-  avatar: string
-  age: number
-  user_id: number
-}
-
-type Profiles = Profile[]
-
-interface Props {
-  visible: boolean
-  setVisible: (visible: boolean) => void
-  profiles: Profiles
-  handleCancel: () => void
-  handleSwitchProfile: (profileID: number) => void
-  handleLogout: () => void
-}
 
 const TopMenu = ({
   visible,
@@ -32,7 +14,7 @@ const TopMenu = ({
   handleCancel,
   handleSwitchProfile,
   handleLogout
-}: Props) => {
+}: TopMenuProps) => {
   const navigate = useNavigate()
 
   const menu = (

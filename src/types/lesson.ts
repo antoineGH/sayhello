@@ -63,6 +63,18 @@ export interface LessonContentProps {
   lessons: Lessons
 }
 
+export interface LessonSummaryProps {
+  lessonID: number
+  lessonName: string
+  author: string
+  duration: number
+  difficulty: number
+  completed: boolean
+  courseID: number
+  courseName: string
+  handleLesson: (lessonID: number) => void
+}
+
 export interface LessonCardProps {
   handleClickLesson: (lessonID: number) => void
   lesson: LessonLight

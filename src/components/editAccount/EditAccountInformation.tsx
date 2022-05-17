@@ -1,32 +1,10 @@
 import { useState } from 'react'
 import ModalEditPassword from 'components/modals/modalEditPassword/ModalEditPassword'
 import { formValueSuccessLogin } from 'types/form'
+import { EditAccountInformationProps } from 'types/profile'
 import { Button, Col, Form, Input, Row } from 'antd'
 
-interface Profile {
-  id: number
-  name: string
-  age: number
-  user_id: number
-}
-
-type Profiles = Profile[]
-
-interface User {
-  id: number
-  email: string
-  password: string
-  first_name: string
-  last_name: string
-  date_created: string
-  profiles: Profiles
-}
-
-interface Props {
-  user: User
-}
-
-const EditAccountInformation = ({ user }: Props) => {
+const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
   const [editPasswordVisible, setEditPasswordVisible] = useState(false)
   const [confirmLoading, setConfirmLoading] = useState(false)
 

@@ -1,31 +1,19 @@
+import { LessonSummaryProps } from 'types/lesson'
 import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 import { TrophyOutlined } from '@ant-design/icons'
 import './style.css'
 
-interface Props {
-  lessonID: number
-  lessonName: string
-  author: string
-  duration: number
-  difficulty: number
-  completed: boolean
-  courseID: number
-  courseName: string
-  handleLesson: (lessonID: number) => void
-}
-
 const LessonSummary = ({
   lessonID,
   lessonName,
-  author,
   duration,
   difficulty,
   completed,
   courseID,
   courseName,
   handleLesson
-}: Props) => {
+}: LessonSummaryProps) => {
   const { Title } = Typography
   return (
     <>

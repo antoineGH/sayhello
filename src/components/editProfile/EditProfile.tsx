@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
+import { EditProfileProps } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
   CaretRightOutlined,
@@ -8,23 +9,11 @@ import {
 } from '@ant-design/icons'
 import './style.css'
 
-interface Profile {
-  id: number
-  name: string
-  avatar: string
-  age: number
-  user_id: number
-}
-
-type Profiles = Profile[]
-
-interface Props {
-  profiles: Profiles
-  handleSwitchProfile: (profileID: number) => void
-  isModal: boolean
-}
-
-const EditProfile = ({ profiles, handleSwitchProfile, isModal }: Props) => {
+const EditProfile = ({
+  profiles,
+  handleSwitchProfile,
+  isModal
+}: EditProfileProps) => {
   const { Title } = Typography
   const [visible, setVisible] = useState(false)
   const [visibleEdit, setVisibleEdit] = useState(false)

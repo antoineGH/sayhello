@@ -1,30 +1,8 @@
+import { AccountInformationProps } from 'types/profile'
 import { Avatar, Col, Row, Typography } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
-interface Profile {
-  id: number
-  name: string
-  age: number
-  user_id: number
-}
-
-type Profiles = Profile[]
-
-interface User {
-  id: number
-  email: string
-  password: string
-  first_name: string
-  last_name: string
-  date_created: string
-  profiles: Profiles
-}
-
-interface Props {
-  user: User
-}
-
-const AccountInformation = ({ user }: Props) => {
+const AccountInformation = ({ user }: AccountInformationProps) => {
   const { Title } = Typography
 
   const formatTimeStamp = (date_created: String): String => {

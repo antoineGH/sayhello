@@ -1,23 +1,8 @@
 import { useEffect, useState } from 'react'
+import { ModalEditProfileProps } from 'types/profile'
 import { Avatar, Button, Col, Modal, Row, Upload } from 'antd'
 import { UploadOutlined, UserOutlined } from '@ant-design/icons'
 import './style.css'
-
-interface Profile {
-  id: number
-  name: string
-  avatar: string
-  age: number
-  user_id: number
-}
-
-interface Props {
-  profile: Profile
-  visible: boolean
-  confirmLoading: boolean
-  handleOk: (username: String) => void
-  handleCancel: () => void
-}
 
 const ModalEditProfile = ({
   profile,
@@ -25,7 +10,7 @@ const ModalEditProfile = ({
   confirmLoading,
   handleOk,
   handleCancel
-}: Props) => {
+}: ModalEditProfileProps) => {
   const [username, setUsername] = useState(profile.name)
 
   useEffect(() => {

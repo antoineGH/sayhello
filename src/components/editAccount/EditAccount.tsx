@@ -1,33 +1,11 @@
 import { useState } from 'react'
+import { EditAccountProps } from 'types/profile'
 import { Button, Card, Col, Row, Typography } from 'antd'
 import AccountInformation from './AccountInformation'
 import EditAccountInformation from './EditAccountInformation'
 import './style.css'
 
-interface Profile {
-  id: number
-  name: string
-  age: number
-  user_id: number
-}
-
-type Profiles = Profile[]
-
-interface User {
-  id: number
-  email: string
-  password: string
-  first_name: string
-  last_name: string
-  date_created: string
-  profiles: Profiles
-}
-
-interface Props {
-  user: User
-}
-
-const EditAccount = ({ user }: Props) => {
+const EditAccount = ({ user }: EditAccountProps) => {
   const { Title } = Typography
   const [visible, setVisible] = useState(false)
 

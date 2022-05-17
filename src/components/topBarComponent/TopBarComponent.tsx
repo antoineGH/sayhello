@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
 import CustomLink from 'components/topMenu/CustomLink'
 import { menu } from 'components/topMenu/menu'
+import { TopBarComponentProps } from 'types/profile'
 import { Avatar, Button, Col, Divider, Drawer, Input, Menu, Row } from 'antd'
 import {
   CloseOutlined,
@@ -19,25 +20,6 @@ import './style.css'
 
 const { SubMenu } = Menu
 
-interface Profile {
-  id: number
-  name: string
-  avatar: string
-  age: number
-  user_id: number
-}
-
-type Profiles = Profile[]
-
-interface Props {
-  visible: boolean
-  setVisible: (visible: boolean) => void
-  profiles: Profiles
-  handleCancel: () => void
-  handleSwitchProfile: (profileID: number) => void
-  handleLogout: () => void
-}
-
 const TopBarComponent = ({
   visible,
   setVisible,
@@ -45,7 +27,7 @@ const TopBarComponent = ({
   handleCancel,
   handleSwitchProfile,
   handleLogout
-}: Props) => {
+}: TopBarComponentProps) => {
   const [visibleMenu, setVisibleMenu] = useState(false)
   const [searchContent, setSearchContent] = useState('')
   const navigate = useNavigate()

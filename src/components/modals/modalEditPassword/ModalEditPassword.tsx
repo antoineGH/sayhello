@@ -1,19 +1,13 @@
 import { useState } from 'react'
+import { ModalEditPasswordProps } from 'types/user'
 import { Form, Input, Modal } from 'antd'
-
-interface Props {
-  visible: boolean
-  handleCancel: () => void
-  confirmLoading: boolean
-  handleOk: (password: string) => void
-}
 
 const ModalEditPassword = ({
   visible,
   handleCancel,
   confirmLoading,
   handleOk
-}: Props) => {
+}: ModalEditPasswordProps) => {
   const [passwordUpdate, setPasswordUpdate] = useState('')
 
   const handleUpdate = () => {
