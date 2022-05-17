@@ -1,23 +1,9 @@
+import { LessonCardProps } from 'types/lesson'
 import { Card, Col, Row, Statistic, Tooltip, Typography } from 'antd'
 import { CheckSquareOutlined, ForwardOutlined } from '@ant-design/icons'
 import './style.css'
 
-interface Lesson {
-  lessonID: number
-  lessonName: string
-  author: string
-  duration: number
-  difficulty: number
-  completed: boolean
-  courseID: number
-}
-
-interface Props {
-  handleClickLesson: (lessonID: number) => void
-  lesson: Lesson
-}
-
-const LessonCard = ({ lesson, handleClickLesson }: Props) => {
+const LessonCard = ({ lesson, handleClickLesson }: LessonCardProps) => {
   const { Title } = Typography
   return (
     <>
@@ -39,7 +25,7 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
               ? 'card_lesson lesson_completed'
               : 'card_lesson card_lesson_uncompleted'
           }
-          onClick={() => handleClickLesson(lesson.lessonID)}
+          onClick={() => handleClickLesson(lesson.id)}
         >
           <Row>
             <Col span={22}>
@@ -56,8 +42,8 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
               <Tooltip
                 title={
                   lesson.completed
-                    ? `${lesson.lessonName} completed`
-                    : `${lesson.lessonName} not completed`
+                    ? `${lesson.name} completed`
+                    : `${lesson.name} not completed`
                 }
               >
                 {lesson.completed && (
@@ -68,7 +54,7 @@ const LessonCard = ({ lesson, handleClickLesson }: Props) => {
           </Row>
           <Row>
             <Col>
-              <Title level={4}>{lesson.lessonName}</Title>
+              <Title level={4}>{lesson.name}</Title>
             </Col>
           </Row>
           <Row>

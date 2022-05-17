@@ -21,7 +21,7 @@ const SearchBar = () => {
 
   const handler = (event: KeyboardEvent) => {
     if (event.code === 'Slash') {
-      setVisible(!visible)
+      setVisible(true)
     }
     return
   }

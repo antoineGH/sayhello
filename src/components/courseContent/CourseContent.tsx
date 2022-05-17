@@ -1,39 +1,11 @@
 import { useNavigate } from 'react-router'
 import LessonCard from 'components/lessonCard/LessonCard'
+import { CourseContentProps } from 'types/course'
 import { Col, Row, Statistic, Tag, Tooltip, Typography } from 'antd'
 import { CheckSquareOutlined } from '@ant-design/icons'
 import './style.css'
 
-type Lessons = Lesson[]
-
-interface Lesson {
-  lessonID: number
-  lessonName: string
-  author: string
-  duration: number
-  difficulty: number
-  completed: boolean
-  courseID: number
-}
-
-interface Course {
-  courseID: number
-  courseName: string
-  duration: number
-  difficulty: number
-  completed: number
-  numberLesson: number
-  numberQuiz: number
-  tags: string[]
-}
-
-interface props {
-  lessons: Lessons
-  tags: string[]
-  course: Course
-}
-
-const CourseContent = ({ course, tags, lessons }: props) => {
+const CourseContent = ({ course, tags, lessons }: CourseContentProps) => {
   const { Title } = Typography
   const navigate = useNavigate()
 
@@ -112,7 +84,7 @@ const CourseContent = ({ course, tags, lessons }: props) => {
           count++
           return (
             <LessonCard
-              key={lesson.lessonID}
+              key={lesson.id}
               handleClickLesson={handleClickLesson}
               lesson={lesson}
             />

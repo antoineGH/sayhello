@@ -1,5 +1,12 @@
 import { useNavigate } from 'react-router'
 import {
+  Lesson,
+  LessonContentProps,
+  Lessons,
+  pictureDetails,
+  videoDetails
+} from 'types/lesson'
+import {
   Button,
   Card,
   Col,
@@ -17,81 +24,7 @@ import {
 } from '@ant-design/icons'
 import './style.css'
 
-interface Quiz {
-  id: number
-  name: string
-  lesson_id: number
-}
-
-type Quizs = Quiz[]
-
-interface Picture {
-  id: number
-  description: string
-  url: string
-  wikidata_id: number
-}
-
-interface Video {
-  id: number
-  description: string
-  url: string
-  wikidata_id: number
-}
-
-interface Wikidata {
-  id: number
-  title: string
-  description: string
-  lesson_id: number
-  wikipicture: Picture[]
-  wikivideo: Video[]
-}
-
-type Wikidatas = Wikidata[]
-
-type Lessons = LessonLight[]
-
-interface LessonLight {
-  id: number
-  name: string
-  author: string
-  duration: number
-  difficulty: number
-  course_id: number
-}
-
-interface Lesson {
-  id: number
-  name: string
-  author: string
-  duration: number
-  difficulty: number
-  course_id: number
-  course_name: string
-  completed: number
-  quizs: Quizs
-  wikidatas: Wikidatas
-}
-
-interface props {
-  lesson: Lesson
-  lessons: Lessons
-}
-
-interface pictureDetails {
-  id: number
-  description: string
-  url: string
-}
-
-interface videoDetails {
-  id: number
-  description: string
-  url: string
-}
-
-const LessonContent = ({ lesson, lessons }: props) => {
+const LessonContent = ({ lesson, lessons }: LessonContentProps) => {
   const { Title } = Typography
   const navigate = useNavigate()
 

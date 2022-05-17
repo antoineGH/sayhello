@@ -1,17 +1,7 @@
+import { QuizSummaryProps } from 'types/quiz'
 import { Button, Col, Row, Statistic, Tooltip, Typography } from 'antd'
 import { Link } from 'react-router-dom'
 import { TrophyOutlined } from '@ant-design/icons'
-
-interface Props {
-  quizID: number
-  quizName: string
-  lessonID: number
-  lessonName: string
-  difficulty: number
-  numberQuestion: number
-  score: number
-  handleQuiz: (quizID: number) => void
-}
 
 const QuizSummary = ({
   quizID,
@@ -22,7 +12,7 @@ const QuizSummary = ({
   numberQuestion,
   score,
   handleQuiz
-}: Props) => {
+}: QuizSummaryProps) => {
   const { Title } = Typography
   return (
     <>

@@ -1,3 +1,4 @@
+import { CourseSummaryProps } from 'types/course'
 import {
   Button,
   Col,
@@ -10,19 +11,6 @@ import {
 } from 'antd'
 import { TrophyOutlined } from '@ant-design/icons'
 
-interface Props {
-  courseID: number
-  courseName: string
-  duration: number
-  difficulty: number
-  completed: number
-  numberLesson: number
-  numberQuiz: number
-  tags: string[]
-  handleCourse: (courseID: number) => void
-  isNotEnrolled: boolean
-}
-
 const CourseSummary = ({
   courseID,
   courseName,
@@ -34,7 +22,7 @@ const CourseSummary = ({
   tags,
   handleCourse,
   isNotEnrolled
-}: Props) => {
+}: CourseSummaryProps) => {
   const { Title } = Typography
 
   const getContains = (numberLesson: number, numberQuiz: number) => {

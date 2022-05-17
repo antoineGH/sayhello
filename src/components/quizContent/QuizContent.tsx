@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { QuizContentProps } from 'types/quiz'
 import {
   Button,
   Col,
@@ -11,27 +12,7 @@ import {
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import './style.css'
 
-export type Questions = Question[]
-
-export interface Question {
-  id: number
-  question: string
-  quiz_id: number
-  options: Option[]
-}
-
-export interface Option {
-  id: number
-  option: string
-  correctness: boolean
-  question_id: number
-}
-
-interface props {
-  questions: Questions
-}
-
-const QuizContent = ({ questions }: props) => {
+const QuizContent = ({ questions }: QuizContentProps) => {
   const { Title } = Typography
   const [index, setIndex] = useState(0)
   const [progress, setProgress] = useState(0)
