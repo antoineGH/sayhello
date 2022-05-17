@@ -1,5 +1,4 @@
 import { SearchOutlined } from '@ant-design/icons'
-import { keyboard } from '@testing-library/user-event/dist/keyboard'
 import { Button, Col, Input, Modal, Row, Tooltip } from 'antd'
 import useEventListener from 'hooks/useEventListener'
 import { useState } from 'react'
@@ -19,7 +18,7 @@ const SearchBar = () => {
 
 	const handler = (event: KeyboardEvent) => {
 		if (event.code === 'Slash') {
-			setVisible(true)
+			setVisible(!visible)
 		}
 		return
 	}
