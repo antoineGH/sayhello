@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import ModalEditPassword from 'components/modals/modalEditPassword/ModalEditPassword'
-import useTitle from 'hooks/useTitle'
 import { formValueSuccessLogin } from 'types/form'
 import { Button, Col, Form, Input, Row } from 'antd'
 
@@ -28,7 +27,6 @@ interface Props {
 }
 
 const EditAccountInformation = ({ user }: Props) => {
-  const title = useTitle('lol')
   const [editPasswordVisible, setEditPasswordVisible] = useState(false)
   const [confirmLoading, setConfirmLoading] = useState(false)
 
