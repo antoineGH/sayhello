@@ -8,7 +8,10 @@ const SearchBar = () => {
 	const [search, setSearch] = useState('')
 
 	const onSearch = () => {
-		search && console.log(`onSearch: ${search}`)
+		if (search) {
+			console.log(`onSearch: ${search}`)
+			setVisible(false)
+		}
 		return
 	}
 
