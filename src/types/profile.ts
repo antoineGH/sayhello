@@ -8,7 +8,7 @@ interface Profile {
 
 type Profiles = Profile[]
 
-interface User {
+export interface User {
   id: number
   email: string
   password: string
@@ -17,6 +17,8 @@ interface User {
   date_created: string
   profiles: Profiles
 }
+
+export type Users = User[]
 
 export interface AccountInformationProps {
   user: User
