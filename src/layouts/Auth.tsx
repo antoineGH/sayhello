@@ -3,6 +3,12 @@ import { Outlet } from 'react-router'
 import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { fetchProfiles } from 'features/profiles/actions'
+import {
+  profileHasError,
+  profileIsLoading,
+  proiflesSelectors
+} from 'features/profiles/selectors'
 import { fetchUsers } from 'features/users/actions'
 import {
   userHasError,
@@ -19,15 +25,16 @@ const Auth = () => {
   const screens = useBreakpoint()
   const md = screens?.md
 
-  const totalUsers = useAppSelector(usersSelectors.selectTotal)
-  const allUsers = useAppSelector(usersSelectors.selectAll)
-  const user1 = useAppSelector(state => usersSelectors.selectById(state, 1))
-  const user2 = useAppSelector(state => usersSelectors.selectById(state, 2))
-  const isLoading = useAppSelector(userIsLoading)
-  const hasError = useAppSelector(userHasError)
+  // const totalUsers = useAppSelector(usersSelectors.selectTotal)
+  // const allUsers = useAppSelector(usersSelectors.selectAll)
+  // const user1 = useAppSelector(state => usersSelectors.selectById(state, 1))
+  // const user2 = useAppSelector(state => usersSelectors.selectById(state, 2))
+  // const isLoading = useAppSelector(userIsLoading)
+  // const hasError = useAppSelector(userHasError)
 
   useEffect(() => {
     dispatch(fetchUsers())
+    dispatch(fetchProfiles(1))
   }, [dispatch])
 
   const handleCancel = (): void => {
