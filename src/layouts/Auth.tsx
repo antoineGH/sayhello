@@ -22,6 +22,7 @@ const Auth = () => {
   const totalUsers = useAppSelector(usersSelectors.selectTotal)
   const allUsers = useAppSelector(usersSelectors.selectAll)
   const user1 = useAppSelector(state => usersSelectors.selectById(state, 1))
+  const user2 = useAppSelector(state => usersSelectors.selectById(state, 2))
   const isLoading = useAppSelector(userIsLoading)
   const hasError = useAppSelector(userHasError)
 
@@ -117,12 +118,3 @@ const Auth = () => {
 }
 
 export default Auth
-function selectIds(
-  arg0: number
-): (state: {
-  users: import('@reduxjs/toolkit').EntityState<
-    import('../types/profile').User
-  > & { loading: boolean; error: boolean }
-}) => unknown {
-  throw new Error('Function not implemented.')
-}
