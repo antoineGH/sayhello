@@ -4,7 +4,11 @@ import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { fetchUsers } from 'features/users/actions'
-import { usersSelectors } from 'features/users/selector'
+import {
+  userHasError,
+  userIsLoading,
+  usersSelectors
+} from 'features/users/selector'
 import { Grid, Layout } from 'antd'
 
 const Auth = () => {
@@ -18,6 +22,8 @@ const Auth = () => {
   const totalUsers = useAppSelector(usersSelectors.selectTotal)
   const allUsers = useAppSelector(usersSelectors.selectAll)
   const user1 = useAppSelector(state => usersSelectors.selectById(state, 1))
+  const isLoading = useAppSelector(userIsLoading)
+  const hasError = useAppSelector(userHasError)
 
   useEffect(() => {
     dispatch(fetchUsers())

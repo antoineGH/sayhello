@@ -6,7 +6,7 @@ export const usersAdapter = createEntityAdapter({
   selectId: (user: User) => user.id
 })
 
-const usersSlice = createSlice({
+export const usersSlice = createSlice({
   name: 'users',
   initialState: usersAdapter.getInitialState({ loading: false, error: false }),
   reducers: {},
