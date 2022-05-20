@@ -3,8 +3,9 @@ import { Outlet } from 'react-router'
 import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { fetchUsers } from 'features/users/actions'
+import { usersSelectors } from 'features/users/slice'
 import { Grid, Layout } from 'antd'
-import { fetchUsers, usersSelectors } from 'features/usersSlice'
 
 const Auth = () => {
   const [visible, setVisible] = useState(false)
@@ -17,9 +18,6 @@ const Auth = () => {
   const totalUsers = useAppSelector(usersSelectors.selectTotal)
   const allUsers = useAppSelector(usersSelectors.selectAll)
   const user1 = useAppSelector(state => usersSelectors.selectById(state, 1))
-  console.log(totalUsers)
-  console.log(allUsers)
-  console.log(user1)
 
   useEffect(() => {
     dispatch(fetchUsers())

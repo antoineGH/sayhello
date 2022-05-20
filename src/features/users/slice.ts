@@ -1,14 +1,7 @@
 import { User } from 'types/profile'
-import {
-  createAsyncThunk,
-  createEntityAdapter,
-  createSlice
-} from '@reduxjs/toolkit'
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
 import { RootState } from 'store'
-
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  return await fetch(`http://localhost:4000/user`).then(res => res.json())
-})
+import { fetchUsers } from './actions'
 
 const usersAdapter = createEntityAdapter({ selectId: (user: User) => user.id })
 
