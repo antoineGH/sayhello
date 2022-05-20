@@ -4,6 +4,7 @@ import {
   createEntityAdapter,
   createSlice
 } from '@reduxjs/toolkit'
+import { RootState } from 'store'
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   return await fetch(`http://localhost:4000/user`).then(res => res.json())
@@ -29,5 +30,9 @@ const usersSlice = createSlice({
     })
   }
 })
+
+export const usersSelectors = usersAdapter.getSelectors(
+  (state: RootState) => state.users
+)
 
 export default usersSlice.reducer

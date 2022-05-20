@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { Outlet } from 'react-router'
 import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
-import { useAppDispatch } from 'hooks/hooks'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { Grid, Layout } from 'antd'
-import { fetchUsers } from 'features/usersSlice'
+import { fetchUsers, usersSelectors } from 'features/usersSlice'
 
 const Auth = () => {
   const [visible, setVisible] = useState(false)
@@ -13,6 +13,13 @@ const Auth = () => {
   const { useBreakpoint } = Grid
   const screens = useBreakpoint()
   const md = screens?.md
+
+  const totalUsers = useAppSelector(usersSelectors.selectTotal)
+  const allUsers = useAppSelector(usersSelectors.selectAll)
+  const user1 = useAppSelector(state => usersSelectors.selectById(state, 1))
+  console.log(totalUsers)
+  console.log(allUsers)
+  console.log(user1)
 
   useEffect(() => {
     dispatch(fetchUsers())
@@ -106,3 +113,12 @@ const Auth = () => {
 }
 
 export default Auth
+function selectIds(
+  arg0: number
+): (state: {
+  users: import('@reduxjs/toolkit').EntityState<
+    import('../types/profile').User
+  > & { loading: boolean; error: boolean }
+}) => unknown {
+  throw new Error('Function not implemented.')
+}
