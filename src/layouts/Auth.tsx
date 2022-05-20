@@ -4,7 +4,7 @@ import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { fetchUsers } from 'features/users/actions'
-import { usersSelectors } from 'features/users/slice'
+import { usersSelectors } from 'features/users/selector'
 import { Grid, Layout } from 'antd'
 
 const Auth = () => {
