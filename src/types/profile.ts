@@ -1,4 +1,4 @@
-interface Profile {
+export interface Profile {
   id: number
   name: string
   age: number
@@ -6,7 +6,7 @@ interface Profile {
   user_id: number
 }
 
-type Profiles = Profile[]
+export type Profiles = Profile[]
 
 export interface User {
   id: number
