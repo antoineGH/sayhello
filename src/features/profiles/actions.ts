@@ -1,9 +1,9 @@
-import { Profiles } from 'types/profile'
+import { ProfilePut, Profiles } from 'types/profile'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchProfiles = createAsyncThunk<Profiles, number>(
   'profiles/fetchProfiles',
-  async (userID: number) => {
+  async userID => {
     try {
       const data = await fetch(
         `http://localhost:4000/profile?user_id=${userID}`
@@ -15,14 +15,38 @@ export const fetchProfiles = createAsyncThunk<Profiles, number>(
   }
 )
 
+export const updateProfile = createAsyncThunk<number, ProfilePut>(
+  'profiles/updateProfile',
+  async profile => {
+    const user = {
+      name: profile.name,
+      avatar: profile.avatar,
+      age: profile.age,
+      user_id: profile.user_id
+    }
+    try {
+      await fetch(`http://localhost:4000/profile/${profile.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
+      return profile.id
+    } catch (e) {
+      throw new Error(`Fail to update profile: ${e}`)
+    }
+  }
+)
+
 export const deleteProfile = createAsyncThunk<number, number>(
   'profiles/deleteProfile',
-  async (userID: number) => {
+  async profileID => {
     try {
-      await fetch(`http://localhost:4000/profile/${userID}`, {
+      await fetch(`http://localhost:4000/profile/${profileID}`, {
         method: 'DELETE'
       })
-      return userID
+      return profileID
     } catch (e) {
       throw new Error(`Fail to delete profile: ${e}`)
     }

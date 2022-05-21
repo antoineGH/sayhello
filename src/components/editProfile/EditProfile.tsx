@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
-import { useAppDispatch } from 'hooks/hooks'
-import { deleteProfile } from 'features/profiles/actions'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { deleteProfile, updateProfile } from 'features/profiles/actions'
+import { profileIsLoading } from 'features/profiles/selectors'
 import { EditProfileProps } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
@@ -19,9 +20,9 @@ const EditProfile = ({
   const { Title } = Typography
   const [visible, setVisible] = useState(false)
   const [visibleEdit, setVisibleEdit] = useState(false)
-  const [confirmLoading, setConfirmLoading] = useState(false)
   const [profile, setProfile] = useState(profiles[0])
   const dispatch = useAppDispatch()
+  const loading = useAppSelector(profileIsLoading)
 
   const handleEditProfile = (profileID: number) => {
     const profile = profiles.filter(profile => profile.id === profileID)
@@ -29,13 +30,24 @@ const EditProfile = ({
     setVisibleEdit(true)
   }
 
-  const handleOk = (username: String) => {
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setConfirmLoading(false)
+  const handleOk = (
+    profileID: number,
+    username: string,
+    avatar: string,
+    age: number,
+    user_id: number
+  ) => {
+    dispatch(
+      updateProfile({
+        id: profileID,
+        name: username,
+        avatar: avatar,
+        age: age,
+        user_id: user_id
+      })
+    ).then(() => {
       setVisibleEdit(false)
-    }, 2000)
-    console.log(`handleOk ${username}`)
+    })
   }
 
   const handleCancel = () => {
@@ -121,7 +133,7 @@ const EditProfile = ({
         handleCancel={handleCancel}
         handleOk={handleOk}
         handleDeleteProfile={handleDeleteProfile}
-        confirmLoading={confirmLoading}
+        confirmLoading={loading}
       />
     </div>
   )
