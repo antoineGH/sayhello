@@ -25,13 +25,13 @@ export const updateProfile = createAsyncThunk<ProfileOut, ProfilePut>(
       user_id: profile.user_id
     }
     try {
-      // await fetch(`http://localhost:4000/profile/${profile.id}`, {
-      //   method: 'PUT',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(user)
-      // })
+      await fetch(`http://localhost:4000/profile/${profile.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+      })
       return { id: profile.id, changes: user }
     } catch (e) {
       throw new Error(`Fail to update profile: ${e}`)
