@@ -1,6 +1,6 @@
 import { Profile } from 'types/profile'
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import { deleteProfile, fetchProfiles } from './actions'
+import { deleteProfile, fetchProfiles, updateProfile } from './actions'
 
 export const profilesAdapter = createEntityAdapter({
   selectId: (profile: Profile) => profile.id
@@ -14,6 +14,7 @@ export const profilesSlice = createSlice({
   }),
   reducers: {},
   extraReducers: builder => {
+    // fetchProfiles
     builder.addCase(fetchProfiles.pending, state => {
       state.loading = true
     })
@@ -25,6 +26,24 @@ export const profilesSlice = createSlice({
       state.loading = false
       state.error = true
     })
+
+    // updateProfile
+    builder.addCase(updateProfile.fulfilled, (state, action) => {
+      state.loading = false
+      profilesAdapter.updateOne(state, {
+        id: action.payload.id,
+        changes: action.payload.changes
+      })
+    })
+    builder.addCase(updateProfile.pending, state => {
+      state.loading = true
+    })
+    builder.addCase(updateProfile.rejected, state => {
+      state.loading = false
+      state.error = true
+    })
+
+    // deleteProfile
     builder.addCase(deleteProfile.fulfilled, (state, { payload: id }) => {
       state.loading = false
       profilesAdapter.removeOne(state, id)
