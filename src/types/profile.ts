@@ -43,6 +43,7 @@ export interface ModalEditProfileProps {
   visible: boolean
   confirmLoading: boolean
   handleOk: (username: String) => void
+  handleDeleteProfile: (profileID: number) => void
   handleCancel: () => void
 }
 

@@ -5,11 +5,26 @@ export const fetchProfiles = createAsyncThunk<Profiles, number>(
   'profiles/fetchProfiles',
   async (userID: number) => {
     try {
-      // TODO: Create custom route on json-server to get all the profile share userID = 1
-      const data = await fetch(`http://localhost:4000/profile`)
+      const data = await fetch(
+        `http://localhost:4000/profile?user_id=${userID}`
+      )
       return await data.json()
     } catch (e) {
       throw new Error(`Fail to fetch profiles: ${e}`)
+    }
+  }
+)
+
+export const deleteProfile = createAsyncThunk<number, number>(
+  'profiles/deleteProfile',
+  async (userID: number) => {
+    try {
+      await fetch(`http://localhost:4000/profile/${userID}`, {
+        method: 'DELETE'
+      })
+      return userID
+    } catch (e) {
+      throw new Error(`Fail to delete profile: ${e}`)
     }
   }
 )

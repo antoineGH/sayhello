@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
+import { useAppDispatch } from 'hooks/hooks'
+import { deleteProfile } from 'features/profiles/actions'
 import { EditProfileProps } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
@@ -19,6 +21,7 @@ const EditProfile = ({
   const [visibleEdit, setVisibleEdit] = useState(false)
   const [confirmLoading, setConfirmLoading] = useState(false)
   const [profile, setProfile] = useState(profiles[0])
+  const dispatch = useAppDispatch()
 
   const handleEditProfile = (profileID: number) => {
     const profile = profiles.filter(profile => profile.id === profileID)
@@ -37,6 +40,11 @@ const EditProfile = ({
 
   const handleCancel = () => {
     setVisibleEdit(false)
+  }
+
+  const handleDeleteProfile = (profileID: number) => {
+    console.log(`handleDeleteProfile ${profileID}`)
+    dispatch(deleteProfile(profileID)).then(data => console.log(data.payload))
   }
 
   return (
@@ -112,6 +120,7 @@ const EditProfile = ({
         visible={visibleEdit}
         handleCancel={handleCancel}
         handleOk={handleOk}
+        handleDeleteProfile={handleDeleteProfile}
         confirmLoading={confirmLoading}
       />
     </div>
