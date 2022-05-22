@@ -1,6 +1,11 @@
 import { Profile } from 'types/profile'
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import { deleteProfile, fetchProfiles, updateProfile } from './actions'
+import {
+  addProfile,
+  deleteProfile,
+  fetchProfiles,
+  updateProfile
+} from './actions'
 
 export const profilesAdapter = createEntityAdapter({
   selectId: (profile: Profile) => profile.id
@@ -23,6 +28,21 @@ export const profilesSlice = createSlice({
       profilesAdapter.setAll(state, action.payload)
     })
     builder.addCase(fetchProfiles.rejected, state => {
+      state.loading = false
+      state.error = true
+    })
+
+    // addProfile
+    builder.addCase(addProfile.fulfilled, (state, action) => {
+      state.loading = false
+      console.log(action.payload)
+      // profilesAdapter.addOne(state, action.payload.profiles)
+      // booksAdapter.addOne(storeState.books, { id: 4, title: "title 4" });
+    })
+    builder.addCase(addProfile.pending, state => {
+      state.loading = true
+    })
+    builder.addCase(addProfile.rejected, state => {
       state.loading = false
       state.error = true
     })

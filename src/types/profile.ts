@@ -6,6 +6,13 @@ export interface ProfilePut {
   user_id?: number
 }
 
+export interface ProfileAdd {
+  username: string
+  avatar: string
+  age: number
+  user_id: number
+}
+
 export interface ChangesPut {
   name?: string
   avatar?: string

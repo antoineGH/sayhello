@@ -36,15 +36,15 @@ const AccountPage = () => {
           'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
         age: 26,
         user_id: 2
-      },
-      {
-        id: 4,
-        name: 'Max',
-        avatar:
-          'https://www.gravatar.com/userimage/120424681/5e05bb39aae93745809bf0a293fdd945?size=120',
-        age: 51,
-        user_id: 2
       }
+      // {
+      //   id: 4,
+      //   name: 'Max',
+      //   avatar:
+      //     'https://www.gravatar.com/userimage/120424681/5e05bb39aae93745809bf0a293fdd945?size=120',
+      //   age: 51,
+      //   user_id: 2
+      // }
     ]
   }
 

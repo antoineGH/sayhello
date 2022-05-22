@@ -1,4 +1,10 @@
-import { ChangesPut, ProfileOut, ProfilePut, Profiles } from 'types/profile'
+import {
+  ChangesPut,
+  ProfileAdd,
+  ProfileOut,
+  ProfilePut,
+  Profiles
+} from 'types/profile'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchProfiles = createAsyncThunk<Profiles, number>(
@@ -15,10 +21,28 @@ export const fetchProfiles = createAsyncThunk<Profiles, number>(
   }
 )
 
+export const addProfile = createAsyncThunk<ProfileAdd, ProfileAdd>(
+  'profiles/addProfile',
+  async profile => {
+    console.log(profile)
+    try {
+      // await fetch('http://localhost:4000/profile', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   },
+      //   body: JSON.stringify(profile)
+      // })
+      return profile
+    } catch (e) {
+      throw new Error(`Fail to add profile: ${e}`)
+    }
+  }
+)
+
 export const updateProfile = createAsyncThunk<ProfileOut, ProfilePut>(
   'profiles/updateProfile',
   async profile => {
-    console.log(profile)
     const user: ChangesPut = {}
     profile.name && (user.name = profile.name)
     profile.avatar && (user.avatar = profile.avatar)
