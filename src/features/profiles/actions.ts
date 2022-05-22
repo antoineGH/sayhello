@@ -1,5 +1,6 @@
 import {
   ChangesPut,
+  Profile,
   ProfileAdd,
   ProfileOut,
   ProfilePut,
@@ -21,19 +22,18 @@ export const fetchProfiles = createAsyncThunk<Profiles, number>(
   }
 )
 
-export const addProfile = createAsyncThunk<ProfileAdd, ProfileAdd>(
+export const addProfile = createAsyncThunk<Profile, ProfileAdd>(
   'profiles/addProfile',
   async profile => {
-    console.log(profile)
     try {
-      // await fetch('http://localhost:4000/profile', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(profile)
-      // })
-      return profile
+      const response = await fetch('http://localhost:4000/profile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(profile)
+      })
+      return await response.json()
     } catch (e) {
       throw new Error(`Fail to add profile: ${e}`)
     }

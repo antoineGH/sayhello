@@ -1,5 +1,6 @@
 import { Profile } from 'types/profile'
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
+import { RootState } from 'store'
 import {
   addProfile,
   deleteProfile,
@@ -34,11 +35,10 @@ export const profilesSlice = createSlice({
 
     // addProfile
     builder.addCase(addProfile.fulfilled, (state, action) => {
-      state.loading = false
       console.log(action.payload)
-      // profilesAdapter.addOne(state, action.payload.profiles)
-      // booksAdapter.addOne(storeState.books, { id: 4, title: "title 4" });
+      profilesAdapter.addOne(state, action.payload)
     })
+
     builder.addCase(addProfile.pending, state => {
       state.loading = true
     })
