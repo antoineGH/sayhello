@@ -1,16 +1,16 @@
 export interface ProfilePut {
   id: number
-  name: string
-  avatar: string
-  age: number
-  user_id: number
+  name?: string
+  avatar?: string
+  age?: number
+  user_id?: number
 }
 
-interface ChangesPut {
-  name: string
-  avatar: string
-  age: number
-  user_id: number
+export interface ChangesPut {
+  name?: string
+  avatar?: string
+  age?: number
+  user_id?: number
 }
 
 export interface ProfileOut {
@@ -64,10 +64,10 @@ export interface ModalEditProfileProps {
   confirmLoading: boolean
   handleOk: (
     profileID: number,
-    username: string,
-    avatar: string,
-    age: number,
-    user_id: number
+    username?: string,
+    avatar?: string,
+    age?: number,
+    user_id?: number
   ) => void
   handleDeleteProfile: (profileID: number) => void
   handleCancel: () => void

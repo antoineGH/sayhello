@@ -1,4 +1,4 @@
-import { ProfileOut, ProfilePut, Profiles } from 'types/profile'
+import { ChangesPut, ProfileOut, ProfilePut, Profiles } from 'types/profile'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchProfiles = createAsyncThunk<Profiles, number>(
@@ -18,15 +18,16 @@ export const fetchProfiles = createAsyncThunk<Profiles, number>(
 export const updateProfile = createAsyncThunk<ProfileOut, ProfilePut>(
   'profiles/updateProfile',
   async profile => {
-    const user = {
-      name: profile.name,
-      avatar: profile.avatar,
-      age: profile.age,
-      user_id: profile.user_id
-    }
+    console.log(profile)
+    const user: ChangesPut = {}
+    profile.name && (user.name = profile.name)
+    profile.avatar && (user.avatar = profile.avatar)
+    profile.age && (user.age = profile.age)
+    profile.user_id && (user.user_id = profile.user_id)
+
     try {
       await fetch(`http://localhost:4000/profile/${profile.id}`, {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },

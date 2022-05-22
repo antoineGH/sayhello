@@ -3,7 +3,7 @@ import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfil
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { deleteProfile, updateProfile } from 'features/profiles/actions'
 import { profileIsLoading } from 'features/profiles/selectors'
-import { EditProfileProps } from 'types/profile'
+import { EditProfileProps, ProfilePut } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
   CaretRightOutlined,
@@ -32,20 +32,20 @@ const EditProfile = ({
 
   const handleOk = (
     profileID: number,
-    username: string,
-    avatar: string,
-    age: number,
-    user_id: number
+    username?: string,
+    avatar?: string,
+    age?: number,
+    user_id?: number
   ) => {
-    dispatch(
-      updateProfile({
-        id: profileID,
-        name: username,
-        avatar: avatar,
-        age: age,
-        user_id: user_id
-      })
-    ).then(() => {
+    const updateArg: ProfilePut = {
+      id: profileID
+    }
+    username !== profile.name && (updateArg.name = username)
+    avatar !== profile.avatar && (updateArg.avatar = avatar)
+    age !== profile.age && (updateArg.age = age)
+    user_id !== profile.user_id && (updateArg.user_id = user_id)
+
+    dispatch(updateProfile(updateArg)).then(() => {
       setVisibleEdit(false)
     })
   }
