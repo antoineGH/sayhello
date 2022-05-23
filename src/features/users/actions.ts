@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchUsers = createAsyncThunk<Users, void>(
   'users/fetchUsers',
-  async (_: void) => {
+  async () => {
     try {
       const data = await fetch('http://localhost:4000/user')
       return await data.json()

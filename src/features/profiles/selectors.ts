@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit'
 import { RootState } from 'store'
 import { profilesAdapter } from './slice'
 
-export const proiflesSelectors = profilesAdapter.getSelectors(
+export const profilesSelectors = profilesAdapter.getSelectors(
   (state: RootState) => state.profiles
 )
 

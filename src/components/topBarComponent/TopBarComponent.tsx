@@ -23,7 +23,6 @@ const { SubMenu } = Menu
 const TopBarComponent = ({
   visible,
   setVisible,
-  profiles,
   handleCancel,
   handleSwitchProfile,
   handleLogout
@@ -166,7 +165,6 @@ const TopBarComponent = ({
         visible={visible}
         handleSwitchProfile={handleSwitchProfile}
         handleCancel={handleCancel}
-        profiles={profiles}
       />
     </nav>
   )

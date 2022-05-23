@@ -17,7 +17,11 @@ export const profilesSlice = createSlice({
     loading: false,
     error: false
   }),
-  reducers: {},
+  reducers: {
+    resetProfileError: state => {
+      state.error = false
+    }
+  },
   extraReducers: builder => {
     // fetchProfiles
     builder.addCase(fetchProfiles.pending, state => {
@@ -77,4 +81,5 @@ export const profilesSlice = createSlice({
   }
 })
 
+export const { resetProfileError } = profilesSlice.actions
 export default profilesSlice.reducer

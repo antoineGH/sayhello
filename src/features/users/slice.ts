@@ -9,7 +9,14 @@ export const usersAdapter = createEntityAdapter({
 export const usersSlice = createSlice({
   name: 'users',
   initialState: usersAdapter.getInitialState({ loading: false, error: false }),
-  reducers: {},
+  reducers: {
+    resetUserError: state => {
+      state.error = false
+    },
+    resetstate: state => {
+      state.entities = {}
+    }
+  },
   extraReducers: builder => {
     builder.addCase(fetchUsers.pending, state => {
       state.loading = true
@@ -25,4 +32,5 @@ export const usersSlice = createSlice({
   }
 })
 
+export const { resetUserError, resetstate } = usersSlice.actions
 export default usersSlice.reducer

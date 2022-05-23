@@ -7,15 +7,17 @@ import { fetchProfiles } from 'features/profiles/actions'
 import {
   profileHasError,
   profileIsLoading,
-  proiflesSelectors
+  profilesSelectors
 } from 'features/profiles/selectors'
+import { resetProfileError } from 'features/profiles/slice'
 import { fetchUsers } from 'features/users/actions'
 import {
   userHasError,
   userIsLoading,
   usersSelectors
 } from 'features/users/selector'
-import { Grid, Layout } from 'antd'
+import { resetUserError } from 'features/users/slice'
+import { Button, Col, Grid, Layout, Row, Spin } from 'antd'
 
 const Auth = () => {
   const [visible, setVisible] = useState(false)
@@ -25,17 +27,19 @@ const Auth = () => {
   const screens = useBreakpoint()
   const md = screens?.md
 
-  // const totalUsers = useAppSelector(usersSelectors.selectTotal)
-  // const allUsers = useAppSelector(usersSelectors.selectAll)
-  // const user1 = useAppSelector(state => usersSelectors.selectById(state, 1))
-  // const user2 = useAppSelector(state => usersSelectors.selectById(state, 2))
-  // const isLoading = useAppSelector(userIsLoading)
-  // const hasError = useAppSelector(userHasError)
+  // HARDCODED USERID
+  const userID = 1
+
+  const user = useAppSelector(state => usersSelectors.selectById(state, userID))
+  const profiles = useAppSelector(profilesSelectors.selectAll)
+  const isLoadingUser = useAppSelector(userIsLoading)
+  const hasErrorUser = useAppSelector(userHasError)
+  const isLoadingProfile = useAppSelector(profileIsLoading)
+  const hasErrorProfile = useAppSelector(profileHasError)
 
   useEffect(() => {
-    dispatch(fetchUsers()).then(data => {
-      console.log(data)
-      dispatch(fetchProfiles(1))
+    dispatch(fetchUsers()).then(response => {
+      response.hasOwnProperty('payload') && dispatch(fetchProfiles(userID))
     })
   }, [dispatch])
 
@@ -48,58 +52,48 @@ const Auth = () => {
     setVisible(false)
   }
 
+  const handleTryAgain = () => {
+    dispatch(resetUserError())
+    dispatch(resetProfileError())
+    dispatch(fetchUsers()).then(() => {
+      dispatch(fetchProfiles(userID))
+    })
+  }
+
   const handleLogout = (): void => {
     console.log('handleLogout')
   }
 
-  const user = {
-    id: 1,
-    email: 'antoine.ratat@gmail.com',
-    password: 'test',
-    first_name: 'Antoine',
-    last_name: 'Ratat',
-    date_created: '2022-02-27T18:45:43.511Z',
-    profiles: [
-      {
-        id: 1,
-        name: 'Antoine',
-        avatar:
-          'https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png',
-        age: 31,
-        user_id: 1
-      },
-      {
-        id: 2,
-        name: 'Carrie',
-        avatar:
-          'https://secure.gravatar.com/userimage/120424681/b77218678307e7fb0e7afce0df04b52c?size=400',
-        age: 54,
-        user_id: 1
-      },
-      {
-        id: 3,
-        name: 'Bastien',
-        avatar:
-          'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
-        age: 26,
-        user_id: 2
-      },
-      {
-        id: 4,
-        name: 'Max',
-        avatar:
-          'https://www.gravatar.com/userimage/120424681/5e05bb39aae93745809bf0a293fdd945?size=120',
-        age: 51,
-        user_id: 2
-      }
-    ]
+  const Error = () => {
+    return (
+      <>
+        <Row className="row_error">
+          <Col>
+            <p className="ant-statistic-title">Error contacting server</p>
+          </Col>
+        </Row>
+        <Row className="row_error">
+          <Col>
+            <Button type="link" onClick={handleTryAgain}>
+              Try Again
+            </Button>
+          </Col>
+        </Row>
+      </>
+    )
   }
 
-  const LoadingComp = () => {
-    return <p>Loading</p>
+  const Loading = () => {
+    return (
+      <Row className="row_loading">
+        <Col>
+          <Spin />
+        </Col>
+      </Row>
+    )
   }
 
-  const LoadedComp = () => {
+  const Loaded = () => {
     return (
       <>
         <Header className="header">
@@ -107,7 +101,6 @@ const Auth = () => {
             <TopMenu
               visible={visible}
               setVisible={setVisible}
-              profiles={user.profiles}
               handleCancel={handleCancel}
               handleSwitchProfile={handleSwitchProfile}
               handleLogout={handleLogout}
@@ -116,7 +109,6 @@ const Auth = () => {
             <TopBarComponent
               visible={visible}
               setVisible={setVisible}
-              profiles={user.profiles}
               handleCancel={handleCancel}
               handleSwitchProfile={handleSwitchProfile}
               handleLogout={handleLogout}
@@ -131,7 +123,15 @@ const Auth = () => {
     )
   }
 
-  return user ? <LoadedComp /> : <LoadingComp />
+  return hasErrorProfile || hasErrorUser ? (
+    <Error />
+  ) : isLoadingProfile || isLoadingUser ? (
+    <Loading />
+  ) : profiles.length > 0 ? (
+    <Loaded />
+  ) : (
+    <></>
+  )
 }
 
 export default Auth

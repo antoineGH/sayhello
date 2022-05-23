@@ -1,4 +1,12 @@
 // TYPE PROFILE
+export interface Profile {
+  id: number
+  name: string
+  age: number
+  avatar: string
+  user_id: number
+}
+
 export type Profiles = Profile[]
 
 export interface User {
@@ -12,14 +20,6 @@ export interface User {
 }
 
 export type Users = User[]
-
-export interface Profile {
-  id: number
-  name: string
-  age: number
-  avatar: string
-  user_id: number
-}
 
 // THUNK PROFILE
 export interface ProfilePutIn {
@@ -91,13 +91,11 @@ export interface ModalSwitchProfileProps {
   visible: boolean
   handleSwitchProfile: (profileID: number) => void
   handleCancel: () => void
-  profiles: Profiles
 }
 
 export interface TopBarComponentProps {
   visible: boolean
   setVisible: (visible: boolean) => void
-  profiles: Profiles
   handleCancel: () => void
   handleSwitchProfile: (profileID: number) => void
   handleLogout: () => void
@@ -106,7 +104,6 @@ export interface TopBarComponentProps {
 export interface TopMenuProps {
   visible: boolean
   setVisible: (visible: boolean) => void
-  profiles: Profiles
   handleCancel: () => void
   handleSwitchProfile: (profileID: number) => void
   handleLogout: () => void

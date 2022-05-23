@@ -10,7 +10,6 @@ import { ReactComponent as ReactLogo } from './logo_sayHello.svg'
 const TopMenu = ({
   visible,
   setVisible,
-  profiles,
   handleCancel,
   handleSwitchProfile,
   handleLogout
@@ -75,7 +74,6 @@ const TopMenu = ({
         visible={visible}
         handleSwitchProfile={handleSwitchProfile}
         handleCancel={handleCancel}
-        profiles={profiles}
       />
     </>
   )
