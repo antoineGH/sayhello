@@ -1,12 +1,11 @@
 import { useAppSelector } from 'hooks/hooks'
-import { profileActive, profilesSelectors } from 'features/profiles/selectors'
+import { profilesSelectors } from 'features/profiles/selectors'
 import { AccountInformationProps } from 'types/profile'
 import { Avatar, Col, Row, Typography } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
 
 const AccountInformation = ({ user }: AccountInformationProps) => {
   const { Title } = Typography
-  const activeID = useAppSelector(profileActive)
   const profiles = useAppSelector(profilesSelectors.selectAll)
 
   const formatTimeStamp = (date_created?: String): String => {
