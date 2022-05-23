@@ -10,9 +10,9 @@ import {
   profilesSelectors
 } from 'features/profiles/selectors'
 import { resetProfileError, setActiveID } from 'features/profiles/slice'
-import { fetchUsers } from 'features/users/actions'
-import { userHasError, userIsLoading } from 'features/users/selector'
-import { resetUserError } from 'features/users/slice'
+import { fetchUser } from 'features/user/actions'
+import { userHasError, userIsLoading } from 'features/user/selector'
+import { resetUserError } from 'features/user/slice'
 import { Button, Col, Grid, Layout, Row, Spin } from 'antd'
 
 const Auth = () => {
@@ -33,7 +33,7 @@ const Auth = () => {
   const hasErrorProfile = useAppSelector(profileHasError)
 
   useEffect(() => {
-    dispatch(fetchUsers()).then(response => {
+    dispatch(fetchUser(userID)).then(response => {
       response.hasOwnProperty('payload') && dispatch(fetchProfiles(userID))
     })
   }, [dispatch])
@@ -50,7 +50,7 @@ const Auth = () => {
   const handleTryAgain = () => {
     dispatch(resetUserError())
     dispatch(resetProfileError())
-    dispatch(fetchUsers()).then(() => {
+    dispatch(fetchUser(1)).then(() => {
       dispatch(fetchProfiles(userID))
     })
   }

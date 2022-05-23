@@ -37,6 +37,7 @@ export const profilesSlice = createSlice({
     })
     builder.addCase(fetchProfiles.fulfilled, (state, action) => {
       state.loading = false
+      console.log(action.payload)
       profilesAdapter.setAll(state, action.payload)
     })
     builder.addCase(fetchProfiles.rejected, state => {

@@ -4,12 +4,12 @@ import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import useTitle from 'hooks/useTitle'
 import { profilesSelectors } from 'features/profiles/selectors'
 import { setActiveID } from 'features/profiles/slice'
-import { usersSelectors } from 'features/users/selector'
+import { userSelectors } from 'features/user/selector'
 import { Col, PageHeader, Row } from 'antd'
 
 const AccountPage = () => {
   useTitle('Account')
-  const user = useAppSelector(state => usersSelectors.selectById(state, 1))
+  const user = useAppSelector(state => userSelectors.selectById(state, 1))
   const profiles = useAppSelector(profilesSelectors.selectAll)
   const dispatch = useAppDispatch()
 
