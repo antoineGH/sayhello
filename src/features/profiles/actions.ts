@@ -1,9 +1,9 @@
 import {
   ChangesPut,
   Profile,
-  ProfileAdd,
+  ProfileAddIn,
   ProfileOut,
-  ProfilePut,
+  ProfilePutIn,
   Profiles
 } from 'types/profile'
 import { createAsyncThunk } from '@reduxjs/toolkit'
@@ -22,7 +22,7 @@ export const fetchProfiles = createAsyncThunk<Profiles, number>(
   }
 )
 
-export const addProfile = createAsyncThunk<Profile, ProfileAdd>(
+export const addProfile = createAsyncThunk<Profile, ProfileAddIn>(
   'profiles/addProfile',
   async profile => {
     try {
@@ -40,7 +40,7 @@ export const addProfile = createAsyncThunk<Profile, ProfileAdd>(
   }
 )
 
-export const updateProfile = createAsyncThunk<ProfileOut, ProfilePut>(
+export const updateProfile = createAsyncThunk<ProfileOut, ProfilePutIn>(
   'profiles/updateProfile',
   async profile => {
     const user: ChangesPut = {}

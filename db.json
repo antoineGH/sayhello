@@ -55,13 +55,6 @@
       "avatar": "https://www.gravatar.com/userimage/120424681/5e05bb39aae93745809bf0a293fdd945?size=120",
       "age": 5,
       "user_id": 2
-    },
-    {
-      "username": "Jean",
-      "avatar": "https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120",
-      "age": 12,
-      "user_id": 1,
-      "id": 6
     }
   ],
   "progression": [
@@ -211,29 +204,17 @@
   "tag": [
     {
       "id": 1,
-      "tag": [
-        "ESL English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL English", "ESL", "English"],
       "course_id": 1
     },
     {
       "id": 2,
-      "tag": [
-        "ESL Intermediate English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Intermediate English", "ESL", "English"],
       "course_id": 2
     },
     {
       "id": 3,
-      "tag": [
-        "ESL Advanced English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Advanced English", "ESL", "English"],
       "course_id": 3
     }
   ],

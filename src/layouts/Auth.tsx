@@ -33,8 +33,10 @@ const Auth = () => {
   // const hasError = useAppSelector(userHasError)
 
   useEffect(() => {
-    dispatch(fetchUsers())
-    dispatch(fetchProfiles(1))
+    dispatch(fetchUsers()).then(data => {
+      console.log(data)
+      dispatch(fetchProfiles(1))
+    })
   }, [dispatch])
 
   const handleCancel = (): void => {
@@ -93,35 +95,43 @@ const Auth = () => {
     ]
   }
 
-  return (
-    <>
-      <Header className="header">
-        {md ? (
-          <TopMenu
-            visible={visible}
-            setVisible={setVisible}
-            profiles={user.profiles}
-            handleCancel={handleCancel}
-            handleSwitchProfile={handleSwitchProfile}
-            handleLogout={handleLogout}
-          />
-        ) : (
-          <TopBarComponent
-            visible={visible}
-            setVisible={setVisible}
-            profiles={user.profiles}
-            handleCancel={handleCancel}
-            handleSwitchProfile={handleSwitchProfile}
-            handleLogout={handleLogout}
-          />
-        )}
-      </Header>
-      <Outlet />
-      <Footer
-        style={{ textAlign: 'center', backgroundColor: '#d4dadf' }}
-      ></Footer>
-    </>
-  )
+  const LoadingComp = () => {
+    return <p>Loading</p>
+  }
+
+  const LoadedComp = () => {
+    return (
+      <>
+        <Header className="header">
+          {md ? (
+            <TopMenu
+              visible={visible}
+              setVisible={setVisible}
+              profiles={user.profiles}
+              handleCancel={handleCancel}
+              handleSwitchProfile={handleSwitchProfile}
+              handleLogout={handleLogout}
+            />
+          ) : (
+            <TopBarComponent
+              visible={visible}
+              setVisible={setVisible}
+              profiles={user.profiles}
+              handleCancel={handleCancel}
+              handleSwitchProfile={handleSwitchProfile}
+              handleLogout={handleLogout}
+            />
+          )}
+        </Header>
+        <Outlet />
+        <Footer
+          style={{ textAlign: 'center', backgroundColor: '#d4dadf' }}
+        ></Footer>
+      </>
+    )
+  }
+
+  return user ? <LoadedComp /> : <LoadingComp />
 }
 
 export default Auth

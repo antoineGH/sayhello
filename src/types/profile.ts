@@ -1,38 +1,4 @@
-export interface ProfilePut {
-  id: number
-  name?: string
-  avatar?: string
-  age?: number
-  user_id?: number
-}
-
-export interface ProfileAdd {
-  username: string
-  avatar: string
-  age: number
-  user_id: number
-}
-
-export interface ChangesPut {
-  name?: string
-  avatar?: string
-  age?: number
-  user_id?: number
-}
-
-export interface ProfileOut {
-  id: number
-  changes: ChangesPut
-}
-
-export interface Profile {
-  id: number
-  name: string
-  age: number
-  avatar: string
-  user_id: number
-}
-
+// TYPE PROFILE
 export type Profiles = Profile[]
 
 export interface User {
@@ -46,6 +12,47 @@ export interface User {
 }
 
 export type Users = User[]
+
+export interface Profile {
+  id: number
+  name: string
+  age: number
+  avatar: string
+  user_id: number
+}
+
+// THUNK PROFILE
+export interface ProfilePutIn {
+  id: number
+  name?: string
+  avatar?: string
+  age?: number
+  user_id?: number
+}
+
+export interface ProfileOut {
+  id: number
+  changes: ChangesPut
+}
+
+export interface ProfileAddIn {
+  username: string
+  avatar: string
+  age: number
+  user_id: number
+}
+
+export interface ChangesPut {
+  name?: string
+  avatar?: string
+  age?: number
+  user_id?: number
+}
+
+// PROPS PROFILE
+export interface AccountPageProps {
+  user?: User
+}
 
 export interface AccountInformationProps {
   user: User

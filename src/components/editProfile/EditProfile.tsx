@@ -7,7 +7,7 @@ import {
   updateProfile
 } from 'features/profiles/actions'
 import { profileIsLoading } from 'features/profiles/selectors'
-import { EditProfileProps, ProfilePut } from 'types/profile'
+import { EditProfileProps, ProfilePutIn } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
   CaretRightOutlined,
@@ -42,7 +42,7 @@ const EditProfile = ({
     age?: number,
     user_id?: number
   ) => {
-    const updateArg: ProfilePut = {
+    const updateArg: ProfilePutIn = {
       id: profileID
     }
     username !== profile.name && (updateArg.name = username)

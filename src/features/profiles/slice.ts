@@ -1,6 +1,5 @@
 import { Profile } from 'types/profile'
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import { RootState } from 'store'
 import {
   addProfile,
   deleteProfile,
