@@ -23,7 +23,7 @@ const ModalEditProfile = ({
       className="modal_edit_password"
       title="Edit Profile"
       visible={visible}
-      onOk={() => handleOk(profile.id, username, 'newavatar')}
+      onOk={() => handleOk(profile.id, username)}
       okText="Update"
       confirmLoading={confirmLoading}
       onCancel={handleCancel}
