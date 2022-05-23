@@ -9,7 +9,7 @@ import {
   profileIsLoading,
   profilesSelectors
 } from 'features/profiles/selectors'
-import { resetProfileError, setActive } from 'features/profiles/slice'
+import { resetProfileError, setActiveID } from 'features/profiles/slice'
 import { fetchUsers } from 'features/users/actions'
 import { userHasError, userIsLoading } from 'features/users/selector'
 import { resetUserError } from 'features/users/slice'
@@ -43,7 +43,7 @@ const Auth = () => {
   }
 
   const handleSwitchProfile = (profileID: number): void => {
-    dispatch(setActive(profileID))
+    dispatch(setActiveID(profileID))
     setVisible(false)
   }
 

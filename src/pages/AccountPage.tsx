@@ -3,7 +3,7 @@ import EditProfile from 'components/editProfile/EditProfile'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import useTitle from 'hooks/useTitle'
 import { profilesSelectors } from 'features/profiles/selectors'
-import { setActive } from 'features/profiles/slice'
+import { setActiveID } from 'features/profiles/slice'
 import { usersSelectors } from 'features/users/selector'
 import { Col, PageHeader, Row } from 'antd'
 
@@ -14,7 +14,7 @@ const AccountPage = () => {
   const dispatch = useAppDispatch()
 
   const handleSwitchProfile = (profileID: number) => {
-    dispatch(setActive(profileID))
+    dispatch(setActiveID(profileID))
   }
 
   return (
