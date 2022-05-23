@@ -1,3 +1,5 @@
+import { useAppSelector } from 'hooks/hooks'
+import { profileActive, profilesSelectors } from 'features/profiles/selectors'
 import { AccountInformationProps } from 'types/profile'
 import { Avatar, Col, Row, Typography } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
@@ -13,12 +15,15 @@ const AccountInformation = ({ user }: AccountInformationProps) => {
     return ''
   }
 
+  const activeID = useAppSelector(profileActive)
+  const profiles = useAppSelector(profilesSelectors.selectAll)
+
   return (
     <div className="container_account_info">
       <Row>
         <Avatar
           size={100}
-          src="https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png"
+          src={profiles[activeID - 1].avatar}
           icon={<UserOutlined />}
         />
       </Row>

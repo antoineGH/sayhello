@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit'
 import { RootState } from 'store'
 import { userAdapter } from './slice'
 
-export const userSelectors = userAdapter.getSelectors(
+export const userSelector = userAdapter.getSelectors(
   (state: RootState) => state.user
 )
 
