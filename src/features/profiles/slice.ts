@@ -20,14 +20,14 @@ export const profilesSlice = createSlice({
   initialState: profilesAdapter.getInitialState({
     loading: false,
     error: false,
-    active: 1
+    activeID: 1
   }),
   reducers: {
     resetProfileError: state => {
       state.error = false
     },
-    setActive: (state, { payload }: PayloadAction<number>) => {
-      state.active = payload
+    setActiveID: (state, { payload }: PayloadAction<number>) => {
+      state.activeID = payload
     }
   },
   extraReducers: builder => {
@@ -89,5 +89,5 @@ export const profilesSlice = createSlice({
   }
 })
 
-export const { resetProfileError, setActive } = profilesSlice.actions
+export const { resetProfileError, setActiveID } = profilesSlice.actions
 export default profilesSlice.reducer

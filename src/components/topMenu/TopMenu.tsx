@@ -17,7 +17,7 @@ const TopMenu = ({
   handleLogout
 }: TopMenuProps) => {
   const navigate = useNavigate()
-  const active = useAppSelector(profileActive)
+  const activeID = useAppSelector(profileActive)
   const profiles = useAppSelector(profilesSelectors.selectAll)
 
   const menu = (
@@ -67,7 +67,7 @@ const TopMenu = ({
         <Col className="col_avatar" md={2} lg={2} xl={1}>
           <Dropdown overlay={menu} placement="bottomRight" arrow>
             <Avatar
-              src={profiles[active - 1].avatar}
+              src={profiles[activeID - 1].avatar}
               icon={<UserOutlined />}
               size={40}
             />

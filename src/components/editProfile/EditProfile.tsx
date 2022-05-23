@@ -28,7 +28,7 @@ const EditProfile = ({
   const [profile, setProfile] = useState(profiles[0])
   const dispatch = useAppDispatch()
   const loading = useAppSelector(profileIsLoading)
-  const active = useAppSelector(profileActive)
+  const activeID = useAppSelector(profileActive)
 
   const handleEditProfile = (profileID: number) => {
     const profile = profiles.filter(profile => profile.id === profileID)
@@ -130,7 +130,7 @@ const EditProfile = ({
                 </Row>
                 <Row>
                   <Col>
-                    {profile.id === active ? (
+                    {profile.id === activeID ? (
                       <CaretRightOutlined
                         rotate={-90}
                         style={{ fontSize: '2rem', color: 'rgb(59 16 229)' }}

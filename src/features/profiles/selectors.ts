@@ -10,4 +10,4 @@ const getSlice = (state: RootState) => state.profiles
 
 export const profileIsLoading = createSelector(getSlice, state => state.loading)
 export const profileHasError = createSelector(getSlice, state => state.error)
-export const profileActive = createSelector(getSlice, state => state.active)
+export const profileActive = createSelector(getSlice, state => state.activeID)
