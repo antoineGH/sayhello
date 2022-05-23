@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router'
 import ModalSwitchProfile from 'components/modals/modalSwitchProfile/ModalSwitchProfile'
+import { useAppSelector } from 'hooks/hooks'
+import { profileActive, profilesSelectors } from 'features/profiles/selectors'
 import { TopMenuProps } from 'types/profile'
 import { Avatar, Button, Col, Dropdown, Menu, Row } from 'antd'
 import { UserOutlined } from '@ant-design/icons'
@@ -15,6 +17,8 @@ const TopMenu = ({
   handleLogout
 }: TopMenuProps) => {
   const navigate = useNavigate()
+  const active = useAppSelector(profileActive)
+  const profiles = useAppSelector(profilesSelectors.selectAll)
 
   const menu = (
     <Menu>
@@ -63,7 +67,7 @@ const TopMenu = ({
         <Col className="col_avatar" md={2} lg={2} xl={1}>
           <Dropdown overlay={menu} placement="bottomRight" arrow>
             <Avatar
-              src="https://fr.gravatar.com/userimage/120424681/f0988edb94af4c3b8731c42b2ebae37c.png"
+              src={profiles[active - 1].avatar}
               icon={<UserOutlined />}
               size={40}
             />

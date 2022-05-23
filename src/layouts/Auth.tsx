@@ -9,13 +9,9 @@ import {
   profileIsLoading,
   profilesSelectors
 } from 'features/profiles/selectors'
-import { resetProfileError } from 'features/profiles/slice'
+import { resetProfileError, setActive } from 'features/profiles/slice'
 import { fetchUsers } from 'features/users/actions'
-import {
-  userHasError,
-  userIsLoading,
-  usersSelectors
-} from 'features/users/selector'
+import { userHasError, userIsLoading } from 'features/users/selector'
 import { resetUserError } from 'features/users/slice'
 import { Button, Col, Grid, Layout, Row, Spin } from 'antd'
 
@@ -30,7 +26,6 @@ const Auth = () => {
   // HARDCODED USERID
   const userID = 1
 
-  const user = useAppSelector(state => usersSelectors.selectById(state, userID))
   const profiles = useAppSelector(profilesSelectors.selectAll)
   const isLoadingUser = useAppSelector(userIsLoading)
   const hasErrorUser = useAppSelector(userHasError)
@@ -48,7 +43,7 @@ const Auth = () => {
   }
 
   const handleSwitchProfile = (profileID: number): void => {
-    console.log(`handleSwitchProfile ProfileID: ${profileID}`)
+    dispatch(setActive(profileID))
     setVisible(false)
   }
 

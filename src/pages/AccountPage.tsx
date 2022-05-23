@@ -1,8 +1,9 @@
 import EditAccount from 'components/editAccount/EditAccount'
 import EditProfile from 'components/editProfile/EditProfile'
-import { useAppSelector } from 'hooks/hooks'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import useTitle from 'hooks/useTitle'
 import { profilesSelectors } from 'features/profiles/selectors'
+import { setActive } from 'features/profiles/slice'
 import { usersSelectors } from 'features/users/selector'
 import { Col, PageHeader, Row } from 'antd'
 
@@ -10,9 +11,10 @@ const AccountPage = () => {
   useTitle('Account')
   const user = useAppSelector(state => usersSelectors.selectById(state, 1))
   const profiles = useAppSelector(profilesSelectors.selectAll)
+  const dispatch = useAppDispatch()
 
   const handleSwitchProfile = (profileID: number) => {
-    console.log(`handleSwitchProfile ProfileID: ${profileID}`)
+    dispatch(setActive(profileID))
   }
 
   return (

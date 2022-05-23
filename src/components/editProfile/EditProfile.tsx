@@ -6,7 +6,7 @@ import {
   deleteProfile,
   updateProfile
 } from 'features/profiles/actions'
-import { profileIsLoading } from 'features/profiles/selectors'
+import { profileActive, profileIsLoading } from 'features/profiles/selectors'
 import { EditProfileProps, ProfilePutIn } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
@@ -28,6 +28,7 @@ const EditProfile = ({
   const [profile, setProfile] = useState(profiles[0])
   const dispatch = useAppDispatch()
   const loading = useAppSelector(profileIsLoading)
+  const active = useAppSelector(profileActive)
 
   const handleEditProfile = (profileID: number) => {
     const profile = profiles.filter(profile => profile.id === profileID)
@@ -129,7 +130,7 @@ const EditProfile = ({
                 </Row>
                 <Row>
                   <Col>
-                    {profile.id === 1 ? (
+                    {profile.id === active ? (
                       <CaretRightOutlined
                         rotate={-90}
                         style={{ fontSize: '2rem', color: 'rgb(59 16 229)' }}

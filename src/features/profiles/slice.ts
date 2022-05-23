@@ -1,5 +1,9 @@
 import { Profile } from 'types/profile'
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
+import {
+  PayloadAction,
+  createEntityAdapter,
+  createSlice
+} from '@reduxjs/toolkit'
 import {
   addProfile,
   deleteProfile,
@@ -15,11 +19,15 @@ export const profilesSlice = createSlice({
   name: 'profiles',
   initialState: profilesAdapter.getInitialState({
     loading: false,
-    error: false
+    error: false,
+    active: 1
   }),
   reducers: {
     resetProfileError: state => {
       state.error = false
+    },
+    setActive: (state, { payload }: PayloadAction<number>) => {
+      state.active = payload
     }
   },
   extraReducers: builder => {
@@ -81,5 +89,5 @@ export const profilesSlice = createSlice({
   }
 })
 
-export const { resetProfileError } = profilesSlice.actions
+export const { resetProfileError, setActive } = profilesSlice.actions
 export default profilesSlice.reducer
