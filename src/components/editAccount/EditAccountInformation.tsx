@@ -35,8 +35,8 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
         <Form
           name="edit-account"
           initialValues={{
-            firstname: user.first_name,
-            lastname: user.last_name
+            firstname: user?.first_name,
+            lastname: user?.last_name
           }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}

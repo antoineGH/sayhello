@@ -55,15 +55,15 @@ export interface AccountPageProps {
 }
 
 export interface AccountInformationProps {
-  user: User
+  user?: User
 }
 
 export interface EditAccountProps {
-  user: User
+  user?: User
 }
 
 export interface EditAccountInformationProps {
-  user: User
+  user?: User
 }
 
 export interface EditProfileProps {
