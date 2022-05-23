@@ -9,7 +9,8 @@ import { Col, PageHeader, Row } from 'antd'
 
 const AccountPage = () => {
   useTitle('Account')
-  const user = useAppSelector(state => userSelector.selectById(state, 1))
+  const userID = useAppSelector(userSelector.selectIds)[0]
+  const user = useAppSelector(state => userSelector.selectById(state, userID))
   const profiles = useAppSelector(profilesSelectors.selectAll)
   const dispatch = useAppDispatch()
 

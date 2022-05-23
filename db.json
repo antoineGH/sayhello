@@ -55,6 +55,13 @@
       "avatar": "https://www.gravatar.com/userimage/120424681/5e05bb39aae93745809bf0a293fdd945?size=120",
       "age": 5,
       "user_id": 2
+    },
+    {
+      "id": 6,
+      "name": "Claddia",
+      "avatar": "https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120",
+      "age": 10,
+      "user_id": 2
     }
   ],
   "progression": [

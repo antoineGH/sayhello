@@ -17,6 +17,7 @@ const AccountInformation = ({ user }: AccountInformationProps) => {
 
   const activeID = useAppSelector(profileActive)
   const profiles = useAppSelector(profilesSelectors.selectAll)
+  console.log(user)
 
   return (
     <div className="container_account_info">
