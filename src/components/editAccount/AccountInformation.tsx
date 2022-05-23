@@ -6,6 +6,8 @@ import { UserOutlined } from '@ant-design/icons'
 
 const AccountInformation = ({ user }: AccountInformationProps) => {
   const { Title } = Typography
+  const activeID = useAppSelector(profileActive)
+  const profiles = useAppSelector(profilesSelectors.selectAll)
 
   const formatTimeStamp = (date_created?: String): String => {
     if (date_created) {
@@ -15,18 +17,10 @@ const AccountInformation = ({ user }: AccountInformationProps) => {
     return ''
   }
 
-  const activeID = useAppSelector(profileActive)
-  const profiles = useAppSelector(profilesSelectors.selectAll)
-  console.log(user)
-
   return (
     <div className="container_account_info">
       <Row>
-        <Avatar
-          size={100}
-          src={profiles[activeID - 1].avatar}
-          icon={<UserOutlined />}
-        />
+        <Avatar size={100} src={profiles[0].avatar} icon={<UserOutlined />} />
       </Row>
       <Row>
         <Col span={24} style={{ marginTop: '1rem' }}>
