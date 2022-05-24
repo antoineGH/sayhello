@@ -4,6 +4,14 @@
   ],
   "user": [
     {
+      "id": 1,
+      "email": "antoine.ratat@gmail.com",
+      "password": "test",
+      "first_name": "Antoine",
+      "last_name": "Ratat",
+      "date_created": "2022-02-27T18:55:43.511Z"
+    },
+    {
       "id": 2,
       "email": "bastien.ratat@gmail.com",
       "password": "test",

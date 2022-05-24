@@ -51,9 +51,13 @@ const ModalEditProfile = ({
           onChange={e => setUsername(e.target.value)}
         />
       </form>
-      <Row>
+      <Row style={{ marginTop: '1rem' }}>
         <Col span={24}>
-          <Button type="link" onClick={() => handleDeleteProfile(profile.id)}>
+          <Button
+            type="link"
+            className="btn-delete btn-delete-profile"
+            onClick={() => handleDeleteProfile(profile.id)}
+          >
             Delete Profile
           </Button>
         </Col>

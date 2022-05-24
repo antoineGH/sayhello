@@ -1,27 +1,36 @@
 .col_avatar,
 .col_upload {
-	display: flex !important;
-	justify-content: center;
+  display: flex !important;
+  justify-content: center;
 }
 
 .col_upload {
-	margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .row_avatar {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .modal_edit_profile {
-	width: 357px !important;
+  width: 357px !important;
 }
 
 .label_form {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	color: rgba(0, 0, 0, 0.85);
-	font-size: 0.95rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 0.95rem;
+}
+
+.btn-delete-profile {
+  padding: 0rem !important;
+  transition: ease-in 300ms !important;
+}
+.btn-delete-profile:hover {
+  padding: 0rem 1rem !important;
 }
