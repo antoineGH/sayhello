@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import ModalEditPassword from 'components/modals/modalEditPassword/ModalEditPassword'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
-import { updateUser } from 'features/user/actions'
+import { deleteUser, updateUser } from 'features/user/actions'
 import { userIsLoading, userSelector } from 'features/user/selector'
 import { formValueSuccessAccount } from 'types/form'
 import { EditAccountInformationProps, UserUpdateIn } from 'types/profile'
@@ -36,7 +36,8 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
 
   const handleDeleteUser = () => {
     console.log('handleDeleteUser')
-    // navigate('/')
+    dispatch(deleteUser(userID))
+    navigate('/')
     // handleLogout
   }
 

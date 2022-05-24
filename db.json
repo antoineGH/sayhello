@@ -4,14 +4,6 @@
   ],
   "user": [
     {
-      "id": 1,
-      "email": "antoine.ratat@gmail.com",
-      "password": "test",
-      "first_name": "Antoine",
-      "last_name": "Ratat",
-      "date_created": "2022-02-27T18:45:43.511Z"
-    },
-    {
       "id": 2,
       "email": "bastien.ratat@gmail.com",
       "password": "test",
@@ -211,29 +203,17 @@
   "tag": [
     {
       "id": 1,
-      "tag": [
-        "ESL English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL English", "ESL", "English"],
       "course_id": 1
     },
     {
       "id": 2,
-      "tag": [
-        "ESL Intermediate English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Intermediate English", "ESL", "English"],
       "course_id": 2
     },
     {
       "id": 3,
-      "tag": [
-        "ESL Advanced English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Advanced English", "ESL", "English"],
       "course_id": 3
     }
   ],

@@ -1,6 +1,6 @@
 import { User } from 'types/profile'
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import { fetchUser, updateUser } from './actions'
+import { deleteUser, fetchUser, updateUser } from './actions'
 
 export const userAdapter = createEntityAdapter({
   selectId: (user: User) => user.id
@@ -43,6 +43,19 @@ export const usersSlice = createSlice({
       })
     })
     builder.addCase(updateUser.rejected, state => {
+      state.loading = false
+      state.error = true
+    })
+
+    // deleteUser
+    builder.addCase(deleteUser.pending, state => {
+      state.loading = true
+    })
+    builder.addCase(deleteUser.fulfilled, (state, { payload: id }) => {
+      state.loading = false
+      userAdapter.removeOne(state, id)
+    })
+    builder.addCase(deleteUser.rejected, state => {
       state.loading = false
       state.error = true
     })
