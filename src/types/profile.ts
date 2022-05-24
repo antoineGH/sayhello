@@ -25,6 +25,7 @@ export interface UserAddIn {
   password: string
   first_name: string
   last_name: string
+  date_created: string
 }
 
 // THUNK PROFILE

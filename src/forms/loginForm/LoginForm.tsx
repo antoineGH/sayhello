@@ -22,10 +22,10 @@ const LoginForm = () => {
       autoComplete="off"
     >
       <Form.Item
-        label="Username"
+        label="Email"
         className="login_username_row"
-        name="username"
-        rules={[{ required: true, message: 'Please input your username' }]}
+        name="email"
+        rules={[{ required: true, message: 'Please input your email' }]}
       >
         <Input className="login_username" />
       </Form.Item>

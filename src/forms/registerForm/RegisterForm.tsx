@@ -1,24 +1,39 @@
 import { useNavigate } from 'react-router'
+import { useAppDispatch } from 'hooks/hooks'
+import { addUser } from 'features/user/actions'
 import { formValueSuccessRegister } from 'types/form'
+import { UserAddIn } from 'types/profile'
 import { Button, Col, Form, Input, Row } from 'antd'
 
 const RegisterForm = () => {
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+
   const onFinish = (values: formValueSuccessRegister) => {
-    console.log('Success:', values)
+    const user: UserAddIn = {
+      email: values.email,
+      password: values.password,
+      first_name: values.first_name,
+      last_name: values.last_name,
+      date_created: new Date().toISOString()
+    }
+    dispatch(addUser(user))
+  }
+
+  const testOnlyRegister = () => {
+    const user: UserAddIn = {
+      email: 'test@test.test',
+      password: 'test',
+      first_name: 'FirstTest',
+      last_name: 'LastTest',
+      date_created: new Date().toISOString()
+    }
+
+    dispatch(addUser(user))
   }
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo)
-  }
-
-  const validateMessages = {
-    // eslint-disable-next-line no-template-curly-in-string
-    required: '${label} is required!',
-    types: {
-      // eslint-disable-next-line no-template-curly-in-string
-      email: '${label} is not a valid email!'
-    }
   }
 
   return (
@@ -27,12 +42,11 @@ const RegisterForm = () => {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      validateMessages={validateMessages}
       autoComplete="off"
     >
       <Form.Item
         className="register_email_row"
-        name={['user', 'first_name']}
+        name={['first_name']}
         label="First Name"
         rules={[
           {
@@ -55,7 +69,7 @@ const RegisterForm = () => {
 
       <Form.Item
         className="register_email_row"
-        name={['user', 'last_name']}
+        name={['last_name']}
         label="Last Name"
         rules={[
           {
@@ -77,7 +91,7 @@ const RegisterForm = () => {
 
       <Form.Item
         className="register_email_row"
-        name={['user', 'email']}
+        name={['email']}
         label="Email"
         rules={[{ type: 'email', message: 'Email not valid' }]}
       >
@@ -144,6 +158,10 @@ const RegisterForm = () => {
           Register
         </Button>
       </Form.Item>
+
+      <Button type="primary" onClick={testOnlyRegister}>
+        REGISTER TEST
+      </Button>
 
       <Row>
         <Col
