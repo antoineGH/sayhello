@@ -42,6 +42,20 @@ export const updateUser = createAsyncThunk<UserOut, UserUpdateIn>(
   }
 )
 
+export const deleteUser = createAsyncThunk<number, number>(
+  'user/deleteUser',
+  async userID => {
+    try {
+      await fetch(`http://localhost:4000/user/${userID}`, {
+        method: 'DELETE'
+      })
+      return userID
+    } catch (e) {
+      throw new Error(`Fail to delete user: ${e}`)
+    }
+  }
+)
+
 export const addUser = async (user: UserAddIn): Promise<User> => {
   try {
     const response = await fetch('http://localhost:4000/user', {

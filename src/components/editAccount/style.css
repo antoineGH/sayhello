@@ -1,62 +1,68 @@
 .edit_account {
-	display: flex;
+  display: flex;
 }
 
 .account_main {
-	margin: 1rem 1rem 1rem 1.5rem;
+  margin: 1rem 1rem 1rem 1.5rem;
 }
 
 .ant-statistic-email {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	color: rgba(0, 0, 0, 0.85);
-	font-size: 0.95rem;
-	display: flex;
-	justify-content: center;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: center;
 }
 
 .card_account_information div {
-	text-align: center;
+  text-align: center;
 }
 
 .card_account_information .ant-avatar {
-	margin: auto;
+  margin: auto;
 }
 
 .special_link {
-	padding: 0rem 1rem !important;
+  padding: 0rem 1rem !important;
 }
 
 .update_password_row {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .container_account_info {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .card_account_information .ant-card-body {
-	background-color: rgb(255, 255, 255);
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	margin: auto;
-	justify-content: flex-start;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: flex-start;
 }
 
 .account_main {
-	min-height: 550px;
+  min-height: 550px;
 }
 
 .account_main .ant-card-head-title {
-	color: rgba(0, 0, 0, 0.45);
-	font-size: 1rem;
-	margin-top: 0.25rem;
-	font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-transform: uppercase;
+}
+
+.btn-delete {
+  color: #ed3131 !important;
 }

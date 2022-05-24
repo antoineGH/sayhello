@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 import ModalEditPassword from 'components/modals/modalEditPassword/ModalEditPassword'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { updateUser } from 'features/user/actions'
@@ -10,6 +11,7 @@ import { Button, Col, Form, Input, Row } from 'antd'
 const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
   const [editPasswordVisible, setEditPasswordVisible] = useState(false)
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
   let userID = 0
   userID = Number(useAppSelector(userSelector.selectIds)[0])
   const loading = useAppSelector(userIsLoading)
@@ -30,6 +32,12 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
 
   const handleCancel = (): void => {
     setEditPasswordVisible(false)
+  }
+
+  const handleDeleteUser = () => {
+    console.log('handleDeleteUser')
+    // navigate('/')
+    // handleLogout
   }
 
   const handleOk = (password: string) => {
@@ -95,6 +103,13 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
             </Button>
           </Form.Item>
         </Form>
+      </Row>
+      <Row className="update_password_row">
+        <Col>
+          <Button onClick={handleDeleteUser} type="link" className="btn-delete">
+            Delete my account
+          </Button>
+        </Col>
       </Row>
       <ModalEditPassword
         visible={editPasswordVisible}
