@@ -1,6 +1,6 @@
 import { User } from 'types/profile'
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import { addUser, fetchUser, updateUser } from './actions'
+import { fetchUser, updateUser } from './actions'
 
 export const userAdapter = createEntityAdapter({
   selectId: (user: User) => user.id

@@ -27,7 +27,6 @@ export const updateUser = createAsyncThunk<UserOut, UserUpdateIn>(
     const userUpdate: UserUpdate = {}
     user.first_name && (userUpdate.first_name = user.first_name)
     user.last_name && (userUpdate.last_name = user.last_name)
-    user.password && (userUpdate.password = user.password)
     try {
       await fetch(`http://localhost:4000/user/${user.id}`, {
         method: 'PATCH',

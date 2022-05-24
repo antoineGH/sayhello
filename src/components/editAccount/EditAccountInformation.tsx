@@ -2,20 +2,19 @@ import { useState } from 'react'
 import ModalEditPassword from 'components/modals/modalEditPassword/ModalEditPassword'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { updateUser } from 'features/user/actions'
-import { userSelector } from 'features/user/selector'
+import { userIsLoading, userSelector } from 'features/user/selector'
 import { formValueSuccessAccount } from 'types/form'
 import { EditAccountInformationProps, UserUpdateIn } from 'types/profile'
 import { Button, Col, Form, Input, Row } from 'antd'
 
 const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
   const [editPasswordVisible, setEditPasswordVisible] = useState(false)
-  const [confirmLoading, setConfirmLoading] = useState(false)
   const dispatch = useAppDispatch()
   let userID = 0
   userID = Number(useAppSelector(userSelector.selectIds)[0])
+  const loading = useAppSelector(userIsLoading)
 
   const onFinish = (values: formValueSuccessAccount) => {
-    console.log('Success:', values)
     if (!values.first_name || !values.last_name) return
     const userUpdate: UserUpdateIn = {
       id: userID,
@@ -33,13 +32,15 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
     setEditPasswordVisible(false)
   }
 
-  const handleOk = (values: string) => {
-    console.log('Success:', values)
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setEditPasswordVisible(false)
-      setConfirmLoading(false)
-    }, 2000)
+  const handleOk = (password: string) => {
+    console.log('Success:', password)
+    if (!password) return
+    const userUpdate: UserUpdateIn = {
+      id: userID,
+      password: password
+    }
+    dispatch(updateUser(userUpdate))
+    setEditPasswordVisible(false)
   }
 
   return (
@@ -99,7 +100,7 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
         visible={editPasswordVisible}
         handleCancel={handleCancel}
         handleOk={handleOk}
-        confirmLoading={confirmLoading}
+        confirmLoading={loading}
       />
     </>
   )
