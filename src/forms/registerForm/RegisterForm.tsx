@@ -32,6 +32,51 @@ const RegisterForm = () => {
     >
       <Form.Item
         className="register_email_row"
+        name={['user', 'first_name']}
+        label="First Name"
+        rules={[
+          {
+            required: true,
+
+            message: 'Please input your first name'
+          },
+          {
+            min: 2,
+            message: 'First name too short'
+          },
+          {
+            max: 20,
+            message: 'First name too long'
+          }
+        ]}
+      >
+        <Input className="register_email" />
+      </Form.Item>
+
+      <Form.Item
+        className="register_email_row"
+        name={['user', 'last_name']}
+        label="Last Name"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your last name'
+          },
+          {
+            min: 2,
+            message: 'Last name too short'
+          },
+          {
+            max: 20,
+            message: 'Last name too long'
+          }
+        ]}
+      >
+        <Input className="register_email" />
+      </Form.Item>
+
+      <Form.Item
+        className="register_email_row"
         name={['user', 'email']}
         label="Email"
         rules={[{ type: 'email', message: 'Email not valid' }]}
@@ -47,6 +92,14 @@ const RegisterForm = () => {
           {
             required: true,
             message: 'Please input your password'
+          },
+          {
+            min: 6,
+            message: 'Password too short'
+          },
+          {
+            max: 20,
+            message: 'Password too long'
           }
         ]}
         hasFeedback
@@ -64,6 +117,14 @@ const RegisterForm = () => {
           {
             required: true,
             message: 'Please confirm your password'
+          },
+          {
+            min: 6,
+            message: 'Password too short'
+          },
+          {
+            max: 20,
+            message: 'Password too long'
           },
           ({ getFieldValue }) => ({
             validator(_, value) {

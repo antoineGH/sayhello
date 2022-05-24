@@ -4,7 +4,7 @@ import routes from 'routes'
 import './App.css'
 
 const App: React.FC = (): JSX.Element => {
-  const isLogged = true
+  const isLogged = false
   const routing = useRoutes(routes(isLogged))
   const { Content } = Layout
 

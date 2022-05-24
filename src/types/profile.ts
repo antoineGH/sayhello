@@ -16,10 +16,16 @@ export interface User {
   first_name: string
   last_name: string
   date_created: string
-  profiles: Profiles
 }
 
 export type Users = User[]
+
+export interface UserAddIn {
+  email: string
+  password: string
+  first_name: string
+  last_name: string
+}
 
 // THUNK PROFILE
 export interface ProfilePutIn {
