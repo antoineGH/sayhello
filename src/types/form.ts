@@ -4,6 +4,12 @@ export interface formValueSuccessLogin {
   remember: Boolean
 }
 
+export interface formValueSuccessAccount {
+  id: number
+  first_name: string
+  last_name: string
+}
+
 export interface formValueSuccessReset {
   password: string
   confirm: string

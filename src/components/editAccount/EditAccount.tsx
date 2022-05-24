@@ -27,7 +27,7 @@ const EditAccount = ({ user }: EditAccountProps) => {
         className="card_account_information"
         title="My Information"
       >
-        {visible ? (
+        {user && visible ? (
           <EditAccountInformation user={user} />
         ) : (
           <AccountInformation user={user} />

@@ -211,17 +211,29 @@
   "tag": [
     {
       "id": 1,
-      "tag": ["ESL English", "ESL", "English"],
+      "tag": [
+        "ESL English",
+        "ESL",
+        "English"
+      ],
       "course_id": 1
     },
     {
       "id": 2,
-      "tag": ["ESL Intermediate English", "ESL", "English"],
+      "tag": [
+        "ESL Intermediate English",
+        "ESL",
+        "English"
+      ],
       "course_id": 2
     },
     {
       "id": 3,
-      "tag": ["ESL Advanced English", "ESL", "English"],
+      "tag": [
+        "ESL Advanced English",
+        "ESL",
+        "English"
+      ],
       "course_id": 3
     }
   ],
