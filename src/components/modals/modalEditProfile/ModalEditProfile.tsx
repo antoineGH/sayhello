@@ -9,7 +9,8 @@ const ModalEditProfile = ({
   visible,
   confirmLoading,
   handleOk,
-  handleCancel
+  handleCancel,
+  handleDeleteProfile
 }: ModalEditProfileProps) => {
   const [username, setUsername] = useState(profile.name)
 
@@ -22,7 +23,7 @@ const ModalEditProfile = ({
       className="modal_edit_password"
       title="Edit Profile"
       visible={visible}
-      onOk={() => handleOk(username)}
+      onOk={() => handleOk(profile.id, username)}
       okText="Update"
       confirmLoading={confirmLoading}
       onCancel={handleCancel}
@@ -50,6 +51,13 @@ const ModalEditProfile = ({
           onChange={e => setUsername(e.target.value)}
         />
       </form>
+      <Row>
+        <Col span={24}>
+          <Button type="link" onClick={() => handleDeleteProfile(profile.id)}>
+            Delete Profile
+          </Button>
+        </Col>
+      </Row>
     </Modal>
   )
 }

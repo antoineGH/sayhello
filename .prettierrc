@@ -4,6 +4,7 @@
     "^react-router$",
     "^components/.+$",
     "^hooks/.+$",
+    "^features/.+$",
     "^utils/.+$",
     "^data/.+$",
     "^types/.+$",

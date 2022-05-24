@@ -1,24 +1,25 @@
 import { useNavigate } from 'react-router'
+import { addUser } from 'features/user/actions'
 import { formValueSuccessRegister } from 'types/form'
+import { UserAddIn } from 'types/profile'
 import { Button, Col, Form, Input, Row } from 'antd'
 
 const RegisterForm = () => {
   const navigate = useNavigate()
+
   const onFinish = (values: formValueSuccessRegister) => {
-    console.log('Success:', values)
+    const user: UserAddIn = {
+      email: values.email,
+      password: values.password,
+      first_name: values.first_name,
+      last_name: values.last_name,
+      date_created: new Date().toISOString()
+    }
+    addUser(user)
   }
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo)
-  }
-
-  const validateMessages = {
-    // eslint-disable-next-line no-template-curly-in-string
-    required: '${label} is required!',
-    types: {
-      // eslint-disable-next-line no-template-curly-in-string
-      email: '${label} is not a valid email!'
-    }
   }
 
   return (
@@ -27,12 +28,56 @@ const RegisterForm = () => {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      validateMessages={validateMessages}
       autoComplete="off"
     >
       <Form.Item
         className="register_email_row"
-        name={['user', 'email']}
+        name={['first_name']}
+        label="First Name"
+        rules={[
+          {
+            required: true,
+
+            message: 'Please input your first name'
+          },
+          {
+            min: 2,
+            message: 'First name too short'
+          },
+          {
+            max: 20,
+            message: 'First name too long'
+          }
+        ]}
+      >
+        <Input className="register_email" />
+      </Form.Item>
+
+      <Form.Item
+        className="register_email_row"
+        name={['last_name']}
+        label="Last Name"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your last name'
+          },
+          {
+            min: 2,
+            message: 'Last name too short'
+          },
+          {
+            max: 20,
+            message: 'Last name too long'
+          }
+        ]}
+      >
+        <Input className="register_email" />
+      </Form.Item>
+
+      <Form.Item
+        className="register_email_row"
+        name={['email']}
         label="Email"
         rules={[{ type: 'email', message: 'Email not valid' }]}
       >
@@ -47,6 +92,14 @@ const RegisterForm = () => {
           {
             required: true,
             message: 'Please input your password'
+          },
+          {
+            min: 6,
+            message: 'Password too short'
+          },
+          {
+            max: 20,
+            message: 'Password too long'
           }
         ]}
         hasFeedback
@@ -64,6 +117,14 @@ const RegisterForm = () => {
           {
             required: true,
             message: 'Please confirm your password'
+          },
+          {
+            min: 6,
+            message: 'Password too short'
+          },
+          {
+            max: 20,
+            message: 'Password too long'
           },
           ({ getFieldValue }) => ({
             validator(_, value) {

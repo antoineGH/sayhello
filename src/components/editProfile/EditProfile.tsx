@@ -1,9 +1,17 @@
 import { useState } from 'react'
 import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
-import { EditProfileProps } from 'types/profile'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import {
+  addProfile,
+  deleteProfile,
+  updateProfile
+} from 'features/profiles/actions'
+import { profileActive, profileIsLoading } from 'features/profiles/selectors'
+import { EditProfileProps, ProfilePutIn } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
   CaretRightOutlined,
+  PlusSquareOutlined,
   SettingOutlined,
   UserOutlined
 } from '@ant-design/icons'
@@ -17,8 +25,10 @@ const EditProfile = ({
   const { Title } = Typography
   const [visible, setVisible] = useState(false)
   const [visibleEdit, setVisibleEdit] = useState(false)
-  const [confirmLoading, setConfirmLoading] = useState(false)
   const [profile, setProfile] = useState(profiles[0])
+  const dispatch = useAppDispatch()
+  const loading = useAppSelector(profileIsLoading)
+  const activeID = useAppSelector(profileActive)
 
   const handleEditProfile = (profileID: number) => {
     const profile = profiles.filter(profile => profile.id === profileID)
@@ -26,17 +36,45 @@ const EditProfile = ({
     setVisibleEdit(true)
   }
 
-  const handleOk = (username: String) => {
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setConfirmLoading(false)
+  const handleOk = (
+    profileID: number,
+    username?: string,
+    avatar?: string,
+    age?: number,
+    user_id?: number
+  ) => {
+    const updateArg: ProfilePutIn = {
+      id: profileID
+    }
+    username !== profile.name && (updateArg.name = username)
+    avatar !== profile.avatar && (updateArg.avatar = avatar)
+    age !== profile.age && (updateArg.age = age)
+    user_id !== profile.user_id && (updateArg.user_id = user_id)
+
+    dispatch(updateProfile(updateArg)).then(() => {
       setVisibleEdit(false)
-    }, 2000)
-    console.log(`handleOk ${username}`)
+    })
   }
 
   const handleCancel = () => {
     setVisibleEdit(false)
+  }
+
+  const handleAddProfile = () => {
+    // Add profile with hard coded values
+    const addArg = {
+      username: 'Jean',
+      avatar:
+        'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
+      age: 12,
+      user_id: 1 //selector this.user.id
+    }
+    dispatch(addProfile(addArg))
+  }
+
+  const handleDeleteProfile = (profileID: number) => {
+    console.log(`handleDeleteProfile ${profileID}`)
+    dispatch(deleteProfile(profileID)).then(data => console.log(data.payload))
   }
 
   return (
@@ -92,7 +130,7 @@ const EditProfile = ({
                 </Row>
                 <Row>
                   <Col>
-                    {profile.id === 1 ? (
+                    {profile.id === activeID ? (
                       <CaretRightOutlined
                         rotate={-90}
                         style={{ fontSize: '2rem', color: 'rgb(59 16 229)' }}
@@ -105,6 +143,32 @@ const EditProfile = ({
               </Col>
             )
           })}
+          {profiles.length <= 3 && visible && (
+            <Col
+              onClick={handleAddProfile}
+              className={visible ? 'profile_col_visible' : 'profile_col'}
+              key={profile.id}
+              xs={11}
+              lg={5}
+            >
+              <Row>
+                <Col>
+                  {profile.id === 1 ? (
+                    <PlusSquareOutlined
+                      style={{ fontSize: '2rem', color: 'rgb(59 16 229)' }}
+                    />
+                  ) : (
+                    <p className="empty_text"></p>
+                  )}
+                </Col>
+              </Row>
+              <Row className={visible ? 'title_white' : ''}>
+                <Col span={24} style={{ marginTop: '0.3rem' }}>
+                  <Title level={5}>Add Profile</Title>
+                </Col>
+              </Row>
+            </Col>
+          )}
         </Row>
       </Card>
       <ModalEditProfile
@@ -112,7 +176,8 @@ const EditProfile = ({
         visible={visibleEdit}
         handleCancel={handleCancel}
         handleOk={handleOk}
-        confirmLoading={confirmLoading}
+        handleDeleteProfile={handleDeleteProfile}
+        confirmLoading={loading}
       />
     </div>
   )

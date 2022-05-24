@@ -1,28 +1,36 @@
 export interface formValueSuccessLogin {
-	username: String
-	password: String
-	remember: Boolean
+  username: String
+  password: String
+  remember: Boolean
+}
+
+export interface formValueSuccessAccount {
+  id: number
+  first_name: string
+  last_name: string
 }
 
 export interface formValueSuccessReset {
-	password: string
-	confirm: string
+  password: string
+  confirm: string
 }
 
 export interface formValueSuccessForgot {
-	user: UserForgot
+  user: UserForgot
 }
 
 export interface UserForgot {
-	email: string
+  email: string
 }
 
 export interface formValueSuccessRegister {
-	user: UserRegister
-	password: string
-	confirm: string
+  email: string
+  password: string
+  first_name: string
+  last_name: string
+  date_created: string
 }
 
 export interface UserRegister {
-	email: string
+  email: string
 }

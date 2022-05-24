@@ -1,15 +1,27 @@
 import { useState } from 'react'
 import ModalEditPassword from 'components/modals/modalEditPassword/ModalEditPassword'
-import { formValueSuccessLogin } from 'types/form'
-import { EditAccountInformationProps } from 'types/profile'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { updateUser } from 'features/user/actions'
+import { userIsLoading, userSelector } from 'features/user/selector'
+import { formValueSuccessAccount } from 'types/form'
+import { EditAccountInformationProps, UserUpdateIn } from 'types/profile'
 import { Button, Col, Form, Input, Row } from 'antd'
 
 const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
   const [editPasswordVisible, setEditPasswordVisible] = useState(false)
-  const [confirmLoading, setConfirmLoading] = useState(false)
+  const dispatch = useAppDispatch()
+  let userID = 0
+  userID = Number(useAppSelector(userSelector.selectIds)[0])
+  const loading = useAppSelector(userIsLoading)
 
-  const onFinish = (values: formValueSuccessLogin) => {
-    console.log('Success:', values)
+  const onFinish = (values: formValueSuccessAccount) => {
+    if (!values.first_name || !values.last_name) return
+    const userUpdate: UserUpdateIn = {
+      id: userID,
+      first_name: values.first_name,
+      last_name: values.last_name
+    }
+    dispatch(updateUser(userUpdate))
   }
 
   const onFinishFailed = (errorInfo: any) => {
@@ -20,13 +32,15 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
     setEditPasswordVisible(false)
   }
 
-  const handleOk = (values: string) => {
-    console.log('Success:', values)
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setEditPasswordVisible(false)
-      setConfirmLoading(false)
-    }, 2000)
+  const handleOk = (password: string) => {
+    console.log('Success:', password)
+    if (!password) return
+    const userUpdate: UserUpdateIn = {
+      id: userID,
+      password: password
+    }
+    dispatch(updateUser(userUpdate))
+    setEditPasswordVisible(false)
   }
 
   return (
@@ -35,8 +49,8 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
         <Form
           name="edit-account"
           initialValues={{
-            firstname: user.first_name,
-            lastname: user.last_name
+            first_name: user?.first_name,
+            last_name: user?.last_name
           }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -45,7 +59,7 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
           <Form.Item
             label="First Name"
             className="edit_firstname_row"
-            name="firstname"
+            name="first_name"
             rules={[
               { required: false, message: 'Please input your first name' }
             ]}
@@ -56,7 +70,7 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
           <Form.Item
             label="Last Name"
             className="edit_lastname_row"
-            name="lastname"
+            name="last_name"
             rules={[
               { required: false, message: 'Please input your last name' }
             ]}
@@ -86,7 +100,7 @@ const EditAccountInformation = ({ user }: EditAccountInformationProps) => {
         visible={editPasswordVisible}
         handleCancel={handleCancel}
         handleOk={handleOk}
-        confirmLoading={confirmLoading}
+        confirmLoading={loading}
       />
     </>
   )

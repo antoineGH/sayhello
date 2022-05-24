@@ -1,53 +1,53 @@
 @import '~antd/dist/antd.css';
 
 body {
-	background: #fff0e5;
+  background: #fff0e5;
 }
 
 /* LAYOUTS */
 
 .layout-content {
-	max-width: 1440px;
-	display: flex;
-	justify-content: center;
-	margin: auto;
-	background: #fff0e5;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background: #fff0e5;
 }
 
 .ant-statistic-content {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 /* IMPORT FONTS */
 
 @font-face {
-	font-family: 'Apercu-Pro-Bold';
-	src: url('./fonts/Apercu-Pro-Bold.woff') format('woff');
+  font-family: 'Apercu-Pro-Bold';
+  src: url('./fonts/Apercu-Pro-Bold.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'Apercu-Pro-Italic';
-	src: url('./fonts/Apercu-Pro-Italic.woff') format('woff');
+  font-family: 'Apercu-Pro-Italic';
+  src: url('./fonts/Apercu-Pro-Italic.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'Apercu-Pro-Light';
-	src: url('./fonts/Apercu-Pro-Light.woff') format('woff');
+  font-family: 'Apercu-Pro-Light';
+  src: url('./fonts/Apercu-Pro-Light.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'Apercu-Pro-Mono';
-	src: url('./fonts/Apercu-Pro-Mono.woff') format('woff');
+  font-family: 'Apercu-Pro-Mono';
+  src: url('./fonts/Apercu-Pro-Mono.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'Apercu-Pro-Regular';
-	src: url('./fonts/Apercu-Pro-Regular.woff') format('woff');
+  font-family: 'Apercu-Pro-Regular';
+  src: url('./fonts/Apercu-Pro-Regular.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'Apercu-Regular';
-	src: url('./fonts/Apercu-Regular.woff') format('woff');
+  font-family: 'Apercu-Regular';
+  src: url('./fonts/Apercu-Regular.woff') format('woff');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
@@ -55,272 +55,292 @@ body {
 /* FONTS MANAGEMENT */
 
 .font_menu_item {
-	font-family: 'Apercu-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell',
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	cursor: pointer;
-	color: #10162f;
-	text-align: left;
-	font-size: 0.95rem;
-	color: #423f40;
-	letter-spacing: -0.01rem;
+  font-family: 'Apercu-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  cursor: pointer;
+  color: #10162f;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #423f40;
+  letter-spacing: -0.01rem;
 }
 
 h3.ant-typography {
-	font-family: 'Apercu-Pro-Bold';
-	font-weight: 700;
-	line-height: 1.1;
-	font-size: 1.625rem;
+  font-family: 'Apercu-Pro-Bold';
+  font-weight: 700;
+  line-height: 1.1;
+  font-size: 1.625rem;
 }
 
 a:hover {
-	cursor: pointer;
-	text-decoration: none;
-	color: #3a10e5;
+  cursor: pointer;
+  text-decoration: none;
+  color: #3a10e5;
 }
 
 p {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell',
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	font-weight: 400;
-	line-height: 1.5;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .ant-statistic-title {
-	font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	margin-bottom: 4px;
-	color: rgb(0 0 0 / 73%);
-	font-size: 14px;
-	letter-spacing: 0.1rem;
-	text-transform: uppercase;
+  font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin-bottom: 4px;
+  color: rgb(0 0 0 / 73%);
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 .ant-tag {
-	font-family: 'Apercu-Pro-Bold';
-	font-weight: 500;
-	line-height: 1.1;
-	padding: 0.35rem 1rem;
-	font-size: 0.8rem;
-	background: #f5ffe3;
-	border: none;
+  font-family: 'Apercu-Pro-Bold';
+  font-weight: 500;
+  line-height: 1.1;
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  background: #f5ffe3;
+  border: none;
 }
 
 .ant-btn-link {
-	color: #3a10e5;
-	transition: background-color 300ms;
-	font-size: 0.95rem;
-	font-family: 'Apercu-Pro-Bold';
+  color: #3a10e5;
+  transition: background-color 300ms;
+  font-size: 0.95rem;
+  font-family: 'Apercu-Pro-Bold';
 }
 
 .ant-btn-link:hover,
 .ant-btn-link:focus {
-	color: #3a10e5;
-	background: #0000001f;
-	border-radius: 4px;
+  color: #3a10e5;
+  background: #0000001f;
+  border-radius: 4px;
 }
 
 h4.ant-typography,
 .ant-typography h4 {
-	margin-bottom: 0.5em;
-	color: rgba(0, 0, 0, 0.85);
-	font-weight: 600;
-	font-size: 1.5rem;
-	line-height: 1.4;
-	font-family: 'Apercu-Pro-Bold';
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-family: 'Apercu-Pro-Bold';
 }
 
 .ant-tooltip-inner {
-	font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 .ant-page-header-heading-sub-title {
-	font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	text-transform: uppercase;
+  font-family: 'Apercu-Pro-Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-transform: uppercase;
 }
 
 .col_course_summary_btn .ant-btn {
-	margin-top: 1rem;
-	background: #3a10e5;
-	color: white;
-	border-radius: 0.2rem;
-	font-family: 'Apercu-Pro-Bold';
-	transition: background-color 400ms;
+  margin-top: 1rem;
+  background: #3a10e5;
+  color: white;
+  border-radius: 0.2rem;
+  font-family: 'Apercu-Pro-Bold';
+  transition: background-color 400ms;
 }
 
 .col_course_summary_btn .ant-btn:hover {
-	border-color: #eeff00 !important;
-	background: #3b10e5c2 !important;
+  border-color: #eeff00 !important;
+  background: #3b10e5c2 !important;
 }
 
 .col_course_summary_btn .btn_disabled {
-	background-color: #3a10e57a !important;
+  background-color: #3a10e57a !important;
 }
 
 .col_course_summary_btn .btn_disabled:hover {
-	background-color: #3a10e57a !important;
-	color: white;
-	pointer-events: none;
+  background-color: #3a10e57a !important;
+  color: white;
+  pointer-events: none;
 }
 
 .col_course_summary_btn {
-	display: flex;
-	justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .ant-progress-text {
-	font-size: 1.3rem;
-	font-family: 'Anonymous Pro', monospace;
-	font-weight: bold;
-	letter-spacing: -0.05rem;
+  font-size: 1.3rem;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: bold;
+  letter-spacing: -0.05rem;
 }
 
 .ant-progress-line {
-	display: flex;
+  display: flex;
 }
 
 .stat_goal {
-	max-height: 82px;
+  max-height: 82px;
 }
 
 .stat_goal .ant-statistic-content-prefix {
-	margin-top: -1rem;
-	margin-right: 4px;
-	font-size: 3.5rem;
-	font-family: 'Anonymous Pro', monospace;
-	font-weight: bold;
-	letter-spacing: -0.05rem;
+  margin-top: -1rem;
+  margin-right: 4px;
+  font-size: 3.5rem;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: bold;
+  letter-spacing: -0.05rem;
 }
 
 .stat_goal .ant-statistic-content-value {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	color: #6b6f7e;
-	display: inline-block;
-	margin: 0px;
-	font-size: 0.95rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  color: #6b6f7e;
+  display: inline-block;
+  margin: 0px;
+  font-size: 0.95rem;
 }
 
 .stat_course_lower .ant-statistic-content-value {
-	margin-top: -1rem;
-	margin-right: 4px;
-	font-size: 1.6rem;
-	font-family: 'Anonymous Pro', monospace;
-	font-weight: bold;
-	letter-spacing: -0.05rem;
+  margin-top: -1rem;
+  margin-right: 4px;
+  font-size: 1.6rem;
+  font-family: 'Anonymous Pro', monospace;
+  font-weight: bold;
+  letter-spacing: -0.05rem;
 }
 
 .stat_course_lower_teacher .ant-statistic-content-value {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	color: #000000;
-	display: inline-block;
-	margin-left: 0px;
-	font-size: 1rem;
-	text-transform: capitalize;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  color: #000000;
+  display: inline-block;
+  margin-left: 0px;
+  font-size: 1rem;
+  text-transform: capitalize;
 }
 
 .stat_course_lower .ant-statistic-content-suffix {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, Cantarell,
-		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-	color: #6b6f7e;
-	display: inline-block;
-	margin-left: 0px;
-	font-size: 0.95rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  color: #6b6f7e;
+  display: inline-block;
+  margin-left: 0px;
+  font-size: 0.95rem;
 }
 
 .stat_score .ant-statistic-content {
-	margin-bottom: -1rem;
+  margin-bottom: -1rem;
 }
 
 .ant-timeline-item-content {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
 }
 
 .stat_related .ant-statistic-content-value {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	color: rgb(58, 16, 229);
-	transition: ease-in 300ms;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  color: rgb(58, 16, 229);
+  transition: ease-in 300ms;
 }
 
 .stat_related .ant-statistic-content-value:hover {
-	color: #3a10e5;
-	background: #0000001f;
-	border-radius: 4px;
-	padding: 0rem 1rem;
+  color: #3a10e5;
+  background: #0000001f;
+  border-radius: 4px;
+  padding: 0rem 1rem;
 }
 
 /* STRIPE */
 
 .ant-progress-inner {
-	background-image: repeating-linear-gradient(
-		-45deg,
-		transparent,
-		transparent 3px,
-		rgba(0, 0, 0, 0.685) 3px,
-		rgba(0, 0, 0, 0.863) 6px
-	);
-	overflow: hidden;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.685) 3px,
+    rgba(0, 0, 0, 0.863) 6px
+  );
+  overflow: hidden;
 }
 
 /* FIELD FORM */
 
 .ant-form-item-label > label {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	color: rgba(0, 0, 0, 0.85);
-	font-size: 0.95rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 0.95rem;
 }
 
 .ant-form-item-label > label::after {
-	content: none;
+  content: none;
 }
 
 /* LOGIN FORM */
 
 #login {
-	width: 100%;
-	justify-content: center;
-	margin: auto;
-	max-width: 250px;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  max-width: 250px;
 }
 
-#login .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before,
-#register .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before,
-#reset .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before,
-#forgot .ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
-	content: none;
+#login
+  .ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before,
+#register
+  .ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before,
+#reset
+  .ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before,
+#forgot
+  .ant-form-item-label
+  > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+  content: none;
 }
 
 #login .login_username_row,
 #login .login_password_row {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .ant-form-horizontal .ant-form-item-label {
-	flex-grow: 0;
-	display: flex;
+  flex-grow: 0;
+  display: flex;
 }
 
 .login_username,
 .login_password {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	font-size: 0.95rem;
-	line-height: 1.5;
-	width: 100%;
-	min-width: 0;
-	padding: 4px 11px;
-	color: #10162f;
-	line-height: 1.5715;
-	background-color: #fff;
-	border: 1px solid #707382;
-	border-radius: 2px;
-	transition: all 0.3s;
-	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  font-size: 0.95rem;
+  line-height: 1.5;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: #10162f;
+  line-height: 1.5715;
+  background-color: #fff;
+  border: 1px solid #707382;
+  border-radius: 2px;
+  transition: all 0.3s;
+  padding: 0.6rem 0.7rem 0.5rem 0.6rem;
 }
 
 #login .btn_login,
@@ -328,22 +348,22 @@ h4.ant-typography,
 #forgot .btn_forgot,
 #reset .btn_reset,
 .btn_quiz_col .btn_quiz {
-	min-width: 40px;
-	height: 40px;
-	font-family: 'Apercu-Pro-Bold';
-	font-size: 1rem;
-	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
-	background: #3a10e5;
-	color: white;
-	border-radius: 0.2rem;
-	transition: background-color 400ms;
-	border: none;
+  min-width: 40px;
+  height: 40px;
+  font-family: 'Apercu-Pro-Bold';
+  font-size: 1rem;
+  padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+  background: #3a10e5;
+  color: white;
+  border-radius: 0.2rem;
+  transition: background-color 400ms;
+  border: none;
 }
 
 .btn_quiz_col {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #login .btn_login:active,
@@ -356,16 +376,16 @@ h4.ant-typography,
 #forgot .btn_forgot:focus,
 #reset .btn_reset:focus,
 .btn_quiz_col .btn_quiz:focus {
-	min-width: 40px;
-	height: 40px;
-	font-family: 'Apercu-Pro-Bold';
-	font-size: 1rem;
-	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
-	background: #3a10e5;
-	color: white;
-	border-radius: 0.2rem;
-	transition: background-color 400ms;
-	border: none;
+  min-width: 40px;
+  height: 40px;
+  font-family: 'Apercu-Pro-Bold';
+  font-size: 1rem;
+  padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+  background: #3a10e5;
+  color: white;
+  border-radius: 0.2rem;
+  transition: background-color 400ms;
+  border: none;
 }
 
 #login .btn_login:hover,
@@ -373,307 +393,330 @@ h4.ant-typography,
 #forgot .btn_forgot:hover,
 #reset .btn_reset:hover,
 .btn_quiz_col .btn_quiz:hover {
-	border-color: #eeff00 !important;
-	background: #3b10e5c2 !important;
-	color: white !important;
+  border-color: #eeff00 !important;
+  background: #3b10e5c2 !important;
+  color: white !important;
 }
 
 .btn_quiz_col .ant-btn[disabled],
 .btn_quiz_col .ant-btn[disabled]:hover,
 .btn_quiz_col .ant-btn[disabled]:focus,
 .btn_quiz_col .ant-btn[disabled]:active {
-	color: rgba(0, 0, 0, 0.25) !important;
-	border-color: #d9d9d9 !important;
-	background: #f5f5f5 !important;
-	text-shadow: none !important;
-	box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.25) !important;
+  border-color: #d9d9d9 !important;
+  background: #f5f5f5 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .btn_disabled {
-	min-width: 40px;
-	height: 40px;
-	font-family: 'Apercu-Pro-Bold';
-	font-size: 1rem;
-	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
-	background: #3a10e5;
-	color: white;
-	border-radius: 0.2rem;
-	transition: background-color 400ms;
-	border: none;
+  min-width: 40px;
+  height: 40px;
+  font-family: 'Apercu-Pro-Bold';
+  font-size: 1rem;
+  padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+  background: #3a10e5;
+  color: white;
+  border-radius: 0.2rem;
+  transition: background-color 400ms;
+  border: none;
 }
 
 .link_heavy {
-	font-family: 'Apercu-Pro-Bold';
-	font-size: 1rem;
-	padding-left: 0rem;
-	margin-left: 0rem;
-	border-radius: 4px;
-	padding: 0rem 0.1rem;
+  font-family: 'Apercu-Pro-Bold';
+  font-size: 1rem;
+  padding-left: 0rem;
+  margin-left: 0rem;
+  border-radius: 4px;
+  padding: 0rem 0.1rem;
 }
 
 .no_account {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	font-size: 0.95rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  font-size: 0.95rem;
 }
 
 .ant-form-item-explain-error {
-	color: #ff4d4f;
-	font-family: 'Apercu-Pro-Mono';
-	letter-spacing: -0.03rem;
-	font-size: 0.8rem;
+  color: #ff4d4f;
+  font-family: 'Apercu-Pro-Mono';
+  letter-spacing: -0.03rem;
+  font-size: 0.8rem;
 }
 
 .register_main,
 .forgot_main,
 .reset_main,
 .login_main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
 }
 
 .ant-page-header-heading-sub-title {
-	margin-right: 12px;
-	color: rgba(0, 0, 0, 0.45);
-	font-size: 14px;
-	line-height: 1.5715;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	margin-top: 0.25rem;
+  margin-right: 12px;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  line-height: 1.5715;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 0.25rem;
 }
 
 .register_justify,
 .login_justify {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /* REGISTER FORM */
 
 #register {
-	width: 100%;
-	justify-content: center;
-	margin: auto;
-	max-width: 250px;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  max-width: 250px;
 }
 
 #register .register_email_row,
 #register .register_password_row,
 #register .register_password_confirm_row {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .register_email,
 .register_password,
 .register_password_confirm {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	font-size: 0.95rem;
-	line-height: 1.5;
-	width: 100%;
-	min-width: 0;
-	padding: 4px 11px;
-	color: #10162f;
-	line-height: 1.5715;
-	background-color: #fff;
-	border: 1px solid #707382;
-	border-radius: 2px;
-	transition: all 0.3s;
-	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  font-size: 0.95rem;
+  line-height: 1.5;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: #10162f;
+  line-height: 1.5715;
+  background-color: #fff;
+  border: 1px solid #707382;
+  border-radius: 2px;
+  transition: all 0.3s;
+  padding: 0.6rem 0.7rem 0.5rem 0.6rem;
 }
 
 /* FORGOT */
 
 #forgot {
-	width: 100%;
-	justify-content: center;
-	margin: auto;
-	max-width: 250px;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  max-width: 250px;
 }
 
 #forgot .forgot_email_row {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .forgot_email {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	font-size: 0.95rem;
-	line-height: 1.5;
-	width: 100%;
-	min-width: 0;
-	padding: 4px 11px;
-	color: #10162f;
-	line-height: 1.5715;
-	background-color: #fff;
-	border: 1px solid #707382;
-	border-radius: 2px;
-	transition: all 0.3s;
-	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  font-size: 0.95rem;
+  line-height: 1.5;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: #10162f;
+  line-height: 1.5715;
+  background-color: #fff;
+  border: 1px solid #707382;
+  border-radius: 2px;
+  transition: all 0.3s;
+  padding: 0.6rem 0.7rem 0.5rem 0.6rem;
 }
 
 /* RESET */
 
 #reset {
-	width: 100%;
-	justify-content: center;
-	margin: auto;
-	max-width: 250px;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  max-width: 250px;
 }
 
 #reset .reset_password_row {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #edit-password .edit_password_row {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #edit-account {
-	width: 100%;
-	justify-content: center;
-	margin: auto;
-	max-width: 250px;
-	margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  max-width: 250px;
+  margin-top: 1rem;
 }
 
 #edit-password {
-	width: 100%;
-	justify-content: center;
-	margin: auto;
-	max-width: 250px;
-	margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+  max-width: 250px;
+  margin-top: 1rem;
 }
 
 #edit-account .edit_password_row,
 #edit-account .edit_firstname_row,
 #edit-account .edit_lastname_row {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 #edit-password .edit_password_row,
 #edit-password .edit_firstname_row,
 #edit-password .edit_lastname_row {
-	display: flex;
+  display: flex;
 }
 
 #edit-account .btn_login {
-	min-width: 40px;
-	height: 40px;
-	font-family: 'Apercu-Pro-Bold';
-	font-size: 1rem;
-	padding: 0.25rem 1.3rem 0.25rem 1.3rem;
-	background: #3a10e5;
-	color: white;
-	border-radius: 0.2rem;
-	transition: background-color 400ms;
-	border: none;
+  min-width: 40px;
+  height: 40px;
+  font-family: 'Apercu-Pro-Bold';
+  font-size: 1rem;
+  padding: 0.25rem 1.3rem 0.25rem 1.3rem;
+  background: #3a10e5;
+  color: white;
+  border-radius: 0.2rem;
+  transition: background-color 400ms;
+  border: none;
 }
 .edit_lastname,
 .edit_firstname,
 .edit_password {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	font-size: 0.95rem;
-	line-height: 1.5;
-	width: 100%;
-	min-width: 0;
-	padding: 4px 11px;
-	color: #10162f;
-	line-height: 1.5715;
-	background-color: #fff;
-	border: 1px solid #707382;
-	border-radius: 2px;
-	transition: all 0.3s;
-	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  font-size: 0.95rem;
+  line-height: 1.5;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: #10162f;
+  line-height: 1.5715;
+  background-color: #fff;
+  border: 1px solid #707382;
+  border-radius: 2px;
+  transition: all 0.3s;
+  padding: 0.6rem 0.7rem 0.5rem 0.6rem;
 }
 
 .reset_password {
-	font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
-	font-size: 0.95rem;
-	line-height: 1.5;
-	width: 100%;
-	min-width: 0;
-	padding: 4px 11px;
-	color: #10162f;
-	line-height: 1.5715;
-	background-color: #fff;
-	border: 1px solid #707382;
-	border-radius: 2px;
-	transition: all 0.3s;
-	padding: 0.6rem 0.7rem 0.5rem 0.6rem;
+  font-family: 'Apercu-Pro-Regular', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell';
+  font-size: 0.95rem;
+  line-height: 1.5;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: #10162f;
+  line-height: 1.5715;
+  background-color: #fff;
+  border: 1px solid #707382;
+  border-radius: 2px;
+  transition: all 0.3s;
+  padding: 0.6rem 0.7rem 0.5rem 0.6rem;
 }
 
 .circle {
-	border-radius: 50%;
-	width: 1.7rem;
-	height: 1.7rem;
-	background-color: #3a10e5;
-	margin: auto;
-	transition: all 0.2s linear;
+  border-radius: 50%;
+  width: 1.7rem;
+  height: 1.7rem;
+  background-color: #3a10e5;
+  margin: auto;
+  transition: all 0.2s linear;
 }
 
 .circle:hover {
-	transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .trophy_elem {
-	color: gold;
-	font-size: 1.1rem;
-	display: flex;
-	justify-content: center;
-	height: 100%;
-	align-items: center;
-	margin-top: 0.2rem;
-	margin-left: 0.03rem;
+  color: gold;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  margin-top: 0.2rem;
+  margin-left: 0.03rem;
 }
 
 .modal_switch_profile {
-	width: 802px !important;
+  width: 802px !important;
+}
+.ant-spin-dot-item {
+  position: absolute;
+  display: block;
+  background-color: #3a10e5 !important;
+}
+.ant-spin-spinning {
+  transform: scale(1.5);
+}
+
+.row_error,
+.row_loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.row_error:nth-child(2) {
+  margin-top: 0.5rem;
 }
 
 /* MEDIA QUERIES */
-
 @media (max-width: 768px) {
-	.btn_quiz_col {
-		justify-content: flex-start;
-	}
+  .btn_quiz_col {
+    justify-content: flex-start;
+  }
 
-	.col_arrow {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transform: rotate(90deg);
-		margin: auto;
-		margin-bottom: 1rem;
-	}
+  .col_arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+    margin: auto;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 576px) {
-	.btn_quiz_col {
-		justify-content: center;
-	}
+  .btn_quiz_col {
+    justify-content: center;
+  }
 
-	.tag_course {
-		margin-bottom: 0.5rem;
-	}
+  .tag_course {
+    margin-bottom: 0.5rem;
+  }
 
-	.card_course .ant-statistic-title,
-	.card_lesson_summary .ant-statistic-title,
-	.card_course_content .ant-statistic-title,
-	.card_course_summary .ant-statistic-title,
-	.card_quiz_summary .ant-statistic-title {
-		margin-bottom: 0rem;
-	}
+  .card_course .ant-statistic-title,
+  .card_lesson_summary .ant-statistic-title,
+  .card_course_content .ant-statistic-title,
+  .card_course_summary .ant-statistic-title,
+  .card_quiz_summary .ant-statistic-title {
+    margin-bottom: 0rem;
+  }
 
-	.row_statistic {
-		margin-left: 0.6rem;
-	}
+  .row_statistic {
+    margin-left: 0.6rem;
+  }
 
-	.row_statistic_lesson {
-		margin-left: 0.2rem;
-	}
+  .row_statistic_lesson {
+    margin-left: 0.2rem;
+  }
 }
