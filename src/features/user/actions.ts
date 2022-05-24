@@ -1,4 +1,11 @@
-import { User, UserAddIn, Users } from 'types/profile'
+import {
+  User,
+  UserAddIn,
+  UserOut,
+  UserUpdate,
+  UserUpdateIn,
+  Users
+} from 'types/profile'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchUser = createAsyncThunk<Users, number>(
@@ -14,20 +21,39 @@ export const fetchUser = createAsyncThunk<Users, number>(
   }
 )
 
-export const addUser = createAsyncThunk<User, UserAddIn>(
-  'user/addUser',
+export const updateUser = createAsyncThunk<UserOut, UserUpdateIn>(
+  'user/updateUser',
   async user => {
+    const userUpdate: UserUpdate = {}
+    user.first_name && (userUpdate.first_name = user.first_name)
+    user.last_name && (userUpdate.last_name = user.last_name)
+    user.password && (userUpdate.password = user.password)
     try {
-      const response = await fetch('http://localhost:4000/user', {
-        method: 'POST',
+      await fetch(`http://localhost:4000/user/${user.id}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(user)
       })
-      return await response.json()
+      return { id: user.id, changes: userUpdate }
     } catch (e) {
-      throw new Error(`Fail to create user: ${e}`)
+      throw new Error(`Fail to update user: ${e}`)
     }
   }
 )
+
+export const addUser = async (user: UserAddIn): Promise<User> => {
+  try {
+    const response = await fetch('http://localhost:4000/user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+    return await response.json()
+  } catch (e) {
+    throw new Error(`Fail to create user: ${e}`)
+  }
+}

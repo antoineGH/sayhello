@@ -18,14 +18,6 @@
       "first_name": "Bastien",
       "last_name": "Ratat",
       "date_created": "2022-02-27T18:55:43.511Z"
-    },
-    {
-      "email": "test@test.test",
-      "password": "test",
-      "first_name": "FirstTest",
-      "last_name": "LastTest",
-      "date_created": "2022-05-24T16:00:19.357Z",
-      "id": 3
     }
   ],
   "profile": [
@@ -219,29 +211,17 @@
   "tag": [
     {
       "id": 1,
-      "tag": [
-        "ESL English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL English", "ESL", "English"],
       "course_id": 1
     },
     {
       "id": 2,
-      "tag": [
-        "ESL Intermediate English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Intermediate English", "ESL", "English"],
       "course_id": 2
     },
     {
       "id": 3,
-      "tag": [
-        "ESL Advanced English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Advanced English", "ESL", "English"],
       "course_id": 3
     }
   ],

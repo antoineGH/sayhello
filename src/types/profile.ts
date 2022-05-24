@@ -20,6 +20,24 @@ export interface User {
 
 export type Users = User[]
 
+export interface UserUpdateIn {
+  id: number
+  first_name: string
+  last_name: string
+  password: string
+}
+
+export interface UserUpdate {
+  first_name?: string
+  last_name?: string
+  password?: string
+}
+
+export interface UserOut {
+  id: number
+  changes: UserUpdate
+}
+
 export interface UserAddIn {
   email: string
   password: string

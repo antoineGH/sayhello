@@ -1,6 +1,6 @@
 import { User } from 'types/profile'
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit'
-import { fetchUser } from './actions'
+import { addUser, fetchUser } from './actions'
 
 export const userAdapter = createEntityAdapter({
   selectId: (user: User) => user.id
@@ -18,6 +18,7 @@ export const usersSlice = createSlice({
     }
   },
   extraReducers: builder => {
+    // fetchUser
     builder.addCase(fetchUser.pending, state => {
       state.loading = true
     })

@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router'
-import { useAppDispatch } from 'hooks/hooks'
 import { addUser } from 'features/user/actions'
 import { formValueSuccessRegister } from 'types/form'
 import { UserAddIn } from 'types/profile'
@@ -7,7 +6,6 @@ import { Button, Col, Form, Input, Row } from 'antd'
 
 const RegisterForm = () => {
   const navigate = useNavigate()
-  const dispatch = useAppDispatch()
 
   const onFinish = (values: formValueSuccessRegister) => {
     const user: UserAddIn = {
@@ -17,19 +15,7 @@ const RegisterForm = () => {
       last_name: values.last_name,
       date_created: new Date().toISOString()
     }
-    dispatch(addUser(user))
-  }
-
-  const testOnlyRegister = () => {
-    const user: UserAddIn = {
-      email: 'test@test.test',
-      password: 'test',
-      first_name: 'FirstTest',
-      last_name: 'LastTest',
-      date_created: new Date().toISOString()
-    }
-
-    dispatch(addUser(user))
+    addUser(user)
   }
 
   const onFinishFailed = (errorInfo: any) => {
@@ -158,10 +144,6 @@ const RegisterForm = () => {
           Register
         </Button>
       </Form.Item>
-
-      <Button type="primary" onClick={testOnlyRegister}>
-        REGISTER TEST
-      </Button>
 
       <Row>
         <Col
