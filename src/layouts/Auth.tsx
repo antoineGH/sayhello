@@ -24,7 +24,7 @@ const Auth = () => {
   const md = screens?.md
 
   // HARDCODED USERID
-  const userID = 2
+  const userID = 1
 
   const profiles = useAppSelector(profilesSelectors.selectAll)
   const isLoadingUser = useAppSelector(userIsLoading)

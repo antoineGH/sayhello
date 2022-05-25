@@ -102,7 +102,7 @@ const EditProfile = ({
         className="card_account_information"
         title={visible ? 'Edit Profile' : 'Select Profile'}
       >
-        <Row className="row_card_account" gutter={[16, 16]}>
+        <Row className="row_card_account">
           {profiles.map(profile => {
             return (
               <Col

@@ -1,133 +1,137 @@
 .profile_title {
-	display: flex;
+  display: flex;
 }
 
 .col_square {
-	height: 150px;
-	width: 150px;
-	background-color: white;
-	margin-bottom: 1rem;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	justify-items: center;
-	justify-self: center;
-	align-items: center;
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
 }
 
 .row_card_account {
-	display: flex;
-	justify-content: space-evenly;
-	height: 55%;
+  display: flex;
+  justify-content: start;
+  height: 55%;
+  grid-gap: 2rem;
+  margin: auto;
+  padding-left: 2.5rem;
+  width: 100%;
 }
 
 .row_card_account .profile_col {
-	width: 100%;
-	background: #f5f5f5;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	cursor: pointer;
-	border: 1px solid #f0f0f0 !important;
-	transition: background-color 400ms;
-	transition: transform 400ms;
+  width: 100%;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border: 1px solid #f0f0f0 !important;
+  transition: background-color 400ms;
+  transition: transform 400ms;
 }
 
 .row_card_account .profile_col_visible {
-	background-image: repeating-linear-gradient(
-		-45deg,
-		transparent,
-		transparent 3px,
-		rgba(0, 0, 0, 0.068) 3px,
-		rgba(0, 0, 0, 0.068) 6px
-	);
-	border: 1px solid #f0f0f0 !important;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	cursor: pointer;
-	transition: transform 0.4s;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.068) 3px,
+    rgba(0, 0, 0, 0.068) 6px
+  );
+  border: 1px solid #f0f0f0 !important;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.4s;
 }
 
 .row_card_account .profile_col_visible:hover {
-	transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .row_card_account .profile_col_visible:hover .title_white h5 {
-	content: '';
+  content: '';
 }
 
 .row_card_account .profile_col:hover {
-	background-color: #ffd300 !important;
-	transform: scale(1.2);
+  background-color: #ffd300 !important;
+  transform: scale(1.2);
 }
 .row_last_col {
-	grid-row-end: -1;
-	position: relative;
+  grid-row-end: -1;
+  position: relative;
 }
 
 .col_cog {
-	min-height: 1.25em;
-	line-height: 1.25;
+  min-height: 1.25em;
+  line-height: 1.25;
 }
 
 .avatar_cog {
-	font-size: 1.1rem;
-	color: '#3a10e5' !important;
+  font-size: 1.1rem;
+  color: '#3a10e5' !important;
 }
 
 .cog_lol {
-	font-size: 1.2rem;
-	color: '#3a10e5';
-	position: relative;
-	display: block;
+  font-size: 1.2rem;
+  color: '#3a10e5';
+  position: relative;
+  display: block;
 }
 
 .overlay {
-	position: absolute;
-	top: 0rem;
-	right: 0rem;
-	font-weight: bold;
-	text-align: right;
-	font-size: 30px;
-	padding: 0.3rem;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  font-weight: bold;
+  text-align: right;
+  font-size: 30px;
+  padding: 0.3rem;
 }
 
 .title_white {
-	width: 75%;
+  width: 75%;
 }
 
 .empty_text {
-	height: 1.3em;
-	line-height: 1.25;
+  height: 1.3em;
+  line-height: 1.25;
 }
 
 .edit_profile_modal .ant-card-head-wrapper,
 .edit_profile_modal .ant-card-head,
 .edit_profile_modal > .ant-row {
-	display: none;
+  display: none;
 }
 
 .edit_profile_modal {
-	min-height: 0px !important;
+  min-height: 0px !important;
 }
 
 .card_account_information {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .edit_profile_modal .card_account_information {
-	height: 100% !important;
-	margin: 0rem;
-	padding: 0rem;
+  height: 100% !important;
+  margin: 0rem;
+  padding: 0rem;
 }
 
 @media (max-width: 996px) {
-	.row_card_account .profile_col:hover {
-		background-color: #ffd300 !important;
-		transform: scale(1.1);
-	}
+  .row_card_account .profile_col:hover {
+    background-color: #ffd300 !important;
+    transform: scale(1.1);
+  }
 }
