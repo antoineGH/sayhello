@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useAppDispatch } from 'hooks/hooks'
 import { Goal } from 'types/goal'
 import { Dictionary } from '@reduxjs/toolkit'
 import { Button, Col, InputNumber, Modal, Row, Slider } from 'antd'
@@ -6,23 +7,21 @@ import { Button, Col, InputNumber, Modal, Row, Slider } from 'antd'
 interface ModalEditGoalsProps {
   goal: Dictionary<Goal>
   profileID: number
+  loading: boolean
 }
 
-const ModalEditGoals = ({ goal, profileID }: ModalEditGoalsProps) => {
+const ModalEditGoals = ({ goal, profileID, loading }: ModalEditGoalsProps) => {
   const [visible, setVisible] = useState(false)
   const [value, setValue] = useState(goal[profileID]?.days)
-  const [confirmLoading, setConfirmLoading] = useState(false)
+  const dispatch = useAppDispatch()
 
   const showModal = () => {
     setVisible(true)
   }
 
   const handleOk = () => {
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setVisible(false)
-      setConfirmLoading(false)
-    }, 2000)
+    // dispatch(updateGoal)
+    setVisible(false)
   }
 
   const handleCancel = () => {
@@ -30,7 +29,6 @@ const ModalEditGoals = ({ goal, profileID }: ModalEditGoalsProps) => {
   }
 
   function onChange(goalValue: any) {
-    console.log('goal = ', goalValue)
     setValue(goalValue)
   }
 
@@ -44,7 +42,7 @@ const ModalEditGoals = ({ goal, profileID }: ModalEditGoalsProps) => {
         title="Edit Goals"
         visible={visible}
         onOk={handleOk}
-        confirmLoading={confirmLoading}
+        confirmLoading={loading}
         onCancel={handleCancel}
       >
         <Row className="row_slider">

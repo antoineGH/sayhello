@@ -1,14 +1,7 @@
 import CourseList from 'components/courseList/CourseList'
 import Goal from 'components/goal/Goal'
 import Score from 'components/score/Score'
-import { useAppSelector } from 'hooks/hooks'
 import useTitle from 'hooks/useTitle'
-import {
-  goalHasError,
-  goalIsLoading,
-  goalsSelectors
-} from 'features/goals/selectors'
-import { profileActive } from 'features/profiles/selectors'
 import { Col, PageHeader, Row } from 'antd'
 
 const Home = () => {

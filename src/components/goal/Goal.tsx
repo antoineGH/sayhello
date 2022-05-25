@@ -49,7 +49,11 @@ const Goal = () => {
       <div className="goal_title">
         <Title level={3}>My Goals</Title>
         {!errorGoal && !loadingGoal && (
-          <ModalEditGoals goal={goal} profileID={profileID} />
+          <ModalEditGoals
+            goal={goal}
+            profileID={profileID}
+            loading={loadingGoal}
+          />
         )}
       </div>
       <Card
