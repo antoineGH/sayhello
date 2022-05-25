@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ModalAddProfile from 'components/modals/modalAddProfile/ModalAddProfile'
 import ModalEditProfile from 'components/modals/modalEditProfile/ModalEditProfile'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import {
@@ -25,6 +26,7 @@ const EditProfile = ({
   const { Title } = Typography
   const [visible, setVisible] = useState(false)
   const [visibleEdit, setVisibleEdit] = useState(false)
+  const [visibleAdd, setVisibleAdd] = useState(false)
   const [profile, setProfile] = useState(profiles[0])
   const dispatch = useAppDispatch()
   const loading = useAppSelector(profileIsLoading)
@@ -60,16 +62,23 @@ const EditProfile = ({
     setVisibleEdit(false)
   }
 
-  const handleAddProfile = () => {
-    // Add profile with hard coded values
-    const addArg = {
-      username: 'Jean',
-      avatar:
-        'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
-      age: 12,
-      user_id: 1 //selector this.user.id
-    }
-    dispatch(addProfile(addArg))
+  const handleCancelAdd = () => {
+    setVisibleAdd(false)
+  }
+
+  const handleAddProfile = (name: string, age: number) => {
+    console.log(`well received in parent ${name}, ${age}`)
+    // TODO: create object and type with name, age, avatar URL, user_id and dispatch with addProfile
+    // TODO: create extra reducer to handle add profile in the store with adapter.addOne()
+    // // Add profile with hard coded values
+    // const addArg = {
+    //   username: 'Jean',
+    //   avatar:
+    //     'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
+    //   age: 12,
+    //   user_id: 1 //selector this.user.id
+    // }
+    // dispatch(addProfile(addArg))
   }
 
   const handleDeleteProfile = (profileID: number) => {
@@ -145,7 +154,7 @@ const EditProfile = ({
           })}
           {profiles.length <= 3 && visible && (
             <Col
-              onClick={handleAddProfile}
+              onClick={() => setVisibleAdd(true)}
               className={visible ? 'profile_col_visible' : 'profile_col'}
               key={profile.id}
               xs={11}
@@ -153,13 +162,9 @@ const EditProfile = ({
             >
               <Row>
                 <Col>
-                  {profile.id === 1 ? (
-                    <PlusSquareOutlined
-                      style={{ fontSize: '2rem', color: 'rgb(59 16 229)' }}
-                    />
-                  ) : (
-                    <p className="empty_text"></p>
-                  )}
+                  <PlusSquareOutlined
+                    style={{ fontSize: '2rem', color: 'rgb(59 16 229)' }}
+                  />
                 </Col>
               </Row>
               <Row className={visible ? 'title_white' : ''}>
@@ -178,6 +183,12 @@ const EditProfile = ({
         handleOk={handleOk}
         handleDeleteProfile={handleDeleteProfile}
         confirmLoading={loading}
+      />
+      <ModalAddProfile
+        visible={visibleAdd}
+        confirmLoading={loading}
+        handleCancelAdd={handleCancelAdd}
+        handleAddProfile={handleAddProfile}
       />
     </div>
   )

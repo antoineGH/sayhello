@@ -112,6 +112,13 @@ export interface ModalEditProfileProps {
   handleCancel: () => void
 }
 
+export interface ModalAddProfileProps {
+  visible: boolean
+  confirmLoading: boolean
+  handleCancelAdd: () => void
+  handleAddProfile: (name: string, age: number) => void
+}
+
 export interface ModalSwitchProfileProps {
   visible: boolean
   handleSwitchProfile: (profileID: number) => void
