@@ -80,7 +80,6 @@ const EditProfile = ({
   }
 
   const handleDeleteProfile = (profileID: number) => {
-    console.log(`handleDeleteProfile ${profileID}`)
     dispatch(deleteProfile(profileID)).then(data => console.log(data.payload))
   }
 
