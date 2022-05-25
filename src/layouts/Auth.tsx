@@ -3,8 +3,10 @@ import { Outlet } from 'react-router'
 import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { fetchGoal } from 'features/goals/actions'
 import { fetchProfiles } from 'features/profiles/actions'
 import {
+  profileActive,
   profileHasError,
   profileIsLoading,
   profilesSelectors
@@ -17,11 +19,12 @@ import { Button, Col, Grid, Layout, Row, Spin } from 'antd'
 
 const Auth = () => {
   const [visible, setVisible] = useState(false)
-  const dispatch = useAppDispatch()
   const { Header, Footer } = Layout
   const { useBreakpoint } = Grid
   const screens = useBreakpoint()
   const md = screens?.md
+  const dispatch = useAppDispatch()
+  const profileID = useAppSelector(profileActive)
 
   // HARDCODED USERID
   const userID = 1
@@ -37,6 +40,10 @@ const Auth = () => {
       response.hasOwnProperty('payload') && dispatch(fetchProfiles(userID))
     })
   }, [dispatch])
+
+  useEffect(() => {
+    dispatch(fetchGoal(profileID))
+  }, [dispatch, profileID])
 
   const handleCancel = (): void => {
     setVisible(false)

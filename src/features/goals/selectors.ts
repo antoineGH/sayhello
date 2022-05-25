@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit'
 import { RootState } from 'store'
-import { goalsAdapter } from './slice'
+import { goalAdapter } from './slice'
 
-export const goalsSelectors = goalsAdapter.getSelectors(
+export const goalsSelectors = goalAdapter.getSelectors(
   (state: RootState) => state.goal
 )
 

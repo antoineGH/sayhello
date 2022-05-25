@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import goalsReducer from './features/goals/slice'
+import goalReducer from './features/goals/slice'
 import profilesReducer from './features/profiles/slice'
 import userReducer from './features/user/slice'
 
@@ -7,7 +7,7 @@ export const store = configureStore({
   reducer: {
     user: userReducer,
     profiles: profilesReducer,
-    goal: goalsReducer
+    goal: goalReducer
   }
 })
 
