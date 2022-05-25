@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useAppDispatch } from 'hooks/hooks'
-import { Goal } from 'types/goal'
+import { updateGoal } from 'features/goals/actions'
+import { Goal, GoalUpdateIn } from 'types/goal'
 import { Dictionary } from '@reduxjs/toolkit'
 import { Button, Col, InputNumber, Modal, Row, Slider } from 'antd'
 
@@ -20,7 +21,11 @@ const ModalEditGoals = ({ goal, profileID, loading }: ModalEditGoalsProps) => {
   }
 
   const handleOk = () => {
-    // dispatch(updateGoal)
+    const goalUpdate: GoalUpdateIn = {
+      id: 1,
+      days: 1
+    }
+    dispatch(updateGoal(goalUpdate))
     setVisible(false)
   }
 
