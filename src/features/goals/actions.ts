@@ -1,4 +1,4 @@
-import { Goals } from 'types/goal'
+import { GoalUpdateIn, GoalUpdateOut, Goals } from 'types/goal'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const fetchGoal = createAsyncThunk<Goals, number>(
@@ -16,4 +16,21 @@ export const fetchGoal = createAsyncThunk<Goals, number>(
   }
 )
 
-// export const updateGoal = createAsyncThunk()
+export const updateGoal = createAsyncThunk<GoalUpdateOut, GoalUpdateIn>(
+  'goal/updateGoal',
+  async goal => {
+    const goalUpdate = { days: goal.days }
+    try {
+      await fetch(`http://localhost:4000/goal/${goal.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(goal)
+      })
+      return { id: goal.id, changes: goalUpdate }
+    } catch (e) {
+      throw new Error(`Fail to update goal: ${e}`)
+    }
+  }
+)
