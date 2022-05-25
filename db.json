@@ -211,29 +211,17 @@
   "tag": [
     {
       "id": 1,
-      "tag": [
-        "ESL English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL English", "ESL", "English"],
       "course_id": 1
     },
     {
       "id": 2,
-      "tag": [
-        "ESL Intermediate English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Intermediate English", "ESL", "English"],
       "course_id": 2
     },
     {
       "id": 3,
-      "tag": [
-        "ESL Advanced English",
-        "ESL",
-        "English"
-      ],
+      "tag": ["ESL Advanced English", "ESL", "English"],
       "course_id": 3
     }
   ],
@@ -383,17 +371,17 @@
     {
       "id": 2,
       "days": 2,
-      "profile_id": 2
+      "profile_id": 1
     },
     {
       "id": 3,
       "days": 7,
-      "profile_id": 3
+      "profile_id": 2
     },
     {
       "id": 4,
       "days": 1,
-      "profile_id": 4
+      "profile_id": 3
     }
   ]
 }
