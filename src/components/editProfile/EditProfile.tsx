@@ -137,8 +137,6 @@ const EditProfile = ({
                 </Row>
                 <Row>
                   <Col>
-                    {profile.id}
-                    {activeID}
                     {profile.id === activeID ? (
                       <CaretRightOutlined
                         rotate={-90}
