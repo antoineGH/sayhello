@@ -3,14 +3,16 @@ import Goal from 'components/goal/Goal'
 import Score from 'components/score/Score'
 import { useAppSelector } from 'hooks/hooks'
 import useTitle from 'hooks/useTitle'
-import { goalsSelectors } from 'features/goals/selectors'
+import {
+  goalHasError,
+  goalIsLoading,
+  goalsSelectors
+} from 'features/goals/selectors'
+import { profileActive } from 'features/profiles/selectors'
 import { Col, PageHeader, Row } from 'antd'
 
 const Home = () => {
   useTitle('Home')
-
-  const goals = useAppSelector(goalsSelectors.selectAll)
-  console.log(goals)
 
   return (
     <>
@@ -30,7 +32,6 @@ const Home = () => {
         <Col xs={24} xl={8}>
           <Row>
             <Col span={24} sm={12} xl={24}>
-              {/* TODO: ON PROFILE LOADING, ERROR */}
               <Goal />
             </Col>
             <Col xs={24} sm={12} xl={24}>

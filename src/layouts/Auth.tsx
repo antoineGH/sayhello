@@ -57,7 +57,7 @@ const Auth = () => {
   const handleTryAgain = () => {
     dispatch(resetUserError())
     dispatch(resetProfileError())
-    dispatch(fetchUser(1)).then(() => {
+    dispatch(fetchUser(userID)).then(() => {
       dispatch(fetchProfiles(userID))
     })
   }

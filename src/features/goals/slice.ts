@@ -12,7 +12,11 @@ export const goalSlice = createSlice({
     loading: false,
     error: false
   }),
-  reducers: {},
+  reducers: {
+    resetGoalError: state => {
+      state.error = false
+    }
+  },
   extraReducers: builder => {
     // fetchGoal
     builder.addCase(fetchGoal.pending, state => {
@@ -30,3 +34,4 @@ export const goalSlice = createSlice({
 })
 
 export default goalSlice.reducer
+export const { resetGoalError } = goalSlice.actions

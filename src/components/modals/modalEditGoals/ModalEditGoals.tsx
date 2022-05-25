@@ -1,9 +1,16 @@
 import { useState } from 'react'
+import { Goal } from 'types/goal'
+import { Dictionary } from '@reduxjs/toolkit'
 import { Button, Col, InputNumber, Modal, Row, Slider } from 'antd'
 
-const ModalEditGoals = () => {
+interface ModalEditGoalsProps {
+  goal: Dictionary<Goal>
+  profileID: number
+}
+
+const ModalEditGoals = ({ goal, profileID }: ModalEditGoalsProps) => {
   const [visible, setVisible] = useState(false)
-  const [value, setValue] = useState(5)
+  const [value, setValue] = useState(goal[profileID]?.days)
   const [confirmLoading, setConfirmLoading] = useState(false)
 
   const showModal = () => {
@@ -57,7 +64,10 @@ const ModalEditGoals = () => {
               max={7}
               value={value}
               formatter={value =>
-                `${value} Days`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                `${value} Day${value && value >= 2 ? 's' : ''}`.replace(
+                  /\B(?=(\d{3})+(?!\d))/g,
+                  ','
+                )
               }
               onChange={onChange}
               style={{ width: '100%' }}

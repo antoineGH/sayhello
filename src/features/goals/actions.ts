@@ -9,7 +9,7 @@ export const fetchGoal = createAsyncThunk<Goals, number>(
         `http://localhost:4000/goal?profile_id=${profileID}`
       )
       const json = await data.json()
-      return [json]
+      return json
     } catch (e) {
       throw new Error(`Fail to fetch goal: ${e}`)
     }
