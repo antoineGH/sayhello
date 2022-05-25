@@ -27,6 +27,7 @@ const ModalAddProfile = ({
     if (name.length >= 1 && name.length <= 20) {
       if (age >= 1 && age <= 99) {
         handleAddProfile(name, age)
+        handleCancelAdd()
       }
     }
     return

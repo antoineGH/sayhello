@@ -8,7 +8,8 @@ import {
   updateProfile
 } from 'features/profiles/actions'
 import { profileActive, profileIsLoading } from 'features/profiles/selectors'
-import { EditProfileProps, ProfilePutIn } from 'types/profile'
+import { userSelector } from 'features/user/selector'
+import { EditProfileProps, ProfileAddIn, ProfilePutIn } from 'types/profile'
 import { Avatar, Button, Card, Col, Row, Typography } from 'antd'
 import {
   CaretRightOutlined,
@@ -30,6 +31,7 @@ const EditProfile = ({
   const [profile, setProfile] = useState(profiles[0])
   const dispatch = useAppDispatch()
   const loading = useAppSelector(profileIsLoading)
+  const userID = Number(useAppSelector(userSelector.selectIds)[0])
   const activeID = useAppSelector(profileActive)
 
   const handleEditProfile = (profileID: number) => {
@@ -67,18 +69,14 @@ const EditProfile = ({
   }
 
   const handleAddProfile = (name: string, age: number) => {
-    console.log(`well received in parent ${name}, ${age}`)
-    // TODO: create object and type with name, age, avatar URL, user_id and dispatch with addProfile
-    // TODO: create extra reducer to handle add profile in the store with adapter.addOne()
-    // // Add profile with hard coded values
-    // const addArg = {
-    //   username: 'Jean',
-    //   avatar:
-    //     'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
-    //   age: 12,
-    //   user_id: 1 //selector this.user.id
-    // }
-    // dispatch(addProfile(addArg))
+    const user: ProfileAddIn = {
+      name: name,
+      avatar:
+        'https://www.gravatar.com/userimage/120424681/1c7e2f0e022ac36a2835ad9b0f2bd09c?size=120',
+      age: age,
+      user_id: userID
+    }
+    dispatch(addProfile(user))
   }
 
   const handleDeleteProfile = (profileID: number) => {
@@ -139,6 +137,8 @@ const EditProfile = ({
                 </Row>
                 <Row>
                   <Col>
+                    {profile.id}
+                    {activeID}
                     {profile.id === activeID ? (
                       <CaretRightOutlined
                         rotate={-90}

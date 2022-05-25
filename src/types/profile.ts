@@ -61,7 +61,7 @@ export interface ProfileOut {
 }
 
 export interface ProfileAddIn {
-  username: string
+  name: string
   avatar: string
   age: number
   user_id: number
