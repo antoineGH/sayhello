@@ -16,6 +16,7 @@ import { fetchUser } from 'features/user/actions'
 import { userHasError, userIsLoading } from 'features/user/selector'
 import { resetUserError } from 'features/user/slice'
 import { Button, Col, Grid, Layout, Row, Spin } from 'antd'
+import { act } from 'react-dom/test-utils'
 
 const Auth = () => {
   const [visible, setVisible] = useState(false)
@@ -24,10 +25,10 @@ const Auth = () => {
   const screens = useBreakpoint()
   const md = screens?.md
   const dispatch = useAppDispatch()
-  const profileID = useAppSelector(profileActive)
+  // const profileID = useAppSelector(profileActive)
 
   // HARDCODED USERID
-  const userID = 1
+  const userID = 2
 
   const profiles = useAppSelector(profilesSelectors.selectAll)
   const isLoadingUser = useAppSelector(userIsLoading)
@@ -38,13 +39,18 @@ const Auth = () => {
   useEffect(() => {
     dispatch(fetchUser(userID)).then(response => {
       response.hasOwnProperty('payload') &&
-        dispatch(fetchProfiles(userID)).then(res => console.log(res.payload))
+        dispatch(fetchProfiles(userID)).then(res => {
+          if (res.payload && typeof res.payload === 'object') {
+            let entries = Object.entries(res.payload)
+            dispatch(fetchGoal(entries[0][1].id))
+          }
+        })
     })
   }, [dispatch])
 
-  useEffect(() => {
-    dispatch(fetchGoal(profileID))
-  }, [dispatch, profileID])
+  // useEffect(() => {
+  //   dispatch(fetchGoal(profileID))
+  // }, [dispatch, profileID])
 
   const handleCancel = (): void => {
     setVisible(false)
