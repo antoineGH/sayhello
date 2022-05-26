@@ -6,11 +6,11 @@ import { Card, PageHeader } from 'antd'
 const CoursePage = () => {
   const navigate = useNavigate()
   const urlParams = useParams()
-  const courseID = urlParams?.courseID
-  useTitle(`Course ${courseID}`)
+  const id = urlParams?.courseID
+  useTitle(`Course ${id}`)
 
   const course = {
-    courseID: 1,
+    id: 1,
     name: 'Course 1',
     duration: 1,
     difficulty: 1,

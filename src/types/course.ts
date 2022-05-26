@@ -1,22 +1,22 @@
 import { LessonsLight } from './lesson'
 
 export interface Course {
-  courseID: number
+  id: number
   name: string
   duration: number
   difficulty: number
-  progressionID: number
-  completed: number
   numberLesson: number
   numberQuiz: number
+  progressionID: number
+  completed: number
   tags: string[]
 }
 
 export type Courses = Course[]
 
 export interface CourseSummaryProps {
-  courseID: number
-  courseName: string
+  id: number
+  name: string
   duration: number
   difficulty: number
   completed: number

@@ -12,8 +12,8 @@ import {
 import { TrophyOutlined } from '@ant-design/icons'
 
 const CourseSummary = ({
-  courseID,
-  courseName,
+  id,
+  name,
   duration,
   difficulty,
   completed,
@@ -40,11 +40,11 @@ const CourseSummary = ({
           </Row>
           <Row>
             <Col>
-              <Title level={4}>{courseName}</Title>
+              <Title level={4}>{name}</Title>
             </Col>
             {completed === 100 ? (
               <Col span={1} style={{ marginLeft: '.7rem' }}>
-                <Tooltip title={`${courseName} Completed`}>
+                <Tooltip title={`${name} Completed`}>
                   <div className="circle">
                     <TrophyOutlined className="trophy_elem" />
                   </div>
@@ -112,7 +112,7 @@ const CourseSummary = ({
               completed === 100 ? 'btn_quiz btn_quiz_resume' : 'btn_quiz'
             }
             style={{ marginTop: '1rem' }}
-            onClick={() => handleCourse(courseID)}
+            onClick={() => handleCourse(id)}
           >
             {completed ? 'Resume' : 'Enroll'}
           </Button>
