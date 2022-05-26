@@ -1,21 +1,42 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { updateGoal } from 'features/goals/actions'
+import { goalDays, goalID } from 'features/goals/selectors'
+import { GoalUpdateIn } from 'types/goal'
 import { Button, Col, InputNumber, Modal, Row, Slider } from 'antd'
 
-const ModalEditGoals = () => {
+interface ModalEditGoalsProps {
+  loading: boolean
+}
+
+const ModalEditGoals = ({ loading }: ModalEditGoalsProps) => {
   const [visible, setVisible] = useState(false)
-  const [value, setValue] = useState(5)
-  const [confirmLoading, setConfirmLoading] = useState(false)
+  const [value, setValue] = useState(0)
+  const dispatch = useAppDispatch()
+
+  const id = Number(useAppSelector(goalID)[0])
+  const days = useAppSelector(goalDays)
+
+  useEffect(() => {
+    const entries = Object.entries(days)
+    if (entries) {
+      if (entries[0]) {
+        if (entries[0][1]) setValue(entries[0][1]?.days)
+      }
+    }
+  }, [days])
+
+  const handleOk = () => {
+    const goalUpdate: GoalUpdateIn = {
+      id: id,
+      days: value
+    }
+    dispatch(updateGoal(goalUpdate))
+    setVisible(false)
+  }
 
   const showModal = () => {
     setVisible(true)
-  }
-
-  const handleOk = () => {
-    setConfirmLoading(true)
-    setTimeout(() => {
-      setVisible(false)
-      setConfirmLoading(false)
-    }, 2000)
   }
 
   const handleCancel = () => {
@@ -23,7 +44,6 @@ const ModalEditGoals = () => {
   }
 
   function onChange(goalValue: any) {
-    console.log('goal = ', goalValue)
     setValue(goalValue)
   }
 
@@ -37,7 +57,7 @@ const ModalEditGoals = () => {
         title="Edit Goals"
         visible={visible}
         onOk={handleOk}
-        confirmLoading={confirmLoading}
+        confirmLoading={loading}
         onCancel={handleCancel}
       >
         <Row className="row_slider">
@@ -57,7 +77,10 @@ const ModalEditGoals = () => {
               max={7}
               value={value}
               formatter={value =>
-                `${value} Days`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                `${value} Day${value && value >= 2 ? 's' : ''}`.replace(
+                  /\B(?=(\d{3})+(?!\d))/g,
+                  ','
+                )
               }
               onChange={onChange}
               style={{ width: '100%' }}

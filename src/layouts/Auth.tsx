@@ -3,8 +3,10 @@ import { Outlet } from 'react-router'
 import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { fetchGoal } from 'features/goals/actions'
 import { fetchProfiles } from 'features/profiles/actions'
 import {
+  profileActive,
   profileHasError,
   profileIsLoading,
   profilesSelectors
@@ -17,14 +19,15 @@ import { Button, Col, Grid, Layout, Row, Spin } from 'antd'
 
 const Auth = () => {
   const [visible, setVisible] = useState(false)
-  const dispatch = useAppDispatch()
   const { Header, Footer } = Layout
   const { useBreakpoint } = Grid
   const screens = useBreakpoint()
   const md = screens?.md
+  const dispatch = useAppDispatch()
+  const profileID = useAppSelector(profileActive)
 
   // HARDCODED USERID
-  const userID = 1
+  const userID = 2
 
   const profiles = useAppSelector(profilesSelectors.selectAll)
   const isLoadingUser = useAppSelector(userIsLoading)
@@ -33,14 +36,17 @@ const Auth = () => {
   const hasErrorProfile = useAppSelector(profileHasError)
 
   useEffect(() => {
-    dispatch(fetchUser(userID)).then(response => {
-      response.hasOwnProperty('payload') && dispatch(fetchProfiles(userID))
-    })
+    dispatch(fetchUser(userID))
   }, [dispatch])
 
-  const handleCancel = (): void => {
-    setVisible(false)
-  }
+  useEffect(() => {
+    dispatch(fetchProfiles(userID))
+  }, [dispatch, userID])
+
+  useEffect(() => {
+    if (profileID === 0) return
+    dispatch(fetchGoal(profileID))
+  }, [dispatch, profileID])
 
   const handleSwitchProfile = (profileID: number): void => {
     dispatch(setActiveID(profileID))
@@ -50,9 +56,13 @@ const Auth = () => {
   const handleTryAgain = () => {
     dispatch(resetUserError())
     dispatch(resetProfileError())
-    dispatch(fetchUser(1)).then(() => {
+    dispatch(fetchUser(userID)).then(() => {
       dispatch(fetchProfiles(userID))
     })
+  }
+
+  const handleCancel = (): void => {
+    setVisible(false)
   }
 
   const handleLogout = (): void => {

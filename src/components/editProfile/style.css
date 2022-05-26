@@ -17,7 +17,7 @@
 
 .row_card_account {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   height: 55%;
   grid-gap: 2rem;
   margin: auto;
