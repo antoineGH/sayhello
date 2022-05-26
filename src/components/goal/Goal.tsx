@@ -44,6 +44,14 @@ const Goal = () => {
     dispatch(fetchGoal(profileID))
   }
 
+  const getStatisticDays = (): string => {
+    let numberDays = goal[profileID]?.days
+    if (numberDays === undefined) {
+      numberDays = 1
+    }
+    return `of ${numberDays} day${numberDays >= 2 ? 's' : ''}`
+  }
+
   return (
     <div className="goal_main">
       <div className="goal_title">
@@ -88,7 +96,7 @@ const Goal = () => {
               className="stat_goal"
               title="THIS WEEK"
               prefix="1"
-              value={`of ${goal[profileID]?.days} days`}
+              value={getStatisticDays()}
             />
             <Divider dashed />
             <Timeline>

@@ -20,7 +20,7 @@ export const profilesSlice = createSlice({
   initialState: profilesAdapter.getInitialState({
     loading: false,
     error: false,
-    activeID: 1
+    activeID: 0
   }),
   reducers: {
     resetProfileError: state => {
