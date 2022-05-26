@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import { useAppDispatch } from 'hooks/hooks'
+import { useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { updateGoal } from 'features/goals/actions'
-import { Goal, GoalUpdateIn } from 'types/goal'
-import { Dictionary } from '@reduxjs/toolkit'
+import { goalDays, goalID } from 'features/goals/selectors'
+import { GoalUpdateIn } from 'types/goal'
 import { Button, Col, InputNumber, Modal, Row, Slider } from 'antd'
 
 interface ModalEditGoalsProps {
-  goal: Dictionary<Goal>
-  profileID: number
   loading: boolean
 }
 
-const ModalEditGoals = ({ goal, profileID, loading }: ModalEditGoalsProps) => {
+const ModalEditGoals = ({ loading }: ModalEditGoalsProps) => {
   const [visible, setVisible] = useState(false)
-  const [value, setValue] = useState(goal[profileID]?.days)
+  const [value, setValue] = useState(0)
   const dispatch = useAppDispatch()
 
-  const showModal = () => {
-    setVisible(true)
-  }
+  const id = Number(useAppSelector(goalID)[0])
+  const days = useAppSelector(goalDays)
+
+  useEffect(() => {
+    const entries = Object.entries(days)
+    if (entries) {
+      if (entries[0]) {
+        if (entries[0][1]) setValue(entries[0][1]?.days)
+      }
+    }
+  }, [days])
 
   const handleOk = () => {
     const goalUpdate: GoalUpdateIn = {
-      // BUG: FIX HARD CODED ID AND DAYS FOR GOAL UPDATE IN GET NON UNDEFINED VALUE
-      id: 1,
-      days: 1
+      id: id,
+      days: value
     }
     dispatch(updateGoal(goalUpdate))
     setVisible(false)
+  }
+
+  const showModal = () => {
+    setVisible(true)
   }
 
   const handleCancel = () => {

@@ -385,8 +385,13 @@
     },
     {
       "id": 5,
-      "days": 6,
+      "days": 3,
       "profile_id": 5
+    },
+    {
+      "id": 6,
+      "days": 4,
+      "profile_id": 6
     }
   ]
 }

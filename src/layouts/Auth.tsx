@@ -37,13 +37,9 @@ const Auth = () => {
 
   useEffect(() => {
     dispatch(fetchUser(userID))
-    // .then(response => {
-    //   response.hasOwnProperty('payload') && dispatch(fetchProfiles(userID))
-    // })
   }, [dispatch])
 
   useEffect(() => {
-    console.log('useEffect fetchProfiles')
     dispatch(fetchProfiles(userID))
   }, [dispatch, userID])
 
@@ -51,10 +47,6 @@ const Auth = () => {
     if (profileID === 0) return
     dispatch(fetchGoal(profileID))
   }, [dispatch, profileID])
-
-  const handleCancel = (): void => {
-    setVisible(false)
-  }
 
   const handleSwitchProfile = (profileID: number): void => {
     dispatch(setActiveID(profileID))
@@ -67,6 +59,10 @@ const Auth = () => {
     dispatch(fetchUser(userID)).then(() => {
       dispatch(fetchProfiles(userID))
     })
+  }
+
+  const handleCancel = (): void => {
+    setVisible(false)
   }
 
   const handleLogout = (): void => {
