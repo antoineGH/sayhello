@@ -29,7 +29,7 @@ const CourseContent = ({ course, tags, lessons }: CourseContentProps) => {
           offset={1}
           style={{ justifyContent: 'center', display: 'flex' }}
         >
-          <Tooltip title={`${course.courseName} completed`}>
+          <Tooltip title={`${course.name} completed`}>
             {course.completed === 100 && (
               <CheckSquareOutlined className="checkedLesson" />
             )}
@@ -38,7 +38,7 @@ const CourseContent = ({ course, tags, lessons }: CourseContentProps) => {
       </Row>
       <Row>
         <Col>
-          <Title level={4}>{course.courseName}</Title>
+          <Title level={4}>{course.name}</Title>
         </Col>
       </Row>
       <Row>

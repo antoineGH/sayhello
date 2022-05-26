@@ -11,9 +11,10 @@ const CoursePage = () => {
 
   const course = {
     courseID: 1,
-    courseName: 'Course 1',
+    name: 'Course 1',
     duration: 1,
     difficulty: 1,
+    progressionID: 1,
     completed: 0,
     numberLesson: 3,
     numberQuiz: 3,
