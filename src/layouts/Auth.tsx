@@ -37,7 +37,8 @@ const Auth = () => {
 
   useEffect(() => {
     dispatch(fetchUser(userID)).then(response => {
-      response.hasOwnProperty('payload') && dispatch(fetchProfiles(userID))
+      response.hasOwnProperty('payload') &&
+        dispatch(fetchProfiles(userID)).then(res => console.log(res.payload))
     })
   }, [dispatch])
 

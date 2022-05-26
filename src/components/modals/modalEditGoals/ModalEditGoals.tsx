@@ -22,6 +22,7 @@ const ModalEditGoals = ({ goal, profileID, loading }: ModalEditGoalsProps) => {
 
   const handleOk = () => {
     const goalUpdate: GoalUpdateIn = {
+      // BUG: FIX HARD CODED ID AND DAYS FOR GOAL UPDATE IN GET NON UNDEFINED VALUE
       id: 1,
       days: 1
     }
