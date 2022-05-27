@@ -71,7 +71,8 @@
       "duration": 1,
       "difficulty": 1,
       "numberLesson": 2,
-      "numberQuiz": 3
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     },
     {
       "id": 2,
@@ -79,7 +80,8 @@
       "duration": 2,
       "difficulty": 2,
       "numberLesson": 2,
-      "numberQuiz": 3
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     },
     {
       "id": 3,
@@ -87,7 +89,8 @@
       "duration": 3,
       "difficulty": 3,
       "numberLesson": 2,
-      "numberQuiz": 3
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     },
     {
       "id": 4,
@@ -95,7 +98,8 @@
       "duration": 4,
       "difficulty": 4,
       "numberLesson": 2,
-      "numberQuiz": 3
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     }
   ],
   "progression": [
@@ -122,23 +126,6 @@
       "completed": 100,
       "course_id": 1,
       "profile_id": 3
-    }
-  ],
-  "tags": [
-    {
-      "id": 1,
-      "tag": ["ESL English", "ESL", "English"],
-      "course_id": 1
-    },
-    {
-      "id": 2,
-      "tag": ["ESL Intermediate English", "ESL", "English"],
-      "course_id": 2
-    },
-    {
-      "id": 3,
-      "tag": ["ESL Advanced English", "ESL", "English"],
-      "course_id": 3
     }
   ],
   "completed": [
