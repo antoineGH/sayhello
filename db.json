@@ -72,12 +72,7 @@
       "difficulty": 1,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": [
-        "Javascript",
-        "Typescript",
-        "Redux",
-        "Code"
-      ]
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     },
     {
       "id": 2,
@@ -86,12 +81,7 @@
       "difficulty": 2,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": [
-        "Javascript",
-        "Typescript",
-        "Redux",
-        "Code"
-      ]
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     },
     {
       "id": 3,
@@ -100,12 +90,7 @@
       "difficulty": 3,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": [
-        "Javascript",
-        "Typescript",
-        "Redux",
-        "Code"
-      ]
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     },
     {
       "id": 4,
@@ -114,12 +99,7 @@
       "difficulty": 4,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": [
-        "Javascript",
-        "Typescript",
-        "Redux",
-        "Code"
-      ]
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
     }
   ],
   "progression": [
@@ -177,7 +157,7 @@
   "lesson": [
     {
       "id": 1,
-      "name": "Lesson ESL1-1",
+      "name": "ESL1-1",
       "author": "Teacher Barbenes",
       "duration": 1,
       "difficulty": 1,
@@ -185,7 +165,7 @@
     },
     {
       "id": 2,
-      "name": "Lesson ESL1-2",
+      "name": "ESL1-2",
       "author": "Teacher Barbenes",
       "duration": 1,
       "difficulty": 1,
@@ -193,7 +173,7 @@
     },
     {
       "id": 3,
-      "name": "Lesson ESL2-1",
+      "name": "ESL2-1",
       "author": "Teacher Barbenes",
       "duration": 2,
       "difficulty": 2,
@@ -201,7 +181,7 @@
     },
     {
       "id": 4,
-      "name": "Lesson ESL2-2",
+      "name": "ESL2-2",
       "author": "Teacher Barbenes",
       "duration": 1,
       "difficulty": 1,
@@ -209,7 +189,7 @@
     },
     {
       "id": 5,
-      "name": "Lesson ESL3-1",
+      "name": "ESL3-1",
       "author": "Teacher Barbenes",
       "duration": 3,
       "difficulty": 3,
@@ -217,7 +197,7 @@
     },
     {
       "id": 6,
-      "name": "Lesson ESL3-2",
+      "name": "ESL3-2",
       "author": "Teacher Barbenes",
       "duration": 1,
       "difficulty": 1,
@@ -225,7 +205,7 @@
     },
     {
       "id": 7,
-      "name": "Lesson ESL4-1",
+      "name": "ESL4-1",
       "author": "Teacher Barbenes",
       "duration": 4,
       "difficulty": 4,
@@ -233,7 +213,7 @@
     },
     {
       "id": 8,
-      "name": "Lesson ESL4-2",
+      "name": "ESL4-2",
       "author": "Teacher Barbenes",
       "duration": 4,
       "difficulty": 4,
@@ -321,9 +301,9 @@
       "date_created": "2022-02-27T18:55:43.511Z",
       "profile_id": 1,
       "quiz_id": 1,
-      "quiz_name": "Quiz ESL English",
+      "quiz_name": "Quiz ESL 1",
       "lesson_id": 1,
-      "lesson_name": "Lesson ESL1-1"
+      "lesson_name": "ESL1-1"
     },
     {
       "id": 2,
@@ -331,9 +311,9 @@
       "date_created": "2022-02-28T18:55:43.511Z",
       "profile_id": 1,
       "quiz_id": 2,
-      "quiz_name": "Quiz ESL English 2",
+      "quiz_name": "Quiz ESL 2",
       "lesson_id": 2,
-      "lesson_name": "Lesson ESL1-2"
+      "lesson_name": "ESL1-2"
     },
     {
       "id": 3,
@@ -341,9 +321,9 @@
       "date_created": "2022-02-29T18:55:43.511Z",
       "profile_id": 1,
       "quiz_id": 3,
-      "quiz_name": "Quiz ESL English 3",
+      "quiz_name": "Quiz ESL 3",
       "lesson_id": 3,
-      "lesson_name": "Lesson ESL1-3"
+      "lesson_name": "ESL1-3"
     },
     {
       "id": 4,
@@ -351,9 +331,9 @@
       "date_created": "2022-02-25T18:55:43.511Z",
       "profile_id": 1,
       "quiz_id": 4,
-      "quiz_name": "Quiz ESL English 4",
+      "quiz_name": "Quiz ESL 4",
       "lesson_id": 4,
-      "lesson_name": "Lesson ESL1-4"
+      "lesson_name": "ESL1-4"
     },
     {
       "id": 1,

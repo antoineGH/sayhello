@@ -5,23 +5,26 @@ import Score from 'components/score/Score'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import useTitle from 'hooks/useTitle'
 import { fetchGoal } from 'features/goals/actions'
+import { goalsSelectors } from 'features/goals/selectors'
 import { profileActive } from 'features/profiles/selectors'
 import { fetchLastestResults } from 'features/results/actions'
-import { resetResultError } from 'features/results/slice'
 import { Col, PageHeader, Row } from 'antd'
 
 const Home = () => {
   useTitle('Home')
   const dispatch = useAppDispatch()
   const profileID = useAppSelector(profileActive)
+  const goalsTotal = useAppSelector(goalsSelectors.selectTotal)
 
   useEffect(() => {
     if (profileID === 0) return
-    dispatch(fetchGoal(profileID))
-  }, [dispatch, profileID])
+    if (goalsTotal !== 0) {
+      dispatch(fetchGoal(profileID))
+    }
+  }, [dispatch, profileID, goalsTotal])
 
   useEffect(() => {
-    dispatch(resetResultError())
+    if (profileID === 0) return
     dispatch(fetchLastestResults(profileID))
   }, [dispatch, profileID])
 
@@ -46,7 +49,7 @@ const Home = () => {
               <Goal />
             </Col>
             <Col xs={24} sm={12} xl={24}>
-              {<Score />}
+              <Score />
             </Col>
           </Row>
         </Col>

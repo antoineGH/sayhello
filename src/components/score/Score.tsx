@@ -95,7 +95,7 @@ const Score = () => {
             count++
             return (
               <Row key={score?.id}>
-                <Col className="score_date">
+                <Col className="score_date" span={24}>
                   {formatTimeStamp(score?.date_created)}
                 </Col>
                 <Col>
