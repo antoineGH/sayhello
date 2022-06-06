@@ -11,13 +11,6 @@ import {
   profilesSelectors
 } from 'features/profiles/selectors'
 import { resetProfileError, setActiveID } from 'features/profiles/slice'
-import {
-  addResult,
-  deleteResult,
-  fetchLastestResults,
-  fetchResults,
-  updateResult
-} from 'features/results/actions'
 import { fetchUser } from 'features/user/actions'
 import { userHasError, userIsLoading } from 'features/user/selector'
 import { resetUserError } from 'features/user/slice'
