@@ -6,7 +6,7 @@ export const fetchResults = createAsyncThunk<Results, number>(
   async (profileID: number) => {
     try {
       const data = await fetch(
-        `http://localhost:4000/result?profile_id=${profileID}`
+        `http://localhost:4000/result?profile_id=${profileID}&_sort=date_created&_order=desc&_limit=4`
       )
       const json = await data.json()
       console.log(json)

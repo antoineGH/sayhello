@@ -314,6 +314,26 @@
       "quiz_name": "Quiz ESL English 2",
       "lesson_id": 2,
       "lesson_name": "Lesson ESL1-2"
+    },
+    {
+      "id": 3,
+      "score": 30,
+      "date_created": "2022-02-29T18:55:43.511Z",
+      "profile_id": 1,
+      "quiz_id": 3,
+      "quiz_name": "Quiz ESL English 3",
+      "lesson_id": 3,
+      "lesson_name": "Lesson ESL1-3"
+    },
+    {
+      "id": 4,
+      "score": 40,
+      "date_created": "2022-02-25T18:55:43.511Z",
+      "profile_id": 1,
+      "quiz_id": 4,
+      "quiz_name": "Quiz ESL English 4",
+      "lesson_id": 4,
+      "lesson_name": "Lesson ESL1-42"
     }
   ],
   "wikidata": [
