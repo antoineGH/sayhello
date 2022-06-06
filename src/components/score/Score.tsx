@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { profileActive } from 'features/profiles/selectors'
 import { fetchLastestResults } from 'features/results/actions'
@@ -25,6 +26,7 @@ const Score = () => {
   const loadingResult = useAppSelector(resultIsLoading)
   const errorResult = useAppSelector(resultHasError)
   const scores = useAppSelector(ResultsSelector.selectEntities)
+  const navigate = useNavigate()
   const { Title } = Typography
 
   const handleTryAgain = () => {
@@ -73,6 +75,21 @@ const Score = () => {
               <Spin />
             </Col>
           </Row>
+        ) : Object.values(scores).length === 0 ? (
+          <div style={{ minHeight: '455px' }}>
+            <Row className="row_error">
+              <Col>
+                <p className="ant-statistic-title">No Scores</p>
+              </Col>
+            </Row>
+            <Row className="row_error">
+              <Col>
+                <Button type="link" onClick={() => navigate(`/auth/quiz`)}>
+                  Take a quiz
+                </Button>
+              </Col>
+            </Row>
+          </div>
         ) : (
           SortResult(Object.values(scores)).map((score, count) => {
             count++

@@ -7,6 +7,7 @@ import useTitle from 'hooks/useTitle'
 import { fetchGoal } from 'features/goals/actions'
 import { profileActive } from 'features/profiles/selectors'
 import { fetchLastestResults } from 'features/results/actions'
+import { resetResultError } from 'features/results/slice'
 import { Col, PageHeader, Row } from 'antd'
 
 const Home = () => {
@@ -17,6 +18,10 @@ const Home = () => {
   useEffect(() => {
     if (profileID === 0) return
     dispatch(fetchGoal(profileID))
+  }, [dispatch, profileID])
+
+  useEffect(() => {
+    dispatch(resetResultError())
     dispatch(fetchLastestResults(profileID))
   }, [dispatch, profileID])
 
