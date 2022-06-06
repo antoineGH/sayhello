@@ -13,6 +13,7 @@ import {
   profilesSelectors
 } from 'features/profiles/selectors'
 import { resetProfileError, setActiveID } from 'features/profiles/slice'
+import { fetchResults } from 'features/results/actions'
 import { fetchUser } from 'features/user/actions'
 import { userHasError, userIsLoading } from 'features/user/selector'
 import { resetUserError } from 'features/user/slice'
@@ -125,6 +126,9 @@ const Auth = () => {
         <Footer style={{ textAlign: 'center', backgroundColor: '#d4dadf' }}>
           <Button onClick={() => dispatch(fetchCourses(1))}>
             fetchCourses
+          </Button>
+          <Button onClick={() => dispatch(fetchResults(1))}>
+            fetchResults
           </Button>
         </Footer>
       </>
