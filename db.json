@@ -72,7 +72,12 @@
       "difficulty": 1,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+      "tags": [
+        "Javascript",
+        "Typescript",
+        "Redux",
+        "Code"
+      ]
     },
     {
       "id": 2,
@@ -81,7 +86,12 @@
       "difficulty": 2,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+      "tags": [
+        "Javascript",
+        "Typescript",
+        "Redux",
+        "Code"
+      ]
     },
     {
       "id": 3,
@@ -90,7 +100,12 @@
       "difficulty": 3,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+      "tags": [
+        "Javascript",
+        "Typescript",
+        "Redux",
+        "Code"
+      ]
     },
     {
       "id": 4,
@@ -99,7 +114,12 @@
       "difficulty": 4,
       "numberLesson": 2,
       "numberQuiz": 3,
-      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+      "tags": [
+        "Javascript",
+        "Typescript",
+        "Redux",
+        "Code"
+      ]
     }
   ],
   "progression": [
@@ -296,7 +316,7 @@
   ],
   "result": [
     {
-      "id": 1,
+      "id": 5,
       "score": 10,
       "date_created": "2022-02-27T18:55:43.511Z",
       "profile_id": 1,
@@ -333,7 +353,17 @@
       "quiz_id": 4,
       "quiz_name": "Quiz ESL English 4",
       "lesson_id": 4,
-      "lesson_name": "Lesson ESL1-42"
+      "lesson_name": "Lesson ESL1-4"
+    },
+    {
+      "id": 1,
+      "score": 100,
+      "date_created": "2022-02-22T18:55:43.511Z",
+      "profile_id": 1,
+      "quiz_id": 5,
+      "quiz_name": "Quiz ESL English 5",
+      "lesson_id": 5,
+      "lesson_name": "Lesson ESL1-5"
     }
   ],
   "wikidata": [

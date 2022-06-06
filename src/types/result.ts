@@ -10,3 +10,20 @@ export interface Result {
 }
 
 export type Results = Result[]
+
+export interface ResultAddIn {
+  score: number
+  profile_id: number
+  quiz_id: number
+  date_created: string
+}
+
+export interface ResultPutIn {
+  id: number
+  score: number
+}
+
+export interface ResultPutOut {
+  id: number
+  changes: Result
+}
