@@ -64,28 +64,66 @@
       "user_id": 2
     }
   ],
+  "course": [
+    {
+      "id": 1,
+      "name": "Learn Redux",
+      "duration": 1,
+      "difficulty": 1,
+      "numberLesson": 2,
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+    },
+    {
+      "id": 2,
+      "name": "Learn Flask",
+      "duration": 2,
+      "difficulty": 2,
+      "numberLesson": 2,
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+    },
+    {
+      "id": 3,
+      "name": "Learn Javascript",
+      "duration": 3,
+      "difficulty": 3,
+      "numberLesson": 2,
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+    },
+    {
+      "id": 4,
+      "name": "Learn Typescript",
+      "duration": 4,
+      "difficulty": 4,
+      "numberLesson": 2,
+      "numberQuiz": 3,
+      "tags": ["Javascript", "Typescript", "Redux", "Code"]
+    }
+  ],
   "progression": [
     {
       "id": 1,
-      "completed": true,
+      "completed": 0,
       "course_id": 1,
       "profile_id": 1
     },
     {
       "id": 2,
-      "completed": false,
+      "completed": 10,
       "course_id": 2,
       "profile_id": 1
     },
     {
       "id": 3,
-      "completed": false,
+      "completed": 50,
       "course_id": 1,
       "profile_id": 3
     },
     {
       "id": 4,
-      "completed": false,
+      "completed": 100,
       "course_id": 1,
       "profile_id": 3
     }
@@ -114,32 +152,6 @@
       "completed": false,
       "lesson_id": 1,
       "profile_id": 3
-    }
-  ],
-  "course": [
-    {
-      "id": 1,
-      "name": "Course ESL1",
-      "duration": 1,
-      "difficulty": 1
-    },
-    {
-      "id": 2,
-      "name": "Course ESL2",
-      "duration": 2,
-      "difficulty": 2
-    },
-    {
-      "id": 3,
-      "name": "Course ESL3",
-      "duration": 3,
-      "difficulty": 3
-    },
-    {
-      "id": 4,
-      "name": "Course ESL4",
-      "duration": 4,
-      "difficulty": 4
     }
   ],
   "lesson": [
@@ -206,23 +218,6 @@
       "duration": 4,
       "difficulty": 4,
       "course_id": 4
-    }
-  ],
-  "tag": [
-    {
-      "id": 1,
-      "tag": ["ESL English", "ESL", "English"],
-      "course_id": 1
-    },
-    {
-      "id": 2,
-      "tag": ["ESL Intermediate English", "ESL", "English"],
-      "course_id": 2
-    },
-    {
-      "id": 3,
-      "tag": ["ESL Advanced English", "ESL", "English"],
-      "course_id": 3
     }
   ],
   "quiz": [

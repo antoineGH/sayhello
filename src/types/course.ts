@@ -1,8 +1,22 @@
 import { LessonsLight } from './lesson'
 
+export interface Course {
+  id: number
+  name: string
+  duration: number
+  difficulty: number
+  numberLesson: number
+  numberQuiz: number
+  progressionID: number
+  completed: number
+  tags: string[]
+}
+
+export type Courses = Course[]
+
 export interface CourseSummaryProps {
-  courseID: number
-  courseName: string
+  id: number
+  name: string
   duration: number
   difficulty: number
   completed: number
@@ -11,17 +25,6 @@ export interface CourseSummaryProps {
   tags: string[]
   handleCourse: (courseID: number) => void
   isNotEnrolled: boolean
-}
-
-interface Course {
-  courseID: number
-  courseName: string
-  duration: number
-  difficulty: number
-  completed: number
-  numberLesson: number
-  numberQuiz: number
-  tags: string[]
 }
 
 export interface CourseContentProps {

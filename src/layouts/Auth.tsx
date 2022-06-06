@@ -3,6 +3,7 @@ import { Outlet } from 'react-router'
 import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { fetchCourses } from 'features/courses/actions'
 import { fetchGoal } from 'features/goals/actions'
 import { fetchProfiles } from 'features/profiles/actions'
 import {
@@ -121,9 +122,11 @@ const Auth = () => {
           )}
         </Header>
         <Outlet />
-        <Footer
-          style={{ textAlign: 'center', backgroundColor: '#d4dadf' }}
-        ></Footer>
+        <Footer style={{ textAlign: 'center', backgroundColor: '#d4dadf' }}>
+          <Button onClick={() => dispatch(fetchCourses(1))}>
+            fetchCourses
+          </Button>
+        </Footer>
       </>
     )
   }
