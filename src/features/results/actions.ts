@@ -15,7 +15,6 @@ export const fetchResults = createAsyncThunk<Results, number>(
         `http://localhost:4000/result?profile_id=${profileID}`
       )
       const json = await data.json()
-      console.log(json)
       return json
     } catch (e) {
       throw new Error(`Fail to fetch results: ${e}`)
@@ -30,7 +29,6 @@ export const fetchLastestResults = createAsyncThunk<Results, number>(
         `http://localhost:4000/result?profile_id=${profileID}&_sort=date_created&_order=desc&_limit=4`
       )
       const json = await data.json()
-      console.log(json)
       return json
     } catch (e) {
       throw new Error(`Fail to fetch results: ${e}`)

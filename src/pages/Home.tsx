@@ -1,11 +1,24 @@
+import { useEffect } from 'react'
 import CourseList from 'components/courseList/CourseList'
 import Goal from 'components/goal/Goal'
 import Score from 'components/score/Score'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import useTitle from 'hooks/useTitle'
+import { fetchGoal } from 'features/goals/actions'
+import { profileActive } from 'features/profiles/selectors'
+import { fetchLastestResults } from 'features/results/actions'
 import { Col, PageHeader, Row } from 'antd'
 
 const Home = () => {
   useTitle('Home')
+  const dispatch = useAppDispatch()
+  const profileID = useAppSelector(profileActive)
+
+  useEffect(() => {
+    if (profileID === 0) return
+    dispatch(fetchGoal(profileID))
+    dispatch(fetchLastestResults(profileID))
+  }, [dispatch, profileID])
 
   return (
     <>
@@ -28,7 +41,7 @@ const Home = () => {
               <Goal />
             </Col>
             <Col xs={24} sm={12} xl={24}>
-              <Score />
+              {<Score />}
             </Col>
           </Row>
         </Col>

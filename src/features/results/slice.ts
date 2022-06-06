@@ -18,7 +18,11 @@ export const resultsSlice = createSlice({
     loading: false,
     error: false
   }),
-  reducers: {},
+  reducers: {
+    resetResultError: state => {
+      state.error = false
+    }
+  },
   extraReducers: builder => {
     // fetchResults
     builder.addCase(fetchResults.pending, state => {
@@ -91,3 +95,4 @@ export const resultsSlice = createSlice({
 })
 
 export default resultsSlice.reducer
+export const { resetResultError } = resultsSlice.actions

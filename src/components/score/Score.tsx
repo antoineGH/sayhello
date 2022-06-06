@@ -1,33 +1,87 @@
-import { Card, Divider, Statistic, Typography } from 'antd'
+import { useEffect } from 'react'
+import { useAppDispatch, useAppSelector } from 'hooks/hooks'
+import { profileActive } from 'features/profiles/selectors'
+import { fetchLastestResults } from 'features/results/actions'
+import {
+  ResultsSelector,
+  resultHasError,
+  resultIsLoading,
+  resultsSelector
+} from 'features/results/selectors'
+import { resetResultError } from 'features/results/slice'
+import { Result } from 'types/result'
+import { Dictionary } from '@reduxjs/toolkit'
+import {
+  Button,
+  Card,
+  Col,
+  Divider,
+  Row,
+  Spin,
+  Statistic,
+  Typography
+} from 'antd'
 import './score.css'
 
 const Score = () => {
+  const dispatch = useAppDispatch()
+  const profileID = useAppSelector(profileActive)
+  const loadingResult = useAppSelector(resultIsLoading)
+  const errorResult = useAppSelector(resultHasError)
+  const scores = useAppSelector(resultsSelector)
   const { Title } = Typography
-  const scores = [
-    { lesson_name: 'Lesson 1', quiz_name: 'Quiz 1', score: 56 },
-    { lesson_name: 'Lesson 2', quiz_name: 'Quiz 2', score: 75 },
-    { lesson_name: 'Lesson 3', quiz_name: 'Quiz 3', score: 24 },
-    { lesson_name: 'Lesson 4', quiz_name: 'Quiz 4', score: 97 }
-  ]
+
+  const handleTryAgain = () => {
+    dispatch(resetResultError())
+    dispatch(fetchLastestResults(profileID))
+  }
+
+  useEffect(() => {
+    console.log(scores)
+  }, [scores])
 
   return (
     <div className="score_title">
       <Title level={3}>Latest Scores</Title>
       <Card bordered={false}>
-        {scores.map((score, count) => {
-          count++
-          return (
-            <div key={count}>
-              <Statistic
-                className="stat_course_lower stat_score"
-                title={`${score.lesson_name} - ${score.quiz_name}`}
-                value={score.score}
-                suffix="%"
-              />
-              {count !== scores.length && <Divider />}
-            </div>
-          )
-        })}
+        {errorResult ? (
+          <div style={{ minHeight: '455px' }}>
+            <Row className="row_error">
+              <Col>
+                <p className="ant-statistic-title">Error contacting server</p>
+              </Col>
+            </Row>
+            <Row className="row_error">
+              <Col>
+                <Button type="link" onClick={handleTryAgain}>
+                  Try Again
+                </Button>
+              </Col>
+            </Row>
+          </div>
+        ) : loadingResult ? (
+          <Row className="row_loading" style={{ minHeight: '455px' }}>
+            <Col>
+              <Spin />
+            </Col>
+          </Row>
+        ) : (
+          scores.map((score, count) => {
+            count++
+            return (
+              <div key={count}>
+                <Statistic
+                  className="stat_course_lower stat_score"
+                  title={`${score.lesson_name} - ${score.quiz_name}`}
+                  value={score.score}
+                  suffix="%"
+                />
+                {count !== scores.length && <Divider />}
+              </div>
+            )
+          })
+          // <p>lol</p>
+        )}
       </Card>
     </div>
   )

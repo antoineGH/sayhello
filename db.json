@@ -423,7 +423,7 @@
   "goal": [
     {
       "id": 1,
-      "days": 1,
+      "days": 4,
       "profile_id": 1
     },
     {
@@ -443,7 +443,7 @@
     },
     {
       "id": 5,
-      "days": 3,
+      "days": 4,
       "profile_id": 5
     },
     {

@@ -10,3 +10,4 @@ const getSlice = (state: RootState) => state.results
 
 export const resultIsLoading = createSelector(getSlice, state => state.loading)
 export const resultHasError = createSelector(getSlice, state => state.error)
+export const resultsSelector = createSelector(getSlice, state => state.entities)

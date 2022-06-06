@@ -4,10 +4,8 @@ import TopBarComponent from 'components/topBarComponent/TopBarComponent'
 import TopMenu from 'components/topMenu/TopMenu'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { fetchCourses } from 'features/courses/actions'
-import { fetchGoal } from 'features/goals/actions'
 import { fetchProfiles } from 'features/profiles/actions'
 import {
-  profileActive,
   profileHasError,
   profileIsLoading,
   profilesSelectors
@@ -32,10 +30,9 @@ const Auth = () => {
   const screens = useBreakpoint()
   const md = screens?.md
   const dispatch = useAppDispatch()
-  const profileID = useAppSelector(profileActive)
 
   // HARDCODED USERID
-  const userID = 2
+  const userID = 1
 
   const profiles = useAppSelector(profilesSelectors.selectAll)
   const isLoadingUser = useAppSelector(userIsLoading)
@@ -50,11 +47,6 @@ const Auth = () => {
   useEffect(() => {
     dispatch(fetchProfiles(userID))
   }, [dispatch, userID])
-
-  useEffect(() => {
-    if (profileID === 0) return
-    dispatch(fetchGoal(profileID))
-  }, [dispatch, profileID])
 
   const handleSwitchProfile = (profileID: number): void => {
     dispatch(setActiveID(profileID))
