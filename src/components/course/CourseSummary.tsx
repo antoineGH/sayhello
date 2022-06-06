@@ -80,7 +80,7 @@ const CourseSummary = ({
             className="row_statistic"
             gutter={[0, 8]}
           >
-            <Col xs={12} sm={6}>
+            <Col xs={12} sm={6} lg={4}>
               <Statistic
                 className="stat_course_lower"
                 title="Contains"
@@ -88,7 +88,7 @@ const CourseSummary = ({
                 suffix={getContains(numberLesson, numberQuiz)}
               />
             </Col>
-            <Col xs={12} sm={6}>
+            <Col xs={12} sm={6} lg={4}>
               <Statistic
                 className="stat_course_lower"
                 title="Duration"
@@ -96,7 +96,7 @@ const CourseSummary = ({
                 suffix="h"
               />
             </Col>
-            <Col xs={12} sm={6}>
+            <Col xs={12} sm={6} lg={4}>
               <Statistic
                 className="stat_course_lower"
                 title="Difficulty"
