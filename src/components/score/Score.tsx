@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from 'hooks/hooks'
 import { profileActive } from 'features/profiles/selectors'
 import { fetchLastestResults } from 'features/results/actions'
@@ -8,7 +7,6 @@ import {
   resultIsLoading
 } from 'features/results/selectors'
 import { resetResultError } from 'features/results/slice'
-import { Results } from 'types/result'
 import {
   Button,
   Card,
