@@ -125,32 +125,6 @@ const Auth = () => {
           <Button onClick={() => dispatch(fetchCourses(1))}>
             fetchCourses
           </Button>
-          <Button onClick={() => dispatch(fetchLastestResults(1))}>
-            fetchLastestResults
-          </Button>
-          <Button onClick={() => dispatch(fetchResults(1))}>
-            fetchResults
-          </Button>
-          <Button
-            onClick={() =>
-              dispatch(
-                addResult({
-                  score: 65,
-                  profile_id: 1,
-                  quiz_id: 1,
-                  date_created: new Date().toISOString()
-                })
-              )
-            }
-          >
-            addResult
-          </Button>
-          <Button onClick={() => dispatch(updateResult({ id: 1, score: 100 }))}>
-            updateResult
-          </Button>
-          <Button onClick={() => dispatch(deleteResult(6))}>
-            deleteResult
-          </Button>
         </Footer>
       </>
     )
