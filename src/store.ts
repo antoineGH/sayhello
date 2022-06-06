@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import coursesReducer from './features/courses/slice'
 import goalReducer from './features/goals/slice'
 import profilesReducer from './features/profiles/slice'
+import resultsReducer from './features/results/slice'
 import userReducer from './features/user/slice'
 
 export const store = configureStore({
@@ -9,7 +10,8 @@ export const store = configureStore({
     user: userReducer,
     profiles: profilesReducer,
     goal: goalReducer,
-    courses: coursesReducer
+    courses: coursesReducer,
+    results: resultsReducer
   }
 })
 
